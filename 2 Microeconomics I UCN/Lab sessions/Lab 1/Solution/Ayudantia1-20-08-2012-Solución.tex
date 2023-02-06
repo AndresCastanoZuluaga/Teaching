@@ -1,0 +1,232 @@
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\usepackage{afterpage}
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{\textbf{Ayudantía \# 1 Microeconomía I \\
+		(EC-301 Y EC-210)\\
+}}
+\begin{center}
+\author{Prof. Andrés M. Castaño Zuluaga\\
+\\
+Ayudantes:\\
+\\
+Stacy Amas Morales\\
+Jose Federsffield Ugalde\\
+\\
+Microeconomía I (EC301 y EC-210)\\
+Universidad Cat\'olica del Norte\\}
+
+
+\end{center}
+
+\date{\today}
+\maketitle
+
+\section{Repaso elementos de oferta y demanda}
+
+\subsection{Equilibrio de mercado}
+
+\begin{enumerate}
+\item Suponga que queremos analizar el mercado de los cacahuetes y que, partiendo del análisis estadístico de datos históricos, concluimos que la calidad de cacahuetes demandada cada semana (Q, medida en fanegas) depende del precio de los cacahuetes (P, medido en dólares por fanega) siguiendo la ecuación
+$$Q_{D}=1000-100P$$
+Ahora suponga que la cantidad ofertada de cacahuetes también depende del precio:
+$$Q_{S}=-125+125P$$
+De acuerdo a lo anterior determine el equilibrio de mercado
+\bigskip
+\item Suponga ahora que la demanda de cacahuetes aumenta hasta:
+$$Q_{D}^{'}=1450-100P$$
+determine el nuevo equilibrio de mercado, y grafique los dos escenarios.
+\end{enumerate}
+\bigskip
+{\Large Solución}
+\bigskip
+\begin{enumerate}
+	\item Las ecuaciones de oferta y demanda reflejan, el modelo de la determinación del precio en el mercado de los cacahuetes. Se puede encontrar el precio de equilibrio haciendo que la cantidad demandad sea igual a la cantidad ofertada:
+	$$Q_{D}=Q_{S}$$
+	$$1000-100P=-125+125P$$
+	$$225P=1125$$
+	$$P^{*}=5$$
+	A un precio de 5\$ por fanega, este mercado esta en equilibrio; a este precio, la gente querrá comprar 500 fanegas, que es exactamente la cantidad que querrán ofrecer los productores de cacahuetes. Este equilibrio se muestra gráficamente mediante la intersección de D y S en la figura 1.
+	\bigskip
+	\item Para la nueva demanda se sigue el mismo procedimiento que en el punto 1:
+	$$Q_{D}^{'}=Q_{S}$$
+	$$1450-100P=-125+125P$$
+	$$225P=1575$$
+	$$P^{*}=7$$
+	$$Q_{D}^{'}=Q_{S}=750$$
+La nueva combinación de oferta y demanda viene determinada por las fuerzas tanto de la oferta como de la demanda. 
+
+
+\begin{figure} [h!]
+	\centering
+	\caption{\textbf{Gráfico equilibrios de mercado punto 1 y 2}}
+	\includegraphics[width=12cm]{grafico1}
+	\scriptsize{\newline \emph{Fuente:}Tomado de Nicholson, 2007, pag. 13. }
+\end{figure}\smallskip
+\end{enumerate}
+
+\subsection{Elasticidad}
+
+\begin{enumerate}
+	\item Considere el mercado de cigarrillos donde la demanda está compuesta por dos grupos. Los del Grupo A son los ''adictos'' al 
+	cigarrillo y los del Grupo B son los que fuman ''de vez en cuando''. El A es un grupo pequeño frente al B. Dibuje la curva de demanda de cada grupo, explicando su diferencia en ubicación y elasticidad.
+	\bigskip
+	\item Suponga una curva de oferta normal que atiende el total del mercado. Marque en el gráfico el equilibrio del mercado.
+	\bigskip
+	\item Suponga la siguiente función de demanda:
+	
+	$$Q_{x} = 200 - 2P_{x} - 3P_{y}$$
+	
+	donde $Q_{x}$ es la cantidad demandada de x, $P_{x}$ es el precio de x y $P_{y}$
+	es el precio de y. Suponga que sólo se conocen cuatro puntos de la función de demanda:
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				% after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+				Punto & $P_{x}$ & $P_{y}$ \\
+				\hline
+				A & 6 & 5 \\
+				B & 8 & 7 \\
+				C & 10 & 10 \\
+				D & 8 & 5 \\
+				\hline
+			\end{tabular}
+		\end{center}
+Calcule donde sea posible la $e_{PQ}^{QD}$, utilizando la formula de elasticidad arco. Luego utilizando los datos del punto anterior calcule la $E_{PR}^{QD}$, donde sea posible. Interprete todos los resultados obtenidos en ambos puntos, e indique a que tipo de bienes hace referencia cada ejemplo.
+	
+\end{enumerate}
+\bigskip
+{\Large Solución}
+\bigskip
+
+\begin{enumerate}
+	\item Los consumidores del grupo A ''adictos'' sienten la necesidad de consumir determinada cantidad de cigarrillos al día, y no cambia mucho por más que cambie el precio. El consumo del grupo B ''de vez en cuando'', es más sensible a variaciones en el precio. Lo anterior, da a entender  que la demanda del grupo A es más inelástica que la del grupo B (Véase Figura 2).
+	
+	\begin{figure} [h!]
+		\centering
+		\caption{\textbf{Demanda de cigarrillos para los consumidores tipo A (Adictos) y tipo B (De vez en cuando).}}
+		\includegraphics[width=12cm]{pregunta9A}
+		\scriptsize{\newline \emph{Fuente:}Construcción del autor}
+	\end{figure}\smallskip.
+	\bigskip
+	\item Después de introducir un curva de oferta normal, se pueden obtener los precios y cantidades de equilibrio de cada mercado, de igual modo se puede ver el efecto de cambios en los precios en la cantidad demandad de cigarrillos para los dos grupo(Véase Figura 3).
+	
+	\begin{figure} [h!]
+		\centering
+		\caption{\textbf{Equilibrio en el mercado de cigarrillos para los consumidores tipo A (Adictos) y tipo B (De vez en cuando).}}
+		\includegraphics[width=12cm]{pregunta9B}
+		\scriptsize{\newline \emph{Fuente:}Construcción del docente}
+	\end{figure}\smallskip
+
+\newpage
+\bigskip
+\item  Al introducir cada par de precios en la ecuación $Q_{x} = 200 - 2P_{x} - 3P_{y}$, se pueden obtener los valores de $Q_{x}$. Utilizando la fórmula de elasticidad arco se puede obtener la elasticidad precio de la demanda ($e_{PQ}^{QD}$) para los segmentos AB, BC y CD. Luego utilizando el precio del bien relacionado $P_{y}$ con el valor de $Q_{x}$ se puede calcular la elasticidad precio cruzada de la demanda ($E_{PR}^{QD}$) para los mismos segmentos. Después de realizados los cálculos los resultados se muestran en el Cuadro 1.
+
+\begin{table}[h!]
+	\begin{center}
+		\caption{\textbf{Resultados e interpretación ejercicio elasticidad}.}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			Punto & $P_{x}$ & $P_{y}$ & $Q_{x}$ & $e_{PQ}^{QD}$ & inter. & Tipo & $E_{PR}^{QD}$ & Inter. & Tipo \\
+			\hline
+			A & 6  & 5  & 173 & - & - & - & - & - & -\\
+			B & 8  & 7  & 163 & $\abs{-0.20}$ & Inelas & Normal & $\abs{-0.17}$ & Inelas & Complementarios  \\
+			C & 10 & 10 & 150 & $\abs{-0.37}$ & Inelas & Normal & $\abs{-0.23}$ & Inelas & Complementarios \\
+			D & 8  & 5  & 169 & $\abs{-0.53}$ & Inelas & Normal & $\abs{-0.17}$ & Inelas & Complementarios \\
+			\hline
+		\end{tabular}
+		\scriptsize{\newline \emph{Fuente:}Construcción del docente}
+	\end{center}
+\end{table}
+\end{enumerate}	
+
+\newpage
+
+\section{Introducción a la Teoría del Consumidor}
+
+\subsection{Restricción presupuestaria}
+
+\begin{enumerate}
+	\item La restricción presupuestaria de Pedro viene determinada por $m=500$; $p_{1}=1$; $p_{2}=2$. Explique como cambia el conjunto presupuestario si el gobierno aplica un impuesto específico de 0.1 al bien 1.
+	\bigskip
+	\item Si el gobierno aplica un impuesto ad-valorem de 20\% al bien 1.
+	\bigskip
+	\item Si el gobierno aplica un impuesto de suma alzada de 100.
+	\bigskip
+	\item Si la pendiente de la restricción presupuestaria (precio relativo) es 1.
+\end{enumerate}
+\bigskip
+{\Large Solución}
+\bigskip
+\begin{enumerate} 
+	\item El conjunto presupuestario para $m=500$; $p_{1}=1$; $p_{2}=2$
+	es el conjunto de cestas compuestas por los bienes de consumo que cumplen:
+	$$x_{1}+2x_{2}\leq 500$$
+	Y la recta presupuestaria será el conjunto de cestas $(x_{1}, x_{2})$	que agotan el presupuesto esto es:
+	$$x_{1}+2x_{2}= 500$$
+	Ahora bien, un impuesto específico es aquel que se cobra por unidad consumida; incrementa el precio en la tasa del impuesto. Si el impuesto es 0.1 sobre el bien $x_{1}$ entonces:
+	$$x_{1}+2x_{2}=500-0.1x_{1}$$
+	$$(1+0.1)x_{1}+2x_{2}=500$$
+	Por lo tanto el precio del bien $x_{1}$ se incrementará en la tasa del impuesto. En general un impuesto especifico (impuesto por unidad consumida) modificara el precio del bien donde se aplica de esta forma:
+	$$p_{1} \longrightarrow (p_{1} + t)$$
+	El conjunto presupuestario se reducirá pues al incrementarse el precio de un bien se reduce la capacidad de compra, el nuevo conjunto presupuestario quedará expresado como:
+	$$\{(x_{1}, x_{2}) \in \mathbb{R}^{2} | \, (1.1)x_{1}+2x_{2} \leq 500\}$$
+	La recta de presupuesto es:
+	$$(1.1)x_{1}+2x_{2}=500$$
+	$$x_{2}= \frac{500}{1.1} - \frac{1.1}{2}x_{1}$$
+	Se puede ver que la pendiente de la restricción presupuestaria, o el cociente entre los precios $\frac{p_{1}}{p_{2}}=\frac{\Delta x_{2}}{\Delta x_{1}}$ se incrementó pues $p_{1}$ aumentó. Esto quiere decir que el bien $x_{1}$ se ha hecho mas caro que el bien $x_{2}$  en términos relativos, pues antes intercambiaba 0,5 unidades de $x_{2}$ por 1 unidad de $x_{1}$ pero ahora se intercambia 0,5 unidades de $x_{2}$ por la misma unidad $x_{1}$. El precio relativo es entonces el costo de oportunidad del bien 1. En conclusión, la pendiente de la nueva recta de presupuesto es mayor y se mantiene el intercepto vertical: la recta de presupuesto original ha pivotado hacia adentro. 
+	\bigskip
+	\item Un impuesto ad-valorem grava el valor de las ventas y entonces modifica el conjunto presupuestario y la recta de presupuesto:
+	$$x_{1}+2x_{2}=500-0.2(1x_{1})$$
+	$$1(1+0.2)x_{1}+2x_{2}=500$$
+	El precio del bien se incrementa a $1(1+0.2)$. El impuesto ad-valorem modifica el precio mediante:
+	$$p_{1} \longrightarrow p_{1}(1 + t)$$
+	Donde t es la tasa de impuesto. El conjunto presupuestario, se reduce pues el precio de uno de los bienes se incrementa. La capacidad de compra se reduce, por lo que el nuevo conjunto presupuestario es:
+	$$\{(x_{1}, x_{2}) \in \mathbb{R}^{2} | \, (1.2)x_{1}+2x_{2} \leq 500\}$$
+	La recta de presupuesto es ahora:
+	$$1.2(x_{1})+2x_{2}=500$$
+	$$x_{2}= \frac{500}{2} - \frac{1.2}{2}x_{1}$$
+	Dado que $x_{1}$ se hace más caro, pierde competitividad respecto a $x_{2}$. El precio relativo o la pendiente de la restricción presupuestaria $\frac{p_{1}}{p_{2}}=\frac{\Delta x_{2}}{\Delta x_{1}}$ se incrementa, y se mantiene el intercepto vertical: la recta de presupuesto o restricción presupuestaria inicial pivota hacia adentro.
+	\bigskip
+	\item El impuesto de suma alzada reduce los ingresos. El nuevo conjunto presupuestario es:
+	$$\{(x_{1}, x_{2}) \in \mathbb{R}^{2} | \, x_{1}+2x_{2} \leq (500-100)\}$$
+	La nueva recta presupuestaria es:
+	$$(x_{1})+2x_{2}=400$$
+	La pendiente $\frac{p_{1}}{p_{2}}$ no se modifica y la recta presupuestaria se desplaza paralelamente en dirección al origen de coordenadas.
+	\bigskip
+	\item Un incremento del precio relativo $\frac{p_{1}}{p_{2}}$ no nos dice de manera directa qué es lo que ha ocurrido. El precio del bien 1 puede haber subido dado el precio del bien 2. El precio del bien 2 puede haber bajado dado el precio del bien 1. O ambos precios pueden haber cambiado provocando el incremento del precio relativo. Pero al incrementarse el precio relativo, es claro que $x_{1}$ se hace mas caro que $x_{2}$ (antes se intercambiaba 0,5 unidades de $x_{2}$ por una unidad de $x_{2}$ y ahora intercambiamos una unidad de $x_{2}$ por una unidad $x_{1}$. Y también es claro que la recta de presupuesto ha girado en sentido horario, pues el precio relativo es también su pendiente.
+\end{enumerate}
+\end{document}
+
