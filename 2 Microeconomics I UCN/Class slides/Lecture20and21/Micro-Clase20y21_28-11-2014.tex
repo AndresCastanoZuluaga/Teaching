@@ -1,0 +1,296 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#22 y \#23 - Minimización de costos}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 20 y 21]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Noviembre 28 de 2014}
+
+%\date{\today}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Anteriormente explicamos como la empresa maximiza su beneficio. No obstante, existe una forma más indirecta de entender la maximización del beneficio.
+\begin{itemize}
+\item <1> El problema de minimización de costos para un determinado nivel de producción
+\item <1> Cómo se elige el más rentable.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La minimización de los costos}
+\begin{itemize}
+\item <1> Una empresa minimiza costos si produce cualquier cantidad de su producto, $y\geq0$, al menor costo posible.
+\bigskip
+\item <1> $C(y)$ es el menor costo posible de producir Q unidades.
+\bigskip
+\item <1> $C(y)$ e la función de costo total.
+\bigskip
+\item <1> Si la empresa se enfrenta a los precios de los factores $w = (w_{1},w_{2},..,w_{n})$ entonces la función de costo total se puede escribir como.
+    $$CT(w_{1},...,w_{n},y)$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{El problema de minimización de costos}
+\begin{itemize}
+\item <1> Suponga una empresa que emplea 2 factores para obtener un cierto producto.
+\bigskip
+\item <1> La función de producción es:
+	$$y = f(x_{1},x_{2})$$
+\bigskip
+\item <1> Dados los precios de los factores $w_{1}$ y $w_{2}$, el costo de la canasta de factores $(x_{1},x_{2})$ es
+$$w_{1}x_{1}+w_{2}x_{2}$$
+\bigskip
+\item <1> Por lo cual dados $w_{1}$, $w_{2}$ y dado y, el problema de minimización de costos es:
+\begin{equation*}
+\begin{aligned}
+& \underset{x_{1}, x_{2}\geq0}{\text{minimizar}}
+& & w_{1}x_{1}+w_{2}x_{2} \\
+& \text{sujeto a}
+& & f(x_{1}, x_{2})=y
+\end{aligned}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{El problema de minimización de costos}
+\begin{itemize}
+\item <1> $x_{1}^{*}(w_{1},w_{2},y)$ y $x_{2}^{*}(w_{1},w_{2},y)$ es la demanda condicional de factor del bien 1 y el bien 2.
+\bigskip
+\item <1> Por lo tanto el menor costo de producir y unidades es:
+	$$C(w_{1}, w_{2}, y)=w_{1}x_{1}^{*}(w_{1},w_{2},y)+w_{2}x_{2}^{*}(w_{1},w_{2},y)$$
+\item <1> Por lo tanto el problema se podría reducir a lo siguiente,  dados $w_{1}$, $w_{2}$ y dado y, ¿cuál es la canasta de factores de menor costo?
+\bigskip
+\item <1> ¿Y cómo se estima el costo total? $\Longrightarrow$ Rectas iso-costo
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rectas iso-costo}
+\begin{itemize}
+\item <1> La recta que contiene todas las canastas de factores que tienen el mismo costo es una recta iso-costo.
+\bigskip
+\item <1> Por ejemplo: dados $w_{1}$ y $w_{2}$, la recta isocosto para un CT de $100$ es:
+$$w_{1}x_{1}+w_{2}x_{2}=100$$
+\item <1> La recta iso-costo es:
+$$w_{1}x_{1}+w_{2}x_{2}=C$$
+$$x_{2}=-\frac{w_{1}}{w_{2}}x_{1}+\frac{C}{w_{2}}$$
+\item <1> Con pendiente igual a $-\frac{w_{1}}{w_{2}}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rectas iso-costo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isocosto}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La isocuanta de producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isocuanta}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La minimización del costo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{mini}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Minimización de costos  con una función de producción Cobb-Douglas}
+\begin{itemize}
+\item <1> Partiendo de la función de producción Cobb-Douglas:
+$$y=f(x_{1}, x_{2})=x_{1}^{\frac{1}{3}}x_{2}^{\frac{2}{3}}$$
+\item <1> Si los precios de los factores son $w_{1}$ y $w_{2}$
+\bigskip
+\item <1> ¿Cuáles son las demandas condicionales de factor?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Minimización de costos  con una función de producción Cobb-Douglas}
+\begin{itemize}
+\item <1> Partiendo de $y=(x_{1}^{*})^{\frac{1}{3}}(x_{2}^{*})^{\frac{2}{3}}$
+\bigskip
+\item <2> Sabemos que geometricamente el punto donde se minimiza los costos es el lugar donde la isocuanta y la isocosto son tangentes, por lo tanto se cumple:
+$$-\frac{w_{1}}{w_{2}}=-\frac{\frac{\partial y}{\partial x_{1}}}{\frac{\partial y}{\partial x_{2}}}=-\frac{x_{2}^{*}}{2x_{1}^{*}}$$
+Por lo tanto:
+$$\frac{w_{1}}{w_{2}}=\frac{x_{2}^{*}}{2x_{1}^{*}}$$
+$$x_{2}^{*}=\frac{2w_{1}}{w_{2}}x_{1}^{*}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Minimización de costos  con una función de producción Cobb-Douglas}
+\begin{itemize}
+\item <1> Luego reemplazando en la función de producción obtengo:
+$$y=(x_{1}^{*})^{\frac{1}{3}}\{ \frac{2w_{1}}{w_{2}}x_{1}^{*} \}^{\frac{2}{3}}$$
+Por lo que la demanda condicional del factor 1 es:
+$$x_{1}^{*}=\{ \frac{w_{2}}{2w_{1}} \}^{\frac{2}{3}} y$$
+La  demanda condicional del factor 2 es:
+$$ x_{2}^{*}=\{ \frac{2w_{1}}{w_{2}} \}^{\frac{1}{3}} y $$
+Por lo que la canasta de factores de menor costo para producir Q unidades es:
+$$ \{x_{1}^{*}(w_{1}, w_{2}, y), x_{2}^{*}(w_{1}, w_{2}, y)\} $$
+$$ \{(\frac{w_{2}}{2w_{1}})^{\frac{2}{3}} y,(\frac{2w_{1}}{w_{2}})^{\frac{1}{3}} y \} $$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curvas de demanda condicional de factor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{dem_condi}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ruta de expansión de laa producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{ruta}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Minimización de costos  con una función de producción Cobb-Douglas}
+\begin{itemize}
+\item <1> En consecuencia, la función de costo total de la empresa es:
+$$C(w_{1}, w_{2}, y)=w_{1}x_{1}^{*}(w_{1},w_{2},y)+w_{2}x_{2}^{*}(w_{1},w_{2},y)$$
+$$=\{ \frac{2w_{1}}{w_{2}} \}^{\frac{1}{3}} y$$
+Por lo que la canasta de factores de menor costo para producir Q unidades es:
+$$=w_{1}\{(\frac{w_{2}}{2w_{1}})^{\frac{2}{3}} y+w_{2}\{(\frac{2w_{1}}{w_{2}})^{\frac{1}{3}} y$$
+$$=(\frac{1}{2})^{\frac{2}{3}} w_{1}^{\frac{1}{3}}w_{2}^{\frac{2}{3}}y+ 2^{\frac{1}{3}}w_{1}^{\frac{1}{3}}w_{2}^{\frac{2}{3}}y$$
+$$=3\{ \frac{w_{1}w_{2}^{2}}{4}\}^{\frac{1}{3}}y$$
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
+

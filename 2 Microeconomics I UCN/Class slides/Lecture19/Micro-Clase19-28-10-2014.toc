@@ -1,0 +1,3 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{La maximizaci\'on del beneficio en el largo plazo}{2}{0}{1}

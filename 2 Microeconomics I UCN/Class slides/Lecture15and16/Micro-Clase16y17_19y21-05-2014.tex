@@ -1,0 +1,381 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#15 y \#16 - La tecnología}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 15 y 16]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Noviembre 14 y 17 de 2014}
+
+%\date{\today}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{La tecnología}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Es un proceso mediante el cual los insumos son convertidos en producto.\\
+\bigskip
+\item <1> Por ejemplo, el trabajo, un proyector, un computador, la electricidad y el software, se combinan para producir ésta clase.
+\bigskip
+\item <1> Generalmente diversas tecnologías producirán el mismo producto. Una pizarra y tiza pueden ser empleados en lugar del proyector y el computador.
+\bigskip
+\item <1> ¿Cuál es la ''mejor'' tecnología?
+\bigskip
+\item <1> ¿Cómo podemos comparar tecnologías?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptos relevantes: conjunto de insumos}
+\begin{itemize}
+\item <1> $x_{i}$ denota la cantidad empleada del insumo i;\\
+\bigskip
+\item <1> Un conjunto de insumos es el vector de cantidades de los insumos, por decir, $(x_{1}, x_{2},..., x_{n})$.
+\bigskip
+\item <1> Por  ejemplo: $(x_{1}, x_{2}, x_{3})=(6, 0, 9)$
+\bigskip
+\item <1> De manera general los insumos se pueden entender como factores de producción:
+\begin{itemize}
+\item <1> Tierra
+\item <1> Trabajo
+\item <1> Capital
+\item <1> Materias primas
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptos relevantes: función de producción y conjunto de producción}
+\begin{center}
+\begin{itemize}
+\item <1> Llamaremos al nivel de producción ''y''.
+\bigskip
+\item <1> La función de producción determina la cantidad máxima de producción posible a partir del conjunto de insumos.
+$$y=f(x_{1}, x_{2},....,x_{n})$$
+\bigskip
+\item <1> Conjunto de producción $\Longrightarrow$ muestra todas las combinaciones de factores y de productos tecnológicamente factibles.
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Conjunto de producción y función de producción para un insumo y un producto}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conjunto de producción}
+\begin{center}
+\begin{itemize}
+\item <1> Un plan de producción es un conjunto de insumos y un nivel de producción; $(x_{1},...., x_{n}, y)$.
+\bigskip
+\item <1> Un plan de producción es factible si:
+$$y\leq f(x_{1},....,x_{n})$$
+\item <1> El conjunto de todos los planes factibles de producción es el conjunto de producción:
+$$T=\{(x_{1},..,x_{n}, y)\mid y\leq f(x_{1},..,x_{n}) para x_{1}\geq 0,.., x_{n}\geq 0\}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tipos de planes de producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conjunto de producción con múltiples insumos}
+\begin{center}
+\begin{itemize}
+\item <1> ¿Cómo se presenta el problema cuando tenemos más de un insumo?
+\bigskip
+\item <1> El caso de dos insumos: las cantidades de los insumos son $x_{1}$ y $x_{2}$.  El nivel de producción es y.
+\bigskip
+\item <1> Suponga la siguiente función de producción:
+$$y=f(x_{1}, x_{2})=2x_{1}^{\frac{1}{3}}x_{2}^{\frac{1}{3}}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conjunto de producción con múltiples insumos}
+\begin{center}
+\begin{itemize}
+\item <1> ¿Cuál es el máximo nivel de producción factible con el vector de insumos $(x_{1}, x_{2})=(1,8)$?
+$$y=2*1^{\frac{1}{3}}*8^{\frac{1}{3}}=4$$
+\bigskip
+\item <1> ¿Cuál es el máximo nivel de producción factible con el vector de insumos $(x_{1}, x_{2})=(8,8)$?
+$$y=2*8^{\frac{1}{3}}*8^{\frac{1}{3}}=8$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conjunto de producción con múltiples insumos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion3}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas}
+\begin{center}
+\begin{itemize}
+\item <1> Cuando hay dos factores de producción, se puede utilizar una herramienta similar a la curva de indiferencia, en este caso para la producción: las isocuantas.
+\bigskip
+\item <1> Una isocuanta es el conjunto de todos los insumos que generan como máximo el mismo nivel de producción y.
+\bigskip
+\item <1> Un conjunto de isocuantas da lugar al mapa de isocuantas, mismo ejemplo:
+$$y=f(x_{1}, x_{2})=2x_{1}^{\frac{1}{3}}x_{2}^{\frac{1}{3}}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{produccion4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{produccion5}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas para proporciones fijas $f(x_{1}, x_{2})=min\{x_{1}, x_{2}\}$}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion6}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas para sustitutos perfectos $f(x_{1}, x_{2})=x_{1}+x_{2}$}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion7}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Isocuantas para funciones tipo Cobb-Douglas}
+\begin{center}
+\begin{itemize}
+\item <1> Una función de producción a la Cobb-Douglas es de la forma:
+$$y=Ax_{1}^{a_{1}}x_{2}^{a_{2}}.....x_{n}^{a_{n}}$$
+$$y=f(x_{1}, x_{2})=2x_{1}^{\frac{1}{3}}x_{2}^{\frac{1}{3}}$$
+donde:
+$$n=2$$
+$$A=1$$
+$$a_{1}=\frac{1}{3}$$
+$$a_{2}=\frac{1}{3}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Isocuantas para tecnología a la Cobb-Douglas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion8}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Propiedades de las isocuantas para funciones tipo Cobb-Douglas}
+\begin{center}
+\begin{itemize}
+\item <1> Monótonas $\Longrightarrow$ con una cantidad mayor o igual de ambos factores debe ser posible al menos obtener el mismo volumen de producción.
+\bigskip
+\item <2> Convexas
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{El producto marginal}
+\begin{center}
+\begin{itemize}
+\item <1> Partiendo de:
+$$y=f(x_{1},...,x_{n})$$
+El producto marginal del insumo i es la tasa de cambio del nivel de producción, cuando cambia el nivel de empleo del insumo i, manteniendo constante los otros insumos.
+$$PMg_{i}=\frac{\partial y}{ \partial x_{i}}$$
+Si $y=f(x_{1}, x_{2})=x_{1}^{\frac{1}{3}}x_{2}^{\frac{2}{3}}$, cuales son los productos marginales
+$$PMg_{1}=\frac{\partial y}{ \partial x_{1}}=\frac{1}{3}x_{1}^{-\frac{2}{3}}x_{2}^{\frac{2}{3}}$$
+$$PMg_{2}=\frac{\partial y}{ \partial x_{1}}=\frac{2}{3}x_{1}^{\frac{1}{3}}x_{2}^{-\frac{1}{3}}$$
+\item <1> En general se puede observar que el producto marginal de uno de los insumos depende de la cantidad empleada de los otros insumos.
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{El producto marginal}
+\begin{center}
+\begin{itemize}
+\item <1> El producto marginal del insumo i es decreciente si, se hace más pequeño a medidad que se incrementa el empleo del insumo i:
+$$\frac{PMg_{i}}{\partial x_{i}}=\frac{\partial}{\partial x_{i}}(\frac{\partial y}{\partial x_{i}})=\frac{\partial^{2}y}{\partial x_{i}^{2}}$$
+Si $y=f(x_{1}, x_{2})=x_{1}^{\frac{1}{3}}x_{2}^{\frac{2}{3}}$, cuales son los productos marginales
+$$PMg_{1}=\frac{\partial y}{ \partial x_{1}}=\frac{1}{3}x_{1}^{-\frac{2}{3}}x_{2}^{\frac{2}{3}}$$
+$$PMg_{2}=\frac{\partial y}{ \partial x_{2}}=\frac{2}{3}x_{1}^{\frac{1}{3}}x_{2}^{-\frac{1}{3}}$$
+entonces:
+$$\frac{PMg_{1}}{\partial x_{1}}=-\frac{2}{9}x_{1}^{-\frac{5}{3}}x_{2}^{\frac{2}{3}}<0$$
+$$\frac{PMg_{1}}{\partial x_{2}}= ?$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relación técnica de sustitución}
+\begin{center}
+\begin{itemize}
+\item <1> Cuánto debe renunciar de un determinado insumo, a cambio de utilizar una cantidad algo mayor del otro para obtener el mismo valor de producción y $\Longrightarrow$ $RTS(x_{1}, x_{2})$.
+\bigskip
+para obtenerla se puede partir de la misma idea que para la curva de indiferencia:
+$$\Delta y= PM_{1}(x_{1}, x_{2})\Delta x_{1}+ PM_{2}(x_{1}, x_{2})\Delta x_{2}=0$$
+De donde se puede obtener:
+$$RTS(x_{1}, x_{2})=\frac{\Delta x_{2}}{\Delta x_{1}}=-\frac{PM_{1}(x_{1}, x_{2})}{PM_{2}(x_{1}, x_{2})}$$
+Como se puede apreciar es muy similar a la definición de la tasa marginal de sustitución analizada en la teoría del consumidor.
+\end{itemize}
+\end{center}
+\end{frame}
+
+\end{document}
+
+

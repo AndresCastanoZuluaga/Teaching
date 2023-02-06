@@ -1,0 +1,389 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#17 y \#18 - La maximización del beneficio}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 18 y 19]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Noviembre 21 y 24 de 2014}
+
+%\date{\today}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{La maximización del beneficio}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Anteriormente explicamos algunas formas de describir la elección tecnologica de la empresa, ahora, se desarrollará como la empresa ellige una determinada cantidad de producción, y de qué modo la produce.\\
+\bigskip
+\item <1> Se suponen que los precios de los factores y de los productos son fijos. Estos se venden en un mercado competitivo.
+\bigskip
+\item <1> Si se parte de una empresa emplea los factores $j = 1,..,m$ para producir los bienes $i = 1,..,n$. Con volumenes de producción  $y_{1},..,y_{n}$. Volúmenes de empleo de los factores $x_{1},..,x_{m}$. Con precios de los bienes  $p_{1},..,p_{n}$, y  precios de los factores  $w_{1},..,w_{m}$.
+\bigskip
+\item <1> Los beneficios entonces se definen como los ingresos menos los costos.
+$$\prod=\sum^{n}_{i=1}p_{i}y_{i}-\sum^{m}_{i=1}w_{i}x_{i}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Los volúmenes de producción y de empleo de los factores, son flujos.\\
+\bigskip
+\item <1> Por ejemplo,  $x_{1}$ debe ser el número de unidades de trabajo empleadas por hora.
+\bigskip
+\item <1> Y $y$ debe ser el número de carros producidos por hora.
+\bigskip
+\item <1> En consecuencia, el beneficio también es un flujo; por ejemplo, el número de dólares de beneficio obtenidos por hora.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La organización de la empresa}
+\begin{itemize}
+\item <1> Existen tres tipos de empresas segun su organización:
+\begin{itemize}
+\item <1> De propiedad individual
+\item <1> Sociedad colectiva
+\item <1> Sociedad anónima $\Longrightarrow$ separación entre la propiedad y el control
+\end{itemize}
+\item <1> Cómo obtengo el valor actual de una empresa?
+\begin{itemize}
+\item <1> Suponga un flujo de beneficios periódicos de una empresa $\prod_{0}, \prod_{1}, \prod_{n}$ y una tasa de interés de mercado $r$, el valor presente del beneficio es:
+$$VP_{\prod}=\prod_{0}+\frac{\prod_{1}}{1+r}+\frac{\prod_{2}}{(1+r)^{2}}$$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La organización de la empresa}
+\begin{itemize}
+\item <1> Las sociedades anónimas tienden a cotizar en bolsa, el precio de las acciones normalmente representa el valor actual de la corriente de dividendos que los accionistas esperan recibir por cada acción.
+\bigskip
+\item <1> Las empresas desean maximizar el valor actual de la corriente de beneficios que generan, que es lo mismo que decir que desean maximizar su valor en bolsa.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Factores fijos y variables}
+\begin{itemize}
+\item <1> Corto plazo $\Longrightarrow$ existen algunos factores fijos.\\
+\bigskip
+\item <1> Largo plazo $\Longrightarrow$ todos los factores son variables.
+\bigskip
+\item <1> A largo plazo la empresa la empresa puede decicidir no utilizar ningun factor y no producir nada $\Longrightarrow$ $\prod_{lp}=0$.
+\bigskip
+\item <1> En el corto plazo la empresa esta obligada a emplear algunos factores, por lo que puede ser posible $\prod_{cp}<0$.
+\bigskip
+\item <1> Hay factores que no dependen del nivel de producción $\Longrightarrow$ arrendamiento
+\bigskip
+\item <1> Otros sólo se pagan si la empresa decide producir una cantidad positiva (cuasifijos) $\Longrightarrow$ electricidad
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Maximización del beneficio a corto plazo}
+\begin{itemize}
+\item <1> Suponga que la empresa esta en el corto plazo, y por lo tanto el factor 2 es fijo $x_{2}=\bar{x_{2}}$, la función de producción de corto plazo es $f(x_{1}, \bar{x_{2}})$, $p$ es el precio de los productos. $w_{1}$ y $w_{2}$ son los precios de los factores, por lo cual el problema de maximización se puede expresar como:
+    \begin{equation*}
+\begin{aligned}
+& \underset{x_{1}}{\text{maximizar}}
+& & pf(x_{1}, x_{2})-w_{1}x_{1}-w_{2}x_{2}  \\
+\end{aligned}
+\end{equation*}
+\item <1> El costo fijo de la empresa es $CF=w_{2}\bar{x_{2}}$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Maximización del beneficio a corto plazo}
+\begin{itemize}
+\item <1> Si $x_{1}^{*}$ es la elección del factor 1 que maximiza el beneficio, entonces el valor del producto marginal de un factor debe ser igual a su precio.
+$$p* PM_{1}(x_{1}^{*},\bar{x_{2}})=w_{1}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Maximización del beneficio a corto plazo}
+\begin{itemize}
+\item <1> Ejemplo: suponga que la empresa decide emplear una cantidad algo mayor del factor 1 $(\Delta x_{1})$, entonces $\Delta y=PM_{1}\Delta x_{1}$, este aumento en producción vale $pPM_{1}\Delta x_{1}$, obtenerlo entonces cuesta $w_{1}\Delta x_{1}$. De lo anterior se desprende que:
+\begin{itemize}
+\bigskip
+\item <1> Si $pPM_{1}\Delta x_{1} > w_{1}\Delta x_{1}$ es posible aumentar los beneficios aumentando $x_{1}$
+\item <1> Si $pPM_{1}\Delta x_{1} < w_{1}\Delta x_{1}$ es posible aumentar los beneficios reduciendo $x_{1}$
+\end{itemize}
+\item <1> Si el beneficio de la empresa es máximo, no debiera incrementar cuando aumentamos o reducimos $x_{1}$, lo que nos quiere decir que en una elección de factores y productos maximizadora del beneficio, el valor del producto marginal $p*PM_{1}(x_{1}^{*},\bar{x_{2}})$, debe ser igual al precio del factor $w_{1}$.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Rectas de isobeneficio a corto plazo}
+\begin{center}
+\begin{itemize}
+\item <1> Una recta de isobeneficio contiene todos los planes de producción que proporcionan el mismo nivel de beneficio.
+\bigskip
+\item <1> La ecuación de la recta de isobeneficio es:
+$$\prod=py-w_{1}x_{1}-w_{2}\bar{x_{2}}$$
+$$y=\frac{w_{1}}{p}x_{1}+ \frac{\prod}{p}+ \frac{w_{2}}{p}\bar{x_{2}}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Rectas de isobeneficio a corto plazo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isobeneficio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Maximización del beneficio a corto plazo}
+\begin{center}
+\begin{itemize}
+\item <1> El problema de la empresa es encontrar el plan de producción que le permita alcanzar la recta de isobeneficio más alta posible, dadas las restriccciones de la empresa en sus planes de producción.
+\bigskip
+\item <1> Pregunta: ¿Qué restricciones?
+\item <1> Respuesta: la función de producción
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Maximización del beneficio a corto plazo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isobeneficio2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Maximización del beneficio a corto plazo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isobeneficio3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Qué ocurre en el punto de Maximización del beneficio a corto plazo?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isobeneficio4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Qué ocurre en el punto de Maximización del beneficio a corto plazo?}
+\begin{center}
+\begin{itemize}
+\item <1> En el punto de maximización de beneficio en el corto plazo:
+$$PM_{1}=\frac{w_{1}}{p}$$
+$$p* PM_{1}=w_{1}$$
+\bigskip
+\item <1> $p* PM_{1}$ es el ingreso del producto marginal del factor 1.
+\begin{itemize}
+\item <1> Si $p* PM_{1}>w_{1}$ entonces el beneficio incrementa con $x_{1}$
+\item <1> Si $p* PM_{1}<w_{1}$ entonces el beneficio disminuye con $x_{1}$
+\end{itemize}
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo con una función de producción Cobb-Douglas}
+\begin{itemize}
+\item <1> Suponga que la función de producción de corto plazo es:
+$$y=x_{1}^{\frac{1}{3}}\bar{x_{2}}^{\frac{1}{3}}$$
+El producto marginal del factor 1 es:
+$$PM_{1}=\frac{\partial y}{ \partial x_{1}}=\frac{1}{3}x_{1}^{-\frac{2}{3}}\bar{x_{2}}^{\frac{1}{3}}$$
+Hemos aprendido qu la condición de maximización del beneficio es:
+$$IPM_{1}=p*PM_{1}=\frac{p}{3}(x_{1}^{*})^{-\frac{2}{3}}\bar{x_{2}}^{\frac{1}{3}}=w_{1}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo con una función de producción Cobb-Douglas}
+Resolviendo:
+$$\frac{p}{3}(x_{1}^{*})^{-\frac{2}{3}}\bar{x_{2}}^{\frac{1}{3}}=w_{1}$$
+$$(x_{1}^{*})^{-\frac{2}{3}}=\frac{3}{p}\frac{w_{1}}{\bar{x_{2}}^{\frac{1}{3}}}$$
+$$(x_{1}^{*})^{\frac{2}{3}}=\frac{p}{3}\frac{\bar{x_{2}}^{\frac{1}{3}}}{w_{1}}$$
+$$x_{1}^{*}=(\frac{p}{3}\frac{\bar{x_{2}}^{\frac{1}{3}}}{w_{1}})^{\frac{3}{2}}$$
+$$x_{1}^{*}=(\frac{p}{3w_{1}})^{\frac{3}{2}}\bar{x_{2}}^{\frac{1}{2}}$$
+Qué representaría $x_{1}^{*}$?
+Cuál sería el nivel de producción de corto plazo?
+$$y^{*}=(\frac{p}{3w_{1}})^{\frac{1}{2}}\bar{x_{2}}^{\frac{1}{2}}$$
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Estática comparativa el plan de producción que maximiza la empresa}
+\begin{itemize}
+\item <1> ¿Qué ocurre con el plan de producción que maximiza el beneficio económica de la empresa en el corto plazo, cuando el precio del bien cambia?
+\item <1> Qué recta se ve afectada? cambia la pendiente? cambia el intercepto?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estática comparativa el plan de producción que maximiza la empresa}
+\begin{itemize}
+\item <1> La recta que se ve afectada es la ecuación de isobeneficio:
+$$y=\frac{w_{1}}{p}x_{1}+ \frac{\prod}{p}+ \frac{w_{2}}{p}\bar{x_{2}}$$
+\item <1> Imaginemos un incremento en $p_{1}$ ¿efecto?
+\begin{itemize}
+\item <1> Reduce la pendiente
+\item <1> reduce el intercepto vertical
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Qué ocurre con el plan de producción que maximiza el beneficio económica de la empresa en el corto plazo, cuando el precio del bien cambia?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{isobeneficio5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Un incremento en el precio del bien provoca}
+\begin{itemize}
+\item <1> Un incremento en el volúmen de producción (la pendiente de la curva de oferta es positiva), y
+\bigskip
+\item <2> Un incremento en el volúmen de empleo del factor variable (la curva de demanda de la empresa por el factor variable se desplaza hacia afuera).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{En el ejemplo desarrollado con anterioridad:}
+$$y=x_{1}^{\frac{1}{3}}\bar{x_{2}}^{\frac{1}{3}}$$
+La demanda de corto plazo por el factor 1 es:
+$$x_{1}^{*}=(\frac{p}{3w_{1}})^{\frac{3}{2}}\bar{x_{2}}^{\frac{1}{2}}$$
+El nivel de producción de corto plazo sería:
+$$y^{*}=(\frac{p}{3w_{1}})^{\frac{1}{2}}\bar{x_{2}}^{\frac{1}{2}}$$
+$x_{1}^{*}$ se incrementa cuando p se incrementa, y $y^{*}$ se incrementa cuando p se incrementa.
+\end{frame}
+
+\end{document}
+
+
