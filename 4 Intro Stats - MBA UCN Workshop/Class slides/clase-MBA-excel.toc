@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
+\beamer@sectionintoc {2}{Tipos de variables y estad\IeC {\'\i }sticas descriptivas}{6}{0}{2}
+\beamer@sectionintoc {3}{Aplicaci\'on a datos reales de Chile a nivel comunal, a\~no 2011}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{\IeC {\textquestiondown } A qu\'e problemas de inter\'es social y econ\'omico nos podemos aproximar con esta base de datos?}{11}{0}{3}
+\beamer@sectionintoc {4}{An\'alisis descriptivo en Excel: paso a paso}{13}{0}{4}
+\beamer@sectionintoc {5}{Tablas din\'amicas e informes de tabla din\'amica}{25}{0}{5}

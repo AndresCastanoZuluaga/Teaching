@@ -1,0 +1,519 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Presentation at VRA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[english,9pt]{beamer}
+%\documentclass[slidestop,compress,9pt,xcolor=dvipsnames]{beamer}
+\documentclass[9pt]{beamer}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage[]{graphicx}
+\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+	\ifdim\Gin@nat@width>\linewidth
+	\linewidth
+	\else
+	\Gin@nat@width
+	\fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+	\def\at@end@of@kframe{}%
+	\ifinner\ifhmode%
+	\def\at@end@of@kframe{\end{minipage}}%
+\begin{minipage}{\columnwidth}%
+	\fi\fi%
+	\def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+		\colorbox{shadecolor}{##1}\hskip-\fboxsep
+		% There is no \\@totalrightmargin, so:
+		\hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+	\MakeFramed {\advance\hsize-\width
+		\@totalleftmargin\z@ \linewidth\hsize
+		\@setminipage}}%
+{\par\unskip\endMakeFramed%
+	\at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Themes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%%%%%%%%%%%%%%%%
+% Color
+%%%%%%%%%%%%%%%%
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+\input{UsualBeamer.tex}
+
+\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+
+\usefonttheme[stillsansseriflarge]{serif}
+\usepackage{appendixnumberbeamer} 
+%\setbeamercovered{transparent}
+
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc, positioning, matrix}
+\usepackage{relsize}
+
+
+%Animated tikz
+\tikzset{
+	invisible/.style={opacity=0},
+	visible on/.style={alt={#1{}{invisible}}},
+	alt/.code args={<#1>#2#3}{%
+		\alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+	},
+}
+
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+
+% \highlight[<colour>]{<stuff>}
+\newcommand{\highlight}[2][yellow]{\mathchoice%
+	{\colorbox{#1}{$\displaystyle#2$}}%
+	{\colorbox{#1}{$\textstyle#2$}}%
+	{\colorbox{#1}{$\scriptstyle#2$}}%
+	{\colorbox{#1}{$\scriptscriptstyle#2$}}}%
+
+\usepackage[flushleft]{threeparttable}
+
+
+
+
+%Initial Slide
+\title{Análisis descriptivo, tablas y  gráficos dinámicos utilizando Excel} 
+\author{\includegraphics[height=1.5cm,width=3.5cm]{MBA} \\
+	\bigskip
+	Andrés M. Castaño}
+
+\institute{Instituto de Economía Aplicada Regional (IDEAR)\\
+} 
+\date{\today} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+\begin{document}
+	
+	
+	
+	\frame{\titlepage}
+	
+	\addtobeamertemplate{frametitle}{}{%
+		\begin{textblock*}{100mm}(0.905\textwidth,-0.55cm)
+			\includegraphics[height=0.6cm,width=1.4cm]{MBA}
+		\end{textblock*}}
+		
+		
+		\frame{\tableofcontents}
+		\AtBeginSubsection[]
+		{
+			\begin{frame}
+				\frametitle{Contenido}
+				\tableofcontents[currentsection,currentsubsection]
+			\end{frame}
+			\addtocounter{framenumber}{-1}% If you don't want them to affect the slide number  
+		}
+	
+	%\title[Análisis descriptivo, tablas y  gráficos dinámicos utilizando Excel 2013]
+	%{Análisis descriptivo, tablas y  gráficos dinámicos %utilizando Excel 2013}
+	
+	%\date[20-08-2015]
+	%{Magíster en Dirección de Empresas - MBA\\\
+	%	Universidad Católica del Norte\\\
+	%	Abril 8 de 2016}
+	
+\section{Introducción}
+\begin{frame}
+	\frametitle{Introducción}
+	\begin{itemize}
+		\item <1> Durante su curso de Estadística van a discutir la importancia de convertir bases de datos complejas en información y en muchas ocasiones, conocimiento. Esta información  debe tener algún sentido: toma de decisiones, entendimiento del problema, formulación de política pública, etc.\\
+		\item <1> El propósito del analisis descriptivo es describir situaciones o eventos. Esto es, decir \textbf{cómo} es, y \textbf{cómo} se manifiesta cierto fenómeno, ya sea del ambiente económico, social, político o cultural.\\
+		\item <1> Los estudios descriptivos buscan especificar las propiedades importantes de personas, grupos, comunidades o cualquier otro fenómeno que sea sometido a análisis (Dankhe, 1986).\\
+		\item <1> El \textbf{análisis descriptivo} sirve como una fase previa a los \textbf{estudios correlacionales} y \textbf{explicativos}.\\
+		\item <1> \textbf{Ejemplo 1:} piense que desea estudiar las características que tiene el emprendimiento en las regiones de Chile (estudio descriptivo).  
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ejemplo 1: emprendimiento en Chile}
+	\begin{itemize}
+		\item <1> 	piense que desea estudiar las características que tiene el emprendimiento en las regiones de Chile (estudio descriptivo)
+	\end{itemize}
+	\begin{block}{Consideraciones iniciales}
+		\bigskip
+		\begin{itemize}
+			\item <1> Es probable que muchos estén más interesados en saber qué factores afectan el emprendimiento en las regiones de Chile? $\Rightarrow$ \textbf{estudio explicativo}.
+			\item <1> O en determinar: ¿Cómo es la relación entre emprendimiento y escolaridad? ¿El emprendimiento es más grande en las comunas con mayor desempleo? ¿Cómo es la relación entre emprendimiento en las comunas y el salario que perciben los habitantes de dicha comuna? $\Rightarrow$ \textbf{estudio correlacional}.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ejemplo 1: emprendimiento en Chile}
+	\begin{block}{Consideraciones iniciales}
+		\bigskip
+		\begin{itemize}
+			\item <1> No obstante, no podemos entrar a explicar causas del emprendimiento, cuando ni siquiera conocemos:
+			\begin{itemize}
+				\item <1> ¿Qué tipo de variable de emprendimiento tengo? $\Rightarrow$ \textbf{¿Continuas o categóricas?}
+				\item <1> ¿Cuáles son sus propiedades estadísticas?
+				\item <1> ¿Cómo es a nivel nacional y regional? 
+				\item <1> ¿Es variable a lo largo de las regiones? $\Rightarrow$ Esto permitirá identificar potenciales datos atípicos (outliers) que pueden afectar un estudio de carácter explicativo.
+			\end{itemize}
+			\item <1> Dichas preguntas \textbf{no las responde} un estudio explicativo, sino un estudio descriptivo que incluya: medidas de \textbf{tendencia central},  \textbf{dispersión} y \textbf{posicionamiento}, y estudiar la forma de la \textbf{distribución}.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Tipos de variables y estadísticas descriptivas}
+\begin{frame}
+	\frametitle{Tipos de variables y estadísticas descriptivas}
+\begin{figure}[h]
+	\includegraphics[width=12cm]{1-Descriptivas}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Nota sobre las escalas de medición}
+	\begin{itemize}
+		\item <1> Escalas de medición de las variables (criterios: distancia, proporción y orden natural)
+		\bigskip
+		\item <1>  Escala de proporción (ejemplo: $\frac{PIB_{2}}{PIB_{1}}$) $\Longrightarrow$ cumple todos los criterios.
+		\bigskip
+		\item <1>  Escala de intervalo $\Longrightarrow$ sólo es significativa la distancia pero no la proporción, ni el orden (ejemplo: tiempo).
+		\bigskip
+		\item <1>  Escala ordinal $\Longrightarrow$ sólo cumplen el orden natural (ejemplo: sistema de calificación, tipos de ingresos).
+		\bigskip
+		\item <1>  Escala nominal $\Longrightarrow$ no cumple ninguno de los criterios (ejemplo: sexo, estado civil).
+	\end{itemize}
+\end{frame}
+
+
+\section{Aplicación a datos reales de Chile a nivel comunal, año 2011}
+\begin{frame}
+	\frametitle{Aplicación a datos reales de Chile a nivel comunal, año 2011}
+\begin{itemize}
+		\item <1> Con fines de ilustrar como realizar análisis estadístico, tablas y gráficos dinámicos en Microsoft Excel 2013, he construido una base de datos para Chile con varibles de distinta índole (nominales, intervalo) que están relacionados con problemas económicos y sociales.
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Aplicación a datos reales de Chile a nivel comunal, año 2011}
+	\begin{center}
+		\begin{figure}[h]
+			\includegraphics[width=11cm]{2-datos}
+			\scriptsize{\newline \emph{Fuente:} elaboración propia}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Descripción de variables}
+	\begin{center}
+		\begin{figure}[h]
+			\includegraphics[width=12cm]{3-datos-descri}
+			\scriptsize{\newline \emph{Fuente:} elaboración propia}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\subsection{¿ A qué problemas de interés social y económico nos podemos aproximar con esta base de datos?}
+\begin{frame}
+	\frametitle{¿Potenciales preguntas de investigación?}
+	\begin{itemize}
+		\small 
+		\item <1> ¿Cómo es el emprendimiento a lo largo de las comunas de Chile?
+		\item <1> ¿Qué relación tiene el emprendimiento con la escolaridad, y el desempleo?
+		\item <1> ¿Cómo ha sido el comportamiento de las ventas de las empresas de la Región de Antofagasta en comparación al resto de regiones?
+	    \item <1> ¿Cómo se comportan los robos en la región de Antofagasta respecto al resto de regiones de Chile?
+	    \item <1> ¿Cómo es la relación entre los robos cometidos en una comuna y su nivel de desempleo?
+	    \item <1> Con el ¿cómo? Nos referimos a problemas dentro de las ciencias sociales y empresariales que hacen referencia a la descripción estadística (media, máximo, mínimo, varianza, etc)  de la variable objeto de estudio.
+	    \item <1> Con el ¿qué? Nos referimos a problemas dentro de las ciencias sociales y empresariales que hacen referencia a una relación estadística entre las variables de estudio (covarianza, correlación).
+	\end{itemize}	
+\end{frame}
+
+\section{Análisis descriptivo en Excel: paso a paso}
+\begin{frame}
+	\frametitle{Análisis descriptivo en Excel: paso a paso}
+	\begin{itemize}
+		\item <1> Ahora pasaremos a realizar un análisis estadístico descriptivo de algunas variables en la base de datos y aprenderemos a interpretar los resultados.\\
+		\bigskip
+		\item <1> Aunque existen muchos programas especializados para elaborar informes estadísticos (SPSS, Stata, entre otros), Microsoft Excel 2013 para Windows cuenta con complementos adicionales que permiten aprender de manera rápida a obtener las principales estadísticas descriptivas.\\
+		\bigskip
+		\item <1> Queremos realizar un reporte estadístico rápido de la variable \textbf{''inicios''} (como una aproximación al emprendimiento) e interpretarlo apropiadamente.\\		
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Paso 1: activar análisis estadístico en Microsoft Excel 2010}
+\begin{itemize}
+	\item <1> Seleccionar la opción \textbf{Archivo}.\\
+	\bigskip
+	\item <1> Aparecerá un menú, escoger la alternativa \textbf{opciones}.\\
+	\bigskip
+	\item <1> Se desplegará un conjunto de Opciones, escoger \textbf{Complementos}.\\	
+	\bigskip
+	\item <1> En la parte derecha inferior aparecerá una opción que indica administrar, a su lado presionar la opción \textbf{Ir}.\\	
+	\bigskip
+	\item <1> Se desplegará un asistente de complementos, con varias opciones, marcar por ahora la opción que dice \textbf{Herramientas para análisis}.\\
+	\item <1> con estos pasos hemos activado el complemento para análisis estadístico.\\				
+\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Paso 1: activar el  análisis estadístico en Microsoft Excel 2010}
+	\begin{center}
+		\begin{figure}[h]
+			%\includegraphics[width=9.8cm]{set-types}
+			\includegraphics[width=11cm]{4-activar-herra}
+		\end{figure}
+	\end{center}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Paso 1: activar el análisis estadístico en Microsoft Excel 2010}
+	\begin{center}
+		\begin{figure}[h]
+			%\includegraphics[width=9.8cm]{set-types}
+			\includegraphics[width=11cm]{5-activar-herra}
+		\end{figure}
+	\end{center}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Paso 2: análisis descriptivo para la variable ''inicios''}
+	\begin{itemize}
+		\item <1> Seleccionar la opción \textbf{Datos}.\\
+		\bigskip
+		\item <1> Aparecerá debajo un conjunto de opciones, en la parte derecha escoger la alternativa \textbf{Análisis de datos}.\\
+		\bigskip
+		\item <1> Se desplegará un conjunto de opciones, escoger \textbf{Estadística descriptiva} y marcar \textbf{Aceptar}.\\	
+		\bigskip
+		\item <1> Aparecerá un menú con varios opciones, en la opción entrada, subopción \textbf{Rango de entrada} se debe seleccionar el rango de celdas que se quiere utilizar para efectuar el análisis estadístico, seleccionaremos las celdas de la columna G (\textbf{''inicios''}), desde G1 hasta G325 que pertenecen a la variable inicios.\\				
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Paso 2: análisis de estadística descriptiva para la variable ''inicios''}
+	\begin{center}
+		\begin{figure}[h]
+			%\includegraphics[width=9.8cm]{set-types}
+			\includegraphics[width=11cm]{6-descrip}
+		\end{figure}
+	\end{center}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Paso 2: análisis de estadística descriptiva para la variable ''inicios''}
+	\begin{itemize}
+		\item <1> En el la opción \textbf{Agrupado por} marcar \textbf{Columnas}.\\
+		\bigskip
+		\item <1> Marcar la opción \textbf{Rótulos en la primera fila} esto le indica a Excel que la primera fila contiene los nombres de las variables.\\
+		\bigskip
+		\item <1> En el sub menú \textbf{Opciones de salida} marcar \textbf{En una hoja nueva}, luego se deben marcar las opciones \textbf{Resumen de estadísticas} y \textbf{Nivel de estadístico para la media}.\\	
+		\bigskip
+		\item <1>  Luego marcar la opción \textbf{Aceptar} y obtendremos nuestra resumen de estadística descriptiva en una nueva hoja de Excel.\\				
+	\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Paso 2: análisis de estadística descriptiva para la variable ''inicios''}
+	\begin{center}
+		\begin{figure}[h]
+			%\includegraphics[width=9.8cm]{set-types}
+			\includegraphics[width=10cm]{7-descrip}
+		\end{figure}
+	\end{center}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Paso 3: interpretar los resultados}
+		\begin{itemize}
+			\item <1> \textbf{Media (tendencia central)}: en promedio en el año 2011, se inician casi 283 nuevas empresas por comuna.\\
+			\bigskip
+			\item <1> \textbf{Error típico (dispersión)}: este estadístico corresponde al error típico de la media. Se calcula como $ET=\frac{\sigma}{\sqrt{n}}$, siendo $\sigma$ el error o desviación estándar de la muestra y $n$ el tamaño de la muestra. Nos permite saber entre que rango está la media de la población. Esto quiere decir que si sacamos muchas muestras aleatorias de tamaño n=324, hay una probabilidad del 95\% que el emprendimiento promedio en las comunas de Chile se va a encontrar entre  $(283-(30.95*1.96))$ y $(283+(30.95*1.96))$ $\Longrightarrow$ $(222.3 ; 343.6)$. 
+			\item <1> \textbf{Mediana y moda (tendencia central)}: para el caso de la mediana, nos quiere decir que el 50\% de las comunas de Chile contaron con 100 o más inicios de empresas en el año 2011. La moda carece de sentido practico para el caso de variables continuas en una escala de intervalo.\\					
+		\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Paso 3: interpretar los resultados}
+	\begin{itemize}
+		\item <1> \textbf{Desviación estándar, varianza y rango (dispersión)}: en general la desviación estándar tiende a interpretarse como una medida de incertidumbre, en el año 2011 el promedio de la variación del emprendimiento respecto a la media es 557. Esto quiere decir que si el emprendimiento siguiera una distribución normal cerca del 68\% de los datos se encuentran entre $(283-557.27)$ y $(283+557)$. Como se puede ver esto nos puede dar un indicio de que existen muchos valores atípicos en la distribución de la variable inicios, por lo cual es poco confiable (ya volveremos a este problema).\\
+	\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Paso 3: interpretar los resultados}
+	\begin{itemize}
+		\item <1> \textbf{Curtosis y asimetría (forma de la distribución)}: estos estadísticos nos van a confirmar nuestras sospechas respecto a que la variable inicios probablemente no se distribuye de manera normal. Por ejemplo el coeficiente de simetría positivo (5.4)  nos indica que la mayoría de los datos se encuentran por debajo del valor de la media (282.6). En una variable que se distribuye normal el coeficiente de asimetría se encuentra entre -0.5 y +0.5. El coeficiente de curtosis (apuntamiento), nos indica que la distribución de la variable inicios es leptocurtica, es decir existe una gran concentración de datos en la región central de la media. Para una distribución normal el coeficiente de curtosis debe estar cercano a 3.
+		\bigskip
+		\item <1> \textbf{Qué problemas puede tener representar el emprendimiento con esta variable?}\\
+		\bigskip
+		\item <1> \textbf{Qué se le ocurriría como un mejor indicador de emprendimiento?}\\					
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Práctica}
+	\begin{itemize}
+		\item <1> Formar grupos de 5.
+		\bigskip
+		\item <1> Tomar dos variable de la base de datos que representen problemas (historias) que usted quiera describir.\\
+		\bigskip
+		\item <1> Calcule los principales estadísticos como se ha explicado.\\	
+		\item <1> Prepare una presentación corta discutiendo su historia y analizando los estadísticos.\\
+		\item <1> Tiempo para tener listo el ejercicios 10 minutos. Tiempo para presentar sus resultados 5 minutos.\\							
+	\end{itemize}	
+\end{frame}
+
+\section{Tablas dinámicas e informes de tabla dinámica}
+\begin{frame}
+	\frametitle{Tablas dinámicas e informes de tabla dinámica}
+	\begin{itemize}
+		\item <1> Las tablas dinámicas te brindarán la posibilidad de resumir, analizar, explorar y presentar datos de resumen.\\
+		\bigskip
+		\item <1> Un informe de tabla dinámica es una forma interactiva de resumir rápidamente grandes volúmenes de datos. Utiliza un informe de tabla dinámica para analizar datos numéricos en profundidad y para responder preguntas no anticipadas sobre los datos.\\
+		\bigskip
+		\item <1> A través de los informes de gráfico dinámico podrás ver los datos de resumen contenidos en un informe de tabla dinámica para realizar comparaciones, patrones y tendencias, a través de los cuales podrás optimizar tus tareas repetitivas.\\		
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Tablas dinámicas e informes de tabla dinámica}
+	\begin{itemize}
+		\item <1> Las tablas dinámicas te brindarán la posibilidad de resumir, analizar, explorar y presentar datos de resumen.\\
+		\bigskip
+		\item <1> Un informe de tabla dinámica es una forma interactiva de resumir rápidamente grandes volúmenes de datos. Utiliza un informe de tabla dinámica para analizar datos numéricos en profundidad y para responder preguntas no anticipadas sobre los datos..\\
+		\bigskip
+		\item <1> A través de los informes de gráfico dinámico podrás ver los datos de resumen contenidos en un informe de tabla dinámica para realizar comparaciones, patrones y tendencias, a través de los cuales podrás optimizar tus tareas repetitivas.\\		
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Sugerencias para trabajar con Tablas Dinámicas}
+	\begin{itemize}
+		\item <1> Se sugiere que todas las columnas estén rotuladas. Pues los títulos se convertirán en los campos de la tabla dinámica.\\
+		\item <1> No deben existir columnas vacías.\\
+		\item <1> Se sugiere que el archivo esté en su formato plano más sencillo.
+		\item <1> Los nombres de las columnas deben estar relacionados con la información que contiene cada columna.
+	\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Aplicación de análisis (1): Teoría Ecológica del Delito (TED)}
+	\begin{itemize}
+		\item <1> Con la base de datos construida se pueden describir algunos fenómenos de interés económico y social.\\
+		\item <1> \textbf{Ejemplo 1:} la TED intenta responder a la pregunta respecto de las razones que llevan a la concentración desigual del delito y de la violencia en el espacio urbano. Esta teoría predice que los lugares con una alta concentración espacial de las viviendas baratas, con niveles de pobreza altos, con alta densidad de población y con prevalencia de la pasividad social los delitos son mayores. Para una revisión conceptual véase:  \textcolor{blue}{\url{http://www.seguridadenbarrios.cl/docs/marco_conceptual.pdf}} \\
+	\end{itemize}	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejercicio práctico propuesto para la TED }
+	\begin{itemize}
+		\item <1> Juntarse en grupos de 3 estudiantes. \\
+		\item <1> Realizar el análisis descriptivo de las variables que involucran la TED (hoja 1), de acuerdo a la base de datos propuesta. \\
+		\item <1> A través de gráficos muestra el tipo de relación que existe entre las variables de la TED (hoja 2). \\
+		\item <1> A través de tablas y gráficos dinámicos muestre el comportamiento en simultaneo de las variables que involucran la TED por región, macrozona, utilizando los estadísticos que crea convenientes, por ejemplo, la media, desviación estándar, etc (hoja 3). \\
+		\item <1> Prepare una presentación donde muestra hasta que punto la TED puede explicar el delito en Chile.  \\
+		\item <1> El profesor pasará a resolver dudas grupo a grupo. \\
+		\item <1> El tiempo para preparar el material son 30 minutos. Tiempo para presentar y discutir los resultados: 10 minutos. \\
+	\end{itemize}	
+\end{frame}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
