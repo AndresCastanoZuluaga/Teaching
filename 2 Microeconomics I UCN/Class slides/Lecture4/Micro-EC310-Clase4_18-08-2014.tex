@@ -1,0 +1,294 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#4 - La restricción presupuestaria}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 4 18/08/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Agosto 18 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} 
+% default, rectangles
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción teoría del consumidor}
+\begin{frame}
+\frametitle{Introducción teoría del consumidor}
+\begin{itemize}
+\item <1> Los consumidores eligen la \textbf{"mejor"} cesta de bienes que \textbf{"pueden"} adquirir.\\
+\bigskip
+\item <1> Qué restringe las elecciones del consumidor? $\Rightarrow$ Su presupuesto, el tiempo, entre otras.\\
+\bigskip
+\item <1> Cuando se puede decir que una canasta $(x_{1},...,x_{n})$ es factible a los precios $p_{1},...,p_{n}$?
+\bigskip
+\item <1> Cuando $p_{1}x_{1}+...+p_{n}x_{n}\leq m$. Siendo m el ingreso disponible del consumidor.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Propiedades del conjunto presupuestario}
+\begin{itemize}
+\item <1> Las canastas exactamente factibles representan la restricción presupuestaria del consumidor:
+$$\{(x_{1},...,x_{n}) | x_{1} \geq 0,...,x_{n}\geq 0 \, ,y, \, 
+ p_{1}x_{1}+p_{n}x_{n}=m\}$$
+\bigskip
+\item <2> El conjunto presupuestario del consumidor es el conjunto de todas las canastas factibles:
+$$\{(x_{1},...,x_{n}) | x_{1} \geq 0,...,x_{n}\geq 0 \, ,y, \, 
+p_{1}x_{1}+p_{n}x_{n} \leq m\}$$
+\bigskip
+\item <2> Por lo cual la recta presupuestaria es diferente del conjunto presupuestario. La restricción presupuestaria es la frontera superior del conjunto presupuestario. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conjunto presupuestario y recta presupuestaria para el caso de dos bienes}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu-1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Conjunto presupuestario y recta presupuestaria para el caso de dos bienes}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{presu-2}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Propiedades del conjunto presupuestario}
+\begin{itemize}
+\item <1> Cómo se interpretarían los interceptos $\frac{m}{p_{1}}$ y $\frac{m}{p_{2}}$?
+\bigskip
+\item <2> Cómo se interpretaría la pendiente? $-\frac{p_{1}}{p_{2}}$
+\begin{itemize}
+\bigskip
+\item <2> Mide la relación en que el mercado está dispuesto a substituir el bien 2 por el 1.
+\bigskip
+\item <2> Nos dice que si incrementamos $x_{1}$ en una unidad, debemos reducir $x_{2}$ en $\frac{p_{1}}{p_{2}}$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pendiente de la restricción presupuestaria}
+\begin{itemize}
+\item <1> Mide la relación en que el mercado está dispuesto a substituir el bien 2 por el 1
+\bigskip
+\item <2> Ejemplo: si el consumidor va aumentar su consumo del bien 1 en $\Delta x_{1}$. ¿Cuánto tendrá que modificar su consumo del bien 2 ($\Delta x_{2}$) para satisfacer su restricción presupuestaria?
+    $$p_{1}x_{1}+p_{2}x_{2}=m$$
+    $$p_{1}(x_{1}+\Delta x_{1})+p_{2}(x_{2}+\Delta x_{2})=m$$
+    $$p_{1}\Delta x_{1}+p_{2}\Delta x_{2}=0$$
+    $$\frac{\Delta x_{2}}{\Delta x_{1}}=-\frac{p_{1}}{p_{2}}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Variación en la recta presupuestaria: Cambio en m}
+La restricción y el conjunto presupuestario dependen de los precios y del ingreso. ¿Qué sucederá si cambian los precios $(p_{1}, p_{2})$ o el ingreso $(m)$?
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Variación en la recta presupuestaria: Cambio en $p_{1}$}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Análisis de casos alternos}
+\begin{itemize}
+\item <1> ¿Qué ocurre cuando sube el precio $p_{1}$, y  m y $p_{2}$ se mantienen fijos?
+\bigskip
+\item <2> ¿Qué ocurre cuando sube el precio $p_{1}$, y  m y $p_{2}$ se mantienen fijos, y el consumidor gasta toda su renta en el bien 2?
+\bigskip
+\item <3> ¿Qué ocurre con la recta presupuestaria cuando hay una variación simultanea (se duplican) de $p_{1}$ y $p_{2}$ ?
+\bigskip
+\item <4> ¿Qué ocurre con la recta presupuestaria cuando hay una variación simultanea (se duplican) de $p_{1}$, $p_{2}$ y m ?
+\bigskip
+\item <5> ¿Qué ocurre con la recta presupuestaria cuando hay un aumento de tanto  $p_{1}$, $p_{2}$ y disminuye m ?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Efecto de los impuestos y las subvenciones}
+\begin{itemize}
+\item <1> Impuestos sobre la cantidad $\Longrightarrow$ mismo efecto que un aumento en los precios ($p_{1}+t$).
+\bigskip
+\item <2> Impuestos sobre el valor o ad valorem (IVA) $\Longrightarrow$ $(1+\gamma)p_{1}$
+\bigskip
+\item <3> Subvención a la cantidad $\Longrightarrow$ El estado da un cantidad de dinero al consumidor que depende de la cantidad que compre del bien. ($p_{1}-\pi$)
+\bigskip
+\item <4> Subvención ad valorem $\Longrightarrow$ depende del precio del bien $(1-\gamma)p_{1}$
+\bigskip
+\item <5> Impuesto o Subvención fija $\Longrightarrow$ Desplaza la restricción presupuestaria hacia adentro o hacia afuera
+\bigskip
+\item <6> Racionamiento $\Longrightarrow$ Establecer la cantidad máxima que se puede consumir de un bien
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Efecto de los impuestos y las subvenciones}
+	\begin{itemize}
+		\item <1> Un impuesto uniforme de una tasa t cambia la restricción de presupuesto de:
+		$$p_{1}x_{1}+p_{2}x_{2}=m$$ \, a
+		$$(1+t)p_{1}x_{1}+(1+t)p_{2}x_{2}=m$$
+		\bigskip
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejemplo: efecto de un impuesto uniforme de una tasa t}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=8.5cm]{presu-3}
+		\end{figure}
+	\end{center}
+	A qué es igual la perdida equivalente de ingreso producto del impuesto? $\Rightarrow$ $m-\frac{m}{1+t}=\frac{t}{1+t}m$
+	
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Qué pasa cuando se raciona el bien 1}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Combinación de impuestos con racionamiento}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document} %fin del documento
+
+
+
+

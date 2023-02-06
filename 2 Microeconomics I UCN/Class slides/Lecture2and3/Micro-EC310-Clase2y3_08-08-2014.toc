@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Funcionamiento de los mercados}{2}{0}{1}
+\beamer@sectionintoc {2}{Elementos de un modelo}{6}{0}{2}
+\beamer@sectionintoc {3}{Teor\IeC {\'\i }a econ\'omica sobre el Valor}{7}{0}{3}
+\beamer@sectionintoc {4}{Ejemplo: Mercado de los apartamentos alrededor de la UCN}{16}{0}{4}
+\beamer@sectionintoc {5}{Curva de demanda}{18}{0}{5}
+\beamer@sectionintoc {6}{Curva de oferta (CP)}{20}{0}{6}
+\beamer@sectionintoc {7}{Equilibrio}{21}{0}{7}
+\beamer@sectionintoc {8}{An\'alisis de est\'atica comparativa}{22}{0}{8}

@@ -1,0 +1,355 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-II semestre de 2014 \\
+Clase \#1 - Presentación del curso, Introducción a la microeconomía}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 1 04/08/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+Agosto 4 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Presentación}
+\begin{frame}
+\frametitle{Presentación}
+\begin{itemize}
+\item <1> \textbf{Profesor:} Andrés M. Castaño, MsC (e), Departamento de Economía of. 342 (3er piso), email:  landres001@hotmail.com\\
+\bigskip
+\item <1> \textbf{Clases:} lunes 14:30-16:00 (Bloque D), sala R-27 y viernes 16:15-17:45 (Bloque E), sala R-25.\\
+\bigskip
+\item <1> \textbf{Programa y diapositivas de las clases:} a través de la plataforma del curso.
+\bigskip
+\item <1> \textbf{Requisitos previos:} Matemáticas I, Introducción a la Economía.
+\bigskip
+\item <1> \textbf{Libros base:} Varian H.R., (2008), Microeconomía Intermedia. Un Enfoque Actual (\textbf{de ahora en adelante VAR2008}), y Nicholson W., (2007), Teoría Microeconómica: principios básicos y ampliaciones (\textbf{de ahora en adelante NICHO2007}).
+\bigskip
+\item <1> \textbf{Horario de atención a estudiantes:} viernes desde las 18:15 hasta las 19:45 pm.
+\end{itemize}
+\end{frame}
+
+\section{Programa y bibliografía}
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad I: Naturaleza y alcance de la economía (1 clase).} \texttt{(VAR2008 Capitulo 1 y NICHO2007 capítulo 1 )}
+\bigskip
+\begin{itemize}
+\item <1> El enfoque microeconómico de la economía
+\item <1> Racionalidad, Optimización y equilibrio
+\item <1> Aplicaciones prácticas de la microeconomía
+\end{itemize}
+\bigskip
+\item <2> \textbf{Unidad II: Teoría del consumidor (14 clases).} \texttt{(VAR2008-Capitulo 2, 3, 4, 5, 6, 8, 14 y 15)}
+\bigskip
+\begin{itemize}
+\item <2> La restricción presupuestaria  (1 clase)
+\item <2> Las preferencias y la utilidad (4 clases)
+\item <2> La elección del consumidor (2 clases)
+\item <2> Curvas de Engel y de demanda (2 clases)
+\item <2> La ecuación de Slutsky (2 clases)
+\item <2> El excedente del consumidor (2 clases)
+\item <2> La función de demanda (1 clase)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad III: Teoría de la empresa (11 clases).} \texttt{(VAR2008-Capitulo 17, 18, 19, 20, 21 y 22)}
+\bigskip
+\begin{itemize}
+\item <1> La función de producción (1 clase)
+\item <1> La maximización del beneficio (2 clases)
+\item <1> La minimización de los costes (2 clases)
+\item <1> Las curvas de costes (2 clases)
+\item <1> Curva de oferta de la empresa (2 clases)
+\item <1> El problema de la agregación y la curva de oferta de la industria (2 clases)
+\end{itemize}
+\bigskip
+\item <2> \textbf{Unidad IV: Equilibrio parcial de mercado (2 clases).} \texttt{(VAR2008-Capitulo 16)}
+\bigskip
+\begin{itemize}
+\item <2> El equilibrio parcial de mercado
+\item <2> La estática comparativa
+\item <2> El efecto de los impuestos y subsidios en el equilibrio parcial de mercado
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad V: Equilibrio general y eficiencia económica (2 clases).} \texttt{(VAR2008-Capitulos 28 y 29)}
+\bigskip
+\begin{itemize}
+\item <1> Análisis de equilibrio general. Intercambio Puro
+\item <1> Criterio de Pareto y equilibrio Walrasiano
+\item <1> Análisis de equilibrio general, la producción
+\item <1> Elementos de economía del bienestar
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Evaluación}
+\begin{frame}
+\frametitle{Evaluación}
+\begin{itemize}
+\item <1> Una (1) cátedra (30\%).\\
+\bigskip
+\item <1> Un (1) examen final (45\%).\\
+\bigskip
+\item <1> Talleres, controles, exposiciones, ayudantías y actividades que el profesor consideré conveniente para el éxito del curso (20\%).\\
+\bigskip
+\item <1> 5\% de nota apreciativa. Dicha apreciativa será valorada a partir de su participación en clase.\\
+\bigskip
+\item <1> 2 décimas sobre la nota final por asistencia a clase (Condición: no tener ninguna falta).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a la entrega de talleres}
+\begin{itemize}
+\item <1> Los viernes (pueden ser todos) al final de la clase  se le dejará al estudiante un conjunto de ejercicios sobre las temáticas desarrolladas en las clases de los lunes y los miércoles. Estos ejercicios deben ser entregados en físico el lunes de la siguiente semana antes del comienzo de la clase, la nota final de todos los talleres será considerada dentro del 20\% citado con anterioridad.\\
+\bigskip
+\item <1> No se aceptará entrega de los ejercicios después de clase.\\
+\bigskip
+\item <1> La nota por no entregar los ejercicios será de 1.0.\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a la pruebas de catedra y el examen final....}
+\begin{block}{\textbf{Catedra 1}}
+\begin{itemize}
+\item <1> Contenido: unidades I y II.
+\item <1> Duración y fecha: 90-120 minutos, en horario de clases, lunes 6 de octubre.
+\item <1> Preguntas teórico-prácticas, pueden ser ejercicios o preguntas de selección múltiple.
+\item <1> Podrá usar calculadora científica (únicamente).
+\item <1> Inasistencia injustificada $\Longrightarrow$ Nota mínima. Inasistencia justificada $\Longrightarrow$ Recupera en fecha y horario a concertar con el profesor. La prueba recuperativa producto de asistencia justificada puede ser oral o escrita.
+\end{itemize}
+\end{block}
+\end{frame}
+
+%\begin{frame}
+%\frametitle{Respecto a las pruebas de catedra y el examen final....}
+%\begin{block}{\textbf{Catedra 2}}
+%\begin{itemize}
+%\item <1> Contenido: unidades  III y IV.
+%\item <1> Duración y fecha: 100 minutos, en horario de clases, miércoles 6 de junio  de 2014.
+%\item <1> Preguntas teórico-prácticas, pueden ser ejercicios o preguntas de selección múltiple.
+%\item <1> Podrá usar calculadora científica (únicamente).
+%\item <1> Inasistencia injustificada $\Longrightarrow$ Nota mínima. Inasistencia justificada $\Longrightarrow$ Recupera en fecha y horario a concertar %con el profesor. La prueba recuperativa producto de asistencia justificada puede ser oral o escrita.
+%\end{itemize}
+%\end{block}
+%\end{frame}
+
+\begin{frame}
+\frametitle{Respecto a las pruebas de catedra y el examen final....}
+\begin{block}{\textbf{ Examen Final}}
+\begin{itemize}
+\item <1> Contenido: Toda la asignatura (5 unidades).
+\item <1> Duración (estimada): entre 120 y 180 minutos, fecha a determinar por la Facultad de Economía.
+\item <1> Preguntas teórico-prácticas, pueden ser ejercicios o preguntas de selección múltiple.
+\item <1> Podrá usar calculadora científica (únicamente).
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a la solicitud de revisión, comentarios, dudas...}
+\begin{itemize}
+\item <1> Contactar por E-mail (landres001@hotmail.com) con un día de anticipación si hay disponibilidad. En caso de no haberla se hará en el siguiente horario:
+\bigskip
+\item <1> Jueves desde las 18:15 hasta las 19:45 pm, Departamento de Economía, IDEAR, oficina 342 (3er piso).
+\end{itemize}
+\end{frame}
+
+
+\section{Clase 1: Qué es la Microeconomía?}
+\begin{frame}
+\frametitle{Qué es la Microeconomía?}
+\centering
+\begin{itemize}
+\item <1> \textbf{The Economist's Dictionary of Economics:} Es el estudio de la economía al nivel de los consumidores individuales, grupos de consumidores, o empresas, con el fin de determinar la asignación eficiente de recursos escasos entre usos alternativos, es decir la determinación de los precios a través de un comportamiento optimizador de los agentes económicos. Los consumidores intentan maximizar su utilidad, y las empresas maximizar su beneficio.
+\bigskip
+\item <2> Piense ahora: ¿Qué sería la macroeconomía?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Qué tipo de preguntas responde la microeconomía?}
+\begin{itemize}
+\item <1> Cómo el cambio en los precios de un bien determina las decisiones de compra de una familia?\\
+\bigskip
+\item <1> Si mi salario aumenta, yo estaría más inclinado a trabajar más o menos horas?\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Se entendió la diferencia?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Micro1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Micro2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro4}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document}
+

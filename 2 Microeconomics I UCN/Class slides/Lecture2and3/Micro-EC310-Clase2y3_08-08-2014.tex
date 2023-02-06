@@ -1,0 +1,458 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#2 y \#3 - Introducción a la microeconomía: elementos de oferta y demanda}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 2 y 3 08/08/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+Marzo 12 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} 
+% default, rectangles
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Funcionamiento de los mercados}
+\begin{frame}
+\frametitle{Cómo describir el funcionamiento de los mercados?}
+\begin{itemize}
+\item <1> Se utilizan modelos, que deben:
+\begin{itemize}
+\item <1> Representar un fenómeno económico real,
+\bigskip
+\item <1> Que la representación sea simplificada, y
+\bigskip
+\item <1> Que se haga en forma matemática
+\end{itemize}
+\bigskip
+\item <1> Existen Buenos y malos modelos?
+\begin{itemize}
+\item <1> Planteamiento directo $\Longrightarrow$ validez de los supuestos
+\bigskip
+\item <1> Planteamiento indirecto $\Longrightarrow$ Que pueda predecir la realidad
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: El Modelo de Maximización de beneficios (Supuestos)}
+\begin{itemize}
+\item <1> El objetivo es la maximización de los beneficios.
+\bigskip
+\item <1> La empresa dispone de información sobre los costes.
+\bigskip
+\item <1> Conoce la naturaleza del mercado en el que vende sus productos.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Contrastación supuestos}
+\begin{itemize}
+\item <1> El objetivo de un empresario es en realidad  maximizar los beneficios?
+\bigskip
+\item <1> El empresario conoce realmente la naturaleza del mercado en el que vende sus productos?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Contrastación de las predicciones}
+\begin{itemize}
+\item <1> Idea de Milton Friedman: No importa si los supuestos son adecuados.
+\bigskip
+\item <1> Lo importante es si el modelo es capaz de explicar y predecir los acontecimientos del mundo real.
+\bigskip
+\item <1> Ejemplo:  jugar pool (billar).
+\end{itemize}
+\end{frame}
+
+
+\section{Elementos de un modelo}
+\begin{frame}
+\frametitle{Elementos de un modelo en economía}
+\small
+\begin{itemize}
+\item <1> Supuesto de ceteris-paribus (\texttt{NICHO2007})
+\begin{itemize}
+\item <1> Número limitado de variables (Parsimonia).
+\item <1> Ejemplo: producción de Trigo.
+\item <1> Ciencias sociales vs ciencias naturales.
+\end{itemize}
+\item <1> Todos los agentes económicos intentan optimizar algo (\texttt{NICHO2007 y Var2008})
+\begin{itemize}
+\item <1> Las personas intentan maximizar su bienestar.
+\item <1> Empresas intentan minimizar los costes.
+\item <1> Legisladores intentan maximizar el bienestar público.
+\end{itemize}
+\item <1> Economía positiva vs economía normativa (\texttt{NICHO2007})
+\begin{itemize}
+\item <1> La industria minera en Chile \textbf{gasta} 100 millones de dolares al año en gastos de capital, trabajo, y en la compensación del
+    daño ambiental (las cosas como son) $\Longrightarrow$ Sólo se asume una posición de descripción y de predicción.
+\item <1> La industria minera en Chile \textbf{debería gastar} más dinero en la compensación por el daño ambiental $\Longrightarrow$ Se asume
+    una posición moral.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Teoría económica sobre el Valor}
+\begin{frame}
+	\frametitle{Teoría económica sobre el Valor}
+	\scriptsize
+	\begin{itemize}
+		\item <1> Pensamiento inicial
+		\begin{itemize}
+			\scriptsize
+			\item <1> Valor (importancia, esencialidad) 
+			\item <1> Santo Tomás de Aquino: valor (Dios) y precio (humanos)
+		\end{itemize}
+		\item <1> Nacimiento de la economía moderna
+		\begin{itemize}
+			\scriptsize
+			\item <1> Planteamiento científico a las cuestiones económicos.
+			\item <1> La Riqueza de las Naciones (Smith, 1776). Distinguía entre Valor de uso (valor) y valor de cambio(precio).
+			\item <1> Paradoja de los diamantes y el agua.
+		\end{itemize}
+		\item <1> La teoría del trabajo del valor de cambio
+		\begin{itemize}
+			\scriptsize
+			\item <1> El valor de cambio de un bien viene dado por lo que cuesta producirlos (trabajo).
+			\item <1> Y cual es el papel de la demanda?
+		\end{itemize}
+		\item <1> La revolución marginalista (1850-1880)
+		\begin{itemize}
+			\scriptsize
+			\item <1>No es la utilidad total la que determina su valor de cambio, sino la utilidad de la última unidad consumida.
+		\end{itemize}
+	\item <1> La síntesis marshalliana de la oferta y la demanda
+	\begin{itemize}
+		\scriptsize
+		\item <1> Ofrecía un marco adecuado para conciliar lo que determina el precio de un determinado bien.
+	\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Qué pasa cuando los individuos no son racionales?}
+\scriptsize
+\begin{itemize}
+\item <1> No siempre la prohibición y el castigo son efectivos a la hora de modificar conductas.
+\bigskip
+\item <1> \textbf{Nudge theory:} el refuerzo positivo y la sugestión indirecta son más efectivos.
+%\bigskip
+%\item <1> Definición: ''A nudge, as we will use the term, is any aspect of the choice architecture that alters people's behaviour in a predictable way without forbidding any options or significantly changing their economic incentives. To count as a mere nudge, the intervention must be easy and cheap to avoid.'' (Thaler & Sunstein Nudge: Improving Decisions about Health, Wealth  Happiness (2008)).
+\bigskip
+\item <1> \textbf{Ejemplo 1:} Planes de pensiones en EEUU.
+\bigskip
+\item <1> \textbf{Ejemplo 2:} Cómo aumentar el número de donantes en el registro de donantes de órganos?
+\bigskip
+\item <1> \textbf{Ejemplo 3:} Cómo hacer que los niños se alimenten sanamente?
+\bigskip
+\item <1> \textbf{Ejemplo 4:} Cómo evitar que los hombres orinen en el suelo?
+\bigskip
+\item <1> \textbf{Ejemplo 5:} Cómo promover la conciencia ciudadana de aseo en las calles?
+\bigskip
+\item <1> \textbf{Ejemplo 6:} Cómo disminuir el exceso de velocidad de los conductores?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 3:} Cómo hacer que los niños se alimenten sanamente?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{food2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 3:} Cómo hacer que los niños se alimenten sanamente?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{food1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 4:} Cómo evitar que los hombres orinen en el suelo?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{orinar2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 5:} Cómo promover la conciencia ciudadana de aseo en las calles?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{caramelos}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 6:} Cómo disminuir el exceso de velocidad de los conductores?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 7:} Cómo promover la actividad física?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{PianoStairs}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 7:} Cómo promover la actividad física?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{stairs}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{Ejemplo: Mercado de los apartamentos alrededor de la UCN}
+\begin{frame}
+\frametitle{Ejemplo: Mercado de los apartamentos alrededor de la UCN}
+\begin{itemize}
+\item <1> Hay dos grupos de apartamentos, los que están lejos y los que están cerca de la UCN. Estudiaremos los últimos.
+\bigskip
+\item <1> Precios apartamentos externos (exógenos), precios apartamentos internos (endógenos).
+\bigskip
+\item <1> Preguntas a responder:
+\begin{itemize}
+\bigskip
+\item <1> ¿Qué determina el precio?
+\item <1> ¿Qué determina quién ira a los apartamentos cercanos y quién a los lejanos?
+\item <1> ¿Qué puede decirse sobre los mecanismos para asignar los apartamentos?
+\item <1> ¿Cómo juzgar las asignaciones?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estructura del Mercado de los apartamentos alrededor de la UCN}
+\begin{itemize}
+\item <1> Todos los Demandantes $\Longrightarrow$ Curva de demanda.
+\bigskip
+\item <1> Todos los oferentes $\Longrightarrow$ Curva de oferta.
+\bigskip
+\item <1> Precio de reserva
+\end{itemize}
+\end{frame}
+
+
+\section{Curva de demanda}
+\begin{frame}
+\frametitle{Curva de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Demanda}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Curva de demanda con muchos demandantes}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Demanda2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{Curva de oferta (CP)}
+\begin{frame}
+\frametitle{Curva de oferta de corto plazo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{OfertaCP}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{Equilibrio}
+\begin{frame}
+\frametitle{Equilibrio en el mercado de departamentos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Equilibrio}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\section{Análisis de estática comparativa}
+\begin{frame}
+\frametitle{Análisis de Estática comparativa $\Longrightarrow$ Aumento de la oferta de apartamentos}
+\begin{center}
+¿Cómo varía el alquiler de departamentos cuando cambian algunos aspectos del mercado?
+\begin{figure}
+\includegraphics[width=9cm]{Equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicios}
+\large
+\begin{itemize}
+\item <1> Si los arrendatarios deciden vender algunos departamentos (10) a sus inquilinos ¿Qué pasa con el resto de arrendatarios?
+\bigskip
+\item <1> Si los arrendatarios deciden vender algunos departamentos (10), pero ninguno de los que arrienda decide comprar ¿Qué pasa con el resto de arrendatarios?
+\bigskip
+\item <1> Si la municipalidad de Antofagasta decide gravar los apartamentos con un impuesto de 200.000 pesos anuales 
+\begin{itemize}
+\item <1> ¿Qué pasa con el precio de arriendo?
+\bigskip
+\item <1> ¿De qué depende este resultado de equilibrio?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Si los arrendatarios deciden vender algunos departamentos a sus inquilinos ¿Qué pasa con el resto de arrendatarios?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{Equilibrio2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document} %fin del documento
+
+\begin{frame}
+\frametitle{Otras formas de asignar los apartamentos}
+\Large
+\begin{itemize}
+\item <1> El monopolista discriminador $\Longrightarrow$ sacarlos a susbasta 1 a 1
+\bigskip
+\item <1>
+\bigskip
+\item <1> Si la municipalidad de Antofagasta decide gravar los apartamentos con un impuesto de 200000 pesos anuales
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Forma de asignación \#2: El monopolista ordinario}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Equilibrio3}
+\end{figure}
+\end{center}
+\end{frame}

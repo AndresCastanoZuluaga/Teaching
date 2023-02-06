@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Presentaci\'on}{2}{0}{1}
+\beamer@sectionintoc {2}{Programa y bibliograf\IeC {\'\i }a}{3}{0}{2}
+\beamer@sectionintoc {3}{Evaluaci\'on}{8}{0}{3}
+\beamer@sectionintoc {4}{Clase 1: Qu\'e es la Microeconom\IeC {\'\i }a?}{13}{0}{4}
