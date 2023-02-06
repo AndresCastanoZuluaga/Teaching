@@ -1,0 +1,455 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía (EC100)-I semestre de 2014 \\
+Clase \#19 y \#20 - Comportamiento de la empresa}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 19y20 10y12/06/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Junio 10 y 12 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Determinantes de la capacidad productiva de un país:
+\begin{itemize}
+\item <1> Tamaño y calidad de la fuerza laboral
+\item <1> Cantidad y calidad de capital
+\item <1> Conocimientos y uso de los conocimientos
+\end{itemize}.\\
+\bigskip
+\item <1> Porqué los estándares de vida en EEUU y algunos países europeos son altos, mientras que en África son bajos.
+\bigskip
+\item <1> La teoría del productor nos ayuda  a entender parte de la problemática.
+\end{itemize}
+\end{frame}
+
+
+\section{Producción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Es un proceso mediante el cual los insumos son convertidos en producto.\\
+\bigskip
+\item <1> Por ejemplo, el trabajo, un proyector, un computador, la electricidad y el software, se combinan para producir ésta clase.
+\bigskip
+\item <1> Generalmente diversas tecnologías (formas de producir) producirán el mismo producto. Una pizarra y tiza pueden ser empleados en lugar del proyector y el computador.
+\bigskip
+\item <1> ¿Cuál es la ''mejor'' forma de producir?
+\bigskip
+\item <1> ¿Cómo podemos comparar formas de producir?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptos relevantes: conjunto de insumos}
+\begin{itemize}
+\item <1> $x_{i}$ denota la cantidad empleada del insumo i;\\
+\bigskip
+\item <1> Un conjunto de insumos es el vector de cantidades de los insumos, por decir, $(x_{1}, x_{2},..., x_{n})$.
+\bigskip
+\item <1> Por  ejemplo: $(x_{1}, x_{2}, x_{3})=(6, 0, 9)$
+\bigskip
+\item <1> De manera general los insumos se pueden entender como factores de producción:
+\begin{itemize}
+\item <1> Tierra
+\item <1> Trabajo
+\item <1> Capital
+\item <1> Materias primas
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptos relevantes: función de producción y conjunto de producción}
+\begin{center}
+\begin{itemize}
+\item <1> Llamaremos al nivel de producción ''y''.
+\bigskip
+\item <1> La función de producción determina la cantidad máxima de producción posible a partir del conjunto de insumos.
+$$y=f(x_{1}, x_{2},....,x_{n})$$
+\bigskip
+\item <1> Conjunto de producción $\Longrightarrow$ muestra todas las combinaciones de factores y de productos tecnológicamente factibles.
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Conjunto de producción y función de producción para un insumo y un producto}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conjunto de producción}
+\begin{center}
+\begin{itemize}
+\item <1> Un plan de producción es un conjunto de insumos y un nivel de producción; $(x_{1},...., x_{n}, y)$.
+\bigskip
+\item <1> Un plan de producción es factible si:
+$$y\leq f(x_{1},....,x_{n})$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tipos de planes de producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptos relevantes: producto total y producto marginal}
+\begin{center}
+\begin{itemize}
+\item <1> Producto total $\Longrightarrow$ cantidad de producción que se obtiene de un determinado bien usando una cantidad de insumos.
+\bigskip
+\item <1> Producto marginal de un insumo $\Longrightarrow$  producción adicional que produce una unidad adicional de ese insumo mientras que los otros insumos permanecen constantes.
+\bigskip
+\item <1> Producto medio.
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Producto total y marginal}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{marginal}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Producto total, marginal y medio}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{marginal1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ley de los rendimientos marginales decrecientes}
+\begin{center}
+\begin{itemize}
+\item <1> Cómo de debería ser el producto marginal de un insumo variable? $\Longrightarrow$ creciente, decreciente, constante?
+\bigskip
+\item <1> La ley de los rendimiento marginales decrecientes establece que debe ser decreciente $\Longrightarrow$ a medida que se añade más de un insumo variable a una cantidad fija de otro insumo, el primer tiene menos margen para utilizar el segundo, y por lo tanto la producción adicional que genera el insumo variable ira siendo menor.
+\bigskip
+\item <2> Ejemplo: imagine un proceso de producción en donde se utilicen dos insumos: trabajo y maquinaria? $\Longrightarrow$ Cómo se aproximaría al entendimiento de producto marginal decreciente?
+\bigskip
+\item <2> Algunos ejemplos interesantes:
+\begin{itemize}
+\item <2> Rendimientos decrecientes en la agricultura
+\item <2> Horas de estudio iniciales vs las finales
+\end{itemize}
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo rendimientos decrecientes en la agricultura}
+\begin{center}
+\begin{figure}
+\includegraphics[width=6cm]{ejemplo}
+\end{figure}
+\end{center}
+¿Puede ayudar esto a explicar porque algunos países de Asia son tan pobres?
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Etapas proceso de producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=6cm]{etapas1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Conjunto de producción con múltiples insumos}
+\begin{center}
+\begin{itemize}
+\item <1> ¿Cómo se presenta el problema cuando tenemos más de un insumo?
+\bigskip
+\item <1> El caso de dos insumos: las cantidades de los insumos son $x_{1}$ y $x_{2}$.  El nivel de producción es y.
+\bigskip
+\item <1> Suponga la siguiente función de producción:
+$$y=f(x_{1}, x_{2})=2x_{1}^{\frac{1}{3}}x_{2}^{\frac{1}{3}}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Conjunto de producción con múltiples insumos}
+\begin{center}
+\begin{itemize}
+\item <1> ¿Cuál es el máximo nivel de producción factible con el vector de insumos $(x_{1}, x_{2})=(1,8)$?
+$$y=2*1^{\frac{1}{3}}*8^{\frac{1}{3}}=4$$
+\bigskip
+\item <1> ¿Cuál es el máximo nivel de producción factible con el vector de insumos $(x_{1}, x_{2})=(8,8)$?
+$$y=2*8^{\frac{1}{3}}*8^{\frac{1}{3}}=8$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Isocuantas}
+\begin{center}
+\begin{itemize}
+\item <1> Cuando hay dos factores de producción, se puede utilizar una herramienta similar a la curva de indiferencia, en este caso para la producción: las isocuantas.
+\bigskip
+\item <1> Una isocuanta es el conjunto de todos los insumos que generan como máximo el mismo nivel de producción y.
+\bigskip
+\item <1> Un conjunto de isocuantas da lugar al mapa de isocuantas, mismo ejemplo:
+$$y=f(x_{1}, x_{2})=2x_{1}^{\frac{1}{3}}x_{2}^{\frac{1}{3}}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{produccion4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{produccion5}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas para funciones tipo Cobb-Douglas}
+\begin{center}
+\begin{itemize}
+\item <1> Una función de producción a la Cobb-Douglas es de la forma:
+$$y=Ax_{1}^{a_{1}}x_{2}^{a_{2}}.....x_{n}^{a_{n}}$$
+$$y=f(x_{1}, x_{2})=2x_{1}^{\frac{1}{3}}x_{2}^{\frac{1}{3}}$$
+donde:
+$$n=2$$
+$$A=1$$
+$$a_{1}=\frac{1}{3}$$
+$$a_{2}=\frac{1}{3}$$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Isocuantas para tecnología a la Cobb-Douglas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{produccion8}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Propiedades de las isocuantas para funciones tipo Cobb-Douglas}
+\begin{center}
+\begin{itemize}
+\item <1> Monótonas $\Longrightarrow$ con una cantidad mayor o igual de ambos factores debe ser posible al menos obtener el mismo volumen de producción.
+\bigskip
+\item <2> Convexas
+\bigskip
+\item <2> Relación técnica de sustitución (similar a la RMS  en teoría del consumidor)
+\bigskip
+\item <2> Cuánto debe renunciar de un determinado insumo, a cambio de utilizar una cantidad algo mayor del otro para obtener el mismo valor de producción y $\Longrightarrow$ $RTS(x_{1}, x_{2})$.
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Rendimientos de escala en la producción}
+\begin{center}
+\begin{itemize}
+\item <1> ¿Cuál es el efecto en la producción de aumentar todos los insumos?
+\bigskip
+\item <1> ¿Qué sucedería con la producción de trigo si aumentamos de manera simultánea y en la misma proporción la tierra, el agua, los fertilizantes? $\Longrightarrow$ Rendimientos a escala
+\begin{itemize}
+\item <1> Rendimientos constantes a escala $\Longrightarrow$ Cortes de pelo
+\item <1> Rendimientos crecientes a escala  $\Longrightarrow$ Algunos procesos manufactureros
+\item <1> Rendimientos decrecientes a escala $\Longrightarrow$ Actividades que implican el uso de recursos naturales
+\end{itemize}
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Corto vs largo plazo en la producción}
+\begin{center}
+\begin{itemize}
+\item <1> Factores fijos vs factores variables.
+\bigskip
+\item <1> En el corto plazo los empresarios pueden modificar factores variables como la mano de obra, pero no los fijos como el capital.
+\bigskip
+\item <1> El largo plazo es un periodo suficientemente largo en el que se pueden ajustar todos los factores, incluso el capital.
+\end{itemize}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efecto de un cambio tecnológico}
+\begin{itemize}
+\item <1> Innovación de procesos $\Longrightarrow$ Mejoramiento de la técnica
+\item <1> Innovación de productos $\Longrightarrow$ Introducción de nuevos productos
+\end{itemize}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{ejemplo1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Productividad}
+\begin{center}
+\begin{itemize}
+\item <1> Productividad $\Longrightarrow$ mide la relación entre la producción total y el promedio ponderado de los insumos.
+\bigskip
+\item <1> Productividad del trabajo $\Longrightarrow$ cantidad de producción por unidad de mano de obra.
+\bigskip
+\item <1> Productividad total de los factores $\Longrightarrow$ producción por unidad de insumos totales.
+\bigskip
+\item <1> En una pais como un todo, uno de los indicadores de productividad es el PIB por hora trabajada.
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Productividad}
+\begin{center}
+\begin{itemize}
+\item <1> Productividad $\Longrightarrow$ mide la relación entre la producción total y el promedio ponderado de los insumos.
+\bigskip
+\item <1> Productividad del trabajo $\Longrightarrow$ cantidad de producción por unidad de mano de obra.
+\bigskip
+\item <1> Productividad total de los factores $\Longrightarrow$ producción por unidad de insumos totales.
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+\end{document}

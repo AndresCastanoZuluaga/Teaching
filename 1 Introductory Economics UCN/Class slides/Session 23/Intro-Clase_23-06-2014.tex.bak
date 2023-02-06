@@ -1,0 +1,325 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía (EC100)-I semestre de 2014 \\
+Clase \#21 y \#22 -Medición del costo de vida}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 21y22 10y12/06/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Junio 16 y 18 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción: Macroeconomía vs Microeconomía}
+\begin{itemize}
+\item <1> Microeconomía:
+\begin{itemize}
+\item <1> Estudio de como individuos, hogares y empresas toman decisiones, y como interactúan los unos con los otros en los mercados.
+\end{itemize}.
+\bigskip
+\item <1> Macroeconomía:
+\begin{itemize}
+\item <1> Es el Estudio de la economía como un todo.
+\bigskip
+\item <1> Su objetivo es explicar los cambios económicos que afectan muchos hogares, empresas, y mercados a la vez.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Qué tipo de preguntas responde la Macroeconomía}
+\begin{itemize}
+\item <1> Porqué es el ingreso medio más alto en algunos países en comparación con otros?
+\bigskip
+\item <1> Porque los precios crecen más rápidamente en algunos periodos de tiempo, mientras que son más estables en otros?
+\bigskip
+\item <1> Porque la producción (PIB) y el empleo se expanden en algunos años y se contraen en otros?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{El ingreso y el gasto en una economía}
+\begin{itemize}
+\item <1> Cuando se desea evaluar si una economía se está comportando bien o mal, que deberíamos tener en cuenta?  .\\
+\bigskip
+\item <2> Rta: El ingreso total que cada uno en la economía está ganando.
+\bigskip
+\item <2> Para una economía como un todo el ingreso debe ser igual al gasto ¿Por qué?
+$$Ingreso=Gasto$$
+\begin{itemize}
+\item <2> Cada  transacción tiene un comprador y un vendedor.
+\bigskip
+\item <2> Cada peso de gasto para algún comprador, es un peso de ingreso para algún vendedor.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Producto Interno Bruto}
+\begin{itemize}
+\item <1> PIB: es una medida del ingreso y los gastos de una economía. Por qué producto? por qué interno? y por qué bruto?\\
+\bigskip
+\item <1> Es el valor total de mercado de todos los bienes finales y servicios producidos, dentro de un país en un determinado periodo de tiempo.
+\bigskip
+\item <1> Una manera de apreciar la igualdad entre ingresos y gastos es en el diagrama de flujo circular
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Diagrama de flujo circular del gasto}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{flujo}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Producto Interno Bruto}
+\begin{itemize}
+\item <1> ''PIB es el valor de mercado'' $\Longrightarrow$ La producción es valorada a precios de mercado\\
+\bigskip
+\item <2> '' De todo lo final'' $\Longrightarrow$ tiene en cuenta el valor de todos los bienes finales, sin tener en cuenta los intermedios ¿A qué ayuda esto?
+\bigskip
+\item <3> ''Bienes y servicios'' $\Longrightarrow$ Incluye bienes tangibles (alimentos, ropa, autos), así como servicios intangibles (cortes de pelo, limpieza del hogar, visitas al médico)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Producto Interno Bruto}
+\begin{itemize}
+\item <1> ''Producidos'' $\Longrightarrow$ Incluye bienes actualmente producidos, no transacciones que involucran bienes producidos en el pasado.
+\bigskip
+\item <2> ''Dentro de un país'' $\Longrightarrow$ tiene en cuenta el valor de la producción dentro de las fronteras geográficas de un país.
+\bigskip
+\item <3> ''En un periodo dado de tiempo'' $\Longrightarrow$ Mide el valor de la producción que tiene lugar dentro de un intervalo especifico de tiempo (Un año, un trimestre, a veces mensual).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Otros indicadores de renta}
+\begin{itemize}
+\item <1> $PIN=Producto Interno Neto=PIB-DEP$
+\bigskip
+\item <1> $PNN=Producto Nacional Neto=PIN-RFE (renta neta de factores externos)$
+\bigskip
+\item <1> $RN=Renta Nacional=PNN-IMP_{in}+Subve_{emp}$
+\bigskip
+\item <1> $RP=Renta Personal=RN-Ben_{nd}-Cotiza_{s.s}+Subve_{per}$
+\bigskip
+\item <1> $RPD=Renta Personal Disponible=RP-IMP_{dir}$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Qué es lo no contabilizado en el PIB}
+\begin{itemize}
+\item <1> Excluye la mayoría de los artículos producidos y vendidos que nunca entran al mercado.
+\bigskip
+\item <1> Excluye artículos producidos y vendidos ilegalmente, tales como drogas ilegales.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La identidad de la contabilidad nacional}
+\begin{itemize}
+\item <1> El PIB es la suma de:
+\begin{itemize}
+\item <1> Consumo $(C)$
+\item <1> Inversión $(I)$
+\item <1> Compras del gobierno $(G)$
+\item <1> Exportaciones netas $(NX)$
+\end{itemize}
+\item <1> Matemáticamente se puede expresar como:
+$$Y=C+I+G+NX$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{PIB y sus componentes}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{PIB}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{PIB nominal vs PIB real}
+\begin{itemize}
+\item <1> PIB nominal $\Longrightarrow$ precios corrientes
+\bigskip
+\item <1> PIB real $\Longrightarrow$ precios constantes
+\bigskip
+\item <1> Una visión precisa de la economía requiere ajustar el PIB de un valor nominal a un valor real ¿Cómo?
+\bigskip
+\item <2> Utilizar el deflactor del PIB
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{PIB nominal, PIB real y deflactor del PIB}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{defla}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Deflactor del PIB}
+\begin{itemize}
+\item <1> El deflactor del PIB es una medida del nivel de precios calculada como la relación entre el PIB nominal y el PIB real de 100.
+\bigskip
+\item <1> ¿Por qué es útil el deflactor del PIB?
+\bigskip
+\item <1> Porque nos dice el aumento del PIB nominal que es atribuible a un aumento de los precios en lugar de un aumento de las cantidades producidas.
+\bigskip
+\item <2> Para calcular el deflactor del PIB:
+$$Defla_{PIB}=\frac{PIB_{Nominal}}{PIB_{Real}}*100$$
+\bigskip
+\item <2> Para convertir el PIB nominal a PIB real:
+$$PIB_{Real}=\frac{PIB_{Nominal}}{Defla_{PIB}}*100$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{PIB nominal, PIB real y deflactor del PIB}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{pib-eeuu}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{PIB y bienestar económico}
+\begin{itemize}
+\item <1> El PIB es la mejor medida del bienestar económico de una sociedad ¿Alguno en desacuerdo?
+\bigskip
+\item <1> PIB por persona (PIB per capita) nos cuenta los ingresos y gastos de la persona promedio en la economía.
+\bigskip
+\item <1> Mayor PIB por persona indica un estándar de vida más alto.
+\bigskip
+\item <1> El PIB  no es una medida perfecta de felicidad, dado que no incluye:
+\begin{itemize}
+\item <1> El valor del tiempo dedicado al ocio
+\item <1> El valor de un entorno limpio
+\item <1> El valor del tiempo de los padres con sus hijos
+\item <1> El valor del trabajo voluntario
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{PIB, esperanza de vida y analfabetismo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{pib-eeuu}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document}
+
+
+

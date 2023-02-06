@@ -1,0 +1,475 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía (EC100)-I semestre de 2014 \\
+Clase \#17 y \#18 - Comportamiento del consumidor}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 17y18 27y29/05/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Mayo 27 y 29 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+
+\begin{frame}
+\frametitle{Introducción teoría del consumidor}
+\begin{itemize}
+\item <1> Los consumidores eligen la \textbf{"mejor"} cesta de bienes que \textbf{"pueden"} adquirir.\\
+\bigskip
+\item <1> Por \textbf{"mejor"} entendemos que los consumidores más desean, y por \textbf{"pueden"} nos referimos a la que efectivamente pueden permitirse adquirir.
+\bigskip
+\item <1> Sea la cesta de consumo del individuo $(x_{1}, x_{2})$, con precios $(p_{1}, p_{2})$, el conjunto presupuestario se define como:
+$$p_{1}x_{1}+p_{2}x_{2}\leq m$$.\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Propiedades del conjunto presupuestario}
+\begin{itemize}
+\item <1> La Recta presupuestaria es el conjunto de cestas que cuestan exactamente m:
+$$p_{1}x_{1}+p_{2}x_{2}=m$$
+\bigskip
+\item <2> La recta presupuestaria es diferente del conjunto presupuestario.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conjunto presupuestario vs recta presupuestaria}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 1: graficar la restricción presupuestaria}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu6}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 1: graficar la restricción presupuestaria}
+\begin{center}
+\begin{figure}
+\includegraphics[width=7cm]{presu7}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Propiedades del conjunto presupuestario}
+\begin{itemize}
+\item <1> Cómo se interpretarían los interceptos $\frac{m}{p_{1}}$ y $\frac{m}{p_{2}}$?
+\bigskip
+\item <1> La pendiente? $-\frac{p_{1}}{p_{2}}$ $\Longrightarrow$ Mide la relación en que el mercado está dispuesto a substituir el bien 2 por el 1 (Coste de oportunidad)
+\bigskip
+\item <2> Ejemplo: si el consumidor va aumentar su consumo del bien 1 en $\Delta x_{1}$. ¿Cuánto tendrá que modificar su consumo del bien 2 ($\Delta x_{2}$) para satisfacer su restricción presupuestaria?
+    $$p_{1}x_{1}+p_{2}x_{2}=m$$
+    $$p_{1}(x_{1}+\Delta x_{1})+p_{2}(x_{2}+\Delta x_{2})=m$$
+    $$p_{1}\Delta x_{1}+p_{2}\Delta x_{2}=0$$
+    $$\frac{\Delta x_{2}}{\Delta x_{1}}=-\frac{p_{1}}{p_{2}}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Variación en la recta presupuestaria: Cambio en m}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Variación en la recta presupuestaria: Cambio en $p_{1}$}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{presu3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La elección del consumidor}
+\begin{itemize}
+\item <1> Anteriormente vimos que los individuos seleccionaban las cestas que estaban a su ''alcance''.\\
+\bigskip
+\item <1> Ahora vamos a ver cómo el individuo selecciona las ''mejores cestas'' $\Longrightarrow$ las cestas que prefieren.\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La utilidad o satisfacción}
+\begin{itemize}
+\item <1> Las personas escogen los bienes y servicios que valoran más $\Longrightarrow$ Cómo cuantificamos esa valoración? $\Longrightarrow$ concepto de utilidad\\
+\bigskip
+\item <1> El problema de cuantificar la utilidad $\Longrightarrow$ Dio paso a un enfoque de preferencias.\\
+\bigskip
+\item <1> Las preferencias son el fundamento para analizar la elección, la utilidad es una forma de describirlas.\\
+\bigskip
+\item <1> Utilidad ordinal vs utilidad cardinal.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Importa el orden no la magnitud}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Supuestos sobre las preferencias del consumidor en el enfoque ordinal}
+\begin{itemize}
+\item <1> Completitud $\Longrightarrow$ completa información
+\bigskip
+\item <1> Jerarquización $\Longrightarrow$ es capaz de ordenar sus preferencias
+\bigskip
+\item <1> Transitividad $\Longrightarrow$ es consistente en sus elecciones
+\bigskip
+\item <1> Insaciabilidad $\Longrightarrow$ prefiere más a menos
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Utilidad y la ley de la utilidad marginal decreciente}
+\begin{itemize}
+\item <1> Utilidad marginal $\Longrightarrow$ utilidad adicional que genera el consumo adicional de un bien.
+\bigskip
+\item <1> Porqué debería ser decreciente la utilidad marginal que genera el consumo de un bien?
+\bigskip
+\item <1> La utilidad total de consumir cierta cantidad de un bien es igual a la suma de las utilidades marginales hasta ese punto:
+$$UT=\sum Umg$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relación entre utilidad y utilidad marginal}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relación entre utilidad y utilidad marginal}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{utilidad3}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Cómo podemos representar gráficamente las preferencias del consumidor $\Longrightarrow$ las curvas de indiferencia }
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{indiferencia}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Pendiente de las curvas de indiferencia $\Longrightarrow$ La Relación Marginal de Substitución (RMS)}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{rms}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Propiedades de las curvas de indiferencia}
+\begin{itemize}
+\item <1> Se prefieren las curvas de indiferencia más altas a las más bajas
+\bigskip
+\item <1> Las curvas de indiferencia tienen pendiente negativa (RMS negativa)
+\bigskip
+\item <1> Las curvas de indiferencia no se cortan
+\bigskip
+\item <1> Las curvas de indiferencia son combadas hacia adentro (convexas) $\Longrightarrow$ RMS decreciente
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Se prefieren las curvas de indiferencia más altas a las más bajas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{propiedad1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las curvas de indiferencia tienen pendiente negativa (RMS negativa)}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{propiedad2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las curvas de indiferencia no se cortan}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{propiedad3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las curvas de indiferencia son combadas hacia adentro (convexas) $\Longrightarrow$ RMS decreciente}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{propiedad4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: Bienes sustitutos perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{sustitutos}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: Bienes complementarios perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{complementarios}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Optimización $\Longrightarrow$ qué es lo que escoje el consumidor?}
+\begin{itemize}
+\item <1> Los consumidores desean una combinación de bienes en la curva de indiferencia más alta posible.
+\bigskip
+\item <1> Pero, el consumidor también elegir una cesta que debe estar  sobre o por debajo de su restricción presupuestaria.
+\bigskip
+\item <2> Dónde debería ser la elección óptima del consumidor? $\Longrightarrow$ donde la RMS sea igual a los precios relativos 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elección óptima del consumidor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{optimo}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Principio de equimarginalidad}
+\begin{itemize}
+\item <1> ''un consumidor con un ingreso fijo enfrentado a precios de mercado dados para los bienes logrará maximizar su satisfacción o utilidad cuando la utilidad marginal del último dólar que gaste en cada bien sea exactamente la misma que la utilidad marginal del último dólar que gaste en cualquier otro bien.''
+$$\frac{Umg_{1}}{P_{1}}=\frac{Umg_{2}}{P_{2}}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo afectan los cambios en el ingreso a la elección del consumidor?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{optimo1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Clasificación de los bienes de acuerdo a su rección ante cambios en el ingreso}
+\begin{itemize}
+\item <1> Si el consumo del bien aumenta cuando aumenta el ingreso $\Longrightarrow$ bien normal.
+\bigskip
+\item <1> Si el consumo del bien disminuye cuando aumenta el ingreso $\Longrightarrow$ bien inferior.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo afectan los cambios en el ingreso a la elección del consumidor? $\Longrightarrow$ El caso de un bien inferior}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{optimo2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cómo afectan los cambios en los precios a la elección del consumidor?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{optimo3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efecto renta y efecto sustitución}
+\begin{itemize}
+\item <1> Un cambio en los precios tiene dos efectos sobre el consumo
+\bigskip
+\begin{itemize}
+\item <1> Efecto renta o efecto ingreso.
+\bigskip
+\item <1> Efecto sustitución.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efecto renta y efecto sustitución}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{optimo4}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Resumen efecto renta y efecto sustitución cuando baja el precio de la Pepsi}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{optimo5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Obtención de la curva de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{optimo6}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\end{document}
+
+
+
+

@@ -1,0 +1,201 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[t,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía (EC100)-I semestre de 2014 \\
+Clase \#23 -Medición del costo de vida (inflación)}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 23 24/06/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Junio 24 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Medición del costo de vida}
+\begin{itemize}
+\item <1> Inflación se refiere  a una situción en la cual el nivel de precios total está aumentando.
+\bigskip
+\item <1> La tasa de inflación es el porcentaje de cambio (\%) en el nivel de precios de un periodo previo.
+\bigskip
+\item <1> El índice de Precios del Consumidor (IPC) $\Longrightarrow$ es una medidad del costo total de una canasta de bienes y servicios comprada por un consumidor típico.
+\bigskip
+\item <1> ¿Quien reporta el IPC en Chile? ¿Cada cuanto lo reporta? ¿Para que lo usa? ¿Cómo lo cálcula?
+\bigskip
+\item <1> ¿Qué ocurre con el gasto de una familia cuando el IPC aumenta?$\Longrightarrow$ Gasta más dolares para mantener el mismo estándar de vida.
+\end{itemize}
+\end{frame}
+
+\section{Cómo se cálcula el IPC?}
+\begin{frame}
+\frametitle{Cómo se cálcula el IPC?}
+\begin{itemize}
+\item <1> Fijación de una cesta de consumo.
+\begin{itemize}
+\item <1> Se determina que precios son más importantes para un consumidor típico (representativo)
+\item <1> El INE lleva a cabo encuestas mensuales para establecer los pesos de los distintos bienes
+\end{itemize}
+\bigskip
+\item <1> Hallar los precios.
+\begin{itemize}
+\item <1> Se determina que precios de cada uno de bienes o servicios en cada momento del tiempo
+\end{itemize}
+\bigskip
+\item <1> Calcular el coste de la cesta.
+\begin{itemize}
+\item <1> Se utilizan datos sobre los precios para calcular el coste que tiene la cesta en diferentes momentos
+\end{itemize}
+\bigskip
+\item <1> Escoger el año base y calcular el índice.
+\bigskip
+\item <1> Calcular la tasa de inflación.
+$$TI=\frac{IPC_{2}-IPC_{1}}{IPC_{1}}*100$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 1: economía sencilla que sólo produce perritos calientes y hamburguesas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{ipc1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 2: Costo general de la canasta}
+\begin{itemize}
+\item <1> Suponga que el año base es 2002, que el costo de la canasta de bienes en 2002 es 1200000. La misma canasta en el año 2004 cuesta 1236000. ¿Cual es el índice de precios del consumidor? cuanto es la inflación entre 2002 y 2004? 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Qué incluye la cesta del IPC? }
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{ipc2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Qué problemas tienen las cestas con las que se mide la inflación?}
+\begin{itemize}
+\item <1> Sesgo de sustitución $\Longrightarrow$ El IPC se calcula suponiendo que la cesta es fija, por lo cual no captura los cambios en los patrones de consumo, sobreestimamdo el aumento que experimentan los precios\\
+\bigskip
+\item <2> Introducción de nuevos bienes $\Longrightarrow$ Cómo la cesta es fija, no se puede capturar el aumento en el valor de cada peso, producto de la mayor variedad para elegir.
+\bigskip
+\item <3> Cambio no medido de la calidad
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Deflactor del PIB frente al Índice de Precios de Consumo}
+\begin{itemize}
+\item <1> $DEF_{PIB}=\frac{PIB nominal}{PIB real}*100$
+\bigskip
+\item <1> Los economistas tienen en cuenta tanto el deflactor del PIB, como el Índice de Precios del Consumo (IPC), para averiguar a qué ritmo suben los precios.
+\bigskip
+\item <1> ¿Qué diferencias hay? 
+\begin{itemize}
+\item <1> El deflactor del PIB refleja los precios de todos los bienes y servicios producidos en el interior, el IPC de todos los bienes y servicios comprados por los consumidores.
+\item <1> Ponderación de los precios $\Longrightarrow$ IPC compara el precio de una cesta fija de bienes respecto a su valor en el año base, el deflactor del PIB compara el precio de los bienes y servicios en el año actual respecto al que tenían en el año base.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
