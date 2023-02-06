@@ -1,0 +1,496 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% para Numerar Slides sin modificar el tema
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+\oldmacro\hfill%
+\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#19 - Prueba de Chow, Normalidad y Multicolinealidad}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 19 18/11/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Lunes 18 de noviembre de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\section{Pruebas de hipótesis en el MCRLM}
+\begin{frame}
+\frametitle{Pruebas de hipótesis en el MCRLM}
+\begin{itemize}
+\item <1> Prueba de hipótesis sobre un coeficiente de regresión parcial o individual (Prueba t) $\Longrightarrow$ \textcolor[rgb]{1.00,0.00,0.00}{desarrollado}.
+\bigskip
+\item <1> Prueba de significancia global del modelo de regresión múltiple estimado (prueba F) $\Longrightarrow$ \textcolor[rgb]{1.00,0.00,0.00}{desarrollado}.
+\bigskip
+\item <1> Prueba de que dos o más coeficientes son iguales a cero $\Longrightarrow$ \textcolor[rgb]{1.00,0.00,0.00}{desarrollado}.
+\bigskip
+\item <1> Prueba de que los coeficiente de regresión parcial satisfacen ciertas restricciones $\Longrightarrow$ \textcolor[rgb]{0.00,1.00,0.00}{pendiente}.
+\bigskip
+\item <1> Prueba sobre la forma funcional de los modelos de regresión $\Longrightarrow$ \textcolor[rgb]{0.00,1.00,0.00}{pendiente}.
+\bigskip
+\item <1> Prueba de la estabilidad de los modelos de regresión a través del tiempo $\Longrightarrow$ \textcolor[rgb]{0.00,1.00,0.00}{pendiente}.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Función Cúbica de Costo}
+\begin{center}
+\includegraphics[width=10cm]{grafico10.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prueba de estabilidad estructural o paramétrica de los modelos de regresión: Prueba de Chow}
+\begin{itemize}
+\item <1> En series de tiempo, puede que en algún momento exista un cambio estructural en la relación entre la regresada y las regresoras.
+\bigskip
+\item <1> Ejemplos: la apertura comercial de un país, la guerra entre países, descentralización.
+\bigskip
+\item <1> Por motivo de estos cambios el valor de los parámetros no permanece constante a lo largo del tiempo, en alguna especificación que los incluya de algún modo.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: recesión de 1982 en EEUU}
+\begin{center}
+\includegraphics[width=11cm]{grafico11.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Qué hacemos para testear el cambio estructural?}
+\begin{itemize}
+\item <1> Se divide la muestra en dos periodos: 1970-1981 y 1982-1995.
+\bigskip
+\item <1> Se tiene entonces tres posibles regresiones (la todo el periodo y las dos de los subperiodos):
+\begin{itemize}
+\item <1> Periodo 1970-1981 $\Longrightarrow$ $Y_{t}=\lambda_{1}+\lambda_{2}X_{t}+\mu_{1t}$  $\Longrightarrow$ $n_{1}=12$
+\bigskip
+\item <1> Periodo 1982-1995 $\Longrightarrow$ $Y_{t}=\gamma_{1}+\gamma_{2}X_{t}+\mu_{2t}$ $\Longrightarrow$ $n_{2}=14$
+\bigskip
+\item <1> Periodo 1970-1995 $\Longrightarrow$ $Y_{t}=\alpha_{1}+\alpha_{2}X_{t}+\mu_{t}$  $\Longrightarrow$ $n=(n_{1}+n_{2})=26$
+\bigskip
+\end{itemize}
+\item <1> Si no hubiera cambio estructural entonces $\alpha_{1}=\gamma_{1}=\lambda_{1}$ y $\alpha_{2}=\gamma_{2}=\lambda_{2}$.
+\bigskip
+\item <1> Las diferencias pueden deberse a diferencias en la intersección o en el coeficiente de pendiente.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Resultados de las tres regresiones}
+\begin{center}
+\includegraphics[width=10cm]{grafico12.png}
+\end{center}
+\begin{center}
+\includegraphics[width=10cm]{grafico13.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gráficos dos periodos}
+\begin{center}
+\includegraphics[width=10cm]{grafico14.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Prueba de Chow}
+\scriptsize
+\begin{itemize}
+\item <1> La prueba supone que: $\mu_{1t}\sim N(0, \sigma^{2})$ y $\mu_{2t}\sim N(0, \sigma^{2})$. Los términos se distribuyen de manera independiente.
+\bigskip
+\item <1> Se estima la regresión que supone que no hay cambio estructural, y se obtiene la $SRC_{3}$ con g de l de $(n_{1}+n_{2}-k)$ donde k es el número de parámetros estimados. En el ejemplo $SRC_{3}=23248.30$ a esta se le llama suma restringida $(SRC_{R})$ dado que supone que $\gamma_{2}=\lambda_{2}$
+\bigskip
+\item <1> Se estima la regresión del primer sub-periodo y se obtiene la $SRC_{1}$ con g de l de $(n_{1}-k)$. En el ejemplo $SRC_{1}=1785.032$ y 10 g de l.
+\bigskip
+\item <1> Se estima la regresión del segundo sub-periodo y se obtiene la $SRC_{2}$ con g de l de $(n_{2}-k)$. En el ejemplo $SRC_{1}=10055.22$ y 12 g de l.
+\bigskip
+\item <1> Se suman los residuos de los sub-periodos para obtener la suma de residuos al cuadrado no restringida $(SRC_{1}+SRC_{2})=SRC_{NR}=(11790.25)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prueba de Chow}
+\scriptsize
+\begin{itemize}
+\item <1> La idea detrás de la prueba de Chow es que si no existe un cambio estructural entonces la $SRC_{NR}$ y $SRC_{R}$ no deberían ser estadísticamente diferentes.
+$$F=\frac{\frac{SRC_{R}-SRC_{NR}}{k}}{\frac{SRC_{NR}}{n_{1}+n_{2}-2k}}\sim F{(k, (n_{1}+n_{2}-2k))}$$
+\item <1> La hipótesis nula es de estabilidad paramétrica, y la alterna es lo contrario.
+\bigskip
+\item <1> Si el $F_{cal}>F_{cri}$, se rechaza la hipótesis nula de estabilidad paramétrica. Por lo cual la regresión agrupada es una mala decisión.
+\bigskip
+\item <1> $$F_{cal}=\frac{\frac{23248.30-11790.252}{2}}{\frac{11790.252}{22}}=10.69$$
+\bigskip
+\item <1> $F_{cri}$ para 2 y 22 g de l el valor de F al 1\% es 7.72. Por lo tanto la probabilidad de obtener un F igual o mayor a 10.69 es mucho menor que el 1\%, es de 0.00057
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Advertencias respecto a la prueba de Chow}
+\begin{itemize}
+\item <1> Se debe verificar que la varianza de los errores de los dos periodos sea igual.
+\bigskip
+\item <1> La prueba de Chow sólo dirá que hay inestabilidad de los parámetros, no dirá si se debe a un cambio de pendiente o a un cambio de intercepto.
+\bigskip
+\item <1> La prueba de Chow supone que el investigador está en la capacidad de determinar en qué momento del tiempo se presentó la ruptura estructural.
+\end{itemize}
+\end{frame}
+
+\section{Verificación supuesto de normalidad}
+\begin{frame}
+\frametitle{Prueba Jarque-Bera (J.B) $\Longrightarrow$ Normalidad}
+\begin{itemize}
+\item <1> Necesaria para realizar inferencia estadística de los coeficientes estimados, indispensable para realizar predicciones.
+\bigskip
+\item <1> Prueba asintótica o de grandes muestras.
+\bigskip
+\item <1> Calcula la asimetría (distribución de los datos, sesgo) y la curtosis (concentración de valores alrededor de la media) de los residuos.
+\bigskip
+\item <1> $$JB=n(\frac{S^{2}}{6}+\frac{(K-3)^2}{24})$$
+n=tamaño de la muestra; S=coeficiente de asimetría; K=coeficiente de curtosis.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prueba Jarque-Bera (JB) $\Longrightarrow$ Normalidad}
+\begin{itemize}
+\item <1> Hipotesis a contrastar por el estadistico:
+\begin{itemize}
+\bigskip
+\item <1> $H_{0}:$ Los residuos generados por el proceso se distrinuyen normalmente.
+\bigskip
+\item <1> $H_{0}:$ Los residuos generados por el proceso no se distribuyen normalmente.
+\end{itemize}
+\bigskip
+\item <1> Criterio de decisión:
+\begin{itemize}
+\bigskip
+\item <1> Si J.B calculado $>$ J.B crítico rechaze $H_{0}$.
+\bigskip
+\item <1> Si J.B calculado $>$ J.B crítico no rechaze $H_{0}$.
+\end{itemize}
+\bigskip
+\item <1> El estadístico J.B se distribuye $\chi^{2}_{N.S,g.l}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Normalidad: Implementación en GRETL}
+\begin{center}
+\includegraphics[width=12cm]{normalidad.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Normalidad: Implementación en GRETL}
+\begin{center}
+\includegraphics[width=12cm]{normalidad1.png}
+\end{center}
+\end{frame}
+
+
+\section{Multicolinealidad}
+\begin{frame}
+\frametitle{Naturaleza de la Multicolinealidad}
+\begin{itemize}
+\item <1> Diferencia entre multicolinealidad perfecta y menos que perfecta.
+\bigskip
+\item <1> La multicolinealidad provoca que no pueda estimar los errores estándar con precisión ¿porqué?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Perfecta y menos que perfecta}
+\begin{center}
+\includegraphics[width=10cm]{grafico1_1.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\includegraphics[width=10cm]{grafico2_2.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Naturaleza de la Multicolinealidad}
+\begin{itemize}
+\item <1> La relación entre las variables tiene que ser lineal, la siguiente es una relación no lineal:
+$$Y_{i}=\beta_{0}+\beta_{1}X_{1}+\beta_{2}X^{2}_{1}+\beta_{2}X^{3}_{1}+\beta_{2}X^{4}_{1}+\mu_{i}$$
+\item <1> Cuando la multicolinealidad es perfecta los coeficientes de regresión son indeterminados y sus errores estándar son infinitos.
+\bigskip
+\item <1> Cuando la multicolinealidad es menos que perfecta los coeficientes no pueden ser estimados con precisión.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fuentes de la multicolinealidad}
+\begin{itemize}
+\item <1> El método de recolección de información empleado.
+\bigskip
+\item <1> Restricciones en el modelo o en la población objeto de muestreo (regresión consumo de electricidad contra el ingreso y el tamaño de las viviendas).
+\bigskip
+\item <1> Especificación en el modelo.
+\bigskip
+\item <1> Modelo sobredeterminado$\Longrightarrow$ $X>N$
+\bigskip
+\item <1> Regresoras de tendencia común $\Longrightarrow$ Series de Tiempo
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimación en presencia de Multicolinealidad Perfecta}
+\begin{itemize}
+\item <1> Porqué los coeficientes son indeterminados y sus errores estándar son infinitos?
+
+$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\sum x^{2}_{3i})-(\sum y_{i}x_{3i})(\sum x_{2i}x_{3i})}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}}$$
+
+$$\hat{\beta}_{3}=\frac{(\sum y_{i}x_{3i})(\sum x^{2}_{2i})-(\sum y_{i}x_{2i})(\sum x_{2i}x_{3i})}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}}$$
+
+\item <1> Suponga que $X_{3i}=\lambda X_{2i}$, y que $\lambda$ es una constante diferente de 0.
+
+%$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\lambda^{2}\sum x^{2}_{2i})-(\lambda \sum y_{i}x_{2i})(\lambda \sum x^{2}_{2i})}{(\sum %x^{2}_{2i})(\lambda^{2}\sum x^{2}_{2i})-\lambda^{2}(\sum x^{2}_{2i})^{2}$$
+%$$=\frac{0}{0}$$
+%para $\hat{\beta}_{3}$ igual es indeterminada.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Estimación en presencia de Multicolinealidad Perfecta}
+\begin{itemize}
+\item <1> Recuerde que $\hat{\beta}_{2}$ es la tasa de cambio en el valor promedio de Y cuando $X_{2}$ cambia en una unidad, en presencia de multicolinelidad $\hat{\beta}_{3}$ cambia también en un valor igual a $\lambda$, ¿qué implicaciones tiene esto?
+\bigskip
+\item <1> $$y_{i}=\hat{\beta}_{2}x_{2i}+\hat{\beta}_{3}(\lambda x_{2i})+ \hat{\mu}_{i}$$
+\bigskip
+\item <1> No hay forma de estimar $\beta_{2}$ y $\beta_{3}$ en forma igualmente única.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Estimación en presencia de Multicolinealidad menos que perfecta}
+\begin{itemize}
+\item <1> La situación de multicolinealidad perfecta es en la práctica un fenómeno anormal.
+
+\item <1> Suponga que $X_{3i}=\lambda X_{2i}+\upsilon_{i}$, y que $\lambda$ es una constante diferente de 0 y $\upsilon_{i}$ es un término de error estocástico tal que $\sum x_{2i}\upsilon_{i}=0$. Ahora los parámetros serían:
+
+$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\lambda^{2}\sum x^{2}_{2i}+\sum \upsilon^{2}_{i})-(\lambda \sum y_{i}x_{2i}+\sum y_{i}\upsilon_{i})(\lambda \sum x^{2}_{2i})}{(\sum x^{2}_{2i})(\lambda^{2}\sum x^{2}_{2i}+\sum \upsilon^{2}_{i})-(\lambda^{2}\sum x^{2}_{2i}}$$
+para $\hat{\beta}_{3}$ igual se podría estimar.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Consecuencias teóricas de la Multicolinealidad}
+\scriptsize
+\begin{itemize}
+\item <1> A nivel teórico la multicolinealidad, el número reducido de observaciones y poca variabilidad hacer parte de un mismo problema $\Longrightarrow$ problemas para estimar los coeficientes con errores estándar pequeños (Leaner).
+\bigskip
+\item <1>  La micronumerosidad (exacta) es la contraparte de la multicolienalidad (exacta). Problemas para estimar cuando las observaciones exceden por poco el número de parámetros.
+\bigskip
+\item <1> (1) La multicolinealidad permite obtener estimadores insesgados.
+\bigskip
+\item <1> (2) La colinealidad no destruye la propiedad de varianza mínima  (eficiencia), pero no significa que la varianza del estimador MCO sea pequeña en relación con el valor del estimador en cualquier muestra dada.
+\bigskip
+\item <1> (3) La multicolinealidad es esencialmente un fenómeno de la regresión muestral.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Consecuencias prácticas de la Multicolinealidad}
+\begin{itemize}
+\item <1>  (1) Aun cuando los estimadores MCO sean MELI, estos presentan varianzas y covarianzas grandes que hacen difícil la estimación precisa.
+\bigskip
+\item <1>  (2) Debido a (1) los intervalos de confianza tienden a ser mucho más amplios, lo cual propicia una aceptación más fácil de la aceptación de la hipótesis nula.
+\bigskip
+\item <1> (3) Debido a (1) la razón t de uno o más coeficientes sea estadísticamente significativa.
+\bigskip
+\item <1> (4) $R^{2}$ tiende a ser muy alto.
+\bigskip
+\item <1> (5) Los estimadores MCO y sus errores estándar son sensibles a pequeños cambios de información.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{1. Estimadores con varianzas y covarianzas grandes}
+\begin{itemize}
+\item <1> $$Var(\hat{\beta}_{2})=\frac{\sigma^{2}}{\sum x^{2}_{2i}(1-r^{2}_{23})}$$
+\item <1> $$Var(\hat{\beta}_{3})=\frac{\sigma^{2}}{\sum x^{2}_{3i}(1-r^{2}_{23})}$$
+\item <1> $$Cov(\hat{\beta}_{2},\hat{\beta}_{3})=\frac{-r_{23}\sigma^{2}}{(1-r^{2}_{23})\sqrt{\sum x^{2}_{2i}x^{2}_{3i}}}$$
+\item <1> La velocidad a la que las varianzas y covarianzas se incrementa se define como el FIV (factor inflador de varianza)
+$$FIV=\frac{1}{1-r^{2}_{23}}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{1. Estimadores con varianzas y covarianzas grandes}
+\begin{itemize}
+\item <1> $$Var(\hat{\beta}_{2})=\frac{\sigma^{2}}{\sum x^{2}_{2i}}*FIV$$
+\item <1> $$Var(\hat{\beta}_{3})=\frac{\sigma^{2}}{\sum x^{2}_{3i}}*FIV$$
+\item <1> Con k variables:
+$$Var(\hat{\beta}_{j})=\frac{\sigma^{2}}{\sum x^{2}_{j}}*FIV_{j}$$
+\item <1> $$TOL_{j}=\frac{1}{FIV_{j}}=(1-R^{2}_{j})$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Efecto del FIV}
+\begin{center}
+\includegraphics[width=10cm]{grafico3_3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Efecto del FIV}
+\begin{center}
+\includegraphics[width=9cm]{grafico4_4.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{2. Intervalos de confianza más amplios}
+\begin{center}
+\includegraphics[width=6cm]{grafico5_5.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{3. Razones t no significativas}
+\begin{itemize}
+\item <1> El estadístico t se define como:
+$$t=\frac{\hat{\beta}_{k}}{ee(\hat{\beta}_{k})}$$
+\item <1> El error estándar aumenta drásticamente producto del FIV, por lo cual t disminuye, lo que finalmente lleva a que no se rechaze con más facilidad
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{4. Un $R^{2}$ alto pero pocas razones t significativas}
+\begin{itemize}
+\item <1> Dado lo anterior es posible encontrar que uno o más coeficientes sean no significativos de manera individual de acuerdo a la prueba t.
+\bigskip
+\item <1> Con un $R^{2}$ alto es posible rechazar la hipótesis de que los coeficientes son simultaneamente iguales a cero con base en la prueba F.
+\bigskip
+\item <1> Una señal clara de multicolinealidad son valores t no significativos pero un $R^{2}$ alto.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{5. Sensibilidad de los estimadores MCO y sus errores a pequeños cambios en la información}
+\begin{center}
+\includegraphics[width=10cm]{grafico6_6.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{5. Sensibilidad de los estimadores MCO y sus errores a pequeños cambios en la información}
+\begin{center}
+\includegraphics[width=12cm]{grafico7_7.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{5. Sensibilidad de los estimadores MCO y sus errores a pequeños cambios en la información}
+\begin{center}
+\includegraphics[width=10cm]{grafico8_8.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Detección de la Multicolinealidad}
+\begin{itemize}
+\item <1> Una señal clara de multicolinealidad son valores t no significativos pero un $R^{2}$ alto.
+\bigskip
+\item <1> Correlaciones altas entre parejas de regresores. Condición necesaria más no suficiente.
+\bigskip
+\item <1> Examen de correlaciones parciales.
+\bigskip
+\item <1> Regresiones auxiliares, y luego verificar el estadístico F.
+\bigskip
+\item <1> Factores de tolerancia e inflación de varianza. Si FIV es superior a 10 se dice que hay problema grave de multicolinealidad.
+\bigskip
+\item <1> Determinante de la matriz de correlaciones.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Medidas correctivas para la Multicolinealidad}
+\begin{itemize}
+\item <1> No hacer nada (Blanchard, 1967) $\Longrightarrow$ La multicolinealidad es la voluntad de Dios.
+\bigskip
+\item <1> Técnica de información a priori. Definir o conocer a priori la magnitud de la colinealidad.
+\bigskip
+\item <1> Combinación de información de corte transversal con series de tiempo (mezcla de datos).
+\bigskip
+\item <1> Eliminación de variables y el sesgo de especificación.
+\bigskip
+\item <1> Transformación de variables $\Longrightarrow$ Primeras diferencias, transformación de razón
+\bigskip
+\item <1> Análisis factorial o el de componentes principales.
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Intro}{2}{0}{1}
+\beamer@sectionintoc {2}{Modelos ANOVA}{4}{0}{2}
+\beamer@sectionintoc {3}{Modelos ANOVA sin intercepto}{8}{0}{3}
+\beamer@sectionintoc {4}{Modelos ANOVA con 2 variables cualitativas}{9}{0}{4}
+\beamer@sectionintoc {5}{Modelos ANCOVA}{10}{0}{5}

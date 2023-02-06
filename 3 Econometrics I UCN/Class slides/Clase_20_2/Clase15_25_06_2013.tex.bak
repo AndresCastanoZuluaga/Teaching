@@ -1,0 +1,323 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#15 - Violación de supuestos}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 15 25/06/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Martes 25 de junio de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+\usecolortheme{beaver} %color del tema
+%\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\section{Multicolinealidad}
+\begin{frame}
+\frametitle{Naturaleza de la Multicolinealidad}
+\begin{itemize}
+\item <1> Se dice que existe una relación lineal exacta (multi) si se satisface:
+$$\lambda_{1}X_{1}+\lambda_{2}X_{2}+......+\lambda_{k}X_{k}=0$$
+Donde $\lambda_{1},\lambda_{2},....,\lambda_{k}$ son simultáneamente igual a cero.
+\bigskip
+\item <1> $$\lambda_{1}X_{1}+\lambda_{2}X_{2}+......+\lambda_{k}X_{k}+\upsilon_{i}=0$$
+Donde $\upsilon_{i}$ es un término de error estocástico.
+\bigskip
+\item <1> Diferencia entre multicolinealidad perfecta y menos que perfecta.
+\bigskip
+\item <1> La multicolinealidad provoca que no pueda estimar los errores estándar con precisión ¿porqué?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo:}
+\begin{center}
+\includegraphics[width=10cm]{grafico1.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\includegraphics[width=10cm]{grafico2.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Naturaleza de la Multicolinealidad}
+\begin{itemize}
+\item <1> La relación entre las variables tiene que ser lineal, la siguiente es una relación no lineal:
+$$Y_{i}=\beta_{0}+\beta_{1}X_{1}+\beta_{2}X^{2}_{1}+\beta_{2}X^{3}_{1}+\beta_{2}X^{4}_{1}+\mu_{i}$$
+\item <1> Cuando la multicolinealidad es perfecta los coeficientes de regresión son indeterminados y sus errores estándar son infinitos.
+\bigskip
+\item <1> Cuando la multicolinealidad es menos que perfecta los coeficientes no pueden ser estimados con precisión.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fuentes de la multicolinealidad}
+\begin{itemize}
+\item <1> El método de recolección de información empleado. 
+\bigskip
+\item <1> Restricciones en el modelo o en la población objeto de muestreo.
+\bigskip
+\item <1> Especificación en el modelo.
+\bigskip
+\item <1> Modelo sobredeterminado$\Longrightarrow$ $X>N$
+\bigskip
+\item <1> Regresoras de tendencia común $\Longrightarrow$ Series de Tiempo
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimación en presencia de Multicolinealidad Perfecta}
+\begin{itemize}
+\item <1> Porqué los coeficientes son indeterminados y sus coeficientes son infinitos?
+
+$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\sum x^{2}_{3i})-(\sum y_{i}x_{3i})(\sum x_{2i}x_{3i})}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}}$$
+
+$$\hat{\beta}_{3}=\frac{(\sum y_{i}x_{3i})(\sum x^{2}_{2i})-(\sum y_{i}x_{2i})(\sum x_{2i}x_{3i})}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}}$$
+
+\item <1> Suponga que $X_{3i}=\lambda X_{2i}$, y que $\lambda$ es una constante diferente de 0.
+
+$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\lambda^{2}\sum x^{2}_{2i})-(\lambda \sum y_{i}x_{2i})(\lambda \sum x^{2}_{2i})}{(\sum x^{2}_{2i})(\lambda^{2}\sum x^{2}_{2i})-(\lambda^{2}\sum x^{2}_{2i}}$$
+$$=\frac{0}{0}$$
+para $\hat{\beta}_{3}$ igual es indeterminada. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Estimación en presencia de Multicolinealidad Perfecta}
+\begin{itemize}
+\item <1> Recuerde que $\hat{\beta}_{2}$ es la tasa de cambio en el valor promedio de Y cuando $X_{2}$ cambia en una unidad, en presencia de multicolinelidad $\hat{\beta}_{3}$ cambia también en un valor igual a $\lambda$, ¿qué implicaciones tiene esto?
+\bigskip
+\item <1> $$y_{i}=\hat{\beta}_{2}x_{2i}+\hat{\beta}_{3}(\lambda x_{2i})+ \hat{\mu}_{i}$$
+\bigskip
+\item <1> No hay forma de estimar $\beta_{2}$ y $\beta_{3}$ en forma igualmente única.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Estimación en presencia de Multicolinealidad menos que perfecta}
+\begin{itemize}
+\item <1> La situación de multicolinealidad perfecta es en la práctica un fenómeno anormal.
+
+\item <1> Suponga que $X_{3i}=\lambda X_{2i}+\upsilon_{i}$, y que $\lambda$ es una constante diferente de 0 y $\upsilon_{i}$ es un término de error estocástico tal que $\sum x_{2i}\upsilon_{i}=0$. Ahora los parámetros serían:
+
+$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\lambda^{2}\sum x^{2}_{2i}+\sum \upsilon^{2}_{i})-(\lambda \sum y_{i}x_{2i}+\sum y_{i}\upsilon_{i})(\lambda \sum x^{2}_{2i})}{(\sum x^{2}_{2i})(\lambda^{2}\sum x^{2}_{2i}+\sum \upsilon^{2}_{i})-(\lambda^{2}\sum x^{2}_{2i}}$$
+para $\hat{\beta}_{3}$ igual se podría estimar.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Consecuencias teóricas de la Multicolinealidad}
+\begin{itemize}
+\item <1> A nivel teórico la multicolinealidad, el número reducido de observaciones y poca variabilidad hacer parte de un mismo problema $\Longrightarrow$ problemas para estimar los coeficientes con errores estándar pequeños (Leaner).
+\bigskip
+\item <1>  La micronumerosidad (exacta) es la contraparte de la multicolienalidad (exacta). Problemas para estimar cuando las observaciones exceden por poco el número de parámetros.
+\bigskip
+\item <1> (1) La multicolinealidad permite obtener estimadores insesgados.
+\bigskip
+\item <1> (2) La colinealidad no destruye la propiedad de varianza mínima  (eficiencia), pero no significa que la varianza del estimador MCO sea pequeña en relación con el valor del estimador en cualquier muestra dada.
+\bigskip
+\item <1> (3) La multicolinealidad es esencialmente un fenómeno de la regresión muestral.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Consecuencias prácticas de la Multicolinealidad}
+\begin{itemize}
+\item <1> Aun cuando los estimadores MCO sean MELI, estos presentan varianzas y covarianzas grandes que hacen difícil la estimación precisa.
+\bigskip
+\item <1>  Debido a (1) los intervalos de confianza tienden a ser mucho más amplios, lo cual propicia una aceptación más fácil de la aceptación de la hipótesis nula.
+\bigskip
+\item <1> Debido a (1) la razón t de uno o más coeficientes sea estadísticamente significativa.
+\bigskip
+\item <1> $R^{2}$ tiende a ser muy alto.
+\bigskip
+\item <1> Los estimadores MCO y sus errores estándar sons sensibles a pequeños cambiso de información.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{1. Estimadores con varianzas y covarianzas grandes}
+\begin{itemize}
+\item <1> $$Var(\hat{\beta}_{2})=\frac{\sigma^{2}}{\sum x^{2}_{2i}(1-r^{2}_{23})}$$
+\item <1> $$Var(\hat{\beta}_{3})=\frac{\sigma^{2}}{\sum x^{2}_{3i}(1-r^{2}_{23})}$$
+\item <1> $$Cov(\hat{\beta}_{2},\hat{\beta}_{3})=\frac{-r_{23}\sigma^{2}}{(1-r^{2}_{23})\sqrt{\sum x^{2}_{2i}x^{2}_{3i}}}$$
+\item <1> La velocidad a la que las varianzas y covarianzas se incrementa se define como el FIV (factor inflador de varianza)
+$$FIV=\frac{1}{1-r^{2}_{23}}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{1. Estimadores con varianzas y covarianzas grandes}
+\begin{itemize}
+\item <1> $$Var(\hat{\beta}_{2})=\frac{\sigma^{2}}{\sum x^{2}_{2i}}*FIV$$
+\item <1> $$Var(\hat{\beta}_{3})=\frac{\sigma^{2}}{\sum x^{2}_{3i}}*FIV$$
+\item <1> Con k variables:
+$$Var(\hat{\beta}_{j})=\frac{\sigma^{2}}{\sum x^{2}_{j}}*FIV_{j}$$
+\item <1> $$TOL_{j}=\frac{1}{FIV_{j}}=(1-R^{2}_{j})$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Efecto del FIV}
+\begin{center}
+\includegraphics[width=10cm]{grafico3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Efecto del FIV}
+\begin{center}
+\includegraphics[width=10cm]{grafico4.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{2. Intervalos de confianza más amplios}
+\begin{center}
+\includegraphics[width=9cm]{grafico5.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{3. Razones t no significativas}
+\begin{itemize}
+\item <1> El estadístico t se define como:
+$$t=\frac{\hat{\beta}_{k}}{ee(\hat{\beta}_{k})}$$
+\item <1> El error estándar aumenta drásticamente producto del FIV, por lo cual t disminuye, lo que finalmente lleva a que no se rechaze con más facilidad
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{4. Un $R^{2}$ alto pero pocas razones t significativas}
+\begin{itemize}
+\item <1> Dado lo anterior es porsible encontrar que uno o más coeficientes sean no significativos de manera individual de acuerdo a la prueba t.
+\bigskip 
+\item <1> Con un $R^{2}$ alto es posible rechazar la hipótesis de que los coeficientes son simultaneamente iguales a cero con base en la prueba F.
+\bigskip
+\item <1> Una señal clara de multicolinealidad son valores t no significativos pero un $R^{2}$ alto.  
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{5. Sensibilidad de los estimadores MCO y sus errores a pequeños cambios en la información}
+\begin{center}
+\includegraphics[width=9cm]{grafico6.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{5. Sensibilidad de los estimadores MCO y sus errores a pequeños cambios en la información}
+\begin{center}
+\includegraphics[width=9cm]{grafico7.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{5. Sensibilidad de los estimadores MCO y sus errores a pequeños cambios en la información}
+\begin{center}
+\includegraphics[width=9cm]{grafico8.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Detección de la Multicolinealidad}
+\begin{itemize}
+\item <1> Una señal clara de multicolinealidad son valores t no significativos pero un $R^{2}$ alto.
+\bigskip
+\item <1> Correlaciones altas entre parejas de regresores. Condición necesaria más no suficiente.
+\bigskip
+\item <1> Examen de correlaciones parciales.
+\bigskip
+\item <1> Regresiones auxiliares, y luego verificar el estadístico F.
+\bigskip
+\item <1> Factores de tolerancia e inflación de varianza. Si FIV es superior a 10 se dice que hay problema grave de multicolinealidad. 
+\bigskip
+\item <1> Determinante de la matriz de correlaciones.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Medidas correctivas para la Multicolinealidad}
+\begin{itemize}
+\item <1> No hacer nada (Blanchar, 1967) $\Longrightarrow$ La multicolinealidad es la voluntad de Dios.
+\bigskip
+\item <1> Técnica de información a priori. Definir o conocer a priori la magnitud de la colinealidad.
+\bigskip
+\item <1> Combinación de información de corte transversal con series de tiempo (mezcla de datos).
+\bigskip
+\item <1> Eliminación de variables y el sesgo de especificación.
+\bigskip
+\item <1> Transformación de variables $\Longrightarrow$ Primeras diferencias, transformación de razón
+\bigskip
+\item <1> Análisis factorial o el de componentes principales.
+\end{itemize}
+\end{frame}
+
+\end{document}

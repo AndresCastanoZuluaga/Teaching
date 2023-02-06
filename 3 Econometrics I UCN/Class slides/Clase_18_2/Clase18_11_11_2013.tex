@@ -1,0 +1,202 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#18 - MCRL con variables dicotomas}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 18 11/11/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Lunes 11 de noviembre de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\section{Intro}
+\begin{frame}
+\frametitle{Comentarios generales...}
+\begin{itemize}
+\item <1> Las variables explicativas pueden no ser de escala de razón, de escala de intervalo, o de escala ordinal.
+\bigskip
+\item <1> Las variables cualitativas que tienden a ser importantes son: sexo, raza, color, religión, nacionalidad, región geográfica, trastornos políticos y afiliación a un partido.
+\bigskip
+\item <1> Modelos ANOVA: una regresada cuantitativa y unas regresoras cualitativas
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Difiere el salario promedio anual de los maestros de escuelas públicas por área geográfica?}
+51 estados clasificados en tres regiones: región noreste y norte-centro (21 estados), región sur (17 estados) y región oeste (13 estados)
+\begin{center}
+\includegraphics[width=6cm]{grafico1.png}
+\end{center}
+\end{frame}
+
+
+\section{Modelos ANOVA}
+
+\begin{frame}
+\frametitle{Especificación}
+\scriptsize
+\begin{itemize}
+\item <1> $$Y_{i}=\beta_{1}+\beta_{2}D_{2i}+\beta_{3}D_{3i}+\mu_{i}$$
+\begin{itemize}
+\item <1> $Y_{i}=$ Salario promedio de los maestros de las escuelas públicas en el estado i
+\bigskip
+\item <1> $D_{2i}=$ es 1 si el estado está en el Noroeste o Norte-centro, 0 para otra región del país
+\bigskip
+\item <1>$D_{3i}=$ es 1 si el estado está en el Sur, 0 para otra región del país
+\end{itemize}
+\bigskip
+\item <1> Cuál es el salario medio de los maestros de escuelas públicas en la región Noreste y Norte-centro?
+$$E(Y_{i}\mid D_{2i}=1, D_{3i}=0)=\beta_{1}+\beta_{2}$$
+\item <1> Cuál es el salario medio de los maestros de escuelas públicas del Sur?
+$$E(Y_{i}\mid D_{2i}=0, D_{3i}=1)=\beta_{1}+\beta_{3}$$
+\item <1> Cuál es el salario medio de los maestros de escuelas públicas del Oeste?
+$$E(Y_{i}\mid D_{2i}=0, D_{3i}=0)=\beta_{1}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\includegraphics[width=10cm]{grafico2.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\includegraphics[width=10cm]{grafico3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Precaución en el uso de variables dicótomas}
+\scriptsize
+\begin{itemize}
+\item <1> Si una variable cualitativa tiene m categorías, sólo hay que agregar (m-1) variables dicótomas $\Longrightarrow$ Colinealidad perfecta (trampa de la variable dicótoma).
+\bigskip
+\item <1> La categoría a la cual no se asigna variable dicótoma se conoce como categoría de comparación, base, de control, de referencia u omitida. Todas las comparaciones se hacen con base en la categoría de comparación.
+\bigskip
+\item <1> El valor de la intersección $(\beta_{1})$ representa el valor medio de la categoría de comparación.
+\bigskip
+\item <1> Los coeficientes anexos a las variables dicótomas se conocen como coeficientes de intersección diferencial. Indican en qué medida el valor de la intersección que se le asigna 1 varía del coeficiente de intersección de la categoría de comparación.
+\bigskip
+\item <1> Se pueden introducir tantas variables dicotómicas como categorías cuando se omite de la regresión la intersección
+\bigskip
+\item <1> Qué criterio es mejor: (m-1) variables dicótomas o sacar el intercepto $\Longrightarrow$ Planteamiento de Kennedy.
+\end{itemize}
+\end{frame}
+
+\section{Modelos ANOVA sin intercepto}
+
+\begin{frame}
+\frametitle{Ejemplo sin intersección}
+\begin{center}
+\includegraphics[width=8cm]{grafico4.png}
+\end{center}
+\begin{center}
+\includegraphics[width=8cm]{grafico5.png}
+\end{center}
+\end{frame}
+
+\section{Modelos ANOVA con 2 variables cualitativas}
+
+\begin{frame}
+\frametitle{Modelos ANOVA con dos variables cualitativas}
+\begin{center}
+\includegraphics[width=11cm]{grafico6.png}
+\end{center}
+\begin{center}
+\includegraphics[width=8cm]{grafico7.png}
+\end{center}
+\end{frame}
+
+\section{Modelos ANCOVA}
+
+\begin{frame}
+\frametitle{Modelos Ancova: mezcla de cuantitativas con cualitativas}
+\begin{itemize}
+\item <1> Los modelos ANOVA no son tan comunes en economía: Modelos de análisis de Covarianza.
+\end{itemize}
+\begin{center}
+\includegraphics[width=10cm]{grafico8.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos Ancova: mezcla de cuantitativas con cualitativas}
+\begin{center}
+\includegraphics[width=12cm]{grafico9.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos Ancova: mezcla de cuantitativas con cualitativas}
+\begin{center}
+\includegraphics[width=10cm]{grafico10.png}
+\end{center}
+\end{frame}
+
+\end{document}
+
+
