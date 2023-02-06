@@ -1,0 +1,292 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Intro. Economía]
+{Introducción a la Economía - semestre I de 2015 \\
+Clase \#1 - Presentación del curso, objeto de estudio de la economía}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 1]
+{INGECO \\
+INGESIS \\
+Universidad Católica del Norte\\}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Presentación}
+\begin{frame}
+\frametitle{Presentación}
+\begin{itemize}
+\item <1> \textbf{Profesor:} Andrés M. Castaño, MsC (e), Departamento de Economía oficina 342 (3er piso), email:  acastano@ucn.cl; landres001@hotmail.com\\
+\bigskip
+\item <1> \textbf{Clases:} lunes y miércoles de  08:10-09:40 (bloque A), las salas están por confirmar.\\
+\bigskip
+\item <1> \textbf{Programa y diapositivas de las clases:} a través de la plataforma del curso.
+\bigskip
+\item <1> \textbf{Libros base:} Mankiw, G., (2009), Principios de Economía (\textbf{de ahora en adelante MANKIW2009}), y Samuelson P. y Nordhaus W., (2003), Economía (\textbf{de ahora en adelante SAMU2003}).
+\bigskip
+\item <1> \textbf{Ayudantes:} por confirmar
+\bigskip
+\item <1> \textbf{Horario de atención a estudiantes:} viernes desde las 17:15 hasta las 18:45 pm.
+\end{itemize}
+\end{frame}
+
+
+\section{Programa y bibliografía}
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad I: Problema económico y sistemas económicos (4 clases).} \texttt{(MANKIW2009, Cap. 1, Cap. 2 y SAMU2003 Cap. 2 )}
+\begin{itemize}
+\item <1> Los Diez principios de la economía, y el economista como científico
+\item <1> Sistemas económicos en la historia
+\item <1> Breve historia del pensamiento económico
+\end{itemize}
+\bigskip
+\item <2> \textbf{Unidad II: Introducción a la Microeconomía (15 clases).} \texttt{(MANKIW2009, Caps. 4, 5, 10, 12, 14, 15, 16 y 17)}; \texttt{(SAMU2003, Caps. 5, 6, 7, 16 y 18)}
+\begin{itemize}
+\item <2> Objeto de estudio de la microeconomía, Demanda, oferta y equilibrio  (3 clases)
+\item <2> Elasticidad de la demanda y de la oferta (2 clases)
+\item <2> La elección del consumidor (2 clases)
+\item <2> Estructuras de mercado: Competencia perfecta, monopolio, oligopolio y competencia monopolística (6 clases)
+\item <2> Externalidades, bienes públicos y recursos comunes (1 clase)
+\item <2> Impuestos y subsidios (1 clase)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad III: Introducción a la Macroeconomía (10 clases).} \texttt{(MANKIW2009, Caps. 22, 23, 24, 25, 26, 27, 28 y 29)}; \texttt{(SAMU2003, Caps. 20, 21, 22, 23, 24, 25, 26 y 27)}
+\begin{itemize}
+\item <1> Objeto de estudio de la macroeconomía, medición de la actividad económica (1 clase)
+\item <1> Consumo, ahorro,  Inversión (1 clase)
+\item <1> Oferta y demanda agregadas (1 clase)
+\item <1> Inflación (1 clase)
+\item <1> Empleo y desempleo (2 clases)
+\item <1> tipos de cambio, tasas de interés (2 clases)
+\item <1> Tópicos de desarrollo económico (3 clases)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Evaluación}
+\begin{frame}
+\frametitle{Evaluación}
+\begin{itemize}
+\item <1> Una (1) cátedra (30\%).\\
+\bigskip
+\item <1> Un  (1) examen final (40\%).\\
+\bigskip
+\item <1> Talleres, controles, exposiciones, y actividades que el profesor considere conveniente para el éxito del curso (15\%).\\
+\bigskip
+\item <1> Ayudantía (10\%).\\
+\bigskip
+\item <1> Apreciativa (5\%).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Respecto a la entrega de talleres y los controles de lectura}
+\begin{itemize}
+\item <1> Los miércoles (pueden ser todos) al final de la clase, se le dejará al estudiante un conjunto de ejercicios sobre las temáticas desarrolladas en las clases del día lunes y el mismo miércoles. Estos ejercicios deben ser entregados en físico el lunes de la siguiente semana antes del comienzo de la clase, la nota final de todos los talleres será considerada dentro del 15\% citado con anterioridad.\\
+\bigskip
+\item <1> Se realizarán controles de lectura con o sin previo aviso sobre el o los capítulos que queden pendiente(s) para una determinada clase. El control se efectuará al inicio de la clase, y no durará más de 15 minutos. \\
+\bigskip
+\item <1> La nota por no entregar los ejercicios, o por no asistir a los controles de lectura será de 1.0.\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a la prueba de catedra y el examen final....}
+\begin{block}{\textbf{Catedra 1}}
+\begin{itemize}
+\item <1> Contenido: unidades I y II (hasta oligopolio y competencia monopolística).
+\item <1> Duración y fecha: 100 minutos, en horario de clases, fecha por definir.
+\item <1> Preguntas teórico-prácticas, pueden ser ejercicios o preguntas de selección múltiple.
+\item <1> Podrá usar calculadora científica (únicamente).
+\item <1> Inasistencia injustificada $\Longrightarrow$ Nota mínima. Inasistencia justificada $\Longrightarrow$ Recupera en fecha y horario a concertar con el profesor. La prueba recuperativa producto de asistencia justificada puede ser oral o escrita.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a las prueba de catedra y el examen final....}
+\begin{block}{\textbf{ Examen Final}}
+\begin{itemize}
+\item <1> Contenido: Toda la asignatura (3 unidades).
+\item <1> Duración (estimada): entre 120 y 180 minutos, fecha a determinar por la Facultad.
+\item <1> Preguntas teórico-prácticas, pueden ser ejercicios o preguntas de selección múltiple.
+\item <1> Podrá usar calculadora científica (únicamente).
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a la solicitud de revisión, comentarios, dudas...}
+\begin{itemize}
+\item <1> Contactar por E-mail (landres001@hotmail.com; acastano@ucn.cl).
+\bigskip
+\item <1>  Horario de atención: viernes desde las 17:15 hasta las 18:45 pm, Departamento de Economía, oficina 342 (3er piso).
+\end{itemize}
+\end{frame}
+
+
+\section{Qué es la Economía?}
+\begin{frame}
+\frametitle{Qué es la Economía?}
+\centering
+\begin{itemize}
+\item <1> Origen griego $\Longrightarrow$  El que administra el hogar.
+\bigskip
+\item <2> Las familias, las empresas, y las personas deben tomar decisiones sobre los recursos escasos.
+\begin{itemize}
+\item <2> Una familia debe decidir ¿\textbf{como} gastar su ingreso mensual entre todas sus necesidades? ¿Quién debe realizar que labor dentro de la casa?
+\bigskip
+\item <2> Un empresario debe decidir \textbf{qué} tipo de producto o servicio vender? \textbf{cómo} producirlo?  ¿Para \textbf{quién} producirlo?
+\bigskip
+\item <2> El estado debe decidir ¿\textbf{Cuanto} asignar de los ingresos a cada una de las necesidades básicas de la población?
+\end{itemize}
+\item <3> La economía estudia el modo en que los agentes económicos (empresas, familias, individuos) toman decisiones respecto a recursos escasos.
+\end{itemize}
+\end{frame}
+
+
+\section{Los 10 principios de la economía}
+\begin{frame}
+\frametitle{Cómo toman decisiones los agentes económicos? $\Longrightarrow$ Los 10 principios de la economía}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Principio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo toman decisiones los agentes económicos? $\Longrightarrow$ Los 10 principios de la economía}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{empresario}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Uno: los individuos se enfrentan a disyuntivas}
+\begin{itemize}
+\item <1> Entre más tiempo invierta un estudiante en ver televisión, o jugar a la pelota, menos tiempo le queda para estudiar.
+\bigskip
+\item <1> Entre más dinero gaste un padre familiar en bienes, menos podrá ahorrar para la educación de sus hijos.
+\bigskip
+\item <1> Disyuntiva entre ''los cañones y la mantequilla'' que afronta un estado.
+\bigskip
+\item <1> Disyuntiva entre un media ambiente limpio y un nivel de renta alto.
+\bigskip
+\item <1> Disyuntiva entre la eficiencia y la equidad (Conceptos clave). (Seguro de desempleo, impuesto sobre la renta de las personas).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dos: el coste de una cosa es aquello a lo que se renuncia para conseguirla}
+\begin{itemize}
+\item <1> ¿Cuál es el beneficio y el coste de estudiar en la universidad?
+\bigskip
+\item <1> ¿Por qué los futbolistas normalmente no estudian más allá de la secundaria?
+\bigskip
+\item <1> \textbf{Concepto clave:} Coste de oportunidad.
+\end{itemize}
+\end{frame}
+
+
+\end{document} %fin del documento
+
+
+
+
+
+
+
+
+
+
