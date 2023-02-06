@@ -1,0 +1,48 @@
+%% AMS-LaTeX Created by Wolfram Mathematica 7.0 : www.wolfram.com
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{center}
+\begin{large}
+\textbf{Control econometría (EC402) número \#1:}
+\end{large}\\
+\textbf{Prof. Andrés Mauricio Castaño Zuluaga}
+\end{center}
+
+\textbf{1. De acuerdo a lo presentado en la clase 1, busque un ejemplo donde la econometría puede ser una herramienta valiosa.}
+\\
+\textbf{Responda lo siguiente:}
+\begin{itemize}
+\item 1. ¿En qué consiste el problema que quiere estudiar? $\Longrightarrow$ Cómo se relaciona con su carrera?
+\item 2. ¿Cual es la variable dependiente (Y) y las variables independientes (X´s)?
+\item 3. ¿Defina la ecuación que puede representar su problema?
+\item 4. ¿Porqué y cómo cree que la econometría puede ayudar con su problema?
+\item 5. ¿Cuál otra alternativa se le ocurre para tratar su problema (que no esté relacionada con la econometría)?.
+\end{itemize}
+
+\end{document} 

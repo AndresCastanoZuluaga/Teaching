@@ -1,0 +1,198 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[10pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{EC402-Econometría I}
+\newcommand{\term}{Primer semestre}
+\newcommand{\examnum}{Parcial \# 1}
+\newcommand{\examdate}{09/10/2013}
+\newcommand{\timelimit}{90 minutos}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document}
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Página \thepage\ de \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r c}
+\textbf{\class} & \textbf{Nombre:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &\textbf{RUT:}& \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Tiempo limite: \timelimit} &  & \textbf{Profesor:} Andrés M. Castaño \emph{M.Sc. (c)}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+Este examen contiene 3 páginas y un total de 15 preguntas, al lado de cada pregunta aparece su ponderación de acuerdo a un máximo de 60 puntos (10 puntos de base). Ingrese la información requerida en la parte superior de la hoja. Las preguntas 1 hasta la 8 son de selección múltiple con única respuesta. Se penaliza cada desacierto con 0.15 puntos. Recuerde que no puede mirar la hoja de su compañero, ni sacar ningún tipo de material. En caso de ser sorprendido observando la hoja de su compañero se le quitará el examen y su nota será la mínima (1). Sólo se permite usar la Calculadora y las tablas estadísticas.\\
+
+\textbf{Nota:} Las preguntas que requieren desarrollo ya sea algebraico o numérico, deben ser resueltas en las hojas en blanco entregadas.
+
+\begin{questions}
+
+\addpoints
+\question[3] Si se define un modelo de la siguiente manera:
+$$C_{t}-C_{t-1}=\delta (C^{*}_{t}-C_{t-1})$$
+$$C^{*}_{t}=\alpha + \beta Y_{t}$$
+$$0<\delta<1$$
+$$C_{t}=\alpha \delta+ (1-\delta)(C_{t-1}+ \beta \delta Y_{t})$$
+Respecto a los parámetros se puede decir:
+\begin{choices}
+\choice $\alpha$, $\beta$, y $\delta$ son parámetros multiplicadores.
+\choice $\alpha$, $\beta$, y $\delta$ son parámetros de la forma reducida.
+\choice $\alpha\delta$, $(1-\delta)$ y $\beta\delta$ son parámetros estructurales.
+\choice $\alpha\delta$, $(1-\delta)$ y $\beta\delta$ son parámetros multiplicadores.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] En el contexto del modelo de regresión lineal general $Y_{i}=X_{i}'\hat{\beta}+\mu_{i}$, donde X es una matriz $(n*k)$, la hipótesis de que X es una matriz de rango completo, implica, entre otras cosas, que:
+\begin{choices}
+\choice Las k columnas de X son linealmente independientes.
+\choice Las n filas de X son linealmente independientes.
+\choice Cada regresor contiene información que está contenida en otros regresores del modelo.
+\choice El vector Y es una combinación lineal exacta de las k columnas de X.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] En el contexto del modelo de regresión lineal general $Y_{i}=X_{i}'\hat{\beta}+\mu_{i}$, la hipótesis de que $E(\mu_{i})=0$ y $E(\mu_{i}\mu_{i}')=\sigma^{2}I$, donde I es una matriz identidad, implica, entre otras cosas, que:
+\begin{choices}
+\choice Los residuos MCO son homocedásticos.
+\choice Las perturbaciones del modelo son heterodedásticas.
+\choice Los residuos MCO no están autocorrelacionados.
+\choice Las perturbaciones del modelo no están autocorrelacionadas.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] Bajo los supuestos clásicos que conforman el modelo  $Y_{i}=X_{i}'\hat{\beta}+\mu_{i}$, el Teorema de Gauss-Markov implica que:
+\begin{choices}
+\choice El estimador MCO de la varianza de los errores es insesgado.
+\choice El estimador MCO de $\beta$ tiene varianza mínima dentro de la clase de estimadores lineales e insesgados de $\beta$.
+\choice El estimador MCO de $\beta$ tiene esperanza mínima dentro de la clase de estimadores lineales e insesgados de $\beta$.
+\choice El estimador MCO de $\beta$ es el único estimador insesgado de $\beta$ que existe.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] Bajo los supuestos clásicos que conforman el modelo  $y_{i}=X_{i}'\hat{\beta}+\mu_{i}$,  el estimador de máxima verosimilitud de la varianza de las perturbaciones:
+\begin{choices}
+\choice Es sesgado pero tiene menor varianza que el estimador MCO, por lo que es eficiente.
+\choice Es insesgado y tiene mayor varianza que el estimador MCO.
+\choice Tiene menor varianza que el estimador MCO.
+\choice Es sesgado y tiene mayor varianza que el estimador MCO.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] Si en un modelo del tipo $Y_{i}=\beta_{1}+\beta_{2}X_{i}+\mu_{i}$ se cumplen todas los supuestos del MCRL, el estimador de $\beta_{2}$ es:
+\begin{choices}
+\choice Un número (constante) que coincide con el verdadero valor de $\beta_{2}$.
+\choice Un número (constante) cuya varianza, de acuerdo con los teoremas de Gauss-Markov y de Cramer-Rao, es mínima.
+\choice Una variable aleatoria cuya varianza es igual a cero.
+\choice Una variable aleatoria cuya distribución de probabilidad está centrada en el verdadero valor de $\beta_{2}$.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] En cuál de estos escenarios \textbf{NO} es posible obtener la varianza de los errores de la regresión ($\hat{\sigma}^{2}$):
+\begin{choices}
+\choice Si el modelo está correctamente especificado
+\choice Si hay problemas de Heterocedasticidad
+\choice Si hay problemas de autocorrelación
+\choice Todas las anteriores
+\choice Ninguna de las anteriores
+\end{choices}
+
+\addpoints
+\question[3] Cual de estos supuestos es necesario para realizar inferencia estadística respecto a los estimadores ($\hat{\beta}_{1}$, $\hat{\beta}_{2}$ y $\hat{\sigma}^{2}$) obtenidos a través del MCO?
+\begin{choices}
+\choice $E(\mu_{i}\mid X_{i})=0$
+\choice $Var(\mu_{i}\mid X_{i})=\sigma^{2}$
+\choice $Cov(\mu_{i},\mu_{j}\mid X_{i},X_{j})=0$
+\choice $Cov(\mu_{i},X_{i})=0$
+\choice $\mu_{i}\sim N(0,\sigma^{2})$
+\choice Todas las anteriores
+\choice Ninguna de las anteriores
+\end{choices}
+
+\addpoints
+\question[6] En las siguientes formulaciones, indique a que supuesto dentro del modelo clásico de regresión lineal se refiere cada una. Así mismo,  explique brevemente que problemas se pueden generar en caso de que se viole el supuesto establecido.\\
+A. $E(\mu_{i}\mid X_{i})=0$\\
+B. $Var(\mu_{i}\mid X_{i})=\sigma^{2}$\\
+C. $Cov(\mu_{i},\mu_{j}\mid X_{i},X_{j})=0$\\
+D. $Cov(\mu_{i},X_{i})=0$
+
+\addpoints
+\question[6] Explique porqué bajo el marco de la estimación de los parámetros de una regresión lineal, el criterio de seleccionar la FRM de tal modo que  $\sum \hat{\mu}_{i}=\sum({Y}_{i}-\hat{Y}_{i})$ sea mínimo es inadecuado (muestre graficamente).
+
+\addpoints
+\question[6]Partiendo de una análisis de regresión simple: Demuestre que $\hat{\beta}_{2}=\frac{\sum^{n}_{i=1} X_{i}Y_{i}-n\bar{X}\bar{Y}}{\sum^{n}_{i=1}X_{i}^{2}-n\bar{X}^{2}}$. Pista: Parta de la segunda ecuación normal mostrada en clase.
+
+\addpoints
+\question[6] Encuentre la expresión matricial de los parámetros a partir de la siguiente especificación econométrica: $y_{i}=X_{i}'\hat{\beta}+e_{i}$.
+
+\bigskip
+Las preguntas 13 a la 15 se refieren al siguiente enunciado: Con objeto de prever la producción anual de uva en una determinada región de Chile, se ha estimado el siguiente modelo por MCO a partir de una muestra de 26 años: algunos de los resultados de estas estimaciones, obtenidos de GRETL, figuran en la tabla a continuación:
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Producción de uva en Chile}}
+\includegraphics[width=7cm]{grafico1}
+\end{figure}
+\end{center}
+
+Donde Q es el número de toneladas de uva producidas, P es el precio medio en origen de una tonelada de uva y F es la cantidad media de fertilizante utilizada en las plantaciones de uva medido en kilos por hectárea.
+
+\addpoints
+\question[4] Cómo interpretaría los coeficientes estimados obtenidos? que teoría económica le permite determinar que los signos obtenidos de los coeficientes son los esperados?
+
+\addpoints
+\question[2] Si la SRC es igual 3,5673, calcule el estimador de la varianza de los errores $\hat{\sigma}^{2}$?
+
+\addpoints
+\question[6] Construya intervalos de confianza para $\hat{\beta}_{1}$, $\hat{\beta}_{2}$ y para la varianza de los errores $\hat{\sigma}^{2}$ e interprete dichos intervalos?
+
+\bigskip
+\bigskip
+\large
+\centering
+\
+\emph{''Yo creo bastante en la suerte. Y he constatado que, cuanto más duro trabajo, más suerte tengo. Así que no descuides tu esfuerzo para que no te falte fortuna.'' <<Thomas Jefferson>>}
+
+\end{questions}
+\end{document}
+

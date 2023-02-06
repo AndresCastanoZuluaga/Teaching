@@ -1,0 +1,88 @@
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{\textbf{Taller \#4 Econometría\\
+Modelos Anova y Ancova \\
+Fecha de entrega: 18-11-2013}}
+\begin{center}
+\author{Prof. Andr\'es Castaño Zuluaga\\
+\\
+Ayudantes:\\
+\\
+Josefa Pellejero Maranguni\v{c}\\
+Mariana Camila Nadal Fernández\\
+\\
+Econometría I (EC402)\\
+Ingeniería Comercial\\
+Universidad Cat\'olica del Norte\\}
+
+\end{center}
+
+\date{\today}
+\maketitle
+
+\section{Presentación del caso}
+En Chile el desempeño del estudiante a nivel universitario  normalmente está ligado al puntaje obtenido en la prueba nacional PSU. En algunas carreras como Ingeniería Comercial, Ingeniería Civil, Ingeniería Industrial, entre otras, el desempeño en el módulo de matemáticas es un factor que puede llegar a predecir posibles fenómenos de deserción estudiantil. Se le pide a Thaisón Alberto, consultor del Ministerio de Educación de Chile, explorar los factores asociados al rendimiento en matemáticas en la prueba PSU de los estudiantes chilenos en el año 2011. A continuación se describen las variables que contiene la base de datos entregada por el Ministerio de Educación al consultor.
+\begin{itemize}
+ \item \textbf{matematica}, equivalente al puntaje obtenido en matemáticas en la prueba PSU (variable dependiente).
+ \item \textbf{sexo}, que indica el sexo del estudiante (1=hombre, 0=mujer).
+ \item \textbf{nacionalidad}, que indica si es extranjero o chileno (1=chileno, 0=extranjero).
+ \item \textbf{grupo-dependencia}, que indica el tipo de financiamiento del colegio del egresado (1=particular pago, 2=particular subvencionado, 3=municipal).
+ \item \textbf{estado-civil} (1=soltero, 2=casado, 3=separado, 4=viudo).
+ \item \textbf{codigo-region}, se utiliza la codificación a 13 regiones (1=Tarapacá; 2=Antofagasta; 3=Atacama; 4=Coquimbo; 5=Valparaíso; 6=O'Higgins; 7=Maule; 8=Biobío; 9=Araucanía; 10=Los Lagos; 11=Aisén; 12=Magallanes; 13=Metropolitana)
+ \item \textbf{promedio-notas}, indica el puntaje promedio de notas obtenido por el estudiante en la enseñanza media (dos dígitos).
+ \item \textbf{ingreso-bruto-familia}, variable categorizada de acuerdo a grupos de ingreso (1= 0 a 278.000; 2= de 278.001 a 834.000; 3= de 834.001 a 1.400.000; 4= de 1.400.000 a 1.950.000; 5= más de 2.500.000)
+\end{itemize}
+
+\section{Resultados}
+En la presentación de los resultados de su investigación, Thaisón Alberto es invitado a la Universidad Católica del Norte; en donde expondrá delante de las distintas carreras, incluida ingeniería comercial (cuyos estudiantes son reconocidos por su gran pericia econométrica), los resultados de su investigación.
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación de los determinantes del rendimiento en matemáticas en la PSU a nivel regional en chile en el año 2011.}}
+\includegraphics[width=15cm]{resultados}
+\end{figure}
+\end{center}
+
+\newpage
+
+\section{Preguntas}
+Durante la presentación de los resultados, le realizaron las siguientes preguntas a Thaisón:
+\begin{enumerate}
+\item Cómo escribiría la especificación de este modelo estimado?
+\item En qué escala de medición se encuentran cada una de las variables?
+\item Quién es la categoría de comparación en la tabla de resultados, y cuál es su puntaje promedio?
+\item Cómo se interpretarían cada uno de los coeficientes obtenidos en los resultados? Qué variables no son significativas?
+\item Cómo se interpretan cada uno de los coeficientes Beta (estandarizados) mostrados en la regresión?
+\item Cual es el puntaje en matemáticas de una mujer extranjera que es casada y que vive en la región de Antofagasta?
+\item Cual es el puntaje en matemáticas de un hombre chileno soltero que estudio en un colegio municipal y que vive en la región de Atacama?
+\item Para un estudiante preocupado por su puntaje en matemáticas debe ser indiferente entre vivir en la región de Los lagos y Santiago?
+\item Qué tan influyente en el puntaje en la PSU es el rendimiento promedio del estudiante en secundaria?
+\end{enumerate}
+\end{document}

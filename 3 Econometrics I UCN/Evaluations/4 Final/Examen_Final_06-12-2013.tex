@@ -1,0 +1,276 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{EC402-Econometría I}
+\newcommand{\term}{Segundo semestre}
+\newcommand{\examnum}{Examen final}
+\newcommand{\examdate}{06/12/2013}
+\newcommand{\timelimit}{60 minutos}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document}
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Página \thepage\ de \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r c}
+\textbf{\class} & \textbf{Nombre:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &\textbf{RUT:}& \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Tiempo limite: \timelimit} &  & \textbf{Profesor:} Andrés M. Castaño \emph{M.Sc. (c)}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+
+Este examen contiene 5 páginas y un total de 15 preguntas, cada pregunta equivale a 4 puntos para un total de 60 puntos. Ingrese la información requerida en la parte superior de la hoja. En las preguntas de selección múltiple con única respuesta, se penaliza cada desacierto con 1 punto. Recuerde que no puede mirar la hoja de su compañero, puede utilizar calculadora y las tablas estadísticas, no puede sacar ningún tipo de material que contenga formulas referentes al curso. En caso de ser sorprendido observando la hoja de su compañero se le quitará el examen y su nota será la mínima (1).\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See http://www-math.mit.edu/~psh/#ExamCls for full documentation, but the questions
+% below give an idea of how to write questions [with parts] and have the points
+% tracked automatically on the cover page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+% Basic question
+
+\addpoints
+\question[4] Si se sospecha que en algún momento existe (en una serie de tiempo) un cambio estructural en la relación entre la regresada y las regresoras, explique cuál es el procedimiento que usted debe seguir para evaluar la hipótesis de cambio estructural y cuál es el criterio de decisión.
+
+
+\addpoints
+\question[4] Cuál de las siguientes NO es una medida correctiva para la Multicolinealidad:
+\begin{choices}
+\choice Utilizar datos de panel.
+\choice Eliminación de variables.
+\choice Transformación de las variables en primeras diferencias.
+\choice Transformación de las variables a escala de razón
+\choice Análisis de componentes principales
+\choice Ninguna de las anteriores.
+\choice Todas las anteriores
+\end{choices}
+
+
+\addpoints
+\question[4] Si en un modelo del tipo $Y_{i} = \beta_{1} + \beta_{2}X_{i} +\mu_{i}$ se cumplen todas las
+hipótesis clásicas del modelo lineal general, el estimador MCO de $\beta_{2}$ es:
+\begin{choices}
+\choice Un número (constante) que coincide con el verdadero valor de $\beta_{2}$.
+\choice Un número (constante) cuya varianza, de acuerdo con el teoremas de Gauss-Markov es mínima.
+\choice Una variable aleatoria cuya varianza es igual a cero.
+\choice Una variable aleatoria cuya distribución de probabilidad no está centrada en el
+verdadero valor de $\beta_{2}$
+\choice Ninguna de las anteriores
+\choice Todas las anteriores
+\end{choices}
+
+\addpoints
+\question[4] En un modelo del tipo $Y_{i} = \beta_{1} + \beta_{2}ln(X_{i}) +\mu_{i}$ , donde ln representa el
+logaritmo neperiano, el parámetro $\beta_{2}$ representa aproximadamente:
+\begin{choices}
+\choice La variación porcentual esperada en la variable dependiente ante una variación
+porcentual de un 1\% en la variable explicativa.
+\choice La variación proporcional esperada en la variable dependiente ante una variación
+absoluta de una unidad en la variable explicativa.
+\choice La variación absoluta esperada en la variable dependiente ante una variación
+absoluta de una unidad en la variable explicativa.
+\choice La variación absoluta esperada en la variable dependiente ante una variación
+porcentual de un 1\% en la variable explicativa.
+\choice Ninguna de las anteriores
+\end{choices}
+
+\addpoints
+\question[4] Los grados de libertad son:
+\begin{choices}
+\choice El número total de observaciones menos las variables dependientes impuestas para la estimación de los parámetros.
+\choice El número total de observaciones menos las restricciones lineales impuestas para la estimación de un parámetro.
+\choice Son el número total de observaciones que serán libres de variar después de estimar algún parámetro desconocido.
+\choice Todas las anteriores..
+\choice Ninguna de las anteriores
+\choice Sólo (A) y (B).
+\choice Sólo (B) y (C).
+\choice Sólo (A) y (C).
+\end{choices}
+
+\addpoints
+\question[4] El objetivo de la minimización de residuos en los MCO se cumple cuando:
+\begin{choices}
+\choice La suma de los residuos es la más mínima posible.
+\choice Cuando los datos observados estén lo más cerca de la FRM.
+\choice La dispersión de los valores observados con respecto a la FRM sea mínima.
+\choice Todas las anteriores.
+\choice Ninguna de las anteriores.
+\choice Sólo (A) y (B).
+\choice Sólo (B) y (C).
+\choice Sólo (A) y (C).
+\end{choices}
+
+\addpoints
+\question[4] El teorema de $Gauss-Markov$, dados los supuestos de los MCO, determina que los estimadores que se obtienen sean:
+\begin{choices}
+\choice Lineales.
+\choice El valor esperado sea igual al valor verdadero.
+\choice Eficientes.
+\choice Todas las anteriores.
+\choice Ninguna de las anteriores.
+\choice Sólo (A) y (B).
+\choice Sólo (B) y (C).
+\choice Sólo (A) y (C).
+\end{choices}
+
+\addpoints
+\question[4] El sesgo de especificación se refiere a::
+\begin{choices}
+\choice Escoger una forma funcional equivocada.
+\choice Escoger variables explicativas que no se relacionan con la variable dependiente.
+\choice Escoger una forma funcional correcta.
+\choice Todas las anteriores.
+\choice Ninguna de las anteriores.
+\choice Sólo (A) y (B).
+\choice Sólo (B) y (C).
+\choice Sólo (A) y (C).
+\end{choices}
+
+\addpoints
+\question[4] La precisión de los parámetros de regresión lineal puede reflejarse en:
+\begin{choices}
+\choice La varianza de los estimadores.
+\choice El error estándar de los estimadores.
+\choice La perturbación estocástica.
+\choice Todas las anteriores.
+\choice Ninguna de las anteriores.
+\choice Sólo (A) y (B).
+\end{choices}
+
+\addpoints
+\question[4] Para comparar dos modelos en base a los $R^2$ se debe tener en cuenta:
+\begin{choices}
+\choice Que ambos modelos posean la misma variable dependiente.
+\choice Que las variables explicativas tomen cualquier forma.
+\choice Que ambos modelos no posean el mismo número de
+observaciones.
+\choice Todas las anteriores.
+\choice Ninguna de las anteriores.
+\choice Sólo (A) y (B).
+\choice Sólo (B) y (C).
+\choice Sólo (A) y (C).
+\end{choices}
+
+\bigskip
+Las preguntas 11 y 12 se refieren al siguiente enunciado: para estudiar el comportamiento del valor total de las ventas de cobre (vship, en millones de dolares) en el periodo 1970-2010, se utilizan como variables explicativas el empleo total (emp, en miles), nomina de sueldos (pay, en millones de dolares), gasto total en capital (invest, en millones de dolares), costo de la electricidad (energy, en millones de dolares), capital real en equipos (equip, en millones de dolares).
+
+\newpage
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación modelo normal y estandarizado}}
+\includegraphics[width=11cm]{Modelo_Normal_beta_preguntas}
+\end{figure}
+\end{center}
+
+\addpoints
+\question[4] Al rellenar los espacios de los resultados de la regresión anterior para $ee(emp)$, $coef(pay)$, $ee(invest)$, $coef(energy)$, $t(equip)$, $t(const)$ y $R^{2}$ se obtiene:
+\begin{choices}
+\choice 81.31, 61.59, 1.11, 34.8, -2.88, 3.78 y 0.86
+\choice 81.31, 61.59, 1.11, -34.8, -2.88, 3.78 y 0.81
+\choice 81.31, 61.59, 1.27, -34.8, -2.88, 3.78 y 0.83
+\choice 81.31, 61.59, 1.27, -34.8, -2.88, 3.78 y 0.75
+\choice 81.31, 61.59, 1.27, 34.8, -2.88, 3.78 y 0.88
+\choice Ninguna de las anteriores
+\end{choices}
+
+\addpoints
+\question[4] De acuerdo a los resultados que rellenó de los coeficientes normales, y además tomando en cuenta los resultados estandarizados se puede decir:
+\begin{choices}
+\choice Un aumento en el costo de la energía en un millón de dolares genera una disminución de 34 mil pesos en las ventas de cobre.
+\choice Todos los coeficientes son estadísticamente significativos excepto el de la variable invest.
+\choice La variable que mayor impacto genera sobre las ventas de cobre es el comportamiento del gasto en energía.
+\choice Un aumento en la nomina de sueldos  de 1000 dolares provoca una aumento en las ventas de cobre de 61 mil dolares.
+\choice Sólo A y B
+\choice Sólo A y C
+\choice Sólo B y C
+\choice Sólo C y D
+\choice Ninguna de las anteriores
+\end{choices}
+
+\addpoints
+\question[4] En el modelo lineal general $Y = X\beta + U$ , si existe una relación  lineal perfecta entre los regresores contenidos en la matriz de datos, el estimador MCO de
+$\beta$:
+\begin{choices}
+\choice Es sesgado e ineficiente.
+\choice Es sesgado e ineficiente, porque los regresores son linealmente dependientes sólo cuando se ha omitido alguna variable explicativa relevante del modelo.
+\choice No es único, porque el determinante de la matriz $X'X$ es igual a cero.
+\choice Es insesgado y eficiente, porque la multicolinealidad aproximada no afecta a las propiedades estadisticas del estimador MCO de $\beta$ .
+\choice Ninguna de las anteriores.
+\choice Sólo (B) y (C)
+\end{choices}
+
+\addpoints
+\question[4] En un modelo del tipo $Y_{i} = \beta_{1} + \beta_{2}X_{i} + \beta_{3}Z_{i} +\mu_{i}$ , la hipotesis nula y
+la hipotesis alternativa en el contraste de significacion global de las pendientes son:
+\begin{choices}
+\choice $H_{0}:\beta_{1}+\beta_{2}+\beta_{3}=0$ y  $H_{1}:\beta_{1}+\beta_{2}+\beta_{3}\neq 0$.
+\choice $H_{0}:\beta_{2}+\beta_{3}=0$ y  $H_{1}:\beta_{2}+\beta_{3}\neq 0$.
+\choice $H_{0}:(\beta_{2},\beta_{3})'=(0,0)'$ y  $H_{1}:(\beta_{2},\beta_{3})'\neq(0,0)'$.
+\choice $H_{0}:(\beta_{1}, \beta_{2},\beta_{3})'=(0,0,0)'$ y  $H_{1}:(\beta_{1},\beta_{2},\beta_{3})'\neq(0,0,0)'$.
+\choice Ninguna de las anteriores
+\end{choices}
+
+
+\addpoints
+\question[4]En el contexto del Modelo Lineal General $Y = X\beta + U$ , indique
+cual de las siguientes hipotesis NO es necesaria para que el estimador MCO de
+$\beta$ sea eficiente en el sentido del teorema de Gauss-Markov:
+\begin{choices}
+\choice Que la varianza del término de error sea constante a lo largo de la muestra.
+\choice Eliminación de variables.
+\choice Que la distribución de los errores sea normal.
+\choice Que las variables explicativas sean deterministas.
+\choice Que la covarianza entre cualquier par de errores sea igual a cero.
+\choice Ninguna de las anteriores.
+\choice Todas las anteriores
+\end{choices}
+
+\end{questions}
+\end{document}
+
+
+
+

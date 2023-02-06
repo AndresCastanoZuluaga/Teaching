@@ -1,0 +1,73 @@
+%% AMS-LaTeX Created by Wolfram Mathematica 7.0 : www.wolfram.com
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{enumerate}
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{center}
+\begin{large}
+\textbf{Control econometría (EC402) número \#1:}
+\end{large}\\
+\textbf{Prof. Andrés Mauricio Castaño Zuluaga}
+\end{center}
+\textbf{El tiempo máximo para responder es de 30 min, no se permite sacar material, se debe responder en el espacio asignado.}\\
+
+\textbf{1. Explique la diferencia entre una variable aleatoria discreta y una variable aleatoria continua, de un ejeplo de cada una (menos de 6 líneas).}
+\bigskip
+
+\textbf{2. Explique en qué consiste una función de densidad de probabilidad condicional, haga un gráfico y de un ejemplo.}
+\bigskip
+
+\textbf{3. Explique porqué una función de distribución de probabilidad puede definirse a partir de sus momentos. Defina tres momentos de una distribución.}
+\bigskip
+
+\textbf{4. Considere la siguiente función de densidad de probabilidad discreta (FDPD):}\\
+\\
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  % after \\: \hlineskip or \cline{col1-col2} \cline{col3-col4} ...
+  x & -2 & 1 & 2 \\
+  f(x) & $\frac{5}{8}$ & $\frac{1}{8}$ & $\frac{2}{8}$ \\
+  \hline
+\end{tabular}
+\\
+\\
+\\
+A. Calcule el valor esperado ($E(X)$) y la varianza ($Var(X)$). Pista1: $E(x)=E(X)=\sum_{x}xf(x)$, pista2: $var(X)=E(X^{2})-(E(X))^{2}$.
+\\
+\\
+\textbf{5. Considere la siguiente función de densidad de probabilidad continua (FDPC):}\\
+\begin{equation}
+f(x)=\frac{x^{2}}{9}
+\end{equation}
+\\
+donde : $(0\leq x\leq 3)$
+\\
+\\
+A. Calcule el valor esperado y la varianza de dicha función de probabilidad. Pista1: $E(x)=\int^{b}_{a}xf(x)dx$, pista2: $var(X)=\int^{b}_{a}(x-\mu)^{2}f(x)dx$, pista3 $var(X)=E(X^{2})-(E(X))^{2}$, pista4 $\int x^{a}dx=\frac{1}{a+1}x^{a+1}+C$
+
+\end{document} 
