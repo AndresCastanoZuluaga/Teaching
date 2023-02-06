@@ -1,0 +1,463 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-II semestre de 2014 \\
+Clases \#5 y \#6 - Las preferencias del consumidor}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 5y6 1y5/09/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Septiembre 1 y 5  de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción teoría del consumidor}
+\begin{frame}
+\frametitle{Introducción teoría del consumidor}
+\begin{itemize}
+\item <1> En el capítulo de restricción presupuestaria vimos que los individuos seleccionaban las cestas que estaban a su ''alcance''.\\
+\bigskip
+\item <1> Ahora vamos a ver cómo el individuo selecciona las ''mejores cestas''.\\
+\bigskip
+\item <1> Un bien consumido en dos lugares o circunstancias distintas equivale a dos o más bienes distintos.
+\bigskip
+\item <1> Un consumidor siempre escoge la cesta más preferida dentro de las cestas que son factibles.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Las preferencias del consumidor: enfoque cardinal vs ordinal}
+	\begin{itemize}
+		\item <1> Las personas escogen los bienes y servicios que valoran más $\Longrightarrow$ Cómo cuantificamos esa valoración? $\Longrightarrow$ concepto de utilidad\\
+		\bigskip
+		\item <1> El problema de cuantificar la utilidad $\Longrightarrow$ Dio paso a un enfoque de preferencias.\\
+		\bigskip
+		\item <1> Las preferencias son el fundamento para analizar la elección, la utilidad es una forma de describirlas.\\
+		\bigskip
+		\item <1> Utilidad ordinal vs utilidad cardinal.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Importa el orden no la magnitud}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{utilidad1}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Relaciones de preferencia}
+\begin{itemize}
+\item <1> Dadas dos cestas de consumo cualesquiera, $(x_{1}, x_{2})$ y $(y_{1},y_{2})$, el consumidor puede ordenarlas según su atractivo.
+\bigskip
+\item <1> Preferencia estricta ($\succ$).
+\bigskip
+\item <1> Indiferencia ($\sim$).
+\bigskip
+\item <1> Preferencia débil ($\succeq$).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Relaciones entre las preferencias}
+\begin{itemize}
+\item <1> si $(x_{1}, x_{2})$ $\succeq$ $(y_{1},y_{2})$ y $(y_{1}, y_{2})$ $\succeq$ $(x_{1},x_{2})$, se concluye que $(x_{1}, x_{2})$ $\sim$ $(y_{1},y_{2})$.
+\bigskip
+\item <2> si $(x_{1}, x_{2})$ $\succeq$ $(y_{1},y_{2})$, pero sabemos que no se da $(x_{1}, x_{2})$ $\sim$ $(y_{1},y_{2})$, se puede concluir que
+$(x_{1}, x_{2})$ $\succ$ $(y_{1},y_{2})$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos sobre las preferencias: los axiomas de la teoría del consumidor}
+\begin{itemize}
+\item <1> Completas $\Longrightarrow$ es posible comparar dos cestas cualesquiera 
+$$(x_{1}, x_{2}) \succeq (y_{1},y_{2}) $$
+$$(y_{1},y_{2})  \succeq (x_{1}, x_{2})$$
+\item <2> Reflexivas $\Longrightarrow$ Cualquier cesta es al menos tan buena como ella misma $(x_{1}, x_{2})$ $\succeq$ $(x_{1},x_{2})$
+\bigskip
+\item <3> Transitivas $\Longrightarrow$ si $(x_{1}, x_{2})$ $\succeq$ $(y_{1},y_{2})$ y $(y_{1}, y_{2})$ $\succeq$ $(z_{1},z_{2})$, entonces $(x_{1}, x_{2})$ $\succeq$ $(z_{1},z_{2})$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Las curvas de indiferencia}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{Pref1}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Las curvas de indiferencia}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{Pref2}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Las curvas de indiferencia}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=9.5cm]{Pref3}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Las curvas de indiferencia}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Prefenciadebil}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Propiedades de las curvas de indiferencia}
+	\begin{itemize}
+		\item <1> Las curvas de indiferencia son densas
+		\bigskip
+		\item <1> Se prefieren las curvas de indiferencia más altas a las más bajas
+		\bigskip
+		\item <1> Las curvas de indiferencia tienen pendiente negativa (RMS negativa)
+		\bigskip
+		\item <1> Las curvas de indiferencia no se cortan
+		\bigskip
+		\item <1> Las curvas de indiferencia son convexas
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Se prefieren las curvas de indiferencia más altas a las más bajas}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{propiedad1}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Las curvas de indiferencia tienen pendiente negativa (RMS negativa)}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{propiedad2}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las curvas no pueden cortarse}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{pref4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: Bienes sustitutos perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{sustitutos}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: Bienes complementarios perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{complementarios}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: males}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{males}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: neutrales}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{neutrales}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: preferencias saciadas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{saciadas}
+%\includegraphics[width=12cm]{pref5}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejemplos de preferencias: preferencias discretas}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{pref6}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de preferencias: preferencias discretas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{discretas}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las preferencias regulares}
+\begin{itemize}
+\item <1> Preferencias monótonas. Si $(x_{1}, x_{2})$ es una cesta bienes y  $(y_{1},y_{2})$  es una que contiene al menos la misma cantidad de ambos bienes y más de uno de ellos entonces:
+$$(y_{1},y_{2}) \succeq (x_{1}, x_{2})$$ 
+
+$\Longrightarrow$ pendiente negativa
+
+\bigskip
+\item <2> Son convexas al origen
+\bigskip
+\item <3> Son densas
+\bigskip
+\item <4> No pueden cortarse (Listo)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preferencias monótonas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{monotonas}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las preferencias regulares $\Longrightarrow$ conjunto convexo}
+\begin{itemize}
+\item <1> Si se prefieren las medias a los extremos, es decir si tenemos: $(x_{1}, x_{2})$ y  $(y_{1},y_{2})$ en la misma curva de indiferencia y tomanos una media ponderada $(\frac{1}{2}x_{1} + \frac{1}{2} y_{1} , \frac{1}{2}x_{2}+ \frac{1}{2}y_{2})$, entonces esta cesta es tan buena $(\succeq)$ o mejor $(\succ)$.
+\bigskip
+\item <2> De modo general: $(tx_{1}+(1-t)y_{1}, tx_{2}+(1-t)y_{2})$ $\succeq$ $(x_{1}, x_{2})$ para cualquier t tal que $(0 \leq t \leq 1)$
+\bigskip
+\item <3> Preferencias convexas
+\bigskip
+\item <4> Convexidad estricta $\Longrightarrow$ desigualdad estricta
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Preferencias convexas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{convexas}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{convexas1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{convexas2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Relación Marginal de Substitución (RMS)}
+\begin{center}
+Convexidad $\Longrightarrow$ RMS decreciente
+\begin{figure}
+\includegraphics[width=8cm]{rms}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interpretaciones adicionales de la RMS}
+	\begin{itemize}
+		\item <1> RMS $\Longrightarrow$ disposición a pagar.
+		\bigskip
+		\item <2> Lo que se tiene que pagar depende del precio del bien, lo que estamos dispuestos a pagar dependerá de las preferencias.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interpretaciones adicionales de la RMS}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{rms1}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tarea para entregar 09/09/2014 (martes) hasta las 12:00 del mediodía}
+	\begin{itemize}
+		\scriptsize
+		\item <1> Busque la definición de funciones convexas, estrictamente convexas, cóncavas y estrictamente cóncavas. y explique con sus propias palabras en que consiste cada una de ellas.
+		\bigskip
+		\item <1> Entregar 3 ejemplos de cada una y explicar por qué son consideradas como tal.
+		\bigskip
+		\item <1> Definir en que consiste el test de la segunda derivada para determinar si una función es concava, convexa, estrictamente convexas y estrictamente cóncava.
+		\bigskip
+		\item <1> Utilizar los ejemplos del punto 2 para aplicar el test de la segunda derivada y verificar el tipo de función.
+		\bigskip
+		\item <1> Buscar ejemplos de funciones convexas y concavas aplicadas a la teoría del consumidor. Explicar que elementos conforman la función y cual es su fundamento económico.
+		\bigskip
+		\item <1> El trabajo debe ser entregado con bolígrafo negro, en hojas cuadriculadas, debidamente corcheteado, y no debe superar las 10 paginas.
+	\end{itemize}
+\end{frame}
+
+\end{document} %fin del documento
+
+
+\begin{frame}
+\frametitle{Interpretaciones adicionales de la RMS}
+\begin{itemize}
+\item <1> Substitutos perfectos $\Longrightarrow$ RMS constante e igual a $-1$.
+\bigskip
+\item <2> Neutrales $\Longrightarrow$ RMS es infinita en todos los puntos.
+\bigskip
+\item <3> Complementarios perfectos $\Longrightarrow$ RMS no puede ser mayor que 0.
+\end{itemize}
+\end{frame}

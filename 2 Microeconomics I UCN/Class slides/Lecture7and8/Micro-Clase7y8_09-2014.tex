@@ -1,0 +1,337 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#7 - La utilidad}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 7 22/09/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Septiembre 22 de 2014}
+
+%\date{\today}
+
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> El problema de cuantificar la utilidad $\Longrightarrow$ Dio paso a las preferencias.\\
+\bigskip
+\item <1> Las preferencias son el fundamento para analizar la elección, la utilidad es una forma de describirlas.\\
+\bigskip
+\item <1> ¿Qué es una función de utilidad?
+$$(x_{1}, x_{2})\succ(y_{1},y_{2})$$ si y sólo si
+$$u(x_{1}, x_{2})> u(y_{1},y_{2})$$
+\bigskip
+\item <1> Utilidad ordinal vs utilidad cardinal.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Importa el orden no la magnitud}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformación monótona}
+\begin{itemize}
+\item <1> No hay una sola manera de asignar utilidades.
+\bigskip
+\item <1> Transformaciones monótonas:
+$u_{1}>u_{2}$ $\Longrightarrow$ $f(u_{1})>f(u_{2})$
+\bigskip
+\item <2> En general las transformaciones monótonas pueden ser:
+\begin{itemize}
+\bigskip
+\item <2> Multiplicación por un número positivo $\Longrightarrow$ $f(u)=3u$
+\bigskip
+\item <2> Suma de cualquier número $\Longrightarrow$ $f(u)=u+17$
+\bigskip
+\item <2> Elevación a una potencia impar $\Longrightarrow$ $f(u)=u^{3}$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformación monótona}
+\begin{itemize}
+\item <1> Tasa de variación de  $f(u)$ $\Longrightarrow$ Variación que experimenta $f$ entre dos valores de $u$, dividida por la variación de $u$.
+$$\frac{\Delta f}{\Delta u}=\frac{f(u_{2})-f(u_{1})}{u_{2}-u_{1}}$$
+\bigskip
+\item <2> Si $f(u)$ es una transformación monótona de una función de utilidad que representa las preferencias $\succeq$, entonces $f(u(x_{1},x_{2}))$ también es una función de utilidad que representa las mismas preferencias ¿por qué?:
+\begin{itemize}
+\item <2> Decir que $u(x_{1},x_{2})$ representa las preferencias ($\succeq$) significa que $u(x_{1},x_{2})>u(y_{1},y_{2})$, si y solo si $(x_{1},x_{2})\succ(y_{1},y_{2})$
+\item <2> Pero si $f(u)$ es una transformación monótona, $u(x_{1},x_{2})>u(y_{1},y_{2})$, si y solo si $f(u(x_{1},x_{2}))\succ f(u(y_{1},y_{2}))$
+\item <2> Por lo tanto, $f(u(x_{1},x_{2}))\succ f(u(y_{1},y_{2}))$, si y sólo si  $(x_{1},x_{2})\succ(y_{1},y_{2})$, por lo que $f(u)$ representa las preferencias $\succeq$ de la misma forma que $u(x_{1},x_{2})$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformación monótona}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Construcción de una función de utilidad $\Longrightarrow$ de la utilidad a las curvas de indiferencia}
+\begin{itemize}
+\item <1> Si se excluyen los casos con preferencias in-transitivas, se puede encontrar siempre una función de utilidad para representar dichas preferencias.
+\bigskip
+\item <2> Si tenemos $u(x_{1},x_{2})$ se pueden trazar curvas de indiferencia. Se debe dibujar todos los puntos $(x_{1},x_{2})$, de tal manera que $u(x_{1},x_{2})$ sea una constante $\Longrightarrow$ Lo habíamos explicado como curva de nivel.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Construcción de una función de utilidad}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad3}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{itemize}
+\item <1> Suponga $u(x_{1},x_{2})=x_{1}*x_{2}$ ¿Cómo son las curvas de indiferencia?
+\bigskip
+\item <2> Suponga la función de utilidad $v(x_{1},x_{2})=x_{1}^{2}*x_{2}^{2}$ ¿Cómo son las curvas de indiferencia?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad4}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{De las curvas de indiferencia  a la función de utilidad (Dos formas)}
+\begin{itemize}
+\item <1> Matemáticamente $\Longrightarrow$ Dadas las curvas de indiferencia, se debe encontrar una función que sea constante a lo largo de cada una.
+\bigskip
+\item <2> Dada una descripción de las preferencias $\Longrightarrow$ Qué intenta maximizar el individuo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo obtener funciones de utilidad para distinto tipo de preferencias}
+\begin{itemize}
+\item <1> Substitutos perfectos:
+$$u(x_{1},x_{2})=ax_{1}+bx_{2}$$
+\bigskip
+\item <2> Complementarios perfectos:
+$$u(x_{1},x_{2})=min(ax_{1},bx_{2})$$
+\bigskip
+\item <3> Preferencias Cobb-Douglas $\Longrightarrow$ ejemplo natural de preferencias regulares
+$$u(x_{1},x_{2})=x_{1}^{c}x_{2}^{d}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{utilidad5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de transformaciones monótonas con la función Cobb-Douglas}
+\begin{itemize}
+\item <1> Transformación logarítmica: $v(x_{1},x_{2})=ln(x_{1}^{c}x_{2}^{d})$
+$$v(x_{1},x_{2})=ln(x_{1}^{c}x_{2}^{d})$$
+$$=c*ln x_{1}+ d*ln x_{2}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplos de transformaciones monótonas con la función Cobb-Douglas}
+\begin{itemize}
+\item <1> Ahora suponga : $v(x_{1},x_{2})=x_{1}^{c}x_{2}^{d}$, si elevamos la utilidad a la potencia $\frac{1}{c+d}$, se obtiene:
+$$=x_{1}^{\frac{c}{c+d}}x_{2}^{\frac{d}{c+d}}$$
+\bigskip
+\item <1> Esto implica que siempre se puede tener una transformación monótona de la función de utilidad Cobb-Douglas en la que los exponentes sumen uno
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Utilidad marginal}
+\begin{itemize}
+\item <1> Utilidad marginal:
+$$UM_{1}=\frac{\Delta U}{\Delta x_{1}}=\frac{u(x_{1}+\Delta x_{1}, x_{2})- u(x_{1}, x_{2})}{\Delta x_{1}}$$
+$$UM_{2}=\frac{\Delta U}{\Delta x_{2}}=\frac{u(x_{1}, x_{2}+ \Delta x_{2})- u(x_{1}, x_{2})}{\Delta x_{2}}$$
+\bigskip
+\item <1> La utilidad marginal como número sólo sirve para representar la forma en que los individuos ordenan la cesta de bienes. Depende de la función de utilidad específica.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Utilidad marginal y la RMS}
+\begin{itemize}
+\item <1> Partiendo de la función de utilidad $u(x_{1}, x_{2})$
+$$UM_{1}\Delta x_{1}+UM_{2}\Delta x_{2}=\Delta U=0$$
+$$RMS=\frac{\Delta x_{2}}{\Delta x_{1}}=-\frac{UM_{1}}{UM_{2}}$$
+\item <1> La función de utilidad y la de utilidad marginal no son únicas, cualquier transformación monótona proporciona una función de utilidad igualmente válida.
+\bigskip
+\item <1> Las transformaciones monótonas alteran las utilidades marginales, pero no la RMS.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Derivando la RMS}
+\begin{itemize}
+\item <1> Considerando una variación $(dx_{1}, dx_{2})$ que mantenga constante la utilidad:
+
+$$du=\frac{\partial u(x_{1}, x_{2})}{\partial x_{1}}dx_{1}+ \frac{\partial u(x_{1}, x_{2})}{\partial x_{2}}dx_{2}=0$$
+debemos llegar a:
+$$RMS=\frac{dx_{2}}{dx_{1}}=-\frac{UM_{1}}{UM_{2}}$$
+$$RMS=\frac{\Delta x_{2}}{\Delta x_{1}}=-\frac{UM_{1}}{UM_{2}}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio \#1}
+\begin{itemize}
+\item <1> Obtenga la RMS para la siguiente función Cobb-Douglas:
+
+$$u(x_{1},x_{2})=x_{1}^{c}x_{2}^{d}$$
+
+Debería llegar a:
+
+$$RMS=-\frac{c*x_{2}}{d*x_{1}}$$
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Ejercicio \#2}
+\begin{itemize}
+\item <1> Anteriormente dijimos que una transformación monótona puede afectar las utilidades marginales, pero no la RMS. Demuestre que la siguiente transformación logarítmica es monótona:
+
+$$u(x_{1},x_{2})=ln(x_{1}^{c}x_{2}^{d})$$
+
+Se debería llegar a la misma RMS  del ejercicio número 1 ?
+\end{itemize}
+\end{frame}
+
+
+\end{document}

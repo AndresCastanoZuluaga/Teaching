@@ -1,0 +1,362 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#9 - La elección}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 9  13/10/2014]
+{Ingeniería Comercial  \\
+Universidad Católica del Norte\\
+
+Octubre 13 de 2014}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{La elección}
+\begin{frame}
+\frametitle{La elección}
+\begin{itemize}
+\item <1> Los consumidores eligen la mejor cesta que pueden adquirir.\\
+\bigskip
+\item <1> De acuerdo a la restricción presupuestaria del individuo, el individuo trata de ubicarse en la curva de indiferencia más alta posible.\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La elección óptima}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{eleccion1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La elección óptima}
+\begin{itemize}
+\item <1> Condición necesaria (Condición de tangencia): La curva de indiferencia es tangente a la recta presupuestaria.
+\bigskip
+\item <1> Dicho punto de tangencia implica que la pendiente de la curva de indiferencia y la pendiente de la recta presupuestaria deben ser iguales.
+\bigskip
+\item <1> Es la condición de tangencia, una condición suficiente?, exploremos algunos casos alternativos.....
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Caso 1: La curva de indiferencia podría no ser tangente $\Longrightarrow$ Gustos en vértice}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=8cm]{elec-optima2}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Caso 2: La curva de indiferencia podría no ser tangente $\Longrightarrow$ El óptimo de esquina}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=9cm]{elec-optima3}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{La elección óptima $\Longrightarrow$ óptimo interior}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=8cm]{eleccion1}
+		\end{figure}
+		Cuando $x_{1}^{*}>0$ y $x_{2}^{*}>0$ la canasta demandada es interior. 
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La elección óptima $\Longrightarrow$ más de una tangecia}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{eleccion2}
+\end{figure}
+\end{center}
+¿Entonces por qué la tangencia es una condición necesaria pero no suficiente para la la existencia de un óptimo del consumidor?
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elección óptima}
+\begin{itemize}
+\item <1> La condición de tangencia se convierte en una \emph{Condición Suficiente} sólo en el caso de que las preferencias sean convexas.
+\bigskip
+\item <1> Si las curvas son estrictamente convexas, sólo habrá una elección óptima en cada restricción presupuestaria.
+\bigskip
+\item <1> La elección óptima interior para una curva de indiferencia de preferencias regulares satisface dos condiciones:
+\begin{itemize}
+	\item <1> El ingreso se agota: $p_{1}x_{1}^{*}+p_{1}x_{1}^{*}=m$
+	\item <1> $RMS=-\frac{p_{1}}{p_{2}}$
+\end{itemize}
+\item <1> Qué implicaciones económicas tienen que RMS debe ser igual a la pendiente de la restricción presupuestaria en un óptimo interior?
+\begin{itemize}
+\item <1> $RMS=-\frac{p_{1}}{p_{2}}$
+\item <1> Imagine que la RMS es distinta de la relación de precios ¿Está tomando el consumidor una decisión óptima?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La demanda del consumidor}
+\begin{itemize}
+\item <1> La elección óptima de los bienes 1 y 2 $(x_{1}^{*}, x_{2}^{*})$, dado un conjunto de precios y renta determinado, se denomina cesta demandada.
+\bigskip
+\item <1> La mejor de las canastas factibles es conocida como la demanda ordinaria a los precios y ingresos dados.
+\bigskip
+\item <1> Funciones de demanda.
+$$x_{1}(p_{1}, p_{2}, m)$$
+$$x_{2}(p_{1}, p_{2}, m)$$
+\bigskip
+\item <1> Cada tipo de preferencia da lugar a funciones de demanda distintas.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejemplo: estimando la demanda ordinaria para el caso de una función Cobb-Douglas}
+	\begin{itemize}
+		\item <1> Si las preferencias son Cobb-Douglas:
+		$$U(x_{1}, x_{2})=x_{1}^{a}x_{2}^{b}$$
+		\item <2> Cuyas utilidades marginales son:
+		$$UMg_{1}=\frac{\partial U(x_{1}, x_{2})}{\partial x_{1}}=ax_{1}^{a-1}x_{2}^{b}$$
+		$$UMg_{2}=\frac{\partial U(x_{1}, x_{2})}{\partial x_{2}}=bx_{1}^{a}x_{2}^{b-1}$$
+		\item <3> Y la tasa marginal de sustitución:
+		$$TMgS=RMS=-\frac{\frac{\partial U(x_{1}, x_{2})}{\partial x_{1}}}{\frac{\partial U(x_{1}, x_{2})}{\partial x_{2}}}=-\frac{ax_{2}}{bx_{1}}$$	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ejemplo: estimando la demanda ordinaria para el caso de una función Cobb-Douglas}
+	\begin{itemize}
+		\item <1> En $(x_{1}^{*}, x_{2}^{*})$ se debe cumplir que TMgS (RMS)  es igual a la pendiente de la restricción presupuestaria, por lo tanto:
+		$$TMgS=-\frac{p_{1}}{p_{2}}$$
+      $$-\frac{ax_{2}^{*}}{bx_{1}^{*}}=-\frac{p_{1}}{p_{2}}$$
+		$$x_{2}^{*}=\frac{bp_{1}}{ap_{2}}x_{1}^{*}$$
+		\item <1> Y además hemos visto que  $(x_{1}^{*}, x_{2}^{*})$ agota el presupuesto:
+	 $$p_{1}x_{1}^{*}+p_{1}x_{1}^{*}=m$$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ejemplo: estimando la demanda ordinaria para el caso de una función Cobb-Douglas}
+	\begin{itemize}
+		\item <1> Sustituyendo $x_{2}^{*}$ en la condición 2 se obtiene:
+		$$x_{1}^{*}=\frac{am}{(a+b)p_{1}}$$
+		\item <1> Sustituyendo $x_{1}^{*}$ en la solución para  $x_{2}^{*}$ se obtiene:
+		$$x_{2}^{*}=\frac{bm}{(a+b)p_{2}}$$
+		\item <1> Por lo tanto hemos descubierto que la mejor canasta factible para el consumidor con preferencias Cobb-Douglas es:
+$$(x_{1}^{*},x_{2}^{*})=
+\{\frac{am}{(a+b)p_{1}} , \frac{bm}{(a+b)p_{2}}\}$$
+		\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Graficamente}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{elec-optima4}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Escenarios alternativos}
+	\begin{itemize}
+		\item <1> ¿Pero, y si $x_{1}^{*}=0$?
+		\bigskip
+		\item <1> ¿Pero, y si $x_{2}^{*}=0$? 
+        \bigskip
+        \item <1> Cómo podría describir la solución?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ejemplo soluciones de esquina $\Longrightarrow$sustitutos perfectos}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{elec-optima5}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ejemplo soluciones de esquina $\Longrightarrow$sustitutos perfectos}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{elec-optima6}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo soluciones de esquina $\Longrightarrow$sustitutos perfectos}
+\begin{itemize}
+\item <1> En definitiva, si la función de utilidad es $U(x_{1},x_{2})=x_{1}+x_{2}$ la canasta óptima es $(x_{1}^{*},x_{2}^{*})$ donde:
+\bigskip
+\begin{itemize}
+\item <1> Si $p_{1}<p_{2}$:
+$$(x_{1}^{*},x_{2}^{*}) =(\frac{m}{p_{1}}, 0)$$
+\bigskip
+\item <1>Si $p_{1}>p_{2}$:
+$$(x_{1}^{*},x_{2}^{*}) =(0,\frac{m}{p_{2}})$$
+\end{itemize}
+\bigskip
+\item <1> Conclusión: si dos bienes son sustitutos perfectos, el consumidor comprará el más barato.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejemplo soluciones de esquina $\Longrightarrow$ el caso de preferencias no convexas (cóncavas)}
+		\begin{center}
+			\begin{figure}
+				\includegraphics[width=8cm]{eleccion5}
+			\end{figure}
+		\end{center}
+	\begin{itemize}
+		\item <1> La solución de tangencia no es óptima
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo de soluciones en punta (vertices) $\Longrightarrow$ Complementarios perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{elec-optima7}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejemplo de soluciones en punta (vertices) $\Longrightarrow$ Complementarios perfectos}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=6.5cm]{elec-optima8}
+		\end{figure}
+	\end{center}
+		\begin{itemize}
+			\item <1> Deberían llegar a que:
+			$$x_{1}^{*}=\frac{m}{p_{1}+ap_{2}}$$
+			$$x_{2}^{*}=\frac{am}{p_{1}+ap_{2}}$$
+		\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Ejemplo de soluciones en punta (vertices) $\Longrightarrow$ Complementarios perfectos}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=9cm]{elec-optima9}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\end{document}
