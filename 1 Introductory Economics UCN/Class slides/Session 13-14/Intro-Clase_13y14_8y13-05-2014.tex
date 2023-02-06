@@ -1,0 +1,382 @@
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+
+\title[Intro. Economía]
+{Introducción a la Economía - semestre I de 2015 \\
+Clase \#12, \#13 y \#14  - Oferta, demanda y política económica}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 12, 13 y 14 ]
+{INGECO \\
+INGESIS \\
+Universidad Católica del Norte\\
+}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Hasta ahora estudiamos la oferta y la demanda desde el punto de vista científico, ahora vamos a estudiar como la política económica puede afectar los resultados de un mercado.\\
+\bigskip
+\item <1> Si bien las condiciones de equilibrio pueden ser eficientes, puede que no todos estén satisfechos con dicho equilibrio.\\
+\bigskip
+\item <1> Para esto los economistas usan la teoría para desarrollar medidas de política económica.\\
+\bigskip
+\begin{itemize}
+\item <1> Fijación de precios mínimos
+\item <1> Fijación de precios máximos
+\item <1> Impuestos $\Longrightarrow$ para que sirven?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\section{Los controles de precios}
+\begin{frame}
+\frametitle{Los controles de precios}
+\begin{itemize}
+\item <1> Se utilizan cuando los diseñadores de política creen que el precio de mercado es injusto para compradores o para vendedores
+\bigskip
+\item <1> El gobierno entonces decide fijar precios máximos o precios mínimos.
+\begin{itemize}
+\bigskip
+\item <1> Precio máximo $\Longrightarrow$ Fijar el precio máximo al que se puede vender un bien.
+\bigskip
+\item <1> Precio mínimo $\Longrightarrow$ Fijar el precio mínimo al que se puede vender un bien.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cómo los precios máximos afectan los resultados del mercado?}
+\begin{itemize}
+\item <1> El precio máximo no es efectivo si se fija por encima del precio de equilibrio.
+\bigskip
+\item <1> El precio máximo es efectivo si se fija por debajo del precio de equilibrio $\Longrightarrow$ escasez
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo 1: Precio máximo inefectivo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{precio_maximo1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 2: Precio máximo efectivo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{precio_maximo2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cómo los precios máximos afectan los resultados del mercado?}
+\begin{itemize}
+\item <1> Un precio máximo efectivo ocasiona:
+\bigskip
+\begin{itemize}
+\bigskip
+\item <1> Escasez $\Longrightarrow$ $Q_{D}>Q_{S}$.
+\begin{itemize}
+\bigskip
+\item <1> Escasez de gasolina de los años 70.
+\end{itemize}
+\bigskip
+\item <1> Racionamiento no relacionado con los precios
+\begin{itemize}
+\bigskip
+\item <1> Largas colas
+\bigskip
+\item <1> Discriminación basada en sesgo del vendedor
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Caso de estudio 1: colas en las gasolineras}
+\begin{itemize}
+\item <1> En 1973, la OPEP subió el precio del crudo en los mercados mundiales. El petróleo crudo es el principal insumo en la gasolina, por lo que los altos precios del petróleo redujo el suministro de gasolina.
+\bigskip
+\item <1> ¿Quién era el responsable de las largas colas en las gasolineras?
+\bigskip
+\item <1> Los economistas culpan a las regulaciones gubernamentales que limitan a las compañías petroleras los precios que podrían cobrar por la gasolina.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Situación inicial: el precio máximo de la gasolina es irrelevante}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{casoestudio_1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Situación final: el precio máximo de la gasolina es relevante}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{casoestudio_2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Caso de estudio 2: control de alquileres en el corto y largo plazo}
+\begin{itemize}
+\item <1> Los controles de alquiler fijan el precio máximo del alquiler que los propietarios pueden cobrar a sus inquilinos.
+\bigskip
+\item <1> El objetivo de la política de control de alquileres es ayudar a los pobres al hacer la vivienda más asequible.
+\bigskip
+\item <1> Un economista llama al control de alquileres ''la mejor manera de destruir una ciudad, aparte de un bombardeo'' $\Longrightarrow$ porqué?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Situación inicial: control de alquileres en el corto plazo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{casoestudio2_1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Situación final: control de alquileres en el largo plazo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{casoestudio2_2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo los precios mínimos afectan los resultados del mercado?}
+\begin{itemize}
+\item <1> Pueden haber dos resultados posibles:
+\begin{itemize}
+\bigskip
+\item <1> El precio mínimo no es efectivo si se fija por debajo del precio de equilibrio.
+\bigskip
+\item <1> El precio mínimo es efectivo si se fija por encima del precio de equilibrio, dando lugar a un superávit.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 3: Precio mínimo inefectivo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{precio_minimo1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 4: Precio mínimo efectivo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{precio_minimo2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo los precios mínimos afectan los resultados del mercado?}
+\begin{itemize}
+\item <1> Un precio mínimo impide la oferta y la demanda se desplace hacia el precio y cantidad de equilibrio.
+\bigskip
+\item <1> Cuando el precio de mercado baja hasta el precio mínimo,  no puede bajar más, y por lo tanto el precio de mercado es igual al precio mínimo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo los precios mínimos afectan los resultados del mercado?}
+\begin{itemize}
+\item <1> Un precio mínimo efectivo debe ocasionar:
+\begin{itemize}
+\item <1> Un superávit dado que $Q_{S}>Q_{D}$.
+\bigskip
+\item <1> Se podría aplicar un racionamiento ajeno a los precios basado en criterios de discriminación.
+\begin{itemize}
+\bigskip
+\item <1> Ejemplos: salario mínimo, apoyo a los precios agrícolas
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso de estudio 3: el salario mínimo}
+\begin{itemize}
+\centering
+\item <1> Un ejemplo importante de un precio mínimo es el salario mínimo. Las leyes de salarios mínimos indican el precio más pequeño posible por el trabajo que cualquier empleador debe pagar.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cómo el salario mínimo afecta el mercado laboral}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{casoestudio3_1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cómo el salario mínimo afecta el mercado laboral}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{casoestudio3_2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Los impuestos}
+\begin{itemize}
+\item <1> Los gobiernos imponen impuestos para gastar en bienes públicos (defensa, parques, carreteras, entre otros).
+\bigskip
+\item <1> ¿Cómo los impuestos afectan los resultados de mercado?
+\begin{itemize}
+\bigskip
+\item <1> Los impuestos desalientan la actividad del mercado.
+\bigskip
+\item <1> Cuando un bien es gravado con un impuesto la cantidad vendida es menor.
+\bigskip
+\item <1> Compradores y vendedores comparten la carga tributaria (incidencia del impuesto).
+\bigskip
+\item <1> Los impuestos llevan a un cambio en el equilibrio del mercado.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Clasificación de los impuestos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{impuestos}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Un impuesto sobre los compradores}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{impuesto1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Un impuesto sobre los vendedores}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{impuesto2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\end{document}
+
+
+
+

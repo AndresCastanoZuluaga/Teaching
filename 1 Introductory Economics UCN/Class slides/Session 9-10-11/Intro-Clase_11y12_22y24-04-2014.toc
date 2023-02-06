@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\'on}{2}{0}{1}
+\beamer@sectionintoc {2}{Determinantes elasticidad precio de la demanda}{5}{0}{2}
+\beamer@sectionintoc {3}{Determinantes de la elasticidad precio de la oferta}{29}{0}{3}
+\beamer@sectionintoc {4}{Determinantes de la elasticidad precio de la oferta}{30}{0}{4}

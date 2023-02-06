@@ -1,0 +1,440 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+
+\title[Intro. Economía]
+{Introducción a la Economía - semestre I de 2015 \\
+Clase  \#9,  \#10 y \#11  - Elasticidad}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 9, 10 y 11 
+]
+{INGECO \\
+INGESIS \\
+Universidad Católica del Norte\\}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Elasticidad $\Longrightarrow$ mide la sensibilidad de compradores y vendedores a las situaciones de mercado.\\
+\bigskip
+\item <2> Hasta ahora el análisis el sentido de los desplazamientos de la demanda y la oferta, pero no la magnitud de la variación $\Longrightarrow$ la elasticidad.\\
+\bigskip
+\item <3> Tipos de elasticidad:
+\begin{itemize}
+\item <3> Elasticidad de la demanda
+\begin{itemize}
+\item <3> Elasticidad precio de la demanda
+\item <3> Elasticidad renta
+\item <3> Elasticidad cruzada
+\end{itemize}
+\item <3> Elasticidad de la oferta
+\begin{itemize}
+\item <3> Elasticidad precio de la oferta
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\section{Determinantes elasticidad precio de la demanda}
+\begin{frame}
+\frametitle{Determinantes elasticidad precio de la demanda}
+\begin{itemize}
+\item <1> Elasticidad precio de la demanda, mide la respuesta de la cantidad de demandada a un cambio en los precios.\\
+\begin{itemize}
+\item <1> Elastica $\Longrightarrow$ respuesta grande $(>1)$
+\item <1> Inelastica $\Longrightarrow$ respuesta baja $(<1)$
+\item <1> Unitaria $\Longrightarrow$ respuesta igual $(=1)$
+\end{itemize}
+\item <1> Determinantes:\\
+\begin{itemize}
+\item <1> Bienes necesarios frente a bienes de lujo
+\begin{itemize}
+\item <1> Bienes necesarios $\Longrightarrow$ demanda inelástica
+\item <1> Bienes de lujo $\Longrightarrow$ demanda elástica
+\end{itemize}
+\item <1> Existencia de substitutos cercanos
+\begin{itemize}
+\item <1> Bienes con muchos substitutos $\Longrightarrow$ demanda elástica
+\item <1> Bienes con pocos substitutos $\Longrightarrow$ demanda inelástica
+\end{itemize}
+\item <1> Definición de mercado
+\item <1> Horizonte temporal
+\begin{itemize}
+\item <1> Alto horizonte temporal $\Longrightarrow$ demanda elástica (ejemplo: gasolina)
+\item <1> Bajo horizonte temporal $\Longrightarrow$ demanda inelástica
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cálculo de la elasticidad precio de la demanda}
+\begin{itemize}
+\item <1> $EPD=\frac{Var \% Q }{Var \% P}$
+\bigskip
+\item <2> Interpretaciones para la EPD:
+\begin{itemize}
+\item <2> Si $EPD(>1)$ la demanda del bien es elástica
+\item <2> Si $EPD(<1)$ la demanda del bien es inelástica
+\item <2> Si $EPD(=1)$ la demanda del bien es unitaria
+\end{itemize}
+\bigskip
+
+\item <3> Se acuerda del ejemplo de cómo disminuir el consumo de tabaco $\Longrightarrow$ un $\Delta$ en $10\%$ del precio reduce la cantidad demandada en 4 \%.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Método del punto medio (elasticidad arco)
+}
+\begin{itemize}
+\item <1> El problema de calcular la elasticidad entre dos puntos de una curva de demanda.
+\bigskip
+\item <2> Suponga que tenemos dos puntos en la curva de demanda:
+$$A=(Q,P)=(120,4)$$
+$$B=(Q,P)=(80, 6)$$
+Realice el cálculo de la EPD de A a B y luego de B a A. ¿Les dio igual?
+\item <3> El método del punto medio permite resolver dicho problema $\Longrightarrow$. Si se tienen dos puntos $(Q_{1}, P_{1})$ y $(Q_{2}, P_{2})$
+$$EPD=\frac{\frac{Q_{2}-Q_{1}}{(\frac{Q_{2}+Q_{1}}{2})}}{\frac{P_{2}-P_{1}}{(\frac{P_{2}+P_{1}}{2})}}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Las curvas de demanda y la elasticidad}
+\begin{itemize}
+\item <1> Entre más plana la curva de demanda, mayor es la EPD.
+\bigskip
+\item <2> Entre más inclinada sea la curva de demanda, menor es la EPD.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso extremo 1: demanda perfectamente inelástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{perf_ine}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso extremo 2: demanda perfectamente elástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{perf_elas}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso intermedio 1: demanda inelástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{ine}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso intermedio 2: demanda elástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{ela}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso intermedio 3: unitaria}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{uni}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{El Ingreso Total y la EPD}
+\begin{itemize}
+\item <1> $IT=P*Q$
+\bigskip
+\item <2> Cómo varía el ingreso total cuando nos movemos a lo largo de la curva de demanda?.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{El Ingreso Total y la EPD}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{IT}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\Delta$ Ingreso Total cuando la demanda es inelástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{IT_ine}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\Delta$ Ingreso Total cuando la demanda es elástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{IT_ela}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Reglas generales}
+\begin{itemize}
+\item <1> Si la curva de demanda es inelástica
+\bigskip
+\begin{itemize}
+\item <1> $(EPD<1)$, un $\Delta P$ $\Longrightarrow$ $\Delta IT$
+\item <1> $(EPD<1)$, un $\nabla P$ $\Longrightarrow$ $\nabla IT$
+\end{itemize}
+\bigskip
+\item <1> Si la curva de demanda es elástica
+\bigskip
+\begin{itemize}
+\item <1> $(EPD>1)$, un $\Delta P$ $\Longrightarrow$ $\nabla IT$
+\item <1> $(EPD>1)$, un $\nabla P$ $\Longrightarrow$ $\Delta IT$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La pendiente de una curva de demanda lineal es constante, pero no su elasticidad}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{ela2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejercicio 1}
+Utilizando los siguientes datos: muestre en una tabla el IT, la EPD, y determine el tipo de elasticidad. Nota: Utilice el método del punto medio.
+\begin{center}
+\begin{figure}
+\includegraphics[width=6cm]{ejercicio}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Solución}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{solucion}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejercicio 2}
+Con los siguientes datos obtener la $e_{PQ}^{QD}$, $E_{R}^{QD}$ y $E_{PR}^{QD}$. De igual modo determinar que tipo de bien es en cada caso.
+\bigskip
+\centering
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  P & Q & R & PR \\
+  \hline
+  100 & 20 & 200 & 80 \\
+  120 & 12 & 190 & 85 \\
+  \hline
+\end{tabular}
+\end{frame}
+
+\section{Determinantes de la elasticidad precio de la oferta}
+\begin{frame}
+\frametitle{Determinantes de la elasticidad precio de la oferta}
+\begin{itemize}
+\item <1> Elasticidad precio de la demanda, mide la respuesta de la cantidad ofrecida a un cambio en los precios.\\
+\begin{itemize}
+\item <1> Elastica $\Longrightarrow$ respuesta grande $(>1)$ (Bienes manufacturados, libros, automóviles)
+\item <1> Inelastica $\Longrightarrow$ respuesta baja $(<1)$ (
+\item <1> Unitaria $\Longrightarrow$ respuesta igual $(=1)$
+\end{itemize}
+\item <1> Determinantes:\\
+\begin{itemize}
+\item <1> Periodo de tiempo examinado
+\begin{itemize}
+\item <1> Corto plazo $\Longrightarrow$ demanda inelástica
+\item <1> Largo plazo $\Longrightarrow$ demanda elástica
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Determinantes de la elasticidad precio de la oferta}
+\begin{frame}
+\frametitle{Determinantes de la elasticidad precio de la oferta}
+\begin{itemize}
+\item <1> Elasticidad precio de la demanda, mide la respuesta de la cantidad ofrecida a un cambio en los precios.\\
+\begin{itemize}
+\item <1> Elastica $\Longrightarrow$ respuesta grande $(>1)$ (Bienes manufacturados, libros, automóviles)
+\item <1> Inelastica $\Longrightarrow$ respuesta baja $(<1)$ (
+\item <1> Unitaria $\Longrightarrow$ respuesta igual $(=1)$
+\end{itemize}
+\item <1> Determinantes:\\
+\begin{itemize}
+\item <1> Periodo de tiempo examinado
+\begin{itemize}
+\item <1> Corto plazo $\Longrightarrow$ demanda inelástica
+\item <1> Largo plazo $\Longrightarrow$ demanda elástica
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso extremo 1: oferta perfectamente inelástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{perf_ine1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso extremo 2: oferta perfectamente elástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{perf_elas1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso intermedio 1: oferta inelástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{ine1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso intermedio 2: oferta elástica}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{ela1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso intermedio 3: unitaria}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{uni1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Cómo varía la EPO a lo largo de la curva de oferta}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{elas_oferta}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document}
+
+
+

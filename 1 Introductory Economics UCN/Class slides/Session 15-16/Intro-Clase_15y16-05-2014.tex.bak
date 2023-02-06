@@ -1,0 +1,427 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía (EC100)-I semestre de 2014 \\
+Clase \#15 y \#16  - Los consumidores, los productores
+y la eficiencia de los mercados}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 15y16 15y20/05/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Mayo 15 y 20 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> ¿El precio y cantidad de equilibrio  maximizan el bienestar total de los compradores y vendedores?\\
+\bigskip
+\item <1> El equilibrio del mercado refleja la forma en que los mercados asignaran los recursos escasos.\\
+\bigskip
+\item <1> La economía del bienestar aborda al pregunta ¿Es la asignación de mercado deseable?\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La economía del bienestar}
+\begin{itemize}
+\item <1> La economía del bienestar es el estudio de cómo la asignación de recursos afecta al bienestar económico.
+\bigskip
+\item <1> Los compradores y los vendedores reciben los beneficios de la participación en el mercado.
+\bigskip
+\item <1> El equilibrio en un mercado maximiza el bienestar total de los compradores y vendedores.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Economía del bienestar}
+\begin{itemize}
+\item <1> Excedente del consumidor $\Longrightarrow$ mide el bienestar económico del lado del comprador.
+\bigskip
+\item <1> Excedente del productor $\Longrightarrow$ mide el bienestar económico del lado del vendedor.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Excedente del consumidor}
+\begin{itemize}
+\item <1> Disponibilidad a pagar $\Longrightarrow$ máxima cantidad que un comprador pagará por un bien.
+\bigskip
+\item <1> Mide cómo el comprador valora el bien o servicio.
+\bigskip
+\item <1> El área bajo la curva de demanda y arriba del precio mide el excedente del consumidor en el mercado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Disponibilidad a pagar}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Disponibilidad a pagar}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Excedente individual}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[width=7cm,height=4cm]{grafico4_1}\\
+\includegraphics[width=7cm,height=4cm]{grafico4_2}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Excedente total}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efecto de cambios en los precios en el excedente del consumidor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{grafico6}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Algunos comentarios}
+\begin{itemize}
+\item <1> Después de analizar los gráficos anteriores, podemos concluir que el excedente del consumidor, es la cantidad que los compradores están dispuestos a pagar por un bien menos la cantidad que efectivamente pagan por ella.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Excedente del productor}
+\begin{itemize}
+\item <1> El excedente del productor es la cantidad que un vendedor se le paga por un bien menos el costo del vendedor.
+\bigskip
+\item <1> Mide el beneficio para los vendedores que participan en un mercado.
+\bigskip
+\item <1> El área encima de la curva de oferta y debajo del precio mide el excedente del productor en el mercado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Excedente productor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico7}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Excedente productor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico8}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Excedente productor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico9}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Excedente individual}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[width=6cm,height=4cm]{grafico10}\\
+\includegraphics[width=6cm,height=4cm]{grafico11}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Excedente total}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico12}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Efecto de cambios en los precios en el excedente del productor}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{grafico13}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Eficiencia del mercado}
+\begin{itemize}
+\item <1> Después de obtener los excedentes, una pregunta interesante sería ¿Es la asignación de libro mercado deseable?
+\bigskip
+\item <1> Excedente del consumidor:
+\begin{itemize}
+\item <1> Valor para los compradores $-$ cantidad pagada por los compradores.
+\end{itemize}
+\item <1> Excedente del productor:
+\begin{itemize}
+\item <1> valor para los vendedores $-$ el costo de los vendedores
+\end{itemize}
+\item <1> Excedente total:
+\begin{itemize}
+\item <1> Excedente del consumidor $+$ excedente del productor
+\bigskip
+\item <1> Valor para los compradores $-$ costo para los vendedores
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Evaluación del equilibrio de mercado}
+\begin{itemize}
+\item <1> La eficiencia $\Longrightarrow$ propiedad de una asignación de recursos de maximizar el excedente total recibido por todos los miembros de la sociedad.
+\bigskip
+\item <1> La equidad $\Longrightarrow$ Justicia de la distribución del bienestar entre compradores y vendedores.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Excedente del productor y del consumidor en el equilibrio de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{grafico14}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Algunas conclusiones de los resultados del mercado}
+\begin{itemize}
+\item <1> Pueden el planificador social alterando el reparto de consumo o el reparto de producción? $\Longrightarrow$ No
+\begin{itemize}
+\item <1> Los libres mercados asignan la oferta de bienes a los compradores que conceden más valor, representado por su disposición a pagar.
+\item <1> Los libres mercados asignan la demanda de bienes a los vendedores que los pueden producir con el menor coste.
+\end{itemize}
+\item <1> Pueden el planificador social aumentando o reduciendo la cantidad del bien? $\Longrightarrow$ No
+\begin{itemize}
+\item <1> Los libres mercados producen la cantidad de bienes que maximiza la suma del excedente del consumidor y del productor.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La eficiencia de la cantidad de equilibrio}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{grafico15}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Algunas conclusiones de los resultados del mercado}
+\begin{itemize}
+\item <1> Debido a que la asignación de mercado es eficiente, el planificador social no debe intervenir.
+\bigskip
+\item <1> ''Dejar las cosas como van'' $\Longrightarrow$ ''laissez faire''
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cuando la estructura del mercado puede llevar a ineficiencia?}
+\begin{itemize}
+\item <1> Si un sistema de mercado no es perfectamente competitivo, puede surgir  el poder de mercado.
+\begin{itemize}
+\bigskip
+\item <1> Capacidad para ejercer influencia en los precios.
+\bigskip
+\item <1> El poder de mercado puede llevar a ineficiencia en el mercado.
+\end{itemize}
+\bigskip
+\item <1> Externalidades
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efecto de los impuestos en el bienestar}
+\begin{itemize}
+\item <1> Con anterioridad observamos que un impuesto disminuye tanto el bienestar de los compradores (sube el precio que pagan) como el de los vendedores (disminuye el precio que reciben).
+\bigskip
+\item <1> Para mirar el efecto sobre el bienestar, debemos tener en cuenta el efecto sobre los ingresos que recauda el estado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pérdida irrecuperable de eficiencia causada por los impuestos}
+\begin{itemize}
+\item <1> Con anterioridad observamos que un impuesto disminuye tanto el bienestar de los compradores (sube el precio que pagan) como el de los vendedores (disminuye el precio que reciben).
+\bigskip
+\item <1> Para mirar el efecto sobre el bienestar, debemos tener en cuenta el efecto sobre los ingresos que recauda el estado.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ingresos fiscales y efectos de un impuesto}
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{grafico16}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cómo afecta un impuesto al bienestar?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{grafico17}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Efectos en el bienestar de un impuesto}
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{grafico18}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Determinantes de la pérdida irrecuperable de eficiencia}
+\begin{itemize}
+\item <1> Depende de que tanto responde la cantidad demandada y ofrecida ante cambios en los precios $\Longrightarrow$ EPD y EPO.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Efecto de las EPD y EPO en la pérdida de eficiencia}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[width=6cm,height=4cm]{grafico19}\\
+\includegraphics[width=6cm,height=4cm]{grafico20}
+\column{.5\textwidth}
+\centering
+\includegraphics[width=6cm,height=4cm]{grafico21}\\
+\includegraphics[width=6cm,height=4cm]{grafico22}
+\end{columns}
+\end{frame}
+
+\end{document}
+
+
+
