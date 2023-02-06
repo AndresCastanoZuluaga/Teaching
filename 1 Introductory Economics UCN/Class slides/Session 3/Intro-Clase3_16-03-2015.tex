@@ -1,0 +1,214 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Intro. Economía]
+{Introducción a la Economía - semestre I de 2015 \\
+Clase \#3 - El economista como científico y su papel en la economía}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 3 ]
+{INGECO \\
+ INGESIS \\
+Universidad Católica del Norte\\
+}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{El economista como científico}
+\begin{frame}
+\frametitle{El economista como cientifico}
+\begin{itemize}
+\item <1> Qué significa pensar como un economista?.\\
+\bigskip
+\item <2> La esencia de la ciencia es el método científico.\\
+\bigskip
+\item <3> Ciencias sociales vs. ciencias naturales.
+\bigskip
+\item <4> La importancia de los experimentos naturales
+\bigskip
+\item <5> Construcción de modelos $\Longrightarrow$ El rol de los supuestos y su validez
+\begin{itemize}
+\bigskip
+\item <5> Planteamiento directo $\Longrightarrow$ validez de los supuestos
+\item <5> Planteamiento indirecto $\Longrightarrow$ Que pueda predecir la realidad
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Nuestro primer modelo:} el diagrama de flujo circular}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{diagrama}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\textbf{Nuestro segundo modelo:} la frontera de posibilidades de producción (lineal)}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=10cm]{frontera3}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Nuestro segundo modelo:} la frontera de posibilidades de producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{frontera3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Nuestro segundo modelo:} la frontera de posibilidades de producción}
+\begin{center}
+\begin{figure}
+\includegraphics[width=9cm]{frontera4}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Niveles de estudio de la economía}
+\centering
+\begin{itemize}
+\item <1> \textbf{Microeconomía:} Es el estudio de la economía al nivel de los consumidores individuales, grupos de consumidores, o empresas, con el fin de determinar la asignación eficiente de recursos escasos entre usos alternativos.
+\bigskip
+\item <2> Piense ahora: ¿Qué sería la macroeconomía?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Se entendió la diferencia?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Micro1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Micro2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Micro o macro?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{Macro4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\end{document} %fin del documento

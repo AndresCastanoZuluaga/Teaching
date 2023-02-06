@@ -1,0 +1,3 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{El economista como cient\IeC {\'\i }fico}{2}{0}{1}

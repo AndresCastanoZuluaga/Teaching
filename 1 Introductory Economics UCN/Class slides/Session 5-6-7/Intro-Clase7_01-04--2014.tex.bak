@@ -1,0 +1,395 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{caption}[numbered]
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía (EC100)-I semestre de 2014 \\
+Clase \#7 y \#8  - Elementos de oferta y demanda}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 7y8 01y03/04/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Abril 1 y 3 de 2014}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Cómo afectará un acontecimiento o medida a la economía $\Longrightarrow$ Oferta y demanda.\\
+\bigskip
+\item <2> Mercados organizados vs mercados en general.\\
+\bigskip
+\item <3> Tipos de mercado:
+\begin{itemize}
+\item <3> Mercado competitivo
+\item <3> Monopolio
+\item <3> Oligopolio
+\item <3> Competencia monopolística
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Elementos de demanda}
+\begin{frame}
+\frametitle{Elementos de demanda}
+\begin{itemize}
+\item <1> ¿Que determina la cantidad que demanda una persona? $\Longrightarrow$ El mercado de helados.\\
+\bigskip
+\begin{itemize}
+\item <1> El precio $\Longrightarrow$ Ley de demanda
+\item <1> La renta $\Longrightarrow$ Bien normal, bien inferior
+\item <1> Precio de los relacionados $\Longrightarrow$ bienes substitutos, bienes complementarios
+\item <1> Los gustos
+\item <1> Las expectativas
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tabla de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{tabla}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curva de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{curva}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La demanda individual vs la demanda de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{demanda_mercado}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La demanda individual vs la demanda de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{demanda_mercado1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La demanda individual vs la demanda de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{demanda_mercado2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\section{Desplazamientos de la curva de demanda}
+\begin{frame}
+\frametitle{Desplazamientos de la curva de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{desplazamiento1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Desplazamientos de la curva de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{desplazamiento}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: Dos formas de reducir la demanda de tabaco}
+\begin{itemize}
+\item <1> Campañas de sensibilización $\Longrightarrow$ desplazan o deslizan la curva de demanda?\\
+\bigskip
+\item <2> Impuestos a la fabricación $\Longrightarrow$ desplaza o desliza la curva de demanda?\\
+\bigskip
+\item <3> Funcionan la segunda medida? $\Longrightarrow$ un $\Delta$ en 10\% del precio reduce la cantidad demandada en 4\%.\\
+\begin{itemize}
+\item <3> Son todos los segmentos igualmente sensibles?
+\item <3> Qué pasa con la demanda de tabaco, si se legaliza la marihuana?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Elementos de oferta}
+\begin{frame}
+\frametitle{Elementos de oferta}
+\begin{itemize}
+\item <1> ¿Que determina la cantidad que ofrece un vendedor? $\Longrightarrow$ El mercado de helados.\\
+\bigskip
+\begin{itemize}
+\item <1> El precio $\Longrightarrow$ Ley de oferta
+\item <1> El precio de los factores de producción
+\item <1> La tecnología
+\item <1> Las expectativas
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tabla de oferta}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{tabla1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curva de oferta}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{curva1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La oferta individual vs la oferta de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{oferta_mercado}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La oferta individual vs la oferta de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{oferta_mercado1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La oferta individual vs la oferta de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{oferta_mercado2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{Desplazamientos de la curva de oferta}
+\begin{frame}
+\frametitle{Desplazamientos de la curva de oferta}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{desplazamiento_oferta}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Desplazamientos de la curva de oferta}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{desplazamiento_oferta1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{El equilibrio}
+
+\begin{frame}
+\frametitle{El equilibrio}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Situación 1: exceso de oferta}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Situación 2: exceso de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pasos para determinar cambios en los equilibrios}
+\begin{itemize}
+\item <1> Determinar si el acontecimiento desplaza la curva de oferta, la de la demanda o quizas las dos.\\
+\bigskip
+\item <1> Determinar el sentido del desplazamiento ( derecha o izquierda).\\
+\bigskip
+\item <1> Utilizar el gráfico de oferta y demanda para determinar como cambia el equilibrio.\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Caso 1: Qué ocurre en el equilibrio del mercado de helados cuando es verano?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document}
+
+
+\begin{frame}
+\frametitle{Caso 1: Qué ocurre en el equilibrio del mercado de helados cuando es verano?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Caso 2: Qué ocurre en el equilibrio del mercado de helados cuando un terremoto destruye fabricas de helado?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso 2: Qué ocurre en el equilibrio del mercado de helados cuando un terremoto destruye fabricas de helado?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso 3: Si ocurren en simultaneo? }
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio6}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Caso 4: porqué el precio del cobre subió luego del terremoto en Iquique?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso 5: porqué el precio del algunos bienes, entre ellos el agua subió luego del terremoto en Iquique?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{equilibrio1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\end{document} %fin del documento

@@ -1,0 +1,309 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Intro. Economía (EC100)]
+{Introducción a la Economía -  semestre I de 2015 \\
+Clase \#2 - 10 principios de la economía}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 2]
+{INGECO \\
+INGESIS \\
+Universidad Católica del Norte\\
+}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{whale} %color del tema
+\usecolortheme{orchid}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Los diez principios de la economía}
+
+\begin{frame}
+\frametitle{Tres: las personas racionales piensan en términos marginales}
+\begin{itemize}
+\item <1> Después de graduarme de Ingeniero Comercial ¿Cómo decidir si estudio uno o dos año más?
+\bigskip
+\item <1> ¿Por qué los futbolistas normalmente no estudian más allá de la secundaria?
+\bigskip
+\item <1> \textbf{Concepto clave:} cambios marginales, beneficios marginales, costos marginales.
+\bigskip
+\item <1> \textbf{Ejemplo 1:} ¿Por qué algunas aerolíneas venden más baratos los pasajes sin reserva?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cuarto: los individuos responden a los incentivos}
+\begin{itemize}
+\item <1> Cuando los individuos toman decisiones de forma racional, su conducta puede cambiar cuando cambian los costes y los beneficios.
+\bigskip
+\item <1> \textbf{Ejemplo 1:} consumo de carne vs Consumo de pollo.
+\bigskip
+\item <1> \textbf{Ejemplo 2:} impuestos a la gasolina.
+\bigskip
+\item <1> \textbf{Ejemplo 3:} La ley sobre el uso de los cinturones de seguridad (Peltzman, 1975).
+\bigskip
+\item <1> \textbf{Ejemplo 4:} ¿Se debe premiar a los carabineros por los partes cursados o por la cantidad de detenidos?
+\bigskip
+\item <1> \textbf{Ejemplo 5:} ¿Se deben vincular los salarios de docentes a una medida de desempeño estudiantil?
+\bigskip
+\item <1> \textbf{Ejemplo 6:} ¿Se debe pagarles a las familias pobres para que sus niños asistan a la escuela?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cuarto: los individuos responden a los incentivos}
+\scriptsize
+\begin{itemize}
+\item <1> No siempre la prohibición y el castigo son efectivos a la hora de modificar conductas.
+\bigskip
+\item <1> \textbf{Nudge theory:} el refuerzo positivo y la sugestión indirecta son más efectivos.
+%\bigskip
+%\item <1> Definición: ''A nudge, as we will use the term, is any aspect of the choice architecture that alters people's behaviour in a predictable way without forbidding any options or significantly changing their economic incentives. To count as a mere nudge, the intervention must be easy and cheap to avoid.'' (Thaler & Sunstein Nudge: Improving Decisions about Health, Wealth  Happiness (2008)).
+\bigskip
+\item <1> \textbf{Ejemplo 1:} Planes de pensiones en EEUU.
+\bigskip
+\item <1> \textbf{Ejemplo 2:} Cómo aumentar el número de donantes en el registro de donantes de organos?
+\bigskip
+\item <1> \textbf{Ejemplo 3:} Cómo hacer que los niños se alimenten sanamente?
+\bigskip
+\item <1> \textbf{Ejemplo 4:} Cómo evitar que los hombres orinen en el suelo?
+\bigskip
+\item <1> \textbf{Ejemplo 5:} Cómo promover la conciencia ciudadana de aseo en las calles?
+\bigskip
+\item <1> \textbf{Ejemplo 6:} Cómo disminuir el exceso de velocidad de los conductores?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 3:} Cómo hacer que los niños se alimenten sanamente?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{food2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 3:} Cómo hacer que los niños se alimenten sanamente?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{food1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 4:} Cómo evitar que los hombres orinen en el suelo?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{orinar2}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 5:} Cómo promover la conciencia ciudadana de aseo en las calles?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{caramelos}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 6:} Cómo disminuir el exceso de velocidad de los conductores?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{velocidad}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 7:} Cómo promover la actividad física?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{PianoStairs}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\textbf{Ejemplo 7:} Cómo promover la actividad física?}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{stairs}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Octavo: el nivel de vida de un país depende de su capacidad para producir bienes y servicios}
+\begin{itemize}
+\item <1> Los ciudadanos de los países de renta alta tienen más televisores, mas automóviles, mejor nutrición, mejor asistencia sanitaria y una esperanza de vida mayor.
+\bigskip
+\item <1> Ver ejemplos en GapMinder
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cinco: el comercio puede mejorar el bienestar de todo el mundo}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{principio5}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Seis: los mercados normalmente constituyen un buen mecanismo para organizar la actividad económica}
+\begin{itemize}
+\item <1> Economía centralmente planificada vs. Economía de mercado.
+\bigskip
+\item <1> Interés personal  o Gobierno paternalista? $\Longrightarrow$ Ni uno ni lo otro
+\bigskip
+\item <1> ''Los hogares y las empresas interactúan en los mercados como si fueran guiados por una \textbf{Mano invisible} que los condujera a obtener un resultado de mercado deseable''
+\begin{itemize}
+\bigskip
+\item <1> \textbf{Instrumento:} precios
+\end{itemize}
+\bigskip
+\item <1> \textbf{Conceptos clave:} Mercado, economía de mercado, planificador central.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Séptimo: el Estado puede mejorar a veces los resultados del mercado}
+\begin{itemize}
+\item <1> ¿Por qué el estado interviene en la economía?
+\begin{itemize}
+\item <1> Promover la eficiencia
+\item <1> Fomentar la equidad
+\end{itemize}
+\bigskip
+\item <2> Fallo de mercado $\Longrightarrow$ El mercado no puede por sí sólo asignar los recursos eficientemente.
+\begin{itemize}
+\bigskip
+\item <2> \textbf{Externalidades}
+\begin{itemize}
+\item <2> \textbf{Ejemplo 1:} ¿Porque sancionar a los camiones que transitan con cobre en avenidas?
+\item <2> \textbf{Ejemplo 2:} ¿Porque subvencionar la investigación?
+\end{itemize}
+\item <2> \textbf{Poder de mercado}
+\begin{itemize}
+\item <2> \textbf{Ejemplo 1:} ¿Porque no se debe permitir una sola compañía de telefonía?
+\item <2> \textbf{Ejemplo 2:} Colusión entre farmacias en Chile
+\item <2> \textbf{Ejemplo 2:} Colusión entre empresas de pollo en Chile
+\end{itemize}
+\item <2> \textbf{Asimetrías de la información}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Noveno: los precios suben cuando el gobierno imprime demasiado dinero}
+\begin{itemize}
+\item <1> \textbf{Concepto clave:} Inflación
+\bigskip
+\item <1> Imprimir demasiado dinero $\Longrightarrow$ $\Delta$ Inflación
+\bigskip
+\item <1> \textbf{Otros motivos:} Guerras, depresiones económicas, trastornos políticos
+\bigskip
+\item <1> \textbf{Ejemplo 1:} Hiperinflación en Alemania en 1930.
+\bigskip
+\item <1> \textbf{Ejemplo 2:} Hiperinflación en Ecuador en 2000.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Decimo: La sociedad se enfrenta a una disyuntiva a corto plazo entre la inflación y el desempleo}
+\begin{itemize}
+\item <1> Conceptos clave:
+\begin{itemize}
+\item <1> Curva de Phillips
+\bigskip
+\item <1> Rigidez de los precios en el corto plazo
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document} 
