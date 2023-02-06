@@ -1,0 +1,400 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#2 - Tipos de modelos, ecuaciones, variables, parámetros}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 2 07/08/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Agosto 7 de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Clasificación de modelos}
+\begin{frame}
+\frametitle{Clasificación de modelos}
+
+\begin{itemize}
+\item <1> De acuerdo a la construcción lógico-empírica.\\
+\bigskip
+\item <1> De acuerdo al dominio de investigación.\\
+\bigskip
+\item <1> De acuerdo a los objetivos o fines para el cual se elabora.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=12cm]{Clasificacion_Constru_Log_Emp}
+\end{center}
+\end{frame}
+
+\section{Ejemplo: Modelo keynesiano explicativo del consumo y del ingreso}
+\begin{frame}
+\frametitle{Ejemplo: Modelo keynesiano explicativo del consumo y del ingreso}
+\begin{equation}
+C_{t}=\beta_{0}+\beta_{1}Y_{t}+\mu_{t}
+\end{equation}
+
+\begin{equation}
+Y_{t}=C_{t}+I_{t}
+\end{equation}
+
+Piense por un momento este modelo es?
+\bigskip
+\begin{itemize}
+\item Lineal o no lineal?
+\item Determinístico o estocástico?
+\item Completo o incompleto?
+\end{itemize}
+\end{frame}
+
+\section{De acuerdo al dominio de investigación...}
+\begin{frame}
+\frametitle{De acuerdo al dominio de investigación...}
+\begin{center}
+\includegraphics[width=9cm]{Clasificacion_Dominio_Invest}
+\end{center}
+\end{frame}
+
+\section{Algunos Ejemplos..}
+\begin{frame}
+\frametitle{Algunos Ejemplos...}
+\begin{block}{\textbf{Modelo histórico $\Longrightarrow$ Mismo momento del tiempo}}
+\begin{equation}
+C_{t}=\alpha_{0}+\alpha_{1}Y_{t} +\mu_{t}
+\end{equation}
+\centering
+$0<\alpha_{1}<1, t=1,2,....,T$
+\end{block}
+
+\begin{block}{\textbf{Modelo a histórico $\Longrightarrow$ No hacen referencia al tiempo}}
+\begin{equation}
+C_{i}=\beta_{0}+\beta_{1}Y_{i} +\mu_{i}
+\end{equation}
+\centering
+$0<\beta_{1}<1$
+\end{block}
+\end{frame}
+
+\section{Modelo de ingreso nacional con impuestos....}
+\begin{frame}
+\frametitle{Modelo de ingreso nacional con impuestos....}
+\begin{block}{\textbf{Clasifiquemos el siguiente modelo...}}
+\begin{equation}
+C_{t}=\alpha_{0}+\alpha_{1}(Y_{t}-T_{t}) +\mu_{1t}
+\end{equation}
+\centering
+$0<\alpha_{1}<1$
+\begin{equation}
+T_{t}=\lambda_{0}+\lambda_{1}Y_{t}+\mu_{2t}
+\end{equation}
+\centering
+$0<\lambda_{1}<1$
+\begin{equation}
+Y_{t}=C_{t}+I_{t}+G_{t}
+\end{equation}
+\end{block}
+\begin{itemize}
+  \item Multiecuacional o uniecuacional?
+  \item Macroeconómico o microeconómico?
+  \item Estático-histórico o Estático-a histórico?
+\end{itemize}
+
+\end{frame}
+
+\section{De acuerdo a los objetivos o fines para el cual se elabora....}
+\begin{frame}
+\frametitle{De acuerdo a los objetivos o fines para el cual se elabora...}
+\begin{center}
+\includegraphics[width=11cm]{Clasificacion_Objetivo_Invest}
+\end{center}
+\end{frame}
+
+\section{Algunos Ejemplos..}
+\begin{frame}
+\frametitle{Algunos Ejemplos...}
+\begin{block}{\textbf{Modelo de proyección}}
+\begin{equation}
+C_{t}=\alpha_{0}+\alpha_{1}Log t +\mu_{t}
+\end{equation}
+Piense en la diferencia entre predicción y proyección?
+\end{block}
+
+\begin{block}{\textbf{Modelo explicativo y predictivo}}
+\begin{equation}
+C_{t}=\alpha_{0}+\alpha_{1}Y_{t-1}+\mu_{t}
+\end{equation}
+\centering
+$0<\alpha_{1}<1$
+\end{block}
+\end{frame}
+
+
+\section{Clasificación de ecuaciones...}
+\begin{frame}
+\frametitle{Clasificación de ecuaciones...}
+\begin{center}
+\includegraphics[width=11cm]{Clasificacion_Ecuaciones}
+\end{center}
+\end{frame}
+
+\section{Ejemplo de cada tipo de ecuación...de comportamiento}
+\begin{frame}
+\frametitle{Ejemplo de cada tipo de ecuación...de comportamiento}
+\small
+\begin{block}{\textbf{De comportamiento: comportamiento de los consumidores}}
+\begin{equation}
+C_{t}=\alpha_{0}+\alpha_{1}(Y_{t-1}-T_{t-1})+ \alpha_{2}t+\mu_{t}
+\end{equation}
+\centering
+$0<\alpha_{1}<1$
+\end{block}
+
+\small
+\begin{block}{\textbf{De comportamiento: comportamiento de los inversores}}
+\begin{equation}
+I_{t}=\beta_{0}+\beta_{1}(Y_{t-1}-Y_{t-2})-\beta_{2}r_{t}+\mu_{t}
+\end{equation}
+\centering
+$\beta_{1}$,$\beta_{2}>0$
+\end{block}
+
+\small
+\begin{block}{\textbf{De comportamiento: comportamiento de los demandantes}}
+\begin{equation}
+D_{t}=\alpha_{0}-\alpha_{1}P_{t}+ \alpha_{2}P_{st}+\alpha_{3}Y_{t}+\alpha_{4}Z_{t}+\mu_{t}
+\end{equation}
+\centering
+$\alpha_{1}$,$\alpha_{2}$, $\alpha_{3}$, $\alpha_{4}>0$
+\end{block}
+\end{frame}
+
+\section{Ejemplo de cada tipo de ecuación...institucionales}
+\begin{frame}
+\frametitle{Ejemplo de cada tipo de ecuación...institucionales}
+\begin{block}{\textbf{Institucionales: ecuación de impuestos}}
+\begin{equation}
+T_{t}=\alpha+\beta Y_{t}+\mu_{t}
+\end{equation}
+\centering
+$0<\beta<1$
+\end{block}
+
+\begin{block}{\textbf{Institucionales: ecuación de oferta monetaria}}
+\begin{equation}
+M_{t}=\alpha+\beta Y_{t}+\mu_{t}
+\end{equation}
+\centering
+$\beta>0$
+\end{block}
+\end{frame}
+
+\section{Ejemplo de cada tipo de ecuación...tecnológicas y de definición}
+\begin{frame}
+\frametitle{Ejemplo de cada tipo de ecuación...tecnológicas y de definición}
+\begin{block}{\textbf{Tecnológicas: función de producción}}
+\begin{equation}
+Q=F(K,L)=AK^{\alpha}L^{\beta}
+\end{equation}
+\centering
+$R.E=\alpha+\beta$
+\end{block}
+
+\begin{block}{\textbf{De definicion: ecuación de demanda final}}
+\begin{equation}
+Y_{t}=C_{t}+I_{t}
+\end{equation}
+\end{block}
+
+\begin{block}{\textbf{De definicion: efecto del capital acumulado}}
+\begin{equation}
+K_{t}=K_{t-1}+I_{t}
+\end{equation}
+\end{block}
+Cuando una identidad es el resultado de una partición de una variable, sus componentes son conjuntos disjuntos, es decir:
+$C_{t}$ $\cap$ $I_{t}$=$\emptyset$ y $C_{t}$ $\cup$ $I_{t}$=$Y_{t}$
+\end{frame}
+
+\section{Ejemplo de cada tipo de ecuación...de equilibrio móvil en un contexto de macroeconomía dinámica}
+\begin{frame}
+\frametitle{Ejemplo de cada tipo de ecuación...de equilibrio móvil en un contexto de macroeconomía dinámica}
+\begin{block}{\textbf{De equilibrio móvil: retardo de tipo lundbergiano}}
+\begin{equation}
+P_{t}=Z_{t-1}
+\end{equation}
+\end{block}
+
+\begin{block}{\textbf{De equilibrio móvil: retardo producto ingreso}}
+\begin{equation}
+Y_{t}=P_{t-1}
+\end{equation}
+\end{block}
+
+\begin{block}{\textbf{De equilibrio móvil: retardo de tipo robersoniano}}
+\begin{equation}
+Z_{t}=Y_{t-1}
+\end{equation}
+\end{block}
+\end{frame}
+
+\section{Clasificación de variables.....}
+\begin{frame}
+\frametitle{Clasificación de variables.....}
+\begin{center}
+\includegraphics[width=10cm]{Clasificacion_Variables}
+\end{center}
+\end{frame}
+
+\section{Algunos ejemplos de variables...}
+\begin{frame}
+\frametitle{Algunos ejemplos de variables...}
+\begin{block}{\textbf{Variables endógenas con retardo}}
+\begin{equation}
+C_{t}=\alpha+\beta_{0}Y_{t}+ \beta_{1}Y_{t-1}+\mu_{t}
+\end{equation}
+\end{block}
+
+\begin{block}{\textbf{Variables expectativas}}
+\begin{equation}
+C_{t}-C_{t-1}=\delta (C^{*}_{t}-C_{t-1}),
+\end{equation}
+\begin{equation}
+C^{*}_{t}=\alpha + \beta Y_{t}
+\end{equation}
+\centering
+$0<\delta<1$
+\end{block}
+Esta ecuación nos dice que el incremento del consumo entre el período $t-1$ y el período t es una proporción $\delta$ de la diferencia entre el consumo observado en el período $t-1$ y el consumo normal esperado en el período $t(C^{*}_{t})$, así mismo especifica que el consumo normal esperado en el periodo $t(C^{*}_{t})$ es una función lineal del ingreso $Y_{t}$, la ecuación en función de variables observables queda:
+\end{frame}
+
+\begin{frame}
+\begin{block}{\textbf{Variables expectativas}}
+\begin{equation}
+C_{t}=\alpha \delta+ (1-\delta)(C_{t-1}+ \beta \delta Y_{t})
+\end{equation}
+\end{block}
+\end{frame}
+
+
+\section{Clasificación de parámetros....}
+\begin{frame}
+\frametitle{Clasificación de parámetros........}
+\begin{block}{\textbf{Parámetros estructurales $\Longrightarrow$ factores de ponderación en la forma primaria}}
+\begin{equation}
+C_{t}=\alpha_{0}+\alpha_{1}(Y_{t-1}-T_{t-1})+ \alpha_{2}t+\mu_{t}
+\end{equation}
+\centering
+$0<\alpha_{1}<1$
+\end{block}
+$\alpha_{0}$ define el consumo autónomo, $\alpha_{1}$ representa la propensión marginal a consumir y $\alpha_{2}$ es la velocidad a la que reacciona el consumo ante cambios en el hábito y en el gusto de los consumidores.
+\end{frame}
+
+\section{Clasificación de parámetros....}
+\begin{frame}
+\frametitle{Clasificación de parámetros........}
+\begin{block}{\textbf{Parámetros de la forma reducida o multiplicadores}}
+\begin{equation}
+C_{t}-C_{t-1}=\delta (C^{*}_{t}-C_{t-1}),
+\end{equation}
+\begin{equation}
+C^{*}_{t}=\alpha + \beta Y_{t}
+\end{equation}
+\centering
+$0<\delta<1$
+\begin{equation}
+C_{t}=\alpha \delta+ (1-\delta)(C_{t-1}+ \beta \delta Y_{t}),
+\end{equation}
+\end{block}
+$\alpha$, $\beta$ y $\delta$ son los parámetros estructurales y $\alpha$ $\delta$, $(1-\delta)$ y $\beta$ $\delta$ son los parámetros de la forma reducida o multiplicadores. $\beta$ $\delta$ mide el efecto sobre $C_{t}$ de un incremento en una unidad de $Y_{t}$, $(1-\delta)$ es el multiplicador total del consumo producido por un aumento unitario del ingreso en el mismo periodo y en los periodos precedentes (igual a $\beta$).
+\end{frame}
+
+\end{document} %fin del documento
+
+
+
+
+
+

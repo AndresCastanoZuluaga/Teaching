@@ -1,0 +1,447 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#1 - Presentación del curso, Introducción a la econometría}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 1 05/08/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Agosto 5 de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+
+\section{Presentación}
+\begin{frame}
+\frametitle{Presentación}
+\begin{itemize}
+\item <1> Profesor Andrés M. Castaño, candidato a Magíster, Departamento de Economía of. 341 (3er piso), email:  acastano@ucn.cl; landres001@hotmail.com\\
+\bigskip
+\item <1> Clases: lunes y miércoles 16:15-17:45 (Bloque E), sala: R-50.\\
+\bigskip
+\item <1> Programa y diapositivas de las clases: a través de la plataforma del curso o se compartirá vía Dropbox (opcional)
+\bigskip
+\item <1> Requisitos previos: Álgebra y análisis matemático, estadística (probabilidad) y teoría económica.
+\end{itemize}
+\end{frame}
+
+\section{Programa y bibliografía}
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad 0: Introducción}. Definición de econometría, objetivo de la econometría, modelo económico vs modelo econométrico, elementos de un modelo, clasificación de variables, clasificación de ecuaciones, clasificación de modelos, análisis de correlación. Libros a usar: Notas de clase Rosales\&Bonilla (2006), cap 1, 2 y 3; Dagun\&Dagun (1998).\\
+\bigskip
+\item <1> \textbf{Unidad I: Regresión lineal simple}. Libros a usar: Gujarati (2004), cap 1,2,3,4,5 y 6; Rosales\&Bonilla (2006), cap 3 y 4; Wooldrigde (2006), cap 2.\\
+\bigskip
+\item <1> \textbf{Unidad II: Regresión lineal múltiple y regresión con variables dicótomas}. Libros a usar: Gujarati (2004), cap 7,8 y 9; Wooldrigde (2006), cap 3,4,5,6 y 7.\\
+\bigskip
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programa y bibliografía}
+\begin{itemize}
+\item <1> \textbf{Unidad III: Violación de los supuestos básicos del MCRL}. Libros a usar: Gujarati (2004), cap 10,11,12 y 13; Wooldrigde (2006), cap 8 y 9.\\
+\bigskip
+\item <1> \textbf{Unidad IV: Introducción a las series de tiempo}. Libros a usar: Gujarati (2004), cap 21 y 22; Wooldrigde (2006), cap 10; Novales (2000), cap 13 y 14.
+\end{itemize}
+\end{frame}
+
+
+\section{Evaluación}
+\begin{frame}
+\frametitle{Evaluación}
+\begin{itemize}
+\item <1> Pruebas cortas (máximo 8), ensayos, trabajos, exposiciones (La media de las notas obtenidas equivale al 15\%  de la nota final). \\
+\bigskip
+\item <1> Dos (2) pruebas parciales (20\% cada una).\\
+\bigskip
+\item <1> Un (1) trabajo final (40\%).\\
+\bigskip
+\item <1> 5\% de nota apreciativa. Dicha apreciativa será valorada a partir de su participación y de su asistencia en las clases.\\
+\bigskip
+\item <1> 2 décimas sobre la nota final por asistencia a clase (Condición: no tener ninguna falta).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Respecto a las pruebas cortas......}
+\scriptsize
+\begin{itemize}
+\item <1> Cada evaluación dura entre 15 y 20 minutos, se desarrolla en la última parte de una clase con el profesor y consiste en dos tipos de preguntas: una de teoría (de tipo opción múltiple) y una de aplicación (con respuesta corta). Puede ser de un sólo tipo o una combinación.\\
+\item <1> La pregunta de teoría: demostrar el dominio de los conceptos y la capacidad de explicar la intuición detrás de cada uno de los tópicos dados.\\
+\item <1> La pregunta de aplicación: se plantea un problema socioeconómico o de los negocios; el estudiante deberá, por ejemplo, formular el problema en términos econométricos o estadísticos o especificar un modelo para resolver el problema, etc. Alternativamente, se plantea un modelo o resultado econométrico y el estudiante deberá interpretarlo en términos económicos.\\
+\item <1> \textbf{Importante:} el contenido es acumulativo; es decir: en una evaluación corta se podrá preguntar sobre cualquier tema visto hasta la fecha. No podrá usar el material de estudio.\\
+\item <1> Inasistencia injustificada $\Longrightarrow$ nota mínima (1). Inasistencia justificada $\Longrightarrow$ se ponderan los resultados de las pruebas cortas realizadas. Para realizar las que no alcanzó a tomar, si fueron varias (más de dos), se hará una (1) que agrupe el \% restante de la nota.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto a la parcial y el examen final....}
+\begin{block}{\textbf{Prueba parcial}}
+\begin{itemize}
+\item <1> Contenido: unidades 0, I y II.
+\item <1> Duración: hora y media, en horario de clases, miércoles 4 de septiembre de 2013.
+\item <1> Preguntas teórico-prácticas.
+\item <1> Podrá usar calculadora científica (únicamente) y necesitará tablas.
+\item <1> Inasistencia injustificada $\Longrightarrow$ Nota mínima. Inasistencia justificada $\Longrightarrow$ Recupera en fecha y horario a concertar con el profesor. La prueba recuperativa producto de asistencia justificada puede ser oral o escrita.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Respecto a las pruebas parciales y el examen final....}
+\begin{block}{\textbf{Examen Final}}
+\begin{itemize}
+\item <1> Contenido: toda la asignatura.
+\item <1> Duración (estimada): entre 2 y 3 horas, fecha a determinar.
+\item <1> Preguntas teórico-prácticas.
+\item <1> Podrá usar calculadora científica (únicamente) y
+necesitará tablas.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Respecto al trabajo de grupo final...}
+\begin{frame}
+\frametitle{Respecto al trabajo de grupo final...}
+\begin{itemize}
+\item <1> Trabajo de investigación convencional, a realizar en grupos de como máximo 5 estudiantes.\\
+\bigskip
+\item <1> Extensión mínima: 15 páginas, espacio sencillo, letra 11 puntos. Extensión máxima: 30 páginas (incluyendo gráficos, tablas, bibliografía, etc.). Formato PDF.\\
+\bigskip
+\item <1> Parte de la estimación numérica se realizará en horario de prácticas, en el Laboratorio de Computación, con la asistencia de los ayudante.\\
+\bigskip
+\item <1> Habrá dos entregas: Informe de Avance (mediados del curso) e Informe Final. En caso de que el estudiante no entregue el informe de avance en las fechas establecidas la calificación del trabajo final se hará sobre la nota máxima de 6.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Respecto al trabajo de grupo final...}
+\begin{itemize}
+\item <1> 21 de agosto: plazo final para enviar por email el listado de integrantes de cada grupo.\\
+\bigskip
+\item <1> 02 de septiembre: plazo final para determinar el tema y las bases de datos a utilizar (ese día se confirmarán los temas, etc. con el profesor en el horario de clases, última media hora).\\
+\bigskip
+\item <1> 02 de octubre: plazo final para entregar el Informe de Avance (enviar por email). Este informe debe contener como mínimo: planteo de la pregunta, modelo teórico a estimar, resultados esperados, bibliografía leída y primeros resultados provisorios. Deben adjuntar las bases de datos en un archivo aparte, en planilla MS-EXCEL.\\
+\bigskip
+\item <1> 11 de noviembre: plazo final para entregar (enviar en PDF por email) el Informe Final.
+\end{itemize}
+\end{frame}
+
+
+\section{Respecto a la solicitud de revisión, comentarios, dudas...}
+\begin{frame}
+\frametitle{Respecto a la solicitud de revisión, comentarios, dudas...}
+
+\begin{itemize}
+\item <1> Contactar por E-mail (acastano@ucn.cl) con un día de anticipación si hay disponibilidad. En caso de no haberla se hará en el siguiente horario:
+\item <1> Viernes 15:00-16:30, Departamento de Economía of. 341 (3er piso).
+\end{itemize}
+\end{frame}
+
+
+\section{Porque la econometría?}
+\begin{frame}
+\frametitle{Porqué la econometría?}
+\small
+\begin{itemize}
+\item <1> Ayuda a entender las relaciones entre variables económicas y de negocios.\\
+\bigskip
+\item <1> Permite analizar los efectos de las decisiones.\\
+\bigskip
+\item <1> En Administración, finanzas y Marketing se tienen datos regulares de precios, ventas, ingresos, gastos, etc.
+\begin{itemize}
+\bigskip
+\item <1> Cómo se relacionan? $\Longrightarrow$ Qué factores determinan las ventas de la empresa?
+\item <1> Cómo puedo predecir su comportamiento? $\Longrightarrow$ Planeación de largo plazo
+\item <1> Cómo tomo decisiones de endeudamiento o precios?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Clase 1: Qué es la econometría}
+\begin{frame}
+\frametitle{Clase 1: Qué es la econometría}
+\small
+\begin{itemize}
+\item <1> \textbf{G. Tintner:} \textcolor[rgb]{1.00,0.00,0.00}{la econometría consiste en la aplicación de la teoría económica, la matemática y los métodos estadísticos a los datos económicos para establecer resultados numéricos y verificar las leyes económicas}.\\
+\bigskip
+\item <1> \textbf{W.C. Hood y T.C. Koopmans:} la econometría es una rama de la economía donde la teoría económica y los métodos estadísticos se fusionan en el análisis de los datos numéricos e institucionales.\\
+\bigskip
+\item <1> \textbf{T. Havellmo:} el método de la investigación econométrica intenta, esencialmente, unir la teoría económica y las mediciones reales, empleando la teoría y la técnica de la inferencia estadística como un puente.\\
+\bigskip
+\item <1> \textbf{O. Lange:} la econometría es la ciencia que trata de la determinación, por métodos estadísticos, de leyes cuantitativas concretas que rigen la vida económica. Esta combina la Teoría Económica con la Estadística Económica y trata de dar, por métodos matemáticos y de inferencia, una expresión concreta a las leyes de la teoría.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Modelación Econométrica}
+\begin{center}
+\begin{figure}
+\caption{\textbf{El proceso de modelación econométrico}}
+\includegraphics[width=10cm]{metodo}
+    \scriptsize{\newline \emph{Fuente:} Heij et al., 2010. Econometric Methods with Applications in Business and Economics}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\section{Metodología de la econometría}
+\begin{frame}
+\frametitle{Metodología de la econometría}
+\small
+\begin{itemize}
+\item <1> Formular una hipótesis o teoría.
+\item <1> Obtener los datos.
+\item <1> Especificación del modelo: consiste en usar la teoría, leyes o hipótesis particulares económicas, para investigar las relaciones entre variables y agentes de la economía.
+\item <1> Estimación del modelo: trata de la utilización de instrumentos auxiliares como las matemáticas y la estadística para estimar el modelo objetivo.
+\item <1> Verificación del modelo: en esta etapa se efectúa la interpretación económica
+del modelo estimado y se realizan pruebas estadísticas. La fase de verificación tiene un papel muy importante dado que examina si la expresión cuantificada puede utilizarse adecuadamente con base en la teoría económica.
+\item <1> Predicción: el modelo obtenido puede ser utilizado para la predicción y el desarrollo de muchas aplicaciones. Pueden surgir nuevos resultados teóricos, y generarse implicaciones de política económica a partir de las conclusiones del modelo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+\small
+\begin{itemize}
+\item <1> (Teoría de consumo keynesiana) Keynes observó que, como regla general y en promedio, las personas consumen más cuando aumentan
+sus ingresos, pero que ese aumento en el consumo es menor que el aumento en los ingresos.
+\item <1> (Datos) Datos de ingreso disponible y de gastos en consumo. Tipos de datos: series temporales, datos de sección cruzada, datos
+agrupados.
+\item <1> (Modelo econométrico) El modelo matemático es exacto o determinístico, pero en la realidad las relaciones económicas no son
+exactas . El económetra agrega entonces un término de error aleatorio...IDEA: siempre hay factores que no podemos observar....
+\begin{equation}
+Y=\beta_{0}+\beta_{1}X+\varepsilon
+\end{equation}
+Estableciendo: $0< \beta_{1} <1$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo}
+\small
+\begin{itemize}
+\item <1> (Estimación) El objetivo es estimar los parámetros del modelo. En este caso, usaríamos técnicas de análisis de regresión simple, como por ejemplo, método de Mínimos Cuadrados Ordinarios. Las estimaciones de los parámetros son  beta 0 y beta 1 y el modelo estimado será:
+\begin{equation}
+\hat{Y}=\hat{\beta_{0}}+\hat{\beta_{1}}X+\varepsilon
+\end{equation}
+\item <1> (Contrastar que el modelo esté bien especificado) IDEA: responder a la pregunta: ¿qué validez tiene nuestro modelo? (porque, por
+ejemplo, puede haber otros factores importantes que influyan en las decisiones de consumo).
+\item <1> (Predicción) Si conformamos las hipótesis, podemos usar los valores estimados de los coeficientes (o parámetros) para predecir el valor del consumo para un aumento de ingreso dado. Eventualmente, supongamos que un gobierno quiera mantener el nivel de consumo agregado sobre cierto valor mínimo. Luego, conociendo que la elasticidad es de aproximadamente 0.72, podría controlar el nivel de ingreso (a través de subsidios o impuestos) para obtener un nivel deseado de consumo.
+\end{itemize}
+\end{frame}
+
+
+\section{Qué es un Modelo?}
+\begin{frame}
+\frametitle{Qué es un Modelo?}
+\begin{block}{\textbf{Modelos científicos}}
+Un modelo es una representación simplificada de la realidad. Los investigadores y los profesionales de diversas áreas del conocimiento trabajan con éstos esquemas, los cuales les permiten estudiar el comportamiento de un fenómeno de interés.
+\end{block}
+
+\begin{block}{\textbf{Modelo Económico}}
+Se denomina modelo económico a cualquier conjunto de supuestos que describen
+una economía o parte de una economía.
+\end{block}
+
+\begin{block}{\textbf{Modelo Econométrico}}
+El modelo econométrico es el modelo económico que contiene las especificaciones necesarias para su validación empírica. Es usual concebir el modelo econométrico como un modelo conformado por una parte determinística y una parte aleatoria o término de error.
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Características mínimas de un modelo}
+\begin{itemize}
+\item <1> Que represente un fenómeno económico real.
+\item <1> Que la representación sea simplificada, y.
+\item <1> Que se haga en forma matemática.
+\end{itemize}
+
+\textbf{¿Porqué los modelos econométricos contienen perturbaciones aleatorias?}
+\bigskip
+\begin{itemize}
+\item <1> Datos: en muchos casos el grado de control que se puede tener sobre las variables de interés es bajo.
+\item <1> Número de variables: principio de parsimonia
+\item <1> Disponibilidad de información: muchas veces cuando el investigador quiere incluir una variable importante en el modelo se encuentra con la limitación de cómo cuantificarla.
+\item <1> Forma funcional: un investigador puede postular que la relación entre las variables de un modelo es de tipo lineal; no obstante, otro investigador podría formular una especificación funcional distinta, por ejemplo cuadrática.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elementos que componen un modelo}
+\small
+\begin{itemize}
+\item <1> Variables: característica de una población que puede tomar diferentes valores.
+\item <1> Ecuaciones: es una igualdad conformada por una expresión matemática que establece relaciones entre variables.
+\item <1> Parámetros: actúan como factores de ponderación de cada variable explicativa y miden el efecto de las fluctuaciones de estas variables sobre la variable dependiente.
+\end{itemize}
+\end{frame}
+
+\end{document} %fin del documento
+
+%\begin{frame}
+%\titlepage
+%\end{frame}
+
+
+% LISTA DE TEMAS
+
+%* Antibes
+%* bars
+%* Bergen
+%* Berkeley
+%* Berlin
+%* Boadilla
+%* Boxes
+%* classic
+%* Copenhagen
+%* Darmstadt
+%* Dresden
+%* Frankfurt
+%* Goettingen
+%* Hannover
+%* Ilmenau
+%* JuanLesPins
+%* lined
+%* Luebeck
+%* Madrid
+%* Malmoe
+%* Marburg
+%* Montpellier
+%* PaloAlto
+%* Pittsburgh
+%* Rochester
+%* shadow
+%* sidebar
+%* Singapore
+%* split
+%* Szeged
+%* Tree
+%* Warsaw
+
+Combinación de Colores
+
+Las combinaciones de colores que hay disponibles para los temas son:
+
+* albatross (Azul Marino)
+* beetle (Azul y Gris)
+* crane (Naranja y b¡Blanco)
+* default (Por Defecto)
+* dolphin (Azul Marino y Blanco)
+* dove (Gris y Blanco)
+* fly (Gris)
+* lily
+* orchid
+* rose
+* seagull (Gris y Blanco)
+* seahorse
+* sidebartab
+* structure
+* whale (Azul Marino y Blanco)
+
+
+
+% Agregamos información del autor y titulo
+
+\title{Mercados Informaci\'on Asimetrica}
+\author{Andr\'es Mauricio Castaño y Gonzalo Ibañez}
+\date{3 de Abril del 2012}
+
+%Definimos la apariencia de las presentaciones
+\usetheme{PaloAlto}
+\usecolortheme{default}
+\setbeamercovered{transparent}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+Este es un ejemplo basico en beamer, el paquete para generar presentaciones en \LaTeX
+\end{frame}
+
+\end{document}

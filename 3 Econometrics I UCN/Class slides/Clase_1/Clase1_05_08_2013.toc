@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Presentaci\'on}{2}{0}{1}
+\beamer@sectionintoc {2}{Programa y bibliograf\IeC {\'\i }a}{3}{0}{2}
+\beamer@sectionintoc {3}{Evaluaci\'on}{5}{0}{3}
+\beamer@sectionintoc {4}{Respecto al trabajo de grupo final...}{9}{0}{4}
+\beamer@sectionintoc {5}{Respecto a la solicitud de revisi\'on, comentarios, dudas...}{11}{0}{5}
+\beamer@sectionintoc {6}{Por qu\'e la econometr\IeC {\'\i }a?}{12}{0}{6}
+\beamer@sectionintoc {7}{Qu\'e es la econometr\IeC {\'\i }a}{13}{0}{7}
+\beamer@sectionintoc {8}{Metodolog\IeC {\'\i }a de la econometr\IeC {\'\i }a}{15}{0}{8}
+\beamer@sectionintoc {9}{Qu\'e es un modelo?}{18}{0}{9}

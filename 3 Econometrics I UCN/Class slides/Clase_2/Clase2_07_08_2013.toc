@@ -1,0 +1,18 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Clasificaci\'on de modelos}{2}{0}{1}
+\beamer@sectionintoc {2}{Ejemplo: Modelo keynesiano explicativo del consumo y del ingreso}{3}{0}{2}
+\beamer@sectionintoc {3}{De acuerdo al dominio de investigaci\'on...}{4}{0}{3}
+\beamer@sectionintoc {4}{Algunos Ejemplos..}{5}{0}{4}
+\beamer@sectionintoc {5}{Modelo de ingreso nacional con impuestos....}{6}{0}{5}
+\beamer@sectionintoc {6}{De acuerdo a los objetivos o fines para el cual se elabora....}{7}{0}{6}
+\beamer@sectionintoc {7}{Algunos Ejemplos..}{8}{0}{7}
+\beamer@sectionintoc {8}{Clasificaci\'on de ecuaciones...}{9}{0}{8}
+\beamer@sectionintoc {9}{Ejemplo de cada tipo de ecuaci\'on...de comportamiento}{10}{0}{9}
+\beamer@sectionintoc {10}{Ejemplo de cada tipo de ecuaci\'on...institucionales}{11}{0}{10}
+\beamer@sectionintoc {11}{Ejemplo de cada tipo de ecuaci\'on...tecnol\'ogicas y de definici\'on}{12}{0}{11}
+\beamer@sectionintoc {12}{Ejemplo de cada tipo de ecuaci\'on...de equilibrio m\'ovil en un contexto de macroeconom\IeC {\'\i }a din\'amica}{13}{0}{12}
+\beamer@sectionintoc {13}{Clasificaci\'on de variables.....}{14}{0}{13}
+\beamer@sectionintoc {14}{Algunos ejemplos de variables...}{15}{0}{14}
+\beamer@sectionintoc {15}{Clasificaci\'on de par\'ametros....}{17}{0}{15}
+\beamer@sectionintoc {16}{Clasificaci\'on de par\'ametros....}{18}{0}{16}

@@ -1,0 +1,403 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#3 - Revisión conceptos de inferencia estadística}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 3 12/08/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Agosto 12 de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Revisión: inferencia estadística}
+\begin{frame}
+\frametitle{Revisión: inferencia estadística}
+\begin{itemize}
+\item <1> \textbf{Inferencia:} estudia la relación entre muestra y población, permite
+obtener conclusiones sobre población a partir de una muestra aleatoria.
+\bigskip
+\item <1> \textbf{Población:} todos los posibles resultados de un fenómeno.
+\bigskip
+\item <1> \textbf{Muestra:} subconjunto de esa población.
+\bigskip
+\item <1> Para inferir, la muestra debe ser aleatoria.
+\bigskip
+\item <1> La inferencia es la estimación de los parámetros y el contraste de hipótesis.
+\end{itemize}
+\end{frame}
+
+
+\section{Variables aleatorias}
+\begin{frame}
+\frametitle{Variables aleatorias}
+\begin{itemize}
+\item <1> Variable cuyo valor está determinado por el resultado de un experimento al azar.
+\bigskip
+\item <1> Variable aleatoria discreta: toma un número finito de valores (lanzamiento de dos dados).
+\bigskip
+\item <1> Variable aleatoria continua: toma cualquier valor dentro de un intervalo de valores (estatura, temperatura)
+\end{itemize}
+\begin{block}{\textbf{Función de Densidad de Probabilidad para una VA discreta (FDP)}}
+\begin{itemize}
+\item <1> Sea X una VA discreta que toma valores diferentes $x_{1}, x_{2},...,x_{n}$ entonces, la función:
+\begin{equation}
+f(x)=P(X=x_{i})  \forall  i=1, 2,....,n
+\end{equation}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo VA  discreta}
+En el lanzamiento de dos dados, considere la VA X, como la suma de los números que aparecen en dos dados:
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  X= & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+  f(x)= & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & $\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$ \\
+  \hline
+\end{tabular}
+\begin{center}
+\includegraphics[width=7cm]{fdp}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{VA continua}
+\begin{block}{\textbf{Función de Densidad de Probabilidad para una VA continua (FDP)}}
+\begin{itemize}
+\item <1> Sea X una VA continua. Entonces, se dice que $f(x)$ es la FDP de X si se satisfacen las siguientes condiciones:
+$$f(x)\geq0$$
+$$\int^{\infty}_{-\infty}f(x)dx=1$$
+$$\int^{b}_{a}f(x)dx=P(a\leq x\leq b)$$
+Donde $f(x)dx$ es la probabilidad asociada a un pequeño intervalo de una variable continua y $P(a\leq x\leq b)$ indica la probabilidad de que X se encuentre en el intervalo que va desde a hasta b.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo VA continua}
+Considere la siguiente función de densidad:
+$$f(x)=\frac{1}{9}x^{2}$$
+$$0\leq x \leq 3$$
+$$\int^{3}_{0}\frac{1}{9}x^{2}dx=\frac{1}{27}x^{3}|^{3}_{0}=1$$
+\begin{center}
+\includegraphics[width=7cm]{fdp1}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Características de las distribuciones de probabilidad}
+\begin{block}{\textbf{Valor esperado E(X)}}
+\begin{itemize}
+\item <1> Valor esperado VA discreta:
+$$E(X)=\sum_{x}xf(x)$$
+$$E(X)=2\frac{1}{36}+3\frac{2}{36}+4\frac{3}{36}+.....+12\frac{1}{36}$$
+\item <1> Valor esperado VA continua:
+$$E(x)=\int^{\infty}_{-\infty}xf(x)dx$$
+$$E(X)=\int^{3}_{0}x(\frac{x^{2}}{9})dx$$
+$$=\frac{1}{9}(\frac{x^{4}}{4})|^{3}_{0}=\frac{9}{4}$$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Características de las distribuciones de probabilidad}
+\begin{block}{\textbf{Varianza}}
+\begin{itemize}
+\item <1> Mide la dispersión de los valores de X alrededor del valor esperado:
+$$var(X)=\sigma^{2}_{x}=E(X-\mu)^{2}$$
+\item <1> Caso si X es discreta:
+$$var(X)=\sum_{x}(x-\mu)^{2}f(x)$$
+\item <1> Caso si X es continua:
+$$var(X)=\int^{\infty}_{-\infty}(x-\mu)^{2}f(x)dx$$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+Caso VA discreta:
+\begin{tabular}{|c|c|c|c|}
+  \hline
+  % after \\: \hlineskip or \cline{col1-col2} \cline{col3-col4} ...
+  x & -2 & 1 & 2 \\
+  f(x) & $\frac{5}{8}$ & $\frac{1}{8}$ & $\frac{2}{8}$ \\
+  \hline
+\end{tabular}
+\bigskip
+$$E(X)=-2\frac{5}{8}+1\frac{1}{8}+2\frac{2}{8}$$
+$$=-\frac{5}{8}$$
+$$E(X^{2})=4\frac{5}{8}+1\frac{1}{8}+4\frac{2}{8}$$
+$$=\frac{29}{8}$$
+$$var(X)=E(X^{2})-(E(X))^{2}$$
+$$var(X)=\frac{29}{8}-(-\frac{5}{8})^{2}=\frac{207}{64}=3.23$$
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo}
+Caso VA continua:
+\bigskip
+$$E(X^{2})=\int^{3}_{0}x^{2}(\frac{x^{2}}{9})dx$$
+$$=\frac{1}{9}(\frac{x^{5}}{5})|^{3}_{0}=\frac{243}{45}$$
+$$var(X)=E(X^{2})-(E(X))^{2}$$
+$$var(X)=\frac{243}{45}-(\frac{9}{4})^{2}=0.34$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimación}
+\begin{itemize}
+\item <1>Procedimiento por medio del cual obtenemos información sobre el valor de un parámetro poblacional a partir de información muestral.
+\item <1> Se trata de obtener el valor del parámetro poblacional (desconocido) a partir de datos muestrales, a partir de una muestra aleatoria simple (m.a.s.) de tamaño n.
+\end{itemize}
+\scriptsize
+\begin{block}{\textbf{Problema de estimación}}
+\begin{itemize}
+\item <1> Estimación puntual o de un punto; y
+\item <1> Estimación por intervalos o de un intervalo.
+\end{itemize}
+\textbf{Estimador:} un estimador de un parámetro poblacional es una variable aleatoria que depende de la información de la muestra y cuyas realizaciones proporcionan aproximaciones al valor desconocido del parámetro poblacional.\\
+\bigskip
+\textbf{Estimación:} es una realización específica de esta variable aleatoria.
+\end{block}
+\end{frame}
+
+\section{Estimación puntual: ejemplo}
+\begin{frame}
+\frametitle{Estimación puntual: ejemplo}
+\begin{itemize}
+\item <1>La media muestral $\bar{X}$ es una variable aleatoria y la llamamos estadístico (genéricamente). Un estadístico es una medida descriptiva muestral y es una variable aleatoria porque su valor depende de la muestra que extraigamos.
+\bigskip
+\item <1> Si con $\bar{X}$ queremos estimar $\mu_{x}$ (parametro poblacional), llamamos a $\bar{X}$ estimador es una v.a.
+\bigskip
+\item <1> En una muestra, su valor particular se llama estimación.
+\end{itemize}
+\begin{block}{\textbf{Claridad importante}}
+\begin{itemize}
+\item <1> \textbf{Estimador puntual:} un estimador puntual de un parámetro poblacional es una función de la muestra que da como resultado un único valor.
+\bigskip
+\item <1> \textbf{Estimación puntual:} es una realización (un valor particular obtenido de una m.a.s.) del estimador puntual.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Estimación puntual: ejemplo...}
+\begin{frame}
+\frametitle{Estimación puntual: ejemplo}
+Para simplificar: no importa cómo llamemos a la función de datos muestrales, si estadístico, estimador o estimador puntual. Solo tendremos en cuenta que son variables aleatorias, cuyo valor depende de la muestra y un valor particular (es decir, una realización) se llamará estimación puntual o estimación de un parámetro poblacional dado.
+\end{frame}
+
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+\begin{block}{\textbf{¿Cómo elegir un buen estimador para obtener una estimación puntual lo más ''fiable'' posible del parámetro poblacional?}}
+\begin{itemize}
+\item <1> sentido común.
+\bigskip
+\item <1> propiedades del estimador.
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{Linealidad}}
+Un estimador es lineal si es una función lineal de las observaciones muestrales.
+\end{block}
+
+\begin{block}{\textbf{Insesgadez}}
+Un estimador es insesgado si la media de la distribución muestral es igual al parámetro correspondiente. $\theta$ : parámetro y $\hat{\theta}$ : estimador.
+$$E(\hat{\theta})=\theta$$
+\bigskip
+$$Sesgo=E(\hat{\theta})- \theta$$
+\end{block}
+\end{frame}
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+
+\begin{block}{\textbf{Varianza Mínima}}
+Un estimador de $\theta$ es de varianza mínima si su varianza es menor que la de cualquier otro estimador de $\theta$.
+\end{block}
+
+\begin{block}{\textbf{Eficiencia}}
+Dados dos o más estimadores insesgados, un estimador es eficiente cuando tiene la varianza menor. Ejemplo:
+$$E(\bar{X})=\mu_{x}$$
+$$E(med. muestral)=\mu_{x}$$
+$$Var(\bar{X})=\frac{\sigma^{2}}{n}$$
+$$var(med. muestral)= \frac{\pi \sigma^{2}}{2n}\simeq 1.57 var(\bar{X})$$
+\end{block}
+\end{frame}
+
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+
+Tengo cuidado con los conceptos de:
+
+\begin{itemize}
+\item <1> Distribución leptocurtica (Más apuntada y con colas más anchas que la normal)
+\item <1> Distribución mesocurtica  (la distribución normal es mesocúrtica, curtosis de 3)
+\item <1> Distribución platicurtica, (menos apuntada y con colas menos anchas que la normal)
+\end{itemize}
+Una de las formulas es:
+$$G_{2}=\frac{\mu_{4}}{\sigma^{4}}-3$$
+
+\scriptsize
+\begin{block}{\textbf{Consistencia}}
+Un estimador es consistente si, a medida que aumenta el tamaño de la muestra, las estimaciones se aproximan al valor del parámetro. ** Si un estadístico NO es consistente no sirve tomar muestras más grandes para obtener estimaciones puntuales más precisas.
+$$lim\hat{\beta}_{i}=\beta_{i}$$
+\end{block}
+
+\end{frame}
+
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+\begin{block}{\textbf{Suficiencia}}
+Un estimador es suficiente si utiliza toda la información disponible en la muestra. La suficiencia es una condición necesaria para la eficiencia.
+\end{block}
+
+\begin{block}{\textbf{Estimador lineal insesgado óptimo}}
+\begin{itemize}
+\item <1> Es un estimador lineal, insesgado y tiene la varianza mínima entre todos los estimadores lineales insesgados del parámetro.
+\bigskip
+\item <1> Aclaración: Para comparar dos estimadores sesgados utilizamos el concepto de error cuadrático medio (ECM) de un estimador.
+$$ECM(\hat{\beta})=var(\hat{\beta})+[sesgo(\hat{\beta})]^{2}$$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+El uso de una estimación puntual tiene inconvenientes:
+\begin{itemize}
+\item <1> Si el estimador no es consistente, por más que tomemos una muestra ''grande'', no estaremos seguros de la confiabilidad de esa estimación puntual.
+\bigskip
+\item <1> Tampoco tenemos una medida del error posible en la estimación puntual. (Hemos visto que para distintas muestras el valor posible cambia...el error posible en la estimación puntual se mide en términos de la variabilidad de la distribución de estimador).
+\bigskip
+\item <1> Un estimador por intervalos de un parámetro poblacional es una regla (basada en información muestral) para determinar un rango, o un intervalo aleatorio, en el cual posiblemente se encuentre dicho parámetro.
+\end{itemize}
+\end{frame}
+
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{itemize}
+\item <1> Ahora, en vez de tener un estimador que es una variable aleatoria, tendremos un intervalo aleatorio pues los límites dependerán de la muestra...
+\bigskip
+\item <1> Para la estimación por intervalos se consideran, en esencia: 1. un estimador puntual, una función del estimador puntual y del parametro a estimar, y la distribución de probabilidades asociada a esta función.
+\bigskip
+\item <1> El intervalo se especifíca para un nivel de confianza dado respecto de la precisión de la estimación, por eso se denomina INTERVALO DE CONFIANZA.
+\end{itemize}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{itemize}
+\item <1> Hasta ahora hemos dicho que los estimadores por intervalos contienen posiblemente. al verdadero, aunque desconocido, parámetro poblacional. Para formalizar, es necesario hablar de esas posibilidades en términos de probabilidades.
+\bigskip
+\item <1> Para la estimación por intervalos se consideran, en esencia: 1. un estimador puntual, una función del estimador puntual y del parametro a estimar, y la distribución de probabilidades asociada a esta función.
+\bigskip
+\item <1> Sea $\theta$ el parámetro a estimar. El estimador por intervalos es un intervalo aleatorio tal que la probabilidad de que el parámetro esté entre LI y LS es $1-\alpha$. LI y LS son v.a.
+    $$P(LI<\theta<LS)=1-\alpha$$
+\end{itemize}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{itemize}
+\item <1> Una vez que extraemos la muestra, calculamos los valores particulares de LI y LS (li y ls) y tendremos un intervalo de confianza: $$li< \theta <ls$$.
+\bigskip
+\item <1> Es decir, el parámetro está entre li y ls con un nivel de confianza de $(1-\alpha)100\%$. (Interprete $\alpha \%$).
+\bigskip
+\item <1> \textbf{Atención:} en una muestra particular, NO podemos hablar de probabilidad; el intervalo contiene o no al verdadero parámetro. Por ello hablamos de nivel de confianza.
+\end{itemize}
+\end{frame}
+
+
+\section{Historia del análisis de regresión}
+\begin{frame}
+\frametitle{Historia del análisis de regresión.....}
+\begin{center}
+\includegraphics[width=11cm]{Historia_econometria}
+\end{center}
+\end{frame}
+
+\end{document}

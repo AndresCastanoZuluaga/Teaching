@@ -1,0 +1,264 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#3 - Revisión de conceptos de inferencia estadística}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 3 26/03/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Marzo 26 de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+\usecolortheme{beaver} %color del tema
+%\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{rectangles} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Revisión: inferencia estadística}
+\begin{frame}
+\frametitle{Revisión: inferencia estadística}
+\begin{itemize}
+\item <1> \textbf{Inferencia:} estudia la relación entre muestra y población, permite
+obtener conclusiones sobre población a partir de una muestra aleatoria.
+\bigskip
+\item <1> \textbf{Población:} todos los posibles resultados de un fenómeno.
+\bigskip
+\item <1> \textbf{Muestra:} subconjunto de esa población.
+\bigskip
+\item <1> Para inferir, la muestra debe ser aleatoria!.
+\bigskip
+\item <1> La inferencia es la estimación de los parámetros y el contraste de hipótesis.
+\end{itemize}
+
+\end{document}
+
+
+\section{Estimación}
+\begin{frame}
+\frametitle{Estimación}
+\begin{itemize}
+\item <1>Procedimiento por medio del cual obtenemos información sobre el valor de un parámetro poblacional a partir de información muestral.
+\item <1> Determinístico o estocástico?Se trata de obtener el valor del parámetro poblacional (desconocido) a partir de datos muestrales, a partir de una muestra aleatoria simple (m.a.s.) de tamaño n.
+\end{itemize}
+\begin{block}{\textbf{Problema de estimación}}
+\begin{itemize}
+\item <1> Estimación puntual o de un punto; y
+\item <1> Estimación por intervalos o de un intervalo.
+\end{itemize}
+\textbf{Estimador:} un estimador de un parámetro poblacional es una variable aleatoria que depende de la información de la muestra y cuyas realizaciones proporcionan aproximaciones al valor desconocido del parámetro poblacional.\\
+\bigskip
+\textbf{Estimación:} es una realización específica de esta variable aleatoria.
+\end{block}
+\end{frame}
+
+
+
+\section{Estimación puntual: ejemplo}
+\begin{frame}
+\frametitle{Estimación puntual: ejemplo}
+\begin{itemize}
+\item <1>La media muestral $\bar{X}$ es una variable aleatoria y la llamamos estadístico (genéricamente). Un estadístico es una medida descriptiva muestral y es una variable aleatoria porque su valor depende de la muestra que extraigamos.
+\bigskip
+\item <1> Si con $\bar{X}$ queremos estimar $\mu_{x}$ (parametro poblacional), llamamos a $\bar{X}$ estimador es una v.a.
+\bigskip
+\item <1> En una muestra, su valor particular se llama estimación.
+\end{itemize}
+\begin{block}{\textbf{Claridad importante}}
+\begin{itemize}
+\item <1> \textbf{Estimador puntual:} un estimador puntual de un parámetro poblacional es una función de la muestra que da como resultado un único valor.
+\bigskip
+\item <1> \textbf{Estimación puntual:} es una realización (un valor particular obtenido de una m.a.s.) del estimador puntual.
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\section{Estimación puntual: ejemplo...}
+\begin{frame}
+\frametitle{Estimación puntual: ejemplo}
+Para simplificar: no importa cómo llamemos a la función de datos muestrales, si estadístico, estimador o estimador puntual. Solo tendremos en cuenta que son variables aleatorias, cuyo valor depende de la muestra y un valor particular (es decir, una realización) se llamará estimación puntual o estimación de un parámetro poblacional dado.
+\end{frame}
+
+
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+\begin{block}{\textbf{¿Cómo elegir un buen estimador para obtener una estimación puntual lo más ''fiable'' posible del parámetro poblacional?}}
+\begin{itemize}
+\item <1> sentido común.
+\bigskip
+\item <1> propiedades del estimador.
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{Linealidad}}
+Un estimador es lineal si es una función lineal de las observaciones muestrales.
+\end{block}
+
+\begin{block}{\textbf{Insesgadez}}
+Un estimador es insesgado si la media de la distribución muestral es igual al parámetro correspondiente. $\theta$ : parámetro y $\hat{\theta}$ : estimador.
+$$E(\hat{\theta})=\theta$$
+\bigskip
+$$Sesgo=E(\hat{\theta})- \theta$$
+\end{block}
+\end{frame}
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+
+\begin{block}{\textbf{Varianza Mínima}}
+Un estimador de $\theta$ es de varianza mínima si su varianza es menor que la de cualquier otro estimador de $\theta$.
+\end{block}
+\end{frame}
+
+
+
+\begin{block}{\textbf{Eficiencia}}
+Dados dos o más estimadores insesgados, un estimador es eficiente cuando tiene la varianza menor. Ejemplo:
+$$E(\bar{X})=$$
+$$E(med. muestral)=\mu_{x}$$
+$$Var(\bar{X})=\frac{\sigma^{2}}{n}$$
+var(med. muestral)= $$\frac{\pi \sigma^{2}}{2n}$$ $$\simeq 1.57 var(\bar{X})$$
+Tengo cuidado con los conceptos de distribución leptocurtica, mesocurtica y platicurtica, provienen del concepto  estadístico de la curtosis, relacionado con la medición de la concentracción de los datos cerca de la media.
+Más apuntada y con colas más anchas que la normal (leptocúrtica), menos apuntada y con colas menos anchas que la normal (platicúrtica), la distribución normal es mesocúrtica (curtosis de 3).
+$$G_{2}$$=$$\frac{\mu_{4}}{\sigma^{4}}-3$$
+\end{block}
+\end{frame}
+
+
+
+\section{Propiedades de los buenos estimadores}
+\begin{frame}
+\frametitle{Propiedades de los buenos estimadores}
+
+\begin{block}{\textbf{Consistencia}}
+Un estimador es consistente si, a medida que aumenta el tamaño de la muestra, las estimaciones se aproximan al valor del parámetro. ** Si un estadístico NO es consistente no sirve tomar muestras más grandes para obtener estimaciones puntuales más precisas.
+$$lim \hat{\beta}_{i}=\beta_{i}$$ $n\rightarrow\propto$
+\end{block}
+
+\begin{block}{\textbf{Suficiencia}}
+Un estimador es suficiente si utiliza toda la información disponible en la muestra. La suficiencia es una condición necesaria para la eficiencia.
+\end{block}
+
+\begin{block}{\textbf{Estimador lineal insesgado óptimo}}
+\begin{itemize}
+\item <1> Es un estimador lineal, insesgado y tiene la varianza mínima entre todos los estimadores lineales insesgados del parámetro.
+\bigskip
+\item <1> Aclaración: Para comparar dos estimadores sesgados utilizamos el concepto de error cuadrático medio (ECM) de un estimador.
+$$ECM(\hat{\beta})=var(\hat{\beta})+[sesgo(\hat{\beta})]_{2}$$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+El uso de una estimación puntual tiene inconvenientes:
+\begin{itemize}
+\item <1> Si el estimador no es consistente, por más que tomemos una muestra ''grande'', no estaremos seguros de la confiabilidad de esa estimación puntual.
+\bigskip
+\item <1> Tampoco tenemos una medida del error posible en la estimación puntual. (Hemos visto que para distintas muestras el valor posible cambia...el error posible en la estimación puntual se mide en términos de la variabilidad de la distribución de estimador).
+\bigskip
+\item <1> Estimación por intervalo o de un intervalo define un intervalo dentro del cual puede estar el verdadero valor del parámetro,
+Formalmente: Un estimador por intervalos de un parámetro poblacional es una regla (basada en información muestral) para determinar un rango, o un intervalo aleatorio, en el cual posiblemente se encuentre dicho parámetro.
+\bigskip
+\item <1> La estimación correspondiente es una estimación por intervalos.
+\end{itemize}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{itemize}
+\item <1> Ahora, en vez de tener un estimador que es una variable aleatoria, tendremos un intervalo aleatorio pues los límites dependerán de la muestra...
+\bigskip
+\item <1> Para la estimación por intervalos se consideran, en esencia: 1. un estimador puntual, una función del estimador puntual y del parametro a estimar, y la distribución de probabilidades asociada a esta función.
+\bigskip
+\item <1> El intervalo se especi.ca para un nivel de con.anza dado respecto de la precisión de la estimación, por eso se denomina INTERVALO DE CONFIANZA.
+\end{itemize}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{itemize}
+\item <1> Hasta ahora hemos dicho que los estimadores por intervalos contienen posiblemente. al verdadero, aunque desconocido, parámetro poblacional. Para formalizar, es necesario hablar de esas posibilidades en términos de probabilidades.
+\bigskip
+\item <1> Para la estimación por intervalos se consideran, en esencia: 1. un estimador puntual, una función del estimador puntual y del parametro a estimar, y la distribución de probabilidades asociada a esta función.
+\bigskip
+\item <1> Sea $\theta$ el parámetro a estimar. El estimador por intervalos es un intervalo aleatorio tal que la probabilidad de que el parámetro esté entre LI y LS es $1-\alpha$. LI y LS son v.a.
+    $$P(LI<\theta<LS)=1-\alpha$$
+\end{itemize}
+\end{frame}
+
+\section{Estimación por intervalos..}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{itemize}
+\item <1> Una vez que extraemos la muestra, calculamos los valores particulares de LI y LS (li y ls) y tendremos un intervalo de confianza: $$li< \theta <ls$$.
+\bigskip
+\item <1> Es decir, el parámetro está entre li y ls con un nivel de confianza de $(1-\alpha)100\%$. (Interprete $\alpha \%$).
+\bigskip
+\item <1> \textbf{Atención:} en una muestra particular, NO podemos hablar de probabilidad; el intervalo contiene o no al verdadero parámetro. Por ello hablamos de nivel de confianza.
+\end{itemize}
+\end{frame}
+
+
+\section{Historia del análisis de regresión}
+\begin{frame}
+\frametitle{Estimación por intervalos..}
+\begin{center}
+\includegraphics[width=11cm]{Historia_econometria}
+\end{center}
+\end{frame}
