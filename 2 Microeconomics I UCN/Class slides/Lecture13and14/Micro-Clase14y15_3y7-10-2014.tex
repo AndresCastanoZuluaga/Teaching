@@ -1,0 +1,423 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#13 y \#14 - La demanda de mercado y la elasticidad}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 13 y 14]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Noviembre 3 y 5 de 2014}
+
+%\date{\today}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{La demanda de mercado}
+\begin{frame}
+\frametitle{La demanda de mercado}
+\begin{itemize}
+\item <1> Anteriormente analizamos la elección del consumidor, ahora centraremos la atención en  la suma de las demandas individuales con el fin de obtener la demanda de mercado.\\
+\bigskip
+\item <1> Pensemos en una economía con n consumidores $i = 1,....,n$. La demanda marshalliana del i-ésimo consumidor por el bien j es:
+$$x_{j}^{*i}(p_{1}, p_{2}, m^{i})$$
+Si todos los consumidores son tomadores de precios, entonces la demanda del mercado por el bien j es:
+$$x_{j}(p_{1}, p_{2}, m^{1},...,m^{n})=\sum_{i=1}^{n}x_{j}^{*i}(p_{1}, p_{2}, m^{i})$$
+Si todos los consumidores son idénticos, entonces:
+$$x_{j}(p_{1}, p_{2}, M)=N*x^{*}_{j}(p_{1}, p_{2}, m)$$
+donde M=nm
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La demanda de mercado}
+\begin{center}
+\begin{itemize}
+\item <1> La curva de demanda del mercado es la ''suma horizontal'' de las curvas de demanda individuales.
+\bigskip
+\item <1> Ejemplo: supongamos que sólo se tienen dos consumidores en la economía; $i = A,B$
+\end{itemize}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{La demanda de mercado}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{image1}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La demanda de mercado}
+\centering
+\begin{itemize}
+\item <1> Otra forma: suponga que la curva de demanda de un individuo es $D_{1}(p)=20-p$, y la del otro es $D_{2}(p)=10-2p$, ¿Cuál es la función de demanda del mercado?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La demanda de mercado}
+\begin{center}
+\begin{figure}
+%\includegraphics[width=11cm]{image2}
+\centerline{\includegraphics[width=11cm]{image2}}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\section{La elasticidad}
+
+\begin{frame}
+\frametitle{La elasticidad}
+\begin{itemize}
+\item <1> Elasticidad $\Longrightarrow$ mide la sensibilidad  de la demanda del consumidor.
+\bigskip
+\item <1> Lo primero que se nos ocurriría para medir, por ejemplo la sensibilidad de la demanda del consumidor ante cambios en el precio, debería ser la pendiente de la curva de demanda:
+$$PCD=\frac{\Delta Q}{\Delta P}$$
+\item <1> No obstante está pendiente depende de las unidades de medida de la demanda y el precio, imagínense si decide comparar las pendientes de dos demandas de, por ejemplo leche, y en uno se habla de litros y en la otra de hectolitros (1 hectolitro=100 litros).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Pendiente de la curva de demanda}
+¿En cuál de estos casos la cantidad demandada es más sensible al cambio en el precio?
+\begin{center}
+\begin{figure}
+\includegraphics[width=7cm]{image3}
+\end{figure}
+\end{center}
+\begin{itemize}
+\item <1> La cantidad demandada es igual de sensible en los dos casos
+\bigskip
+\item <1> Para corregir el problema de las unidades de medida se podría calcular la elasticidad como:
+$$\varepsilon_{Q,P}=\frac{\% \Delta Q}{\% \Delta P}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{El problema de calcular la elasticidad entre dos puntos de una curva de demanda}
+\begin{itemize}
+\item <1> Suponga que tenemos dos puntos en la curva de demanda:
+$$A=(Q,P)=(120,4)$$
+$$B=(Q,P)=(80, 6)$$
+Realice el cálculo de la EPD de A a B y luego de B a A. ¿Les dio igual?
+\item <2> El método del punto medio permite resolver dicho problema $\Longrightarrow$. Si se tienen dos puntos $(Q_{1}, P_{1})$ y $(Q_{2}, P_{2})$
+$$EPD=\frac{\frac{Q_{2}-Q_{1}}{(\frac{Q_{2}+Q_{1}}{2})}}{\frac{P_{2}-P_{1}}{(\frac{P_{2}+P_{1}}{2})}}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cálculo de la elasticidad}
+\centering
+\begin{itemize}
+\item <1> De modo general hay dos maneras de aproximarse al cálculo de la elasticidad.
+\begin{itemize}
+\bigskip
+\item <1> Elasticidad arco $\Longrightarrow$ también puede entenderse como la elasticidad precio ''promedio'' de demanda del bien i sobre un intervalo de precios.
+\bigskip
+\item <1> Elasticidad punto $\Longrightarrow$ Es la elasticidad estimada para un único valor del precio se conoce como elasticidad punto.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elasticidad arco}
+¿Cuál es la elasticidad precio ''promedio'' de demanda para el intervalo de precios centrado en $P_{i}^{'}$?
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{image4}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elasticidad arco}
+¿Cuál es la elasticidad precio ''promedio'' de demanda para el intervalo de precios centrado en $P_{i}^{'}$?
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{image5}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elasticidad arco}
+¿Cúal es la elasticidad precio ''promedio'' de demanda para el intervalo de precios centrado en $P_{i}^{'}$?
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{image6}
+\end{figure}
+\end{center}
+Esta es la elasticidad arco para el intervalo de precios centrado en $P_{i}^{'}$
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elasticidad punto}
+¿Cuál es la elasticidad precio de la demanda dentro de un muy pequeño intervalo de precios centrado en $P_{i}^{'}$?
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\includegraphics[width=5cm,height=3.5cm]{image7}\\
+\includegraphics[width=5cm,height=3.5cm]{image8}
+\column{.5\textwidth}
+\centering
+\includegraphics[width=5cm,height=3.5cm]{image9}\\
+\includegraphics[width=5cm,height=3.5cm]{image10}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elasticidad punto}
+\begin{itemize}
+\item <1> Para contrarrestar el problema de las unidades de medida, se utiliza una medida de sensibilidad, conocida como la elasticidad precio de la demanda, que mide las variaciones de precios y cantidades en porcentaje:
+$$\varepsilon_{Q,P}=\frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}}$$
+$$\varepsilon_{Q,P}=\frac{P \Delta Q}{Q \Delta P}$$
+Que no es más que el cociente entre el precio y la cantidad multiplicada por la pendiente de la curva de demanda, el mismo que obtuvimos con anterioridad.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Ejemplo del cálculo}
+\begin{itemize}
+\item <1> Considere la curva de demanda lineal $Q=a-bP$, calcule la pendiente de la curva de demanda y la elasticidad punto:
+$$PCD=\frac{\Delta Q}{\Delta P}=-b$$
+La elasticidad la tendríamos utilizando la fórmula:
+$$\varepsilon_{Q,P}=\frac{P \Delta Q}{Q \Delta P}=\frac{-bP}{Q}=\frac{-bP}{a-bP}$$
+Que se puede decir de $\varepsilon_{Q,P}$ cuando $P=0$ y cuando $Q=0$
+\bigskip
+\item <1> Qué valor debe tener el precio para que la elasticidad sea $-1$
+$$\frac{-bP}{a-bP}=-1$$
+$$p=\frac{a}{2b}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Algunas aplicaciones de la elasticidad}
+\begin{itemize}
+\item <1> Tipos de elasticidad:
+\begin{itemize}
+\item <1> La cantidad demandada del bien i respecto a su precio (elasticidad precio de la demanda)
+\bigskip
+\item <1> La demanda por el bien i en relación al ingreso (elasticidad ingreso de la demanda)
+\bigskip
+\item <1> La demanda del bien i en relación al precio del bien j (elasticidad precio cruzada de la demanda).
+\bigskip
+\item <1> La cantidad ofertada del bien i respecto a su precio (elasticidad precio de oferta)
+\bigskip
+\item <1> La cantidad ofertada del bien i en relación al salario (elasticidad de oferta en relación al salario)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Graficamente: La elasticidad precio de la demanda en un punto}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{image11}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Las curvas de demanda y la elasticidad}
+\begin{itemize}
+\item <1> Entre más plana la curva de demanda, mayor es la EPD.
+\bigskip
+\item <2> Entre más inclinada sea la curva de demanda, menor es la EPD.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La elasticidad precio de la demanda y el ingreso}
+\begin{itemize}
+\item <1> Si al subir el precio se provoca una disminución pequeña en la cantidad demandada, entonces el ingreso del vendedor se incrementa.
+\bigskip
+\item <1> Cuando la demanda es inelástica el ingreso de los vendedores se incrementa cuando el precio se incrementa.
+\bigskip
+\item <1> Si al subir el precio se provoca una gran disminución en la cantidad demandada, entonces el ingreso de los vendedores se reduce.
+\bigskip
+\item <1> Cuando la demanda es elástica el ingreso de los vendedores cae cuando el precio se incrementa.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La relación entre la elasticidad precio de la demanda y el ingreso}
+\scriptsize
+\begin{itemize}
+\item <1> El ingreso de los vendedores es:
+$$R=P*Q$$
+Si supones un pequeño cambio en el precio ($P+\Delta P$) y luego en la cantidad ($Q+\Delta Q$), tenemos:
+$$R^{'}=(P+\Delta P)(Q+\Delta Q)$$
+$$=PQ+Q\Delta P+ P\Delta Q+ \Delta P \Delta Q $$
+Restando el valor de la renta inicial con la nueva tengo:
+$$\Delta R=Q\Delta P+ P\Delta Q+ \Delta P \Delta Q $$
+En un escenario con $\Delta P$ y $\Delta Q$ muy bajos, tendríamos:
+$$\Delta R=Q\Delta P+ P\Delta Q$$
+Si quisieramos obtener la variación de la renta cuando varían los precios tendríamos:
+$$\frac{\Delta R}{\Delta P}= Q+P\frac{\Delta Q}{\Delta P}$$
+También se podría expresar como:
+$$\frac{\Delta R}{\Delta P}= Q[1-\abs{\varepsilon_{Q,P}}]$$
+\end{itemize}
+\end{frame}
+
+
+%\begin{frame}
+	%\frametitle{Graficamente: la relación entre la elasticidad %precio de la demanda y el ingreso}
+	%\begin{center}
+	%	\begin{figure}
+	%		\includegraphics[width=10cm]{ingresos}
+	%	\end{figure}
+	%\end{center}
+%\end{frame}
+
+
+\begin{frame}
+\frametitle{La relación entre la elasticidad precio de la demanda y el ingreso}
+\begin{itemize}
+\item <1> Teniendo esta expresión:
+$$\frac{\Delta R}{\Delta P}= Q[1-\abs{\varepsilon_{Q,P}}]$$
+Que puede decir acerca de la relación entre el ingreso y la elasticidad precio de la demanda?
+\bigskip
+\item <2> Si $\abs{\varepsilon_{Q,P}}=1$, $\frac{\Delta R}{\Delta P}=0$.
+\bigskip
+\item <2> Si $\abs{\varepsilon_{Q,P}}>1$, $\frac{\Delta R}{\Delta P}$ va ser negativo.
+\bigskip
+\item <2> Si $\abs{\varepsilon_{Q,P}}$<1, $\frac{\Delta R}{\Delta P}$ va ser positivo.
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+

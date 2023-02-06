@@ -1,0 +1,439 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#11 y \#12 - La ecuación de Slutsky}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 11y12 27-31/10/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Octubre 27 y 31 de 2014}
+
+%\date{\today}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> Cómo varía la conducta de un consumidor cuando cambia su entorno económico $\Longrightarrow$ Comportamiento de la elección cuando varía el precio de un determinado bien. (Bienes normales vs Bienes Giffen).\\
+\bigskip
+\item <1> Porqué variaciones en los precios pueden producir efectos ambiguos en la demanda.\\
+\bigskip
+\item <1> Los variaciones en los precios pueden tener dos efectos: Efecto sustitución y efecto renta
+\end{itemize}
+\end{frame}
+
+\section{Efecto sustitución y efecto renta}
+\begin{frame}
+\frametitle{Efecto sustitución}
+\begin{itemize}
+\item <1> Cuando hay un $\nabla$ del precio de un bien, por decir $x_{1}$, hay dos efectos posibles:\\
+\bigskip
+\begin{itemize}
+\item <1> Varía la relación de intercambio $\frac{p_{1}}{p_{2}}$ $\Longrightarrow$ Efecto sustitución
+\bigskip
+\item <1> $\Delta$ el poder adquisitivo de mi renta inicial $\Longrightarrow$ Efecto renta
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Efecto renta}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky11}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Efecto renta}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky22}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Efecto renta}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky33}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Cambios en el ingreso real}
+	\begin{itemize}
+		\item <1> Pueden existir dos interpretaciones a los nuevos precios:\\
+		\bigskip
+		\begin{itemize}
+			\item <1> Es necesario un menor ingreso para comprar la canasta original, entonces el ingreso real se ha incrementado
+			\bigskip
+			\item <1> Es necesario un mayor ingreso para comprar la canasta original, entonces el ingreso real ha disminuido.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Efecto sustitución puro}
+		\begin{itemize}
+			\item <1> Slutsky aisló el cambio en la demanda debido únicamente al cambio en los precios relativos, preguntándose''¿cuál es el cambio en la cantidad demandada cuando el ingreso del consumidor se ajusta de tal manera que, a los nuevos precios, pueda comprar exáctamente la canasta inicial?''
+		\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Efecto sustitución puro}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky4}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Efecto sustitución puro cuando disminuye $p_{1}$}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky5}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Efecto sustitución puro}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky6}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Efecto sustitución puro}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky7}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Efecto sustitución puro}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky8}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Y el efecto renta es?}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky9}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Por lo que el efecto total es?}
+	\begin{center}
+		\begin{figure}
+			\includegraphics[width=11cm]{slutsky10}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cómo aproximarse el ajuste en la renta?}
+\begin{itemize}
+\item <1> Cuanto se debe ajustar la renta para que $(x_{1}, x_{2})$ siga siendo asequible tanto en $(p_{1}, p_{2}, m)$ como con $(p_{1}^{*}, p_{2}, m^{*})$:
+\begin{equation}
+m^{*}=p_{1}^{*}x_{1} + p_{2}x_{2}
+\end{equation}
+
+\begin{equation}
+m=p_{1}x_{1} + p_{2}x_{2}
+\end{equation}
+Restando (1) y (2) se obtiene:
+\begin{equation}
+m^{*}-m=x_{1}(p_{1}^{*}-p_{1})
+\end{equation}
+
+\begin{equation}
+\Delta m=x_{1}\Delta p_{1}
+\end{equation}
+\item <1> La ecuación 4 muestra la variación que debe experimentar la renta para que la antigua cesta sea asequible.
+\bigskip
+\item <1> La variación en la renta y el precio van en la misma dirección.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 1: el ajuste de la renta}
+\begin{itemize}
+\item <1> Suponga que un individuo consume inicialmente 20 chocolatinas x semana a 50 pesos cada una. Si el precio de las chocolatinas sube 10 pesos ¿Cuánto se debe ajustar la renta?:
+\bigskip
+\begin{equation}
+\Delta m=\Delta p_{1} * x_{1}=10 * 20=200
+\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresión para el Efecto Sustitución}
+\begin{itemize}
+\item <1> Efecto sustitución $(\Delta x_{1}^{s})$
+\begin{equation}
+\Delta x_{1}^{s}=x_{1}(p_{1}^{*}, m^{*})- x_{1}(p_{1}, m)
+\end{equation}
+\item <1> Para obtener el efecto sustitución se debe utilizar la demanda del consumidor para calcular las opciones óptimas $(p_{1}^{*}, m^{*})$ y $(p_{1}, m)$.
+\bigskip
+\item <1> El efecto substitución se suele llamar ''variación de la demanda compensada'' ¿Por qué?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 2: cálculo del efecto substitución}
+\begin{itemize}
+\item <1> Suponga que el consumidor tiene la siguiente función de demanda de leche (¿Qué tipo de demanda es esta?):
+$$x_{1}= 10+ \frac{m}{10p_{1}}$$
+\bigskip
+\item <1> Si la renta inicial del consumidor es de 12000 pesos semanales y el precio de la leche es 100 pesos x litro, entonces, $x_{1}=22$
+\bigskip
+\item <1> Suponga que el precio baja a 80 pesos x litro, por lo que, $x_{1}^{*}=25$
+\bigskip
+\item <1> ¿Cuánto debe variar la renta para que el consumo inicial de leche fuera asequible al precio de 80 pesos x litro:
+$$\Delta m= x_{1}\Delta p_{1}=22 * (80-100)=-440$$
+$$m^{*}=m + \Delta m = 12000-440=11560$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 2: cálculo del efecto substitución}
+\begin{itemize}
+\item <1> ¿Cuanta leche demanda el consumidor al nuevo precio (80 x litro) y con la nueva renta (11560):
+$$x_{1}(p_{1}^{*}, m^{*})=x_{1}(80, 11560)=10+ \frac{11560}{10*80}=24.45$$
+\item <1> Por lo que el efecto sustitución es:
+$$\Delta x_{1}^{s}=x_{1}(p_{1}^{*}, m^{*})- x_{1}(p_{1}, m)$$
+$$\Delta x_{1}^{s}=x_{1}(80, 11560)- x_{1}(100, 12000)=24.45-22=2.45$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresión para el efecto renta}
+\begin{itemize}
+\item <1> Efecto Renta $(\Delta x_{1}^{n})$
+\begin{equation}
+\Delta x_{1}^{n}=x_{1}(p_{1}^{*}, m)- x_{1}(p_{1}^{*}, m^{*})
+\end{equation}
+\item <1> Variación en la demanda del bien 1 cuando variamos la renta de $m^{*}$ a $m$ manteniendo fijo el precio del bien 1 en $p_{1}^{*}$
+\bigskip
+\item <1> En la clase anterior mostramos que el $\nabla m$ podía ocasionar:
+\begin{itemize}
+\bigskip
+\item <1> $\Delta x_{1}$, si $x_{1}$ es inferior
+\bigskip
+\item <1> $\nabla x_{1}$, si $x_{1}$ es normal
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo 2: cálculo del efecto renta}
+\begin{itemize}
+\item <1> Dado el ejemplo anterior:
+$$x_{1}(p_{1}^{*}, m)= x_{1}(80, 12000)=25$$
+\bigskip
+$$x_{1}(p_{1}^{*}, m^{*})=x_{1}(80, 11560)=24.45$$
+\bigskip
+Por lo que el efecto renta:
+$$\Delta x_{1}^{n}=x_{1}(p_{1}^{*}, m)- x_{1}(p_{1}^{*}, m^{*})$$
+\bigskip
+$$=x_{1}(80, 12000)- x_{1}(80, 11560)$$
+\bigskip
+$$= 25 - 24.45= 0.55$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Signo del efecto sustitución}
+\begin{itemize}
+\item <1> Como se vio en el ejemplo anterior el efecto renta puede ser positivo (bienes normales) o negativo (bienes inferiores).
+\bigskip
+\item <1> Qué ocurre con el signo del efecto sustitución?:
+\bigskip
+\begin{itemize}
+\item <1> Si $\nabla p_{1}$, $\Delta x_{1}^{s}\geq 0$; que es equivalente a decir que si $p_{1}>p_{1}^{*}$ se debe tener que $x_{1}(p_{1}^{*}, m^{*}) \geq x_{1}(p_{1}, m)$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Por qué $\Delta x_{1}^{s}\geq 0$, si $\nabla p_{1}$ }
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{slutsky2}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Variación total de la demanda $\Delta x_{1}$}
+\begin{itemize}
+\item <1> La variación total de la demanda $\Delta x_{1}$:
+$$\Delta x_{1}=x_{1}(p_{1}^{*}, m)-x_{1}(p_{1}, m)$$
+Como se pudo ver este efecto total, puede dividirse en efecto sustitución y efecto renta:
+\begin{equation}
+\Delta x_{1}=\Delta x_{1}^{s}+\Delta x_{1}^{n}
+\end{equation}
+\begin{equation}
+\begin{multlined}
+x_{1}(p_{1}^{*}, m)-x_{1}(p_{1}, m)= \{[x_{1}(p_{1}^{*}, m^{*})- x_{1}(p_{1}, m)]  \\
++ [x_{1}(p_{1}^{*}, m)- x_{1}(p_{1}^{*}, m^{*})] \}
+\end{multlined}
+\end{equation}
+\bigskip
+\item <1> La última ecuación es conocida como \textbf{la identidad de Slutsky}, e indica cómo se descompone la variación total de la demanda
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Variación total de la demanda $\Delta x_{1}$}
+\begin{itemize}
+\item <1> El signo del efecto sustitución siempre va a ser negativo (signo contrario a la variación del precio), el efecto renta puede ser positivo o negativo:
+\bigskip
+\item <1> Si el bien es normal, y $\Delta p_{1}$
+$$\Delta x_{1}=\Delta x_{1}^{s}+\Delta x_{1}^{n}$$
+$$(-) = (-) + (-) $$
+\bigskip
+\item <1> Si el bien es inferior, y $\Delta p_{1}$
+$$\Delta x_{1}=\Delta x_{1}^{s}+\Delta x_{1}^{n}$$
+$$(?) = (-) + (+) $$
+¿Qué tipo de bien es este?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Un bien Giffen tiene  que ser un bien inferior, pero no todo bien inferior es Giffen}
+\begin{center}
+\begin{figure}
+\includegraphics[width=11cm]{slutsky3}
+\end{figure}
+\end{center}
+\end{frame}
+
+\end{document}

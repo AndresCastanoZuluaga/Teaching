@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{La demanda de mercado}{2}{0}{1}
+\beamer@sectionintoc {2}{La elasticidad}{7}{0}{2}

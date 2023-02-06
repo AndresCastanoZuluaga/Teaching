@@ -1,0 +1,317 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Microeconomía I (EC301)]
+{Microeconomía I (EC301)-I semestre de 2014 \\
+Clase \#10 - La demanda}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 10 17/10/2014]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Octubre 17 de 2014}
+
+%\date{\today}
+
+%\date{\today}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{crane}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+
+
+
+%* albatross (Azul Marino) feo
+%* beetle (Azul y Gris) feo
+%* crane (Naranja y b¡Blanco) Bonito
+%* default (Por Defecto)
+%* dolphin (Azul Marino y Blanco)
+%* dove (Gris y Blanco)
+%* fly (Gris) feo
+%* lily bonito
+%* orchid
+%* rose
+%* seagull (Gris y Blanco)
+%* seahorse
+%* sidebartab
+%* structure
+%* whale (Azul Marino y Blanco)
+
+
+\begin{document} %inicio del documento
+
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+%indice
+%\begin{frame}
+%\frametitle{Contenido}
+%\tableofcontents[pausesections]
+%\end{frame}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}{Contenido}
+%\tableofcontents[currentsection,currentsubsection,currentsubsubsection]
+%\end{frame}
+%}
+
+%\addtobeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber\hspace{2em}\null}
+%\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+%\inserttotalframenumber
+\section{Introducción}
+\begin{frame}
+\frametitle{Introducción}
+\begin{itemize}
+\item <1> En el capítulo anterior desarrollamos el modelo básico de elección del consumidor: la maximización de la utilidad sujeta a la restricción presupuestaria da lugar a una elección óptima.\\
+\bigskip
+\item <1> Las elecciones óptimas de los consumidores dependían de la renta y de los precios de los bienes.\\
+\bigskip
+\item <1> Las funciones de demanda muestran las cantidades óptimas de cada uno de los bienes en función  de los precios y la renta del consumidor:\\
+$$x_{1}=x_{1}(p_{1}, p_{2}, m)$$
+$$x_{2}=x_{2}(p_{1}, p_{2}, m)$$
+\bigskip
+\item <1> El concepto de estática comparativa?\\
+\end{itemize}
+\end{frame}
+
+\section{Cambios en la demanda cuando cambia la renta}
+\begin{frame}
+\frametitle{Cómo varia la demanda de un bien cuando cambia su renta?}
+\begin{itemize}
+\item <1> El comportamiento de la demanda depende del tipo de bien que estemos hablando, sea normal o inferior\\
+\bigskip
+\item <1> Si $x_{1}$ es normal: $\Delta m$ $\Longrightarrow$ $\Delta x_{1}$, $\nabla m$ $\Longrightarrow$ $\nabla x_{1}$   .\\
+\bigskip
+\item <1> Si $x_{1}$ es inferior: $\Delta m$ $\Longrightarrow$ $\nabla x_{1}$, $\nabla m$ $\Longrightarrow$ $\Delta x_{1}$   .\\
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bien normal}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{bien_normal}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bien inferior}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{bien_inferior}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Curvas de oferta-renta (ingreso-consumo ó senda de expansión de la renta) y curva de Engel}
+\begin{itemize}
+\item <1> La curva de oferta-renta representa la unión de las cestas demandadas para distintos niveles de la renta.
+\bigskip
+\begin{itemize}
+\item <1> Tiene pendiente positiva si los dos bienes son normales.
+\end{itemize}
+\item <1> La curva de Engel muestra como varía la demanda cuando varía la renta y todos los precios se mantienen constantes.
+$$\frac{\Delta x_{1}}{\Delta m }>0$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Curvas de ingreso consumo (CIC) y curva de Engel (CE)}
+\begin{center}
+\begin{figure}
+\includegraphics[width=12cm]{ingre-consu_engel}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{Cómo son las CIC y la CE para cierto tipo de preferencias?}
+
+\begin{frame}
+\frametitle{CIC Y CE para substitutos perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{CIC-CE_substitutos}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{CIC Y CE para complementarios perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{CIC-CE_complementarios}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{CIC Y CE para preferencias Cobb-Douglas}
+\begin{itemize}
+\item <1> Si $u(x_{1}, x_{2})=x_{1}^{a}x_{2}^{1-a}$, cuyas demandas marshallianas son:
+$$x_{1}=\frac{am}{p_{1}}$$
+$$x_{2}=\frac{(1-a)m}{p_{2}}$$
+\bigskip
+\item <2> Es notorio que las demandas de ambos bienes son funciones lineales de la renta, por lo cual la senda de expansión de la renta pasa por el origen.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{CIC Y CE para preferencias Cobb-Douglas}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{CIC-CE_cobb}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{CIC Y CE para preferencias Homotéticas}
+\begin{itemize}
+\item <1> Las curvas de Engel reales no tienen por qué ser rectas.
+\bigskip
+\item <1> En las situaciones anteriores, la demanda de un bien aumento en la misma proporción que la renta ¿por qué?
+\bigskip
+\item <1> Si partimos de la situación en qué las preferencias sólo dependen del cociente entre el bien 1 y el 2, significa que si:
+ $$(x_{1}, x_{2})\succ(y_{1}, y_{2})$$
+ también se cumple, para cualquier valor positivo de t
+ $$(2x_{1}, 2x_{2})\succ(2y_{1}, 2y_{2})$$
+ $$(3x_{1}, 3x_{2})\succ(3y_{1}, 3y_{2})$$
+ $$(tx_{1}, tx_{2})\succ(ty_{1}, ty_{2})$$
+ A este tipo de preferencias se les conoce como preferencias homotéticas.
+\end{itemize}
+\end{frame}
+
+
+\section{Cambios en la demanda cuando cambian los precios}
+\begin{frame}
+\frametitle{Cómo varia la demanda de un bien cuando cambian los precios?}
+\begin{itemize}
+\item <1> Si partimos de la situación donde $\nabla p_{1}$ mientras que m y $p_{2}$ permanecen constante ¿qué ocurre con la cantidad demandada del bien 1?.
+\bigskip
+\begin{itemize}
+\item <1> Bien normal $\nabla p_{1}$ $\Longrightarrow$ $\Delta x_{1}$
+\bigskip
+\item <1> Bien Giffen $\nabla p_{1}$ $\Longrightarrow$ $\nabla x_{1}$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Cambios en la demanda cuando cambian los precios: bienes normales}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{var-prec-bien-normal}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cambios en la demanda cuando cambian los precios: bienes Giffen}
+\begin{center}
+\begin{figure}
+\includegraphics[width=8cm]{var-prec-bien-giffen}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curvas de oferta-precio (precio-consumo o CPC) y curva de demanda (CD)}
+\begin{itemize}
+\item <1> La curva de oferta-precio representa la unión de las cestas demandadas para distintos niveles del precio del bien 1.
+\bigskip
+\item <2> La curva de demanda muestra el nivel óptimo de consumo del bien $x_{1}$ correspondiente a cada valor de $p_{1}$
+$$\frac{\Delta x_{1}}{\Delta p_{1}}<0$$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curvas de oferta-precio (precio-consumo) y curva de demanda}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{prec-consu_demanda}
+\end{figure}
+\end{center}
+\end{frame}
+
+\section{Cómo son las CPC y la CD para cierto tipo de preferencias?}
+
+\begin{frame}
+\frametitle{CPC Y CD para substitutos perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{CPC-CD_substitutos}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{CPC Y CD para complementarios perfectos}
+\begin{center}
+\begin{figure}
+\includegraphics[width=10cm]{CPC-CD_complementarios}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\end{document}
+

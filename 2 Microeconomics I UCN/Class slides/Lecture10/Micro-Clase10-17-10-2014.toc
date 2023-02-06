@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\'on}{2}{0}{1}
+\beamer@sectionintoc {2}{Cambios en la demanda cuando cambia la renta}{3}{0}{2}
+\beamer@sectionintoc {3}{C\'omo son las CIC y la CE para cierto tipo de preferencias?}{8}{0}{3}
+\beamer@sectionintoc {4}{Cambios en la demanda cuando cambian los precios}{14}{0}{4}
+\beamer@sectionintoc {5}{C\'omo son las CPC y la CD para cierto tipo de preferencias?}{20}{0}{5}
