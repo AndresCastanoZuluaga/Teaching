@@ -1,0 +1,392 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#4 y \#5 - Análisis de regresión simple, motivación y significado}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clases 4 y 5]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Agosto 14 y 19 de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+%\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Regresión Lineal Simple: Motivación}
+\begin{frame}
+\frametitle{Regresión Lineal Simple: Motivación}
+\begin{itemize}
+\item <1> \textbf{análisis de regresión:}  estudio de la relación entre una variable Y y una (o más variables) X
+\bigskip
+\item <1> \textbf{regresión lineal simple:} una variable X.
+\bigskip
+\item <1> \textbf{Y:} variable dependiente ó explicada ó regresada ó respuesta ó predicha ó endógena ó resultado ó controlada.
+\bigskip
+\item <1> \textbf{X:} variable independiente ó explicativa ó regresora ó predictora ó estímulo ó exógena ó covariante ó de control.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Regresión Lineal Simple: Motivación}
+\begin{itemize}
+\item <1> Relaciones determinísticas vs relaciones estocásticas
+\bigskip
+\item <1> Regresión vs causalidad. No siempre existe una relación de causalidad $\Longrightarrow$ Importancia de la teoría.
+\bigskip
+\item <1> Regresión vs correlación.
+\bigskip
+\item <1> Escalas de medición de las variables (criterios: distancia, proporción y orden natural)
+\bigskip
+\begin{itemize}
+\item <1>  Escala de proporción (ejemplo: $\frac{PIB_{2}}{PIB_{1}}$).
+\bigskip
+\item <1>  Escala de intervalo $\Longrightarrow$ sólo es significativa la distancia pero no la proporción, ni el orden (Ejemplo: tiempo).
+\bigskip
+\item <1>  Escala ordinal $\Longrightarrow$ Sólo cumplen el orden natural (Ejemplo: sistema de calificación, tipos de ingresos).
+\bigskip
+\item <1>  Escala nominal $\Longrightarrow$ no cumple ninguno de los criterios (ejemplo: sexo, estado civil).
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Objetivos del análisis de regresión}
+\begin{frame}
+\frametitle{Objetivos del análisis de regresión}
+\begin{itemize}
+\item <1> Estimar la media o valor medio de Y dado X. Formalmente, estimamos la media de la distribución condicional de $Y\mid X$.
+$$E(Y\mid X)$$
+\item <1> Contrastar hipótesis (sugeridas por la teoría económica o de negocios).
+\bigskip
+\item <1> Predecir.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Algunos ejemplos}
+\begin{itemize}
+\item <1> Estatura padres vs estatura hijos
+\item <1> Estatura vs edad
+\item <1> Propensión marginal a consumir
+\item <1> Elasticidad precio de la demanda
+\item <1> Curva de phillips
+\item <1> Mayor inflación, menor proporción de ingreso liquido
+\item <1> Elasticidad de la demanda ante cambios en los gastos de publicidad
+\item <1> Retornos salariales de la educación
+\end{itemize}
+\end{frame}
+
+\section{Ejemplo}
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{itemize}
+\item <1> Objeto de estudio: relación entre productividad y educación formal de los trabajadores.
+\bigskip
+\item <1> Según la teoría: más educación, más productividad. Problema: ¿cómo medir la productividad?
+\bigskip
+\item <1> Solución teórica: bajo el supuesto de mercados competitivos.
+$$PML=W$$
+\item <1> Estudiaremos la relación entre Y=''salario por hora'' y X=''años de educación media y superior''.
+\end{itemize}
+\end{frame}
+
+\section{La Función de Regresión Poblacional (FRP)}
+\begin{frame}
+\frametitle{La función de Regresión Poblacional (FRP)}
+\begin{itemize}
+\item <1> Población (estadística): todos los pares posibles (educ, salario).
+\bigskip
+\item <1> Suponga que observamos todos los elementos de la población (este es un
+ejemplo, no un caso real!)
+\bigskip
+\item <1> Dibujamos un gráfico de puntos, cada punto $(X=educ,Y=salario)$
+\bigskip
+\item <1> Formalmente, dibujamos en el espacio $(X,Y)$ la distribución (i.e., población) de la variable bivariante $(X,Y)$.
+\end{itemize}
+\end{frame}
+
+
+\section{Gráfico de puntos (población ó distribución de (X,Y))}
+\begin{frame}
+\frametitle{Gráfico de puntos (población ó distribución de (X,Y))}
+\begin{center}
+\includegraphics[width=10cm]{salarioVSeducacion.jpg}
+\end{center}
+\end{frame}
+
+\section{Obteniendo la FRP: Para cada valor de X (educ) calculamos $E(Y\shortmid X=x)$}
+\begin{frame}
+\frametitle{Obteniendo la FRP: Para cada valor de X (educ) calculamos $E(Y\mid X=x)$}
+\begin{center}
+\includegraphics[width=10cm]{salarioVSeducacion2.jpg}
+\end{center}
+\end{frame}
+
+
+\section{FRP}
+\begin{frame}
+\frametitle{FRP}
+Si unimos con una línea todos los valores medios de Y condicionales a cada valor de X, obtenemos la línea de regresión poblacional. La expresión matemática de esta línea es la FRP. Si, en particular, la relación entre Y y X es lineal, la línea de regresión poblacional es una recta. Por lo tanto, la FRP es la ecuación de esa recta:
+$$E(Y\mid X)=\beta_{1} + \beta_{2}X$$
+En nuestro ejemplo:
+$$E(Y\mid X)=2+3X$$
+\end{frame}
+
+
+\section{FRP (ejemplo)}
+\begin{frame}
+\frametitle{FRP (ejemplo)}
+\begin{center}
+\includegraphics[width=10cm]{salarioVSeducacion3.jpg}
+\end{center}
+\end{frame}
+
+\section{Especificación estocástica de la FRP}
+\begin{frame}
+\frametitle{Especificación estocástica de la FRP}
+Está claro que la FRP no estocástica (como la ecuación de la recta mencionada antes) no describe exactamente la realidad de cada elemento de la población. Es decir, tal como el gráfico de puntos muestra, si tomamos un elemento (individuo) al azar, y resulta que tiene 5 años de educación, sólo por casualidad su salario será $2+ 3*5 =17$.
+\end{frame}
+
+\section{Especificación estocástica de la FRP}
+\begin{frame}
+\frametitle{Especificación estocástica de la FRP}
+Si la relación entre salario y educación fuera exacta, entonces todos los puntos se situarían sobre la recta $Y = 2 + 3*X$ (y por lo tanto
+$Y = E(Y\mid X)$ para todo valor posible de X). Pero, aunque para el PROMEDIO de la población la relación es exacta, para cualquier individuo en particular la relación NO es exacta. En general, podríamos decir que para el individuo i:
+$$Y_{i}=\beta_{1}+\beta_{2}X_{i}+ \mu_{i}$$
+\end{frame}
+
+\section{Especificación estocástica de la FRP}
+\begin{frame}
+\frametitle{Especificación estocástica de la FRP}
+La variable $\mu_{i}$ es una cantidad (aleatoria) que puede ser positiva, negativa o incluso cero. Es decir, el salario del individuo i es igual a la media del salario condicionada al valor de educacion $X_{i}$ mas o menos alguna cantidad.
+\bigskip
+\begin{itemize}
+\item <1> $\mu_{i}$: término de error (o perturbación) estocástico o aleatorio.
+\bigskip
+\item <1> Ecuacion $Y_{i} = \beta_{1} + \beta_{2}X_{i} + \mu_{i}$ : FRP estocastica $\Longrightarrow$ nuestro objeto de estudio!!!.
+\end{itemize}
+\bigskip
+(Si la FRP fuera determinística o no estocástica...no nos harían falta las técnicas de estimación ni de muestreo, ¿por qué?)
+\end{frame}
+
+
+\section{Origen o naturaleza del término de error}
+\begin{frame}
+\frametitle{Origen o naturaleza del término de error}
+\begin{itemize}
+\item <1> Omisión de variables que influencian a Y (porque no son medibles o por parsimonia).
+\bigskip
+\item <1> Errores de medición (errores en los datos!!!).
+\bigskip
+\item <1> Aleatoriedad debida al tipo de fenómenos que estudiamos: el comportamiento humano/social nunca es exacto!!!.
+\end{itemize}
+\end{frame}
+
+\section{Elementos de la FRP (y de la FRP estocástica)}
+\begin{frame}
+\frametitle{Elementos de la FRP (y de la FRP estocástica)}
+\begin{center}
+\includegraphics[width=8cm]{grafico4.jpg}
+\end{center}
+\end{frame}
+
+\section{Modelo de Regresión Lineal Simple}
+\begin{frame}
+\frametitle{Modelo de Regresión Lineal Simple}
+La FRP estocastica $Y_{i} = \beta_{1} + \beta_{2}X_{i} + \mu_{i}$ define el modelo de regresion lineal simple (MRLS). En la practica, un analisis de regresion lineal simple trata a todos los factores que influyen en Y ademas de X como inobservables, de alli que incluimos $\mu_{i}$. Si los otros factores (incluidos en $\mu_{i}$ ) se mantienen fijos de modo que un cambio en $\mu_{i}$ sea cero, entonces $X_{i}$ tiene un efecto lineal
+sobre $Y_{i}$ , o en otras palabras, la pendiente es una constante
+
+Si: $$\triangle \mu_{i}= 0 \Longrightarrow \triangle Y_{i} = \beta_{2}\triangle X_{i} \Longrightarrow  \beta_{2}= \frac{\triangle Y_{i}}{\triangle X_{i}}$$
+
+\end{frame}
+
+\section{Importancia de la pendiente}
+\begin{frame}
+\frametitle{Importancia de la pendiente}
+El coeficiente $\beta_{2}$, la pendiente, mide entonces (bajo el supuesto de que $\triangle \mu_{i}= 0$) cuánto varía $Y_{i}$ cuando varía $X_{i}$ en una unidad. En modelos económicos o de negocios este parámetro es crucial. En nuestro ejemplo, $\beta_{2}$ mide el cambio en el salario por hora con otro año adicional de educación media o superior.
+\end{frame}
+
+\section{Aplicación: elasticidades}
+\begin{frame}
+\frametitle{Aplicación: elasticidades}
+Suponga que Y es el gasto en consumo, X es ingreso. El modelo matemático es:
+
+$$Y = \beta_{1} + \beta_{2}X$$
+
+Luego, la elasticidad del gasto en consumo con respecto al ingreso está dado por:
+
+$$\epsilon_{Y} = \frac{dY}{dX}\frac{X}{Y}=\beta_{2}\frac{X}{Y}$$
+
+El coeficiente $\beta_{2}$ (si $\triangle \mu_{i}= 0$) afecta la elasticidad.
+\end{frame}
+
+\section{Aplicación: elasticidades}
+\begin{frame}
+\frametitle{Aplicación: elasticidades}
+Sea el MRLS: $$lnY = \beta_{1} + \beta_{2}lnX + \mu$$
+$$Y=exp(\beta_{1} + \beta_{2}lnX + \mu)$$
+$$\frac{dY}{dX}=exp(\beta_{1} + \beta_{2}lnX + \mu)\beta_{2}\frac{1}{X}$$
+$$\frac{dY}{dX}=\frac{X}{Y}\beta_{2}\Longrightarrow \epsilon_{Y}=\frac{dY}{dX}\frac{X}{Y}=\beta_{2}$$
+
+Especificación adecuada cuando la elasticidad es constante.
+\end{frame}
+
+\section{Linealidad}
+\begin{frame}
+\frametitle{Linealidad}
+El modelo en logaritmos sigue siendo un modelo de regresión ''LINEAL'' simple. La razón es porque nos interesa la linealidad con respecto a los
+coeficientes de la regresión. Metodológicamente, se aplica la misma técnica estimando un modelo lineal del tipo:
+
+$$W = \beta_{1} + \beta_{2}Z + \mu$$
+Donde:
+$$W = logY$$ y
+$$Z =log X$$
+
+Obviamente, el dibujo en el espacio (X,Y) deja de ser una recta. Hay modelos que no lineales en los parámetros, pero no los estudiaremos
+aquí!!.
+\end{frame}
+
+\section{Función de Regresión de la Muestra (FRM)}
+\begin{frame}
+\frametitle{Función de Regresión de la Muestra (FRM)}
+\begin{itemize}
+\item <1> Objetivo: Estimar los parámetros o coeficientes de la regresión.
+\bigskip
+\item <1> Si tuviéramos los datos de todos los pares (X,Y) de la distribución (población), calcularíamos $E(Y\mid X = x)$ para cada valor de X y obtendríamos la línea de regresión y luego, la ecuación (FRP).
+\bigskip
+\item <1> Pero en general este no es el caso, y como es usual, disponemos de una muestra.
+\bigskip
+\item <1> Necesitamos, por lo tanto, encontrar un \textbf{ESTIMADOR} de la FRP.
+\end{itemize}
+\end{frame}
+
+\section{Función de Regresión de la Muestra (FRM)}
+\begin{frame}
+\frametitle{Función de Regresión de la Muestra (FRM)}
+El ESTIMADOR de la FRP se denomina función de regresión de la muestra (FRM):
+$$\hat{Y}_{i}=\hat{\beta}_{1} + \hat{\beta}_{2}X_{i}$$
+
+$\hat{\beta}_{1}$ es el estimador de $\beta_{1}$, $\hat{\beta}_{2}$ es el estimador de $\beta_{2}$, $\hat{Y}_{i}$ es el estimador de $E(Y\mid X_{i})$
+\end{frame}
+
+\section{FRM estocástica}
+\begin{frame}
+\frametitle{FRM estocástica}
+La versión estocástica de la FRM es:
+$$\hat{Y}_{i}=\hat{\beta}_{1} + \hat{\beta}_{2}X_{i}+ \hat{\mu}_{i}$$
+Donde $\hat{\mu}_{i}$ es el estimador de $\mu_{i}$; se denomina término residual o residuo y se puede definir como:
+$$\hat{\mu}_{i}={Y}_{i}-\hat{Y}_{i}$$
+\end{frame}
+
+\section{Objetivo análisis de regresión}
+\begin{frame}
+\frametitle{Objetivo análisis de regresión}
+Estimar:
+$$Y_{i} = \beta_{1} + \beta_{2}X_{i} + \mu_{i}$$
+apartir de:
+$$\hat{Y}_{i}=\hat{\beta}_{1} + \hat{\beta}_{2}X_{i}+ \hat{\mu}_{i}$$
+Note que el valor observado $Y_{i}$:
+$$Y_{i}=\hat{Y}_{i}+\hat{\mu}_{i}$$
+$$Y_{i}= E(Y\mid X_{i})+ \mu_{i}$$
+
+Al tomar una muestra particular y obtener valores particulares de $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ obtenemos una estimación de la FRP.
+\end{frame}
+
+
+\section{Regresión poblacional y regresión muestral}
+\begin{frame}
+\frametitle{Regresión poblacional y regresión muestral}
+\begin{center}
+\includegraphics[width=10cm]{grafico5.jpg}
+\end{center}
+\end{frame}
+
+\section{Sobre la figura anterior...}
+\begin{frame}
+\frametitle{Sobre la figura anterior...}
+asuman $\hat{\mu}_{i}=e_{i}$.
+Primer punto (a la izquierda, $X=3$), $Y_{i}$ = $\hat{Y}_{i}$ + $\hat{\mu}_{i}$ donde $\hat{\mu}_{i}$ $> 0$, $Y_{i} = E(Y\mid X = 3) + \mu_{i}$  donde $\mu_{i}$ $> 0$. Para el segundo punto (a la derecha, X = 8), $\hat{\mu}_{i}$ $<0$ al igual que $\mu_{i}$ $<0$
+\bigskip
+IMPORTANTE: Estos son sólo dos posibles ejemplos. En realidad podríamos tener distintos casos donde dado un par $(X_{i},Y_{i})$. y los
+valores correspondientes de $E(Y\mid X)$ y la estimación $\hat{Y}_{i}$ : $\hat{\mu}_{i}$ $>0$.
+\end{frame}
+
+\section{Recuerde...}
+\begin{frame}
+\frametitle{Recuerde...}
+\begin{itemize}
+\item <1> La FRP estocástica es una relación teórica entre Y y X que especifica que $E(Y\mid X)$ es una función lineal en parámetros de X y que cada $Y_{i}$ es igual $E(Y\mid X_{i})$ más o menos una cantidad $\mu_{i}$. $Y_{i}= E(Y\mid X_{i} ) + \mu_{i} = \beta_{1} + \beta_{2}X_{i} + \mu_{i}$
+\item <1> No observamos (conocemos) $E(Y\mid X_{i})$ ni $\mu_{i}$ (solo sabemos que $\mu_{i} = Y_{i}-E(Y\mid Xi)$)..
+\item <1> La FRM estocástica es el ESTIMADOR de la FRP estocástica. $Y_{i} = \hat{Y}_{i} +\hat{\mu}_{i} = \hat{\beta}_{1} + \hat{\beta}_{2}X_{i}+ \hat{\mu}_{i}$
+\item <1> Cuando obtenemos valores particulares de $\beta_{1}$ y $\beta_{1}$, dada una muestra, obtenemos una ESTIMACION de la FRP.
+\item <1> Al obtener estimaciones de $\beta_{1}$ y $\beta_{1}$, es posible calcular $\hat{\mu}_{i} = Y_{i}-\hat{Y}_{i}$
+\item Es trivial, pero tenga en cuenta que: $\hat{Y}_{i}$ $\neq$ $E(Y\mid X)$ y $\hat{\mu}_{i}$ $\neq$ $\mu_{i}$ !!! (es lo mismo que ocurre cuando comparamos la media muestral $\hat{X}$ y la media poblacional $\mu$ de una v.a.)
+\end{itemize}
+\end{frame}
+
+\end{document} 

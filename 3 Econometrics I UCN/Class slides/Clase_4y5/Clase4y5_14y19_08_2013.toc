@@ -1,0 +1,27 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Regresi\'on Lineal Simple: Motivaci\'on}{2}{0}{1}
+\beamer@sectionintoc {2}{Objetivos del an\'alisis de regresi\'on}{4}{0}{2}
+\beamer@sectionintoc {3}{Ejemplo}{6}{0}{3}
+\beamer@sectionintoc {4}{La Funci\'on de Regresi\'on Poblacional (FRP)}{7}{0}{4}
+\beamer@sectionintoc {5}{Gr\'afico de puntos (poblaci\'on \'o distribuci\'on de (X,Y))}{8}{0}{5}
+\beamer@sectionintoc {6}{Obteniendo la FRP: Para cada valor de X (educ) calculamos $E(Y\shortmid X=x)$}{9}{0}{6}
+\beamer@sectionintoc {7}{FRP}{10}{0}{7}
+\beamer@sectionintoc {8}{FRP (ejemplo)}{11}{0}{8}
+\beamer@sectionintoc {9}{Especificaci\'on estoc\'astica de la FRP}{12}{0}{9}
+\beamer@sectionintoc {10}{Especificaci\'on estoc\'astica de la FRP}{13}{0}{10}
+\beamer@sectionintoc {11}{Especificaci\'on estoc\'astica de la FRP}{14}{0}{11}
+\beamer@sectionintoc {12}{Origen o naturaleza del t\'ermino de error}{15}{0}{12}
+\beamer@sectionintoc {13}{Elementos de la FRP (y de la FRP estoc\'astica)}{16}{0}{13}
+\beamer@sectionintoc {14}{Modelo de Regresi\'on Lineal Simple}{17}{0}{14}
+\beamer@sectionintoc {15}{Importancia de la pendiente}{18}{0}{15}
+\beamer@sectionintoc {16}{Aplicaci\'on: elasticidades}{19}{0}{16}
+\beamer@sectionintoc {17}{Aplicaci\'on: elasticidades}{20}{0}{17}
+\beamer@sectionintoc {18}{Linealidad}{21}{0}{18}
+\beamer@sectionintoc {19}{Funci\'on de Regresi\'on de la Muestra (FRM)}{22}{0}{19}
+\beamer@sectionintoc {20}{Funci\'on de Regresi\'on de la Muestra (FRM)}{23}{0}{20}
+\beamer@sectionintoc {21}{FRM estoc\'astica}{24}{0}{21}
+\beamer@sectionintoc {22}{Objetivo an\'alisis de regresi\'on}{25}{0}{22}
+\beamer@sectionintoc {23}{Regresi\'on poblacional y regresi\'on muestral}{26}{0}{23}
+\beamer@sectionintoc {24}{Sobre la figura anterior...}{27}{0}{24}
+\beamer@sectionintoc {25}{Recuerde...}{28}{0}{25}

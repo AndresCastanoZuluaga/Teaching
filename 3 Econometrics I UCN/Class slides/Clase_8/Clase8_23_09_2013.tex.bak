@@ -1,0 +1,257 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#8 - Bondad de ajuste}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 8]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Septiembre 23 de 2013}
+
+%\date{\today}
+
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Precisión o errores estándar del los estimadores}
+\begin{frame}
+\frametitle{Precisión o errores estándar de los mínimos cuadrados estimados}
+\begin{itemize}
+\item <1> Varianza de los errores:
+$$\hat{\sigma}^{2}=\frac{\sum^{n}_{i=1}\mu_{i}^{2}}{n-2}$$
+$$\sum \hat{\mu_{i}}^{2}=\sum y_{i}^{2}-\hat{\beta}_{2}^{2}\sum x_{i}^{2}$$
+\bigskip
+\item <1> $$Var(\hat{\beta}_{1})= \frac{\sum X_{i}^{2}\sigma^{2}}{N \sum x_{i}^{2}}$$
+\bigskip
+\item <1> $$Var(\hat{\beta}_{2})= \frac{\sigma^{2}}{\sum x_{i}^{2}}$$
+\bigskip
+\item <1> Qué son los grados de libertad?.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Características}
+\begin{itemize}
+\item <1> $Var(\hat{\beta}_{2})$ es directamente proporcional a $\hat{\sigma}^{2}$ pero inversamente proporcional a la $\sum x_{i}$.
+\bigskip
+\item <1> $Var(\hat{\beta}_{1})$ es directamente proporcional a $\hat{\sigma}^{2}$ y a $\sum X_{i}$ pero inversamente proporcional a la $\sum x_{i}$ y al tamaño de la muestra.
+\bigskip
+\item <1> Los estimadores $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$, varian entre cada muestra, tienen cierta dependencia:
+$$Cov(\hat{\beta}_{1}, \hat{\beta}_{2})=\bar{X}\frac{\sigma^{2}}{\sum x_{i}^{2}}$$
+\bigskip
+\item <1> .
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{itemize}
+\item <1> Buscamos una medida que nos indique si el ajuste MCO de la nube de puntos es o no un buen ajuste.
+\bigskip
+\item <1> Es decir, una medida que nos indique el grado de importancia de las discrepancias (o residuos) entre los valores de la variable dependiente observados $Y_{i}$ y los ajustados (o estimados) $\hat{Y}_{i}$.
+\bigskip
+\item <1> Sea la FRP o modelo econométrico.
+$$Y_{i} = \beta_{1} + \beta_{2}X_{i} + \mu_{i}; i=1,2,...,n$$
+\bigskip
+\item <1> IDEA: Distintos valores observados de $Y_{i}$ se deben fundamentalmente a que $X_{i}$ adopta distintos valores.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{itemize}
+\item <1> En otras palabras: con el análisis de regresión lineal buscamos explicar la variabilidad de Y , entre distintos individuos (corte transversal) o distintos momentos en el tiempo (series de tiempo) a través de la variabilidad de X.
+\bigskip
+\item <1> Dado que el modelo incorpora $\mu_{i}$, la variabilidad de Y incluye un elemento aleatorio (no explicado por X).
+\bigskip
+\item <1> Al estimar el modelo, ajustamos una recta MCO a una nube de puntos. El criterio tiene que ver con variabilidad: minimizamos la
+variabilidad de los residuos.
+\bigskip
+\item <1> Esto sugiere que la variabilidad total de las Yi observadas será solo en parte explicada por el modelo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{center}
+\includegraphics[width=9cm]{grafico6}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{center}
+\includegraphics[width=9cm]{grafico7}
+\end{center}
+\end{frame}
+
+
+\section{Bondad del Ajuste MCO}
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{itemize}
+\item <1> La variabilidad total de la $Y_{i}$ observadas se puede expresar a través de la suma total de cuadrados (STC) o suma cuadrática total (SCT):
+$$SCT=\sum^{n}_{i=1}(Y_{i}-\bar{Y})^{2}$$
+\end{itemize}
+Descomponemos la variabilidad en:
+$$STC=\sum^{n}_{i=1}(\hat{Y}_{i}+\mu_{i}-\bar{Y})^{2}=\sum^{n}_{i=1}((\hat{Y}_{i}-\bar{Y})+\mu_{i})^{2}$$
+$$=\sum^{n}_{i=1}(\hat{Y}_{i}-\bar{Y})+\sum^{n}_{i=1}\mu_{i}^{2}+2\sum^{n}_{i=1}(\hat{Y}_{i}-\bar{Y})\mu_{i}$$
+$$=\sum^{n}_{i=1}(\hat{Y}_{i}-\bar{Y})^{2}+\sum^{n}_{i=1}\mu_{i}^{2}+2\sum^{n}_{i=1}\mu_{i}\hat{Y}_{i}-2\bar{Y}\sum^{n}_{i=1}\mu_{i}$$
+\end{frame}
+
+
+\section{Bondad del Ajuste MCO}
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{center}
+\includegraphics[width=8cm]{grafico1}
+\end{center}
+Puede ser escrito igual como:
+$$STC=SEC+SRC$$
+\end{frame}
+
+
+\section{Bondad del Ajuste MCO}
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{itemize}
+\item <1> Si se satisface el supuesto de que las $X_{i}$ no son todas iguales, $STC>0$ y por lo tanto.
+$$\frac{STC}{STC}=\frac{SEC}{STC}+\frac{SRC}{STC}$$
+$$\frac{SEC}{STC}+\frac{SRC}{STC}=1$$
+\item <1> $\frac{SEC}{STC}$ es la proporción de la variabilidad total explicada por el modelo $= R^{2}$ o coeficiente de determinación:
+$$R^{2}=\frac{SEC}{STC}$$
+ó bien:
+$$R^{2}=1-\frac{SRC}{STC}$$
+\item <1> $\frac{SRC}{STC}$ es la proporción de la variabilidad total NO explicada por el modelo.
+\end{itemize}
+\end{frame}
+
+
+\section{Bondad del Ajuste MCO}
+\begin{frame}
+\frametitle{Bondad del Ajuste MCO}
+\begin{center}
+\includegraphics[width=10cm]{grafico2}
+\end{center}
+\end{frame}
+
+\section{Coeficiente de Determinación}
+\begin{frame}
+\frametitle{Coeficiente de Determinación}
+\begin{itemize}
+\item <1> El coeficiente de determinación $R^{2}$ es una medida de bondad del ajuste MCO.
+\end{itemize}
+\begin{block}{\textbf{Propiedades:}}
+\begin{itemize}
+\item <1> $R2 \geq 0$, pues relaciona variabilidades (desvíos elevados al cuadrado).
+\bigskip
+\item <1> $0\leq R2 \leq 1$ y $R^{2}x 100$ es el \% de variabilidad de Y explicada por el modelo.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Coeficiente de Determinación}
+\begin{frame}
+\frametitle{Coeficiente de Determinación}
+$R^{2}= 1$. Todas las observaciones están sobre la recta MCO $\Longrightarrow$ $SEC=STC$ y $SRC=0$, el ajuste es perfecto.
+\begin{center}
+\includegraphics[width=9cm]{grafico3}
+\end{center}
+\end{frame}
+
+\section{Coeficiente de Determinación}
+\begin{frame}
+\frametitle{Coeficiente de Determinación}
+$R2=0$. La recta MCO es la recta $\bar{Y}$. $SRC=STC$ y $SEC=0$. Conocer el valor de X no aporta ninguna información sobre la variabilidad de Y .
+El modelo no explica nada.
+\begin{center}
+\includegraphics[width=8cm]{grafico4}
+\end{center}
+\end{frame}
+
+\section{Coeficiente de Determinación}
+\begin{frame}
+\frametitle{Coeficiente de Determinación}
+\begin{itemize}
+\item <1> En general, $0 <R2<1$ y a mayor $R^{2}$, mejor ajuste.
+\bigskip
+\item <1> El $R^{2}$ del modelo simple es igual al coeficiente de correlación muestral entre $X_{i}$ y $Y_{i}$. Demostración (Tarea): El coeficiente de correlación muestral se define como:
+    $$r_{xy}=\frac{Cov_Muestral(X,Y)}{S_{X}S_{Y}}=\frac{\frac{\sum^{n}_{i=1}(Y_{i}-\bar{Y})(X_{i}-\bar{X})}{n-1}}{\sqrt{S^{2}_{X}}\sqrt{S^{2}_{Y}}}$$
+    $$=\frac{S_{XY}}{S_{X}S_{Y}}$$
+    $$-1\leq r_{XY}\leq 1$$
+    $$R^{2}=1- \frac{SRC}{STC}$$
+\end{itemize}
+\end{frame}
+
+\section{Patrones de correlación}
+\begin{frame}
+\frametitle{Patrones de correlación}
+\begin{center}
+\includegraphics[width=7cm]{grafico5}
+\end{center}
+\end{frame}
+
+\end{document}
+
+\section{Coeficiente de Determinación}
+\begin{frame}
+\frametitle{Coeficiente de Determinación}
+$$STC=(n-1)S^{2}_{Y}$$
+$$SRC=\sum^{n}_{i=1}Y^{2}_{i}-\hat{\beta}_{1}\sum^{n}_{i=1}Y_{i} -\hat{\beta}_{2} \sum^{n}_{i=1}Y_{i}X_{i}$$
+$$=\sum^{n}_{i=1}Y^{2}_{i}-(\bar{Y}-\hat{\beta}_{2}\bar{X})\sum^{n}_{i=1}Y_{i} -\hat{\beta}_{2} \sum^{n}_{i=1}Y_{i}X_{i}$$
+$$=\sum^{n}_{i=1}Y^{2}_{i}-(\bar{Y}-\hat{\beta}_{2}\bar{X})\sum^{n}_{i=1}Y_{i} -\hat{\beta}_{2} \sum^{n}_{i=1}Y_{i}X_{i}$$
+
+
+
+\end{frame}

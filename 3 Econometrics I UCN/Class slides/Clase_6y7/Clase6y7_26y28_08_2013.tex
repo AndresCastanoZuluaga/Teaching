@@ -1,0 +1,792 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#6 - Supuestos del MCRL y MCO}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 6]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Agosto 26 de 2013}
+
+%\date{\today}
+
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{FRP: ejemplo}
+\begin{frame}
+\frametitle{FRP: ejemplo}
+\begin{center}
+\includegraphics[width=11cm]{ejemplo1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{FRP: ejemplo}
+\begin{center}
+\includegraphics[width=9cm]{ejemplo2.png}
+\end{center}
+FRP: lugar geométrico de las medias condicionales de la variable dependiente para los valores fijos de las variables explicativas
+\end{frame}
+
+\begin{frame}
+\frametitle{FRP: ejemplo}
+\begin{center}
+\includegraphics[width=6cm]{ejemplo3.png}
+\end{center}
+$E(Y\mid X)=f(X_{i})$ \\
+Qué forma debe tomar $f(X_{i})$? \\
+supongamos que $E(Y \mid X_{i})=\beta_{1}+\beta_{2}X_{i}$
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+Con el fin de garantizar que $E(Y \mid X)=\beta_{1}+ \beta_{2}X$, el Modelo Clásico de Regresión Lineal satisface los siguientes supuestos:
+\begin{block}{\textbf{1. Linealidad en los parámetros}}
+\begin{itemize}
+\item <1>  \textbf{Linealidad en variables:} $Y=f(x)$ es lineal en X si: \\
+\begin{itemize}
+\item <1> Si X aparace elevado a una potencia o índice 1 (no son ejemplos: $X^{2}$, $\sqrt{X}$) y...
+\item <1> X no está multiplicada ni dividida por alguna otra variable (no son ejemplos: $X*Z$, $\frac{X}{Z}$ , siendo $Z \neq X$)
+\item <1> $\frac{dY}{dX}$  es independiente de X
+\end{itemize}
+\item <1>  \textbf{Linealidad en los parámetros:} $E(Y\mid X)$ es una función lineal de los parámetros, por lo tanto $E(Y\mid X)=\beta_{1}+\beta_{2}X_{i}^{2}$ es una función lineal (en $\beta$).
+\end{itemize}
+Ejemplos de modelos que no son lineales en los los parámetros: \\
+
+$Y=\beta_{1}X^{\beta_{2}}+\mu$ ; $Y=\beta_{1}+\beta_{2}X_{2}+\beta_{3}X_{3}+\beta_{2}\beta_{3}X_{4}+\mu$
+\end{block}
+\end{frame}
+
+\section{Especificación estocástica de la FRP}
+\begin{frame}
+\frametitle{Especificación estocástica de la FRP}
+\begin{center}
+\includegraphics[width=9cm]{ejemplo4.png}
+\end{center}
+Podemos definir la desvición individual $\mu_{i}$ como:
+$$\mu_{i}=Y_{i}-E(Y\mid X_{i})$$
+Si partimos de que $E(Y\mid X)$ es lineal en $X_{i}$:
+$$Y_{i}=E(Y\mid X_{i})+\mu_{i}$$
+$$=\beta_{1}+\beta_{2}X_{i}+\mu_{i}$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Especificación estocástica de la FRP}
+Propiedad de descomposición de la FEC:
+$$Y_{i}=E(Y\mid X_{i})+\mu_{i}$$
+Algunas propiedades importantes:
+\begin{itemize}
+\item <1> LET (ley de expectativas totales): $E(E(Y \mid X))=E(Y)$
+\item <1> PLE (propiedad de linealidad de la esperanza): $E(f(X)Y\mid X)= f(X) E(Y\mid X)$
+\item <1> LEI (ley de expectativas iteradas) : $E(E(Y\mid X,Z)\mid X) = E(Y \mid X)$
+\end{itemize}
+Aplicando valor esperado a ambos lados:
+$$E(Y_{i}\mid X_{i})=E(E(Y\mid X_{i})\mid X)+E(\mu_{i}\mid X_{i})$$
+Aplicando LEI:
+$$E(Y_{i}\mid X_{i})= E(Y\mid X_{i}) + E(\mu_{i}\mid X_{i})$$
+Ahora: ¿Porqué?
+$$E(\mu_{i}\mid X_{i})=0$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Porqué no se colocan tantas X como sea posible}
+\begin{itemize}
+\item <1> Vaguedad de la teoría.
+\bigskip
+\item <1> No disponibilidad de información.
+\bigskip
+\item <1> Variables centrales vs variables periféricas.
+\bigskip
+\item <1> Aleatoriedad intrinseca.
+\bigskip
+\item <1> Variables proxy inadecuadas.
+\bigskip
+\item <1> Principio de parsimonia (navaja de occam).
+\bigskip
+\item <1> Forma funcional incorrecta.
+\end{itemize}
+\end{frame}
+
+\section{Función de Regresión Muestral (FRM)}
+\begin{frame}
+\frametitle{Función de Regresión Muestral (FRM)}
+Objetivo: estimar la FRP a partir de la FRM.
+\begin{center}
+\includegraphics[width=9cm]{ejemplo5.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Función de Regresión Muestral (FRM)}
+FRM: $$\hat{Y}=\hat{\beta_{1}}+ \hat{\beta_{2}}X_{i}$$
+siendo: \\
+\bigskip
+$\hat{Y}$ $\Longrightarrow$ estimador de $E(Y\mid X)$ \\
+\bigskip
+$\hat{\beta_{1}}$ $\Longrightarrow$ estimador de $\beta_{1}$ \\
+\bigskip
+$\hat{\beta_{2}}$ $\Longrightarrow$ estimador de $\beta_{2}$
+\end{frame}
+
+\section{Función de Regresión Muestral Estocástica(FRME)}
+\begin{frame}
+\frametitle{Función de Regresión Muestral Estocástica (FRME)}
+FRM:
+$$\hat{Y}=\hat{\beta_{1}}+ \hat{\beta_{2}}X_{i} + \hat{\mu_{i}}$$
+siendo: \\
+\bigskip
+$\hat{Y}$ $\Longrightarrow$ estimador de $E(Y\mid X)$ \\
+\bigskip
+$\hat{\beta_{1}}$ $\Longrightarrow$ estimador de $\beta_{1}$ \\
+\bigskip
+$\hat{\beta_{2}}$ $\Longrightarrow$ estimador de $\beta_{2}$ \\
+\bigskip
+$\hat{\mu_{i}}$ $\Longrightarrow$ estimador de $\mu_{i}$ \\
+\bigskip
+Podemos definir:
+$$Y_{i}=\hat{Y_{i}}+\hat{\mu_{i}}$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Función de Regresión Muestral Estocástica (FRME)}
+\begin{center}
+\includegraphics[width=10cm]{ejemplo6.png}
+\end{center}
+\end{frame}
+
+
+
+\section{Método de los Mínimos Cuadrados Ordinarios (MCO)}
+
+\begin{frame}
+\frametitle{Porqué el método de los Mínimos Cuadrados Ordinarios (MCO)?}
+\begin{center}
+\includegraphics[width=9cm]{ejemplo6.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Método de los Mínimos Cuadrados Ordinarios (MCO)...Intuición}
+\begin{center}
+\includegraphics[width=9cm]{grafico6.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Método de los Mínimos Cuadrados Ordinarios (MCO)}
+$$\hat{\mu}_{i}={Y}_{i}-\hat{Y}_{i}$$
+$$Y_{i} = \beta_{1} + \beta_{2}X_{i} + \mu_{i}$$
+$$\hat{Y}_{i}=\hat{\beta}_{1} + \hat{\beta}_{2}X_{i}$$
+$$\hat{\mu}_{i}={Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i}$$
+
+\begin{itemize}
+\item <1> \textbf{Criterio 1}: selecionar la FRM  de tal modo que $\sum \hat{\mu}_{i}=\sum({Y}_{i}-\hat{Y}_{i})$ sea mínimo
+\bigskip
+\item <2> \textbf{Criterio 2} $\Longrightarrow$ Método de los Mínimos Cuadrados Ordinarios:
+$$\sum\hat{\mu}^{2}_{i}=\sum({Y}_{i}-\hat{Y}_{i})^{2}$$
+$$\sum\hat{\mu}^{2}_{i}=\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})^{2}$$
+$$\sum\hat{\mu}^{2}_{i}=f(\hat{\beta}_{1},\hat{\beta}_{2})$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación criterio 1 ¿Adecuado?}
+\begin{center}
+\includegraphics[width=8cm]{grafico6.png}
+\end{center}
+$\sum \hat{\mu}_{i}=0$ dado que todos los $\hat{\mu}_{i}$ tienen igual peso (valor)
+\end{frame}
+
+\begin{frame}
+\frametitle{Implementación experimental criterio 2}
+\begin{center}
+\includegraphics[width=11cm]{mco1.png}
+\end{center}
+El MCO escoge $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ de tal modo que $\sum\hat{\mu}^{2}_{i}$ se lo más pequeña posible.
+\end{frame}
+
+
+\section{Supuestos del MCRL}
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+El objetivo de la regresión no sólo es estimar los parámetros $(\hat{\beta}_{1},\hat{\beta}_{2})$, sino realizar inferencia respecto a que tan cerca están de sus contraparte poblacionales $(\beta_{1},\beta_{2})$, por lo tanto se deben realizar supuestos respecto a la forma en cómo la $Y_{i}$ son generadas:
+\begin{block}{\textbf{1. Linealidad en los parámetros}}
+\begin{itemize}
+\item <1>  \textbf{Linealidad en los parámetros:} $E(Y\mid X)$ es una función lineal de los parámetros, por lo tanto $E(Y\mid X)=\beta_{1}+\beta_{2}X_{i}^{2}$ es una función lineal (en $\beta$).
+\end{itemize}
+Ejemplos de modelos que no son lineales en los los parámetros: \\
+$Y=\beta_{1}X^{\beta_{2}}+\mu$ ; $Y=\beta_{1}+\beta_{2}X_{2}+\beta_{3}X_{3}+\beta_{2}\beta_{3}X_{4}+\mu$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{2. Los valores de X son fijos en muestreo repetido}}
+\begin{itemize}
+\item <1> Los valores que toma el regresor X son considerados fijos en muestreo repetido, lo que en términos técnicos implica que X es no estocástica.
+\bigskip
+\item <1> Lo anterior significa es que el análisis de regresión es una \textbf{análisis de regresión condicional}, es decir, condicionado a los valores dados del (los) regresor (es) X.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{3. El valor medio de la perturbación $\mu_{i}=0$}}
+\begin{itemize}
+\item <1> Dado el valor de X, la media o el valor esperado del término aleatorio de perturbación $\mu_{i}=0$.
+$$E(\mu_{i}\mid X_{i})=0$$
+\item <1> Este supuesto implica los factores que no están explícitamente en el modelo y que por lo tanto están en $\mu_{i}$, no afectan sistematicamente la media de Y. Los valores positivos se van a anular con los negativos de tal modo que su efecto promedio sobre y es cero.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{center}
+\includegraphics[width=9cm]{grafico1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{4. Homocedasticidad o igual varianza de $\mu_{i}$}}
+\begin{itemize}
+\item <1> Dado el valor de X, la varianza de $\mu_{i}$ es la misma para todas las observaciones (varianzas condicionales de $\mu_{i}$ son idénticas. Simbolicamente:
+$$Var(\mu_{i}\mid X_{i})=E{[\mu_{i}-E(\mu_{i})\mid X_{i}]}^{2}$$
+$$=E(\mu^{2}_{i}\mid X_{i})-E(\mu_{i}\mid X_{i})^{2}$$ $\Longrightarrow$ por el supuesto de exogeneidad
+$$=\sigma_{2}$$
+\item <1> De manera más simple significa que las poblaciones Y correspondientes a diversos valores de X tienen la misma varianza, o que la variación alrededor de la recta de regresión es la misma para los valores de X.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{center}
+\includegraphics[width=10cm]{grafico2.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\scriptsize
+\begin{itemize}
+\item <1> Distribución leptocurtica (Más apuntada y con colas más anchas que la normal)
+\item <1> Distribución mesocurtica  (la distribución normal es mesocúrtica, curtosis de 3)
+\item <1> Distribución platicurtica, (menos apuntada y con colas menos anchas que la normal)
+\end{itemize}
+\begin{center}
+\includegraphics[width=9cm]{grafico3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{5. No existe autocorrelación entre las perturbaciones (no correlación serial}}
+\begin{itemize}
+\item <1> Dados dos valores cualquiera de $X_{i}$ y $X_{j}$ ($i \neq j$), la correlación entre dos $\mu_{i}$ y $\mu_{j}$ es cero:
+$$Cov(\mu_{i},\mu_{j}\mid X_{i},X_{j})=E[(\mu_{i}-E(\mu_{i}))\mid X_{i}][(\mu_{j}-E(\mu_{j}))\mid X_{i}]$$
+$$=E(\mu_{i}\mid X_{i})(\mu_{j}\mid X_{j})$$
+$$=0$$
+\item <1> En términos simples, esto implica que dado X, las desviaciones de dos valores cualesquiera de $\mu$ no están relacionados.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{center}
+\includegraphics[width=8cm]{grafico4.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{6. La covarianza entre $\mu_{i}$ y $X_{i}$ es cero, o $E(\mu_{i} X_{i})=0$}}
+$$Cov(\mu_{i},X_{i})=E[(\mu_{i}-E(\mu_{i}))][(X_{j}-E(X_{j}))]$$
+$$=E[\mu_{i}(X_{j}-E(X_{j}))]$$
+$\Longrightarrow$ dado que $E(\mu_{i})=0$
+$$=E(\mu_{i}X_{j})-E(X_{J}E(\mu_{i}))$$
+$$=E(\mu_{i}X_{j})=0$$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{7. El número de observaciones n debe ser mayor que el número de parámetros por estimar}}
+\end{block}
+\begin{block}{\textbf{8. Variabilidad en los valores de X}}
+\begin{itemize}
+\item <1> No todos los valores de X deben ser iguales.
+\item <1> Var(X) debe ser un número positivo finito.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{9. El modelo de regresión está correctamente especificado}}
+\begin{itemize}
+\item <1> No hay sesgo de especificacióno o error.
+\item <1> Cuáles variables deben estra incluidas en el modelo?.
+\item <1> Cuál es la forma funcional del modelo?.
+\item <1> Es el modelo lineal en los parámetros?
+\item <1> Trate de evitar lo que Gujarati denomina ''Abundancia de Datos''
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+Ejemplo: curva de Phillips lineal vs no lineal. En qué consiste esl sesgo de especificación?
+\begin{center}
+\includegraphics[width=9cm]{grafico5.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supuestos del MCRL}
+\begin{block}{\textbf{10. No hay multicolinealidad perfecta}}
+\begin{itemize}
+\item <1> No hay relaciones perfectamente lineales entre las variables explicativas.
+\item <1> Tiene implicaciones en términos matriciales, y puede ocasionar que no se puedan obtener los estimadores $(\hat{\beta}_{0} y \hat{\beta}_{1})$.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Método de los Mínimos Cuadrados Ordinarios (MCO)}
+\begin{frame}
+\frametitle{Ahora si: Método de los Mínimos Cuadrados Ordinarios (MCO)}
+\begin{itemize}
+\item <1> Bajo que condiciones es un ''buen'' método?.
+\end{itemize}
+$$\hat{\mu}_{i}={Y}_{i}-\hat{Y}_{i}$$
+$$\hat{\mu}_{i}={Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i}$$
+Vimos porqué lo tenemos que hacer así:
+$$\sum\hat{\mu}^{2}_{i}=\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})^{2}$$
+$$\sum\hat{\mu}^{2}_{i}=f(\hat{\beta}_{1},\hat{\beta}_{2})$$
+ahora recuerde que:
+$$({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})*({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})$$
+Resolviendo y aplicando sumatoria tenemos:
+$$=\sum{Y}_{i}^{2}+n\hat{\beta}_{1}^{2}+\hat{\beta}_{2}^{2}\sum X_{i}^{2}-2\hat{\beta}_{1}\sum {Y}_{i}-2\hat{\beta}_{2}\sum X_{i}{Y}_{i}+ 2\hat{\beta}_{1}\hat{\beta}_{2}\sum X_{i}$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Recordatorio: propiedades de la sumatoria}
+\begin{itemize}
+\item <1> $\sum_{i=k}^{n}K=nK$ (donde K es una constante)
+\bigskip
+\item <1> $\sum_{i=1}^{n}KX_{i}=K\sum_{i=1}^{n}X_{i}$
+\bigskip
+\item <1> $\sum_{i=1}^{n}(a+bX_{i})=na+b\sum_{i=1}^{n}X_{i}$
+\bigskip
+\item <1> $\sum_{i=1}^{n}({Y}_{i}+X_{i})=\sum_{i=1}^{n}X_{i}+\sum_{i=1}^{n}Y_{i}$
+\end{itemize}
+\end{frame}
+
+\section{Cómo obtenemos $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$}
+\begin{frame}
+\frametitle{Cómo obtenemos $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$}
+$$min\sum\hat{\mu}^{2}_{i}=min\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})^{2}$$
+\textbf{Derivamos respecto a cada parámetro...
+}$$\frac{\partial{\sum\hat{\mu}^{2}_{i}}}{{\partial \hat{\beta}_{1}}}=-2\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})=0$$
+
+$$\frac{\partial{\sum\hat{\mu}^{2}_{i}}}{{\partial\hat{\beta}_{2}}}=-2\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})(X_{i})=0$$
+\textbf{Condiciones de primer orden o ecuaciones normales:
+}$$\sum^{n}_{i=1}Y_{i}-n\hat{\beta}_{1}-\hat{\beta}_{2}\sum^{n}_{i=1}X_{i}=0$$
+
+$$\sum^{n}_{i=1}Y_{i}X_{i}-\hat{\beta}_{1}\sum^{n}_{i=1}X_{i}-\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}=0$$
+\end{frame}
+
+\section{Despejando obtenemos expresiones para $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ }
+\begin{frame}
+\frametitle{Despejando obtenemos expresiones para $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$}
+Si dividimos la primera ecuación normal entre n, obtenemos:
+$$\hat{\beta}_{1}=\bar{Y}-\hat{\beta}_{2}\bar{X}$$
+
+Ahora, si dividimos la ecuación normal número 2 entre $\sum^{n}_{i=1}X_{i}$ y luego le restamos el valor de la ecuación anterior tendríamos:
+
+$$\frac{\sum^{n}_{i=1}Y_{i}X_{i}=\hat{\beta}_{1}\sum^{n}_{i=1}X_{i}+\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}$$
+
+$$\frac{\sum^{n}_{i=1}Y_{i}X_{i}}{\sum^{n}_{i=1}X_{i}}=\hat{\beta}_{1}+ \frac{\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}$$
+
+$$\frac{\sum^{n}_{i=1}Y_{i}X_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{Y}=\hat{\beta}_{2}(\frac{\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{X})$$
+\end{frame}
+
+\section{Despejando obtenemos expresiones para $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ }
+\begin{frame}
+\frametitle{Despejando obtenemos expresiones para $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$}
+\Large
+$$\hat{\beta}_{2}=\frac{\frac{\sum^{n}_{i=1}Y_{i}X_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{Y}}{\frac{\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{X}}$$
+\begin{itemize}
+\item <1> Los estimadores MCO son estimadores puntuales y su cálculo depende sólo de los datos observados.
+\end{itemize}
+\end{frame}
+
+
+\section{Forma matricial}
+\begin{frame}
+\frametitle{Forma matricial}
+\begin{center}
+\includegraphics[width=9cm]{matricial.png}
+\end{center}
+$$y_{i}=X_{i}'\hat{\beta}+e_{i}$$
+\end{frame}
+
+\section{Forma matricial}
+\begin{frame}
+\frametitle{Forma matricial}
+$$y_{i}=X_{i}'\hat{\beta}+e_{i}$$
+$$e_{i}=y_{i}-X_{i}'\hat{\beta}$$
+$$SRC=\sum^{n}_{i=1}(y_{i}-X_{i}'\hat{\beta})^2$$
+$$SRC=(y-X\hat{\beta})'(y-X\hat{\beta})$$
+$$=(y'-\hat{\beta}'X')(y-X\hat{\beta})$$
+$$=y'y-y'X\hat{\beta}-\hat{\beta}'X'y+\hat{\beta}'X'X\hat{\beta}$$
+Dado que:
+$$y'X\hat{\beta}=\hat{\beta}'X'y$$
+Entonces:
+$$=y'y-2y'X\hat{\beta}+\hat{\beta}'X'X\hat{\beta}$$
+\end{frame}
+
+\section{Forma matricial}
+\begin{frame}
+\frametitle{Forma matricial}
+Ahora podemos definir:
+$a=X'y$, $a'=y'X$, $A=X'X$
+Entonces:
+$$SRC=y'y-2a'\hat{\beta}+\hat{\beta}A\hat{\beta}$$
+Hacemos la derivada de matrices respecto el vector de parámetros:
+$$\frac{\partial(SRC)}{\partial\hat{\beta}}=-2a+2A\hat{\beta}=0$$
+Las ecuaciones normales serían:
+$$-2a+2A\hat{\beta}=0$$
+$$2A\hat{\beta}=2a$$
+$$\hat{\beta}=\frac{2a}{2A}$$
+$$\hat{\beta}=\frac{X'y}{X'X}$$
+$$\hat{\beta}=(X'X)^{-1}(X'y)$$
+\end{frame}
+
+\section{Forma matricial}
+\begin{frame}
+\frametitle{Forma matricial}
+Las ecuaciones normales, usando la forma matricialse pueden reescribir como:
+\begin{equation}
+\begin{bmatrix}
+1 & ... & 1 \\
+X_{1} & ... & X_{n} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+y_{1} \\
+. \\
+. \\
+. \\
+y_{n} \\
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 & ... & 1 \\
+X_{1} & ... & X_{2} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+1 & X_{1} \\
+. & .\\
+. & .\\
+. & .\\
+1 & X_{1} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\begin{bmatrix}
+\sum^{n}_{i=1}y_{i} \\
+\sum^{n}_{i=1} y_{i}X_{i} \\
+\end{bmatrix}
+-
+\begin{bmatrix}
+n & \sum^{n}_{i=1} X_{i} \\
+\sum^{n}_{i=1} X_{i} & \sum^{n}_{i=1} X^{2}_{i} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+(y obtenemos las expresiones conocidas)
+\end{frame}
+
+\section{Forma matricial}
+\begin{frame}
+\frametitle{Forma matricial}
+$$\hat{\beta}=(X'X)^{-1}(X'y)$$
+
+\begin{equation}
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+n & \sum^{n}_{i=1} X_{i} \\
+\sum^{n}_{i=1} X_{i} & \sum^{n}_{i=1} X^{2}_{i} \\
+\end{bmatrix}^{-1}
+*
+\begin{bmatrix}
+\sum^{n}_{i=1}y_{i} \\
+\sum^{n}_{i=1} y_{i}X_{i} \\
+\end{bmatrix}
+\end{equation}
+
+\scriptsize
+\begin{equation}
+\begin{bmatrix}
+n & \sum^{n}_{i=1} X_{i} \\
+\sum^{n}_{i=1} X_{i} & \sum^{n}_{i=1} X^{2}_{i} \\
+\end{bmatrix}^{-1}
+=\frac{1}{n\sum^{n}_{i=1} X^{2}_{i}-(\sum^{n}_{i=1} X_{i})^2}
+*
+\begin{bmatrix}
+\sum^{n}_{i=1} X^{2}_{i} & -\sum^{n}_{i=1} X_{i} \\
+-\sum^{n}_{i=1} X_{i} & n \\
+\end{bmatrix}
+\end{equation}
+
+\begin{block}{\textbf{Recuerde que (inversa de una matriz 2x2):}}
+\begin{equation}
+A=
+\begin{bmatrix}
+ a & b \\
+ c & d \\
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+A^{-1}=
+\begin{bmatrix}
+ a & b \\
+ c & d \\
+\end{bmatrix}^{-1}
+=
+\frac{1}{ad-bc}
+*
+\begin{bmatrix}
+d & -b \\
+-c & a \\
+\end{bmatrix}
+\end{equation}
+\end{block}
+\end{frame}
+
+
+
+\section{Otro parámetro del modelo: Varianza de los errores}
+\begin{frame}
+\frametitle{Otro parámetro del modelo: Varianza de los errores}
+\begin{itemize}
+\item <1> En el modelo de regresión lineal simple hay otro parámetro que nos interesa estimar (por razones que quedarán claras un poco más
+adelante):
+$$\sigma^{2}=Var(\mu_{i}\mid X_{i})=E(\mu^{2}_{i}\mid X_{i})$$
+\bigskip
+\item <1> Como $\mu_{i}$ no es observable, el estimador de $\sigma^{2}$ se obtiene a partir de los residuos $\hat{\mu}_{i}={Y}_{i}-\hat{Y}_{i}:$
+$$\hat{\sigma}^{2}=\frac{\sum^{n}_{i=1}\mu_{i}^{2}}{n-2} $$
+\bigskip
+\item <1> $\hat{\sigma}^{2}$ está defnido si $n > 2$. Al numerador suele llamarse Suma Cuadrática de Residuos (SCR) o Suma de Residuos al Cuadrado, o sumatoria de los residuos al cuadrado (SRC).
+(SRC).
+\end{itemize}
+\end{frame}
+
+\section{Ejemplo Sencillo}
+\begin{frame}
+\frametitle{Ejemplo Sencillo}
+\begin{itemize}
+\item En una empresa el gasto en publicidad X y el ingreso por ventas Y durante los últimos 5 meses han sido:
+\bigskip
+\begin{tabular}{|c|c|}
+\hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  $X$ & $y$ \\
+  1 & 1 \\
+  2 & 1 \\
+  3 & 2 \\
+  4 & 2 \\
+  5 & 4 \\
+\hline
+\end{tabular}
+\bigskip
+\item Queremos estimar el modelo:
+$Y_{i} = \hat{\beta}_{1} + \hat{\beta}_{2}X_{i} + \mu_{i}$ ; siendo $i=1,....,5$
+\bigskip
+
+\item Obtenemos:
+$n=5$; $\sum^{5}_{i=1} X_{i}=15$; $\sum^{5}_{i=1}y_{i}=10$; $\sum^{5}_{i=1}X^{2}_{i}=55$; $\sum^{5}_{i=1}X_{i}y_{i}=37$, por tanto
+\end{itemize}
+\end{frame}
+
+\section{Ejemplo Sencillo}
+\begin{frame}
+\frametitle{Ejemplo Sencillo}
+\begin{equation}
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 & 15 \\
+15 & 55 \\
+\end{bmatrix}^{-1}
+*
+\begin{bmatrix}
+10 \\
+37 \\
+\end{bmatrix}
+\end{equation}
+Teniedo en cuenta la inversa esto nos daría:
+\begin{equation}
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=\frac{1}{50}
+*
+\begin{bmatrix}
+55 & -15 \\
+-15 & 5 \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+10 \\
+37 \\
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-0.1\\
+ 0.7\\
+\end{bmatrix}
+\end{equation}
+La recta MCO estimada es:
+$$\hat{Y}_{i}=-0.1 + 0.7X_{i}$$
+\end{frame}
+
+\section{Ejemplo Sencillo}
+\begin{frame}
+\frametitle{Ejemplo Sencillo}
+\begin{itemize}
+\item <1> Los residuos son, para $i = 1, ..., 5:$
+$$\hat{\mu}_{i}={Y}_{i}-(-0.1 + 0.7X_{i})$$
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  i & 1 & 2 & 3 & 4 & 5 \\
+  $\hat{\mu}_{i}$ & 0.4 & -0.3 & 0 & -0.7 & 0.6 \\
+  \hline
+\end{tabular}
+\bigskip
+\item <1> Por tanto, la varianza de los errores estimada es:
+$$\hat{\sigma}^{2}=\frac{1.1}{5-2}=0.36667$$
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+
+\section{Una forma útil}
+\begin{frame}
+\frametitle{Ejemplo Sencillo}
+\begin{itemize}
+\item <1> Para obtener la estimación de la varianza de los errores, no necesitamos obtener los n residuos, pues la SRC (i.e. $\sum^{n}_{i=1}\mu_{i}^{2}$ puede calcularse de la siguiente manera:
+    $$$$
+\item <1> Por tanto, la varianza de los errores estimada es:
+$$\hat{\sigma}^{2}=\frac{1.1}{5-2}=0.36667$$
+\end{itemize}
+\end{frame}
+
+

@@ -1,0 +1,258 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% para Numerar Slides sin modificar el tema
+%\newcommand*\oldmacro{}%
+%\let\oldmacro\insertshorttitle%
+%\renewcommand*\insertshorttitle{%
+%\oldmacro\hfill%
+%\insertframenumber\,/\,\inserttotalframenumber}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402)-II semestre de 2013 \\
+Clase \#9 - Propiedades del ajuste MCO}
+
+\author[Prof. Andrés M. Castaño]
+{\includegraphics[height=2cm,width=2.5cm]{ucn.jpg}
+\\
+% con el del mcr es height=1.5cm,width=4cm
+Andrés M. Castaño}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 9]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Septiembre 25 de 2013}
+
+%\date{\today}
+
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Propiedades numéricas del ajuste MCO}
+\begin{frame}
+\frametitle{Propiedades numéricas del ajuste MCO}
+\begin{itemize}
+\item <1> A partir de los datos siempre es posible obtener una recta de regresión MCO, incluso si no se cumplen los supuestos estadísticos del modelo clásico. Suele llamarse a esta construcción "hacer el ajuste MCO de los datos".
+\bigskip
+\item <1> Lo único que necesitamos es que las Xi NO sean todas iguales.
+\bigskip
+\item <1> Las propiedades numéricas se cumplen para cualquier recta MCO aunque no se cumpla ningún otro supuesto del modelo clásico.
+\end{itemize}
+\end{frame}
+
+\section{Propiedades numéricas del ajuste MCO}
+\begin{frame}
+\frametitle{Propiedades numéricas del ajuste MCO}
+\large
+\begin{block}{\textbf{1. La recta MCO pasa por el punto $(\bar{X},\bar{Y})$. Dada $\hat{Y}_{i} = \hat{\beta}_{1} + \hat{\beta}_{2}X_{i}$ , si
+$X_{i}=\bar{X}$:}}
+$$\hat{Y}_{i}=\hat{\beta}_{1} + \hat{\beta}_{2}\bar{X}$$
+$$=(\bar{Y}-\hat{\beta}_{2}\bar{X})+\hat{\beta}_{2}\bar{X}$$
+$$=\bar{Y}$$
+\end{block}
+\end{frame}
+
+
+\section{Propiedades numéricas del ajuste MCO}
+\begin{frame}
+\frametitle{Propiedades numéricas del ajuste MCO}
+\large
+\begin{block}{\textbf{2. El promedio del Y estimado = promedio del Y observado, $\bar{\hat{Y}} = \bar{Y}$:}}
+$$\bar{\hat{Y}}=\frac{\sum^{n}_{i=1}\hat{Y}_{i}}{n}=\frac{\sum^{n}_{i=1}(\hat{\beta}_{1} + \hat{\beta}_{2}X_{i})}{n}$$
+$$=\frac{n\hat{\beta}_{1}}{n}+\hat{\beta}_{2}\bar{X}=(\bar{Y}-\hat{\beta}_{2}\bar{X})+\hat{\beta}_{2}\bar{X}=\bar{Y})$$
+\end{block}
+\end{frame}
+
+\section{Propiedades numéricas del ajuste MCO}
+\begin{frame}
+\frametitle{Propiedades numéricas del ajuste MCO}
+Las propiedades 3 y 4 que siguen se derivan de las ecuaciones normales (condiciones de primer orden):
+\begin{block}{\textbf{3. La suma de los residuos es cero, por lo tanto su promedio también es igual a cero, $\sum^{n}_{i=1}\mu_{i}= 0$ $\Longrightarrow$ $\bar{\mu}= 0$:}}
+$$\sum^{n}_{i=1}\mu_{i}=\sum^{n}_{i=1}(Y_{i}-\hat{\beta}_{1} -\hat{\beta}_{2}X_{i})=0$$
+\end{block}
+\begin{block}{\textbf{4. Los residuos no están correlacionados con $X_{i}$, $\sum^{n}_{i=1}\mu_{i}X_{i}=0$:}}
+$$\sum^{n}_{i=1}\mu_{i}X_{i}=\sum^{n}_{i=1}(Y_{i}-\hat{\beta}_{1} -\hat{\beta}_{2}X_{i})X_{i}=0$$
+\end{block}
+\end{frame}
+
+
+\section{Propiedades numéricas del ajuste MCO}
+\begin{frame}
+\frametitle{Propiedades numéricas del ajuste MCO}
+Las propiedades 3 y 4 que siguen se derivan de las ecuaciones normales (condiciones de primer orden):
+\begin{block}{\textbf{5. Los residuos no están correlacionados con el valor estimado o predicho $\hat{Y}_{i}$,$\sum^{n}_{i=1}\hat{Y}_{i}\mu_{i}=0$:}}
+$$\sum^{n}_{i=1}\hat{Y}_{i}\mu_{i}=\sum^{n}_{i=1}(\hat{\beta}_{1}+\hat{\beta}_{2}X_{i})\mu_{i}$$
+$$=\hat{\beta}_{1}\sum^{n}_{i=1}\mu_{i}+ \hat{\beta}_{2}\sum^{n}_{i=1}X_{i}\mu_{i}$$
+$$=0$$
+\end{block}
+Aplicando propiedades 3 y 4
+\end{frame}
+
+
+\section{Propiedades numéricas del ajuste MCO}
+\begin{frame}
+\frametitle{Propiedades numéricas del ajuste MCO}
+\large
+\begin{block}{\textbf{6. Los estimadores MCO son funciones lineales de la variable aleatoria $Y_{i}$ : Reescribimos las expresiones de $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ :}}
+$$\hat{\beta}_{2}=(\frac{\sum^{n}_{i=1}X_{i}}{\sum^{n}_{i=1}X^{2}_{i}})*Y_{i}-(\frac{n\bar{X}\bar{Y}}{\sum^{n}_{i=1}X^{2}_{i}-n\bar{X^{2}}})$$
+$$\hat{\beta}_{1}=0*Y_{i}+(\bar{Y}-\hat{\beta}_{2}\bar{X})$$
+\end{block}
+\end{frame}
+
+
+\section{Propiedades Estadísticas de la Estimación MCO}
+\begin{frame}
+\frametitle{Propiedades Estadísticas de la Estimación MCO}
+\begin{itemize}
+\item <1> Los estimadores puntuales $\hat{\beta}_{1}$, $\hat{\beta}_{2}$ y $\hat{\sigma}^{2}$ son variables aleatorias. Por tanto, es posible caracterizar algunas de sus propiedades estadísticas.
+\item <1> Algunas de estas propiedades estadísticas se satisfacen cuando se cumplen (por lo menos) los supuestos del modelo clásico.
+\item <1> Otras, las que se refieren concretamente a la distribución de las variables aleatorias $\hat{\beta}_{1}$, $\hat{\beta}_{2}$ y $\hat{\sigma}^{2}$, requieren de un supuesto adicional con respecto a la distribución de los errores $\mu_{i}$.
+\item <1> Distinguimos, además, entre propiedades de muestra finita y propiedades asintóticas (para n grande).
+\end{itemize}
+\end{frame}
+
+\section{Propiedades Estadísticas de la Estimación MCO}
+\begin{frame}
+\frametitle{Propiedades Estadísticas de la Estimación MCO}
+Si se satisfacen los supuestos del modelo clásico entonces:
+\begin{block}{\textbf{1. (Insesgadez): Los estimadores MCO $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ son insesgados:}}
+$$E(\hat{\beta}_{2})=\beta_{2}$$
+$$E(\hat{\beta}_{1})=\beta_{1}$$
+\end{block}
+
+\begin{block}{\textbf{2. Sus varianzas y la covarianza son proporcionales a $\sigma^{2}$:}}
+$$var(\hat{\beta}_{1})=\sigma^{2}(\frac{\sum^{n}_{i=1}X^{2}_{i}}{n\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}})$$
+$$var(\hat{\beta}_{2})=\sigma^{2}(\frac{1}{\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}})$$
+$$cov(\hat{\beta}_{1},\hat{\beta}_{2})=-\bar{X}var(\hat{\beta}_{2})=-\sigma^{2}(\frac{\bar{X}}{\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}})$$
+\end{block}
+
+\end{frame}
+
+\section{Propiedades Estadísticas de la Estimación MCO}
+\begin{frame}
+\frametitle{Propiedades Estadísticas de la Estimación MCO}
+\begin{itemize}
+\item <1> Las desviaciones  estándares de $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$  se calculan como:
+$$\sqrt{var(\hat{\beta}_{k})}; k=1,2,....,k$$
+\item <1> Como $\sigma^{2}$ no es conocida, utilizamos $\hat{\sigma}^{2}$ para estimar las varianzas y la covarianza:
+$$var(\hat{\beta}_{1})=\hat{\sigma}^{2}(\frac{\sum^{n}_{i=1}X^{2}_{i}}{n\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}})$$
+$$var(\hat{\beta}_{2})=\hat{\sigma}^{2}(\frac{1}{\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}})$$
+\item <1> y las desviaciones estándares estimadas reciben, en general, el nombre de errores estándares de los estimadores
+$$se(\hat{\beta}_{k})=\sqrt{var(\hat{\beta}_{k})}$$
+\end{itemize}
+\end{frame}
+
+\section{Propiedades Estadísticas de la Estimación MCO}
+\begin{frame}
+\frametitle{Propiedades Estadísticas de la Estimación MCO}
+\begin{block}{\textbf{3. El estimador de la varianza de los errores es insesgado:}}
+$$E(\hat{\sigma}^{2})=E(\frac{\sum^{n}_{i=1}\mu_{i}^{2}}{n-2})$$
+$$=\frac{{n-2}\sigma^{2}}{n-2}=\sigma^{2}$$
+\end{block}
+
+\begin{block}{\textbf{4. Varianza mínima:}}
+Teorema de Gauss Markov: De todos los estimadores lineales e insesgados de $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$, los estimadores MCO tienen la varianza mínima
+\end{block}
+\end{frame}
+
+
+\section{Propiedades Estadísticas: El Modelo Clásico de Regresión Normal}
+\begin{frame}
+\frametitle{Propiedades Estadísticas: El Modelo Clásico de Regresión Normal}
+\begin{itemize}
+\item <1> Como ya sabemos, para poder hacer inferencia estadística basándonos en algún estimador o estadístico, necesitamos conocer la distribución de dicho estimador.
+\item <1> Dado que en la FRP la aleatoriedad viene dada por la perturbacion o error $\mu_{i}$ , si conocemos su distribucion podremos deducir la distribucion de los estimadores MCO $\hat{\beta}_{1}$, $\hat{\beta}_{2}$ y $\hat{\sigma}^{2}$.
+\item <1> En el llamado modelo clásico de regresión normal, el supuesto es:
+$$\mu_{i}\sim N(0,\sigma^{2})$$
+con:
+$\mu_{i}$,$\mu_{j}$ independientes $\Longrightarrow$ $cov(\mu_{i},\mu_{j})=0$
+\end{itemize}
+\end{frame}
+
+\section{Propiedades Estadísticas: El Modelo Clásico de Regresión Normal}
+\begin{frame}
+\frametitle{Propiedades Estadísticas: El Modelo Clásico de Regresión Normal}
+Si se satisfacen los supuestos del modelo lineal clásico y además la
+distribución de los errores es normal, entonces:
+\begin{block}{\textbf{5. Los estimadores de distribuyen normal:}}
+$$\hat{\beta}_{k}\sim N(\hat{\beta}_{k}, var(\hat{\beta}_{k})); k=1,2,.....,K$$
+\begin{equation}
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+\sim normal bivariante
+\end{equation}
+\end{block}
+\end{frame}
+
+\section{Propiedades Estadísticas Asintóticas}
+\begin{frame}
+\frametitle{Propiedades Estadísticas Asintóticas}
+\begin{itemize}
+\item <1> Las propiedades asintóticas se satisfacen para muestras grandes $(n \longrightarrow \infty)$.
+\item <1> Si se cumplen (por lo menos) los supuestos del modelo clásico (no es necesario el supuesto de normalidad de errores) $(+)$ condiciones adicionales $(-)$ que no veremos en detalle.
+\item <1> Los estimadores MCO $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ son estimadores consistentes de $\beta_{1}$, $\beta_{2}$.
+\item <1> Los estimadores MCO $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ son estimadores asintóticamente normales, siendo su distribución aproximada normal bivariante.
+\item <1> $\hat{\sigma^{2}}$ es un estimador consistente de $\sigma^{2}$.
+\end{itemize}
+\end{frame}
+
+\section{Propiedades Estadísticas...Recordatorio}
+\begin{frame}
+\frametitle{Propiedades Estadísticas...Recordatorio}
+\begin{itemize}
+\item <1> Recuerde que si un estimador de un parámetro desconocido es consistente, entonces al tomar muestras cada vez más grandes, la estimación obtenida se acerca cada vez más al verdadero valor del parámetro desconocido.
+\bigskip
+\item <1> Si el estimador es insesgado, cuando tomamos un número muy grande de muestras, el promedio de las estimaciones obtenidas considerando todas las muestras se acerca al verdadero valor del parámetro desconocido..
+\end{itemize}
+\end{frame}
+
+\end{document} 

@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Precisi\'on o errores est\'andar del los estimadores}{2}{0}{1}
+\beamer@sectionintoc {2}{Bondad del Ajuste MCO}{8}{0}{2}
+\beamer@sectionintoc {3}{Bondad del Ajuste MCO}{9}{0}{3}
+\beamer@sectionintoc {4}{Bondad del Ajuste MCO}{10}{0}{4}
+\beamer@sectionintoc {5}{Bondad del Ajuste MCO}{11}{0}{5}
+\beamer@sectionintoc {6}{Coeficiente de Determinaci\'on}{12}{0}{6}
+\beamer@sectionintoc {7}{Coeficiente de Determinaci\'on}{13}{0}{7}
+\beamer@sectionintoc {8}{Coeficiente de Determinaci\'on}{14}{0}{8}
+\beamer@sectionintoc {9}{Coeficiente de Determinaci\'on}{15}{0}{9}
+\beamer@sectionintoc {10}{Patrones de correlaci\'on}{16}{0}{10}

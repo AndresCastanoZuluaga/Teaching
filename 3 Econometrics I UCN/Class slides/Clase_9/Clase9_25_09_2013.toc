@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Propiedades num\'ericas del ajuste MCO}{2}{0}{1}
+\beamer@sectionintoc {2}{Propiedades num\'ericas del ajuste MCO}{3}{0}{2}
+\beamer@sectionintoc {3}{Propiedades num\'ericas del ajuste MCO}{4}{0}{3}
+\beamer@sectionintoc {4}{Propiedades num\'ericas del ajuste MCO}{5}{0}{4}
+\beamer@sectionintoc {5}{Propiedades num\'ericas del ajuste MCO}{6}{0}{5}
+\beamer@sectionintoc {6}{Propiedades num\'ericas del ajuste MCO}{7}{0}{6}
+\beamer@sectionintoc {7}{Propiedades Estad\IeC {\'\i }sticas de la Estimaci\'on MCO}{8}{0}{7}
+\beamer@sectionintoc {8}{Propiedades Estad\IeC {\'\i }sticas de la Estimaci\'on MCO}{9}{0}{8}
+\beamer@sectionintoc {9}{Propiedades Estad\IeC {\'\i }sticas de la Estimaci\'on MCO}{10}{0}{9}
+\beamer@sectionintoc {10}{Propiedades Estad\IeC {\'\i }sticas de la Estimaci\'on MCO}{11}{0}{10}
+\beamer@sectionintoc {11}{Propiedades Estad\IeC {\'\i }sticas: El Modelo Cl\'asico de Regresi\'on Normal}{12}{0}{11}
+\beamer@sectionintoc {12}{Propiedades Estad\IeC {\'\i }sticas: El Modelo Cl\'asico de Regresi\'on Normal}{13}{0}{12}
+\beamer@sectionintoc {13}{Propiedades Estad\IeC {\'\i }sticas Asint\'oticas}{14}{0}{13}
+\beamer@sectionintoc {14}{Propiedades Estad\IeC {\'\i }sticas...Recordatorio}{15}{0}{14}

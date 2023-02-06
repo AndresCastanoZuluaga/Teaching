@@ -1,0 +1,21 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{FRP: ejemplo}{2}{0}{1}
+\beamer@sectionintoc {2}{Especificaci\'on estoc\'astica de la FRP}{6}{0}{2}
+\beamer@sectionintoc {3}{Funci\'on de Regresi\'on Muestral (FRM)}{9}{0}{3}
+\beamer@sectionintoc {4}{Funci\'on de Regresi\'on Muestral Estoc\'astica(FRME)}{11}{0}{4}
+\beamer@sectionintoc {5}{M\'etodo de los M\IeC {\'\i }nimos Cuadrados Ordinarios (MCO)}{13}{0}{5}
+\beamer@sectionintoc {6}{Supuestos del MCRL}{19}{0}{6}
+\beamer@sectionintoc {7}{M\'etodo de los M\IeC {\'\i }nimos Cuadrados Ordinarios (MCO)}{33}{0}{7}
+\beamer@sectionintoc {8}{C\'omo obtenemos $\mathaccentV {hat}05E{\beta }_{1}$ y $\mathaccentV {hat}05E{\beta }_{2}$}{35}{0}{8}
+\beamer@sectionintoc {9}{Despejando obtenemos expresiones para $\mathaccentV {hat}05E{\beta }_{1}$ y $\mathaccentV {hat}05E{\beta }_{2}$ }{36}{0}{9}
+\beamer@sectionintoc {10}{Despejando obtenemos expresiones para $\mathaccentV {hat}05E{\beta }_{1}$ y $\mathaccentV {hat}05E{\beta }_{2}$ }{37}{0}{10}
+\beamer@sectionintoc {11}{Forma matricial}{38}{0}{11}
+\beamer@sectionintoc {12}{Forma matricial}{39}{0}{12}
+\beamer@sectionintoc {13}{Forma matricial}{40}{0}{13}
+\beamer@sectionintoc {14}{Forma matricial}{41}{0}{14}
+\beamer@sectionintoc {15}{Forma matricial}{42}{0}{15}
+\beamer@sectionintoc {16}{Otro par\'ametro del modelo: Varianza de los errores}{43}{0}{16}
+\beamer@sectionintoc {17}{Ejemplo Sencillo}{44}{0}{17}
+\beamer@sectionintoc {18}{Ejemplo Sencillo}{45}{0}{18}
+\beamer@sectionintoc {19}{Ejemplo Sencillo}{46}{0}{19}
