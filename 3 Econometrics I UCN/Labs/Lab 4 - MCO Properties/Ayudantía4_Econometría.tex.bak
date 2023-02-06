@@ -1,0 +1,101 @@
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{\textbf{Ejercicios Econometría\\
+Ayudantía \#4}}
+\begin{center}
+\author{Prof. Andr\'es Castaño Zuluaga\\
+\\
+Ayudantes:\\
+\\
+Josefa Pellejero\\
+Mariana Camila Nadal\\
+\\
+Econometría I (EC402)\\
+Ingeniería Comercial\\
+Universidad Cat\'olica del Norte\\}
+
+\end{center}
+
+\date{\today}
+\maketitle
+
+\section{Demostraciones utiles de las propiedades númericas del ajuste MCO}
+
+\subsection{Demuestre que $\hat{\mu}=0$}
+Para comenzar a demostrar que el valor medio de los residuos es igual a cero, partimos de la definición conocida:
+$$\mu_{i}=Y_{i}-\hat{Y}_{i}$$
+Dado que por la definición de la ecuación de regresión muestral estocástica se define $\hat{Y}_{i}=\hat{\beta}_{1}+\hat{\beta}_{2}X_{i}$, entonces:
+$$\mu_{i}=Y_{i}-\hat{\beta}_{1}-\hat{\beta}_{2}X_{i}$$
+Aplicando sumatoria a ambos lados obtenemos:
+$$\sum_{i=1}^{n}\mu_{i}=\sum_{i=1}^{n}Y_{i}-n\hat{\beta}_{1}-\hat{\beta}_{2}\sum_{i=1}^{n}X_{i}$$
+Si dividimos ambos lados entre n se obtiene:
+$$\bar{\mu}=\bar{Y}-\hat{\beta}_{1}-\hat{\beta}_{2}\bar{X}$$
+Finalmente si reemplazamos la definición del intercepto se obtiene:
+$$\bar{\mu}=\bar{Y}-\bar{Y}+\hat{\beta}_{2}\bar{X}-\hat{\beta}_{2}\bar{X}=0$$
+
+\subsection{Demuestre que $\bar{\hat{Y}}=\bar{Y}$}
+$$\mu_{i}=Y_{i}-\hat{Y}_{i}$$
+Aplicando sumatoria a ambos lados:
+$$\sum_{i=1}^{n}\mu_{i}=\sum_{i=1}^{n}Y_{i}-\sum_{i=1}^{n}\hat{Y}_{i}$$
+Dividiendo entre n:
+$$\bar{\mu}=\bar{Y}-\bar{\hat{Y}}$$
+por lo cual dado que $\bar{\hat{\mu}}=0$, entonces:
+$$\bar{Y}=\bar{\hat{Y}}$$
+
+\subsection{Demuestre que $\sum_{i=1}^{n}\hat{Y_{i}}\mu_{i}=0$}
+$$\sum_{i=1}^{n}\hat{Y_{i}}\mu_{i}=\sum_{i=1}^{n}(\hat{\beta}_{1}+\hat{\beta}_{2}X_{i})\mu_{i}$$
+Resolviendo se obtiene:  
+$$\sum_{i=1}^{n}\hat{Y_{i}}\mu_{i}=\hat{\beta}_{1}n\bar{\mu}+\hat{\beta}_{2}\sum_{i=1}^{n}X_{i})\mu_{i}$$
+Ahora dado que $\frac{\sum_{i=1}^{n}\mu_{i}}{n}=\bar{\mu}$, reemplazamos en la ecuación este resultado y obetnemos:
+$$\sum_{i=1}^{n}\hat{Y_{i}}\mu_{i}=\hat{\beta}_{1}\sum_{i=1}^{n}\mu_{i}+\hat{\beta}_{2}\sum_{i=1}^{n}X_{i})\mu_{i}$$
+Dado que $\sum_{i=1}^{n}\mu_{i}=0$ y  $\sum_{i=1}^{n}X_{i})\mu_{i}=0$, entonces:
+$$\sum_{i=1}^{n}\hat{Y_{i}}\mu_{i}=0$$
+
+
+\section{Demostraciones Bondad de Ajuste}
+
+\subsection{Demuestre que $R^{2}=1-\frac{SRC}{STC}$}
+La variabilidad total de la $Y_{i}$ observadas se puede expresar a través de la suma total de cuadrados (STC) o suma cuadrática total (SCT):
+$$SCT=\sum^{n}_{i=1}(Y_{i}-\bar{Y})^{2}$$
+Descomponemos la variabilidad en:
+$$STC=\sum^{n}_{i=1}(\hat{Y}_{i}+\mu_{i}-\bar{Y})^{2}=\sum^{n}_{i=1}((\hat{Y}_{i}-\bar{Y})+\mu_{i})^{2}$$
+$$=\sum^{n}_{i=1}(\hat{Y}_{i}-\bar{Y})+\sum^{n}_{i=1}\mu_{i}^{2}+2\sum^{n}_{i=1}(\hat{Y}_{i}-\bar{Y})\mu_{i}$$
+$$=\sum^{n}_{i=1}(\hat{Y}_{i}-\bar{Y})^{2}+\sum^{n}_{i=1}\mu_{i}^{2}+2\sum^{n}_{i=1}\mu_{i}\hat{Y}_{i}-2\bar{Y}\sum^{n}_{i=1}\mu_{i}$$
+Si se satisface el supuesto de que las $X_{i}$ no son todas iguales, $STC>0$ y por lo tanto.
+$$\frac{STC}{STC}=\frac{SEC}{STC}+\frac{SRC}{STC}$$
+$$\frac{SEC}{STC}+\frac{SRC}{STC}=1$$
+$\frac{SEC}{STC}$ es la proporción de la variabilidad total explicada por el modelo $= R^{2}$ o coeficiente de determinación:
+$$R^{2}=\frac{SEC}{STC}$$
+ó bien:
+$$R^{2}=1-\frac{SRC}{STC}$$
+$\frac{SRC}{STC}$ es la proporción de la variabilidad total NO explicada por el modelo.
+
+\subsection{demuestre que la raíz cuadrada de $R^{2}$ es igual a $r_{Y, \hat{Y}}$}
+$$r_{Y,\hat{Y}}=\frac{\sum_{i}^{n}(Y_{i}-\bar{Y})(\hat{Y_{i}}-\bar{Y})}{\sqrt{\sum_{i}^{n}(Y_{i}-\bar{Y})^{2}\sum_{i}^{n}(\hat{Y_{i}}-\bar{Y})^2}}$$
+\end{document}

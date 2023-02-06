@@ -1,0 +1,351 @@
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{\textbf{Ejercicios Econometría\\
+Ayudantía \#2}}
+\begin{center}
+\author{Prof. Andr\'es Castaño Zuluaga\\
+\\
+Ayudantes:\\
+\\
+Josefa Pellejero\\
+Mariana Camila Nadal\\
+\\
+Econometría I (EC402)\\
+Ingeniería Comercial\\
+Universidad Cat\'olica del Norte\\}
+
+\end{center}
+
+\date{\today}
+\maketitle
+
+\section{Método de los Mínimos Cuadrados Ordinarios}
+
+\subsection{Propiedades de la sumatoria}
+\begin{enumerate}
+\item $\sum_{i=k}^{n}K=nK$ (donde K es una constante)
+\bigskip
+\item $\sum_{i=1}^{n}KX_{i}=K\sum_{i=1}^{n}X_{i}$
+\bigskip
+\item $\sum_{i=1}^{n}(a+bX_{i})=na+b\sum_{i=1}^{n}X_{i}$
+\bigskip
+\item $\sum_{i=1}^{n}({Y}_{i}+X_{i})=\sum_{i=1}^{n}X_{i}+\sum_{i=1}^{n}Y_{i}$
+\end{enumerate}
+
+\subsection{Demostración MCO}
+\noindent Después de haber repasado estas propiedades, se parte de la definición de un error estimado:
+$$\hat{\mu}_{i}={Y}_{i}-\hat{Y}_{i}$$
+\\
+Reemplazando el estimador para la $E(Y\mid X)$ tenemos:
+$$\hat{\mu}_{i}={Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i}$$
+Ahora dado que los errores son una función de los párametros a estimar:
+$$\sum\hat{\mu}^{2}_{i}=f(\hat{\beta}_{1},\hat{\beta}_{2})$$
+Elevando al cuadrado los errores podemos ponderar de manera diferente a los errores que están más alejados de la recta estimada, por lo tanto:
+$$\sum\hat{\mu}^{2}_{i}=\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})^{2}$$
+Se debe resolver el siguiente producto notable:
+$$({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})*({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})$$
+Resolviendo y aplicando sumatoria tenemos:
+$$\sum\hat{\mu}^{2}_{i}=\sum{Y}_{i}^{2}+n\hat{\beta}_{1}^{2}+\hat{\beta}_{2}^{2}\sum X_{i}^{2}-2\hat{\beta}_{1}\sum {Y}_{i}-2\hat{\beta}_{2}\sum X_{i}{Y}_{i}+ 2\hat{\beta}_{1}\hat{\beta}_{2}\sum X_{i}$$
+Para obtener los parámetros $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$, derivamos la expresión anterior respecto a cada parámetro:
+
+$$\frac{\partial{\sum\hat{\mu}^{2}_{i}}}{{\partial \hat{\beta}_{1}}}=-2\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})=0$$
+
+$$\frac{\partial{\sum\hat{\mu}^{2}_{i}}}{{\partial\hat{\beta}_{2}}}=-2\sum({Y}_{i}-\hat{\beta}_{1} - \hat{\beta}_{2}X_{i})(X_{i})=0$$
+
+\noindent Las condiciones de primer orden o ecuaciones normales serían:
+\begin{equation}
+n\hat{\beta}_{1}-\sum^{n}_{i=1}Y_{i}+\hat{\beta}_{2}\sum^{n}_{i=1}X_{i}=0
+\end{equation}
+
+\begin{equation}
+\hat{\beta}_{1}\sum^{n}_{i=1}X_{i}-\sum^{n}_{i=1}Y_{i}X_{i}+\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}=0
+\end{equation}
+
+\noindent Ahora despejando obtenemos expresiones para $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$, primero si dividimos la primera ecuación normal entre n, obtenemos:
+
+$$\hat{\beta}_{1}=\bar{Y}-\hat{\beta}_{2}\bar{X}$$
+
+\noindent Luego, si dividimos la ecuación normal número 2 entre $\sum^{n}_{i=1}X_{i}$ y luego le restamos el valor de la ecuación anterior tendríamos:
+
+$$\frac{\sum^{n}_{i=1}Y_{i}X_{i}=\hat{\beta}_{1}\sum^{n}_{i=1}X_{i}+\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}$$
+
+$$\frac{\sum^{n}_{i=1}Y_{i}X_{i}}{\sum^{n}_{i=1}X_{i}}=\hat{\beta}_{1}+ \frac{\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}$$
+Reemplazando $\hat{\beta}_{1}$ y reordenando se obtiene:
+$$\frac{\sum^{n}_{i=1}Y_{i}X_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{Y}=\hat{\beta}_{2}(\frac{\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{X})$$
+$$\hat{\beta}_{2}=\frac{\frac{\sum^{n}_{i=1}Y_{i}X_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{Y}}{\frac{\sum^{n}_{i=1}X^{2}_{i}}{\sum^{n}_{i=1}X_{i}}-\bar{X}}$$
+
+\subsection{Expresiones alternativas para el parámetro $\hat{\beta}_{2}$}
+
+Demuestre que:
+
+\begin{equation}
+\hat{\beta}_{2}=\frac{\sum^{n}_{i=1} X_{i}Y_{i}-n\bar{X}\bar{Y}}{\sum^{n}_{i=1}X_{i}^{2}-n\bar{X}^{2}}
+\end{equation}
+Además demuestre que:
+\begin{equation}
+\hat{\beta}_{2}=\frac{Cov(X_{i},Y_{i})}{Var(X_{i})}
+\end{equation}
+
+\subsubsection{Demostración Ecuación 3}
+
+\noindent Partiendo de la segunda ecuación normal:
+
+$$\hat{\beta}_{1}\sum^{n}_{i=1}X_{i}-\sum^{n}_{i=1}Y_{i}X_{i}+\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}=0$$
+Si se reemplaza el valor de $\hat{\beta}_{1}=\bar{Y}-\hat{\beta}_{2}\bar{X}$ se obtiene:
+$$\sum^{n}_{i=1}Y_{i}X_{i}-\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}-(\bar{Y}-\hat{\beta}_{2}\bar{X})\sum^{n}_{i=1}X_{i}=0$$
+Dado que $\bar{X}=\frac{\sum^{n}_{i=1}X_{i}}{n}$, se sabe que $\sum^{n}_{i=1}X_{i}=n\bar{X}$, reemplazando en la ecuación anterior se obtiene:
+$$\sum^{n}_{i=1}Y_{i}X_{i}-\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}-(\bar{Y}-\hat{\beta}_{2}\bar{X})n\bar{X}=0$$
+$$\sum^{n}_{i=1}Y_{i}X_{i}-\hat{\beta}_{2}\sum^{n}_{i=1}X^{2}_{i}-n\bar{X}\bar{Y}+n\hat{\beta}_{2}\bar{X}^{2}=0$$
+Sacando factor común de $\hat{\beta}_{2}$ y despejando se obtiene:
+$$\hat{\beta}_{2}=\frac{\sum^{n}_{i=1} X_{i}Y_{i}-n\bar{X}\bar{Y}}{\sum^{n}_{i=1}X_{i}^{2}-n\bar{X}^{2}}$$
+
+\subsubsection{Demostración Ecuación 4}
+
+\noindent Recordemos que la covarianza se define como:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})$$
+\noindent y la varianza como:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}$$
+
+\noindent Por lo tanto se debe demostrar que:
+$$\hat{\beta}_{2}=\frac{\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}}=\frac{\sum^{n}_{i=1} X_{i}Y_{i}-n\bar{X}\bar{Y}}{\sum^{n}_{i=1}X_{i}^{2}-n\bar{X}^{2}}$$
+\noindent Para tal fin, se parte de:
+$$\hat{\beta}_{2}=\frac{\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}}$$
+\noindent Se soluciona el producto notable en el numerador de la siguiente manera:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})=\sum^{n}_{i=1}X_{i}Y_{i}-\sum^{n}_{i=1}X_{i}\bar{Y}-\sum^{n}_{i=1}\bar{X}Y_{i}+\sum^{n}_{i=1}\bar{X}\bar{Y}$$
+\noindent Aplicando la propiedad 1 y 2 de la sumatoria se obtiene:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})=\sum^{n}_{i=1}X_{i}Y_{i}-\bar{Y}\sum^{n}_{i=1}X_{i}-\bar{X}\sum^{n}_{i=1}Y_{i}+n\bar{X}\bar{Y}$$
+\noindent Luego teniendo en cuenta que $\sum^{n}_{i=1}X_{i}=n\bar{X}$ y $\sum^{n}_{i=1}Y_{i}=n\bar{Y}$, se obtiene:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})=\sum^{n}_{i=1}X_{i}Y_{i}-\bar{Y}(n\bar{X})-\bar{X}(n\bar{Y})+n\bar{X}\bar{Y}$$
+\noindent Como se puede ver los tres últimos componentes son expresiones equivalentes, por lo tanto se llega a:
+$$\sum^{n}_{i=1} X_{i}Y_{i}-n\bar{X}\bar{Y}$$
+\noindent Luego se soluciona el producto notable del denominador de acuerdo a:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}=\sum^{n}_{i=1}X_{i}^{2}-2\sum^{n}_{i=1}X_{i}\bar{X}+\sum^{n}_{i=1}\bar{X}^{2}$$
+\noindent Aplicando las propiedades 1 y 2 de la sumatoria se obtiene:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}=\sum^{n}_{i=1}X_{i}^{2}-2\bar{X}\sum^{n}_{i=1}X_{i}+n\bar{X}^{2}$$
+\noindent Luego reemplazando $\sum^{n}_{i=1}X_{i}=n\bar{X}$, se obtiene:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}=\sum^{n}_{i=1}X_{i}^{2}-2\bar{X}(n\bar{X})+n\bar{X}^{2}$$
+\noindent Multiplicando $\bar{X}$ por $\bar{X}$ y reordenando, nos queda:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}=\sum^{n}_{i=1}X_{i}^{2}-2n\bar{X}^{2}+n\bar{X}^{2}$$
+\noindent Restando se obtiene:
+$$\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}=\sum^{n}_{i=1}X_{i}^{2}-n\bar{X}^{2}$$
+\noindent Por lo tanto se demuestra que:
+$$\frac{\sum^{n}_{i=1}(X_{i}-\bar{X})(Y_{i}-\bar{Y})}{\sum^{n}_{i=1}(X_{i}-\bar{X})^{2}}=\frac{\sum^{n}_{i=1} X_{i}Y_{i}-n\bar{X}\bar{Y}}{\sum^{n}_{i=1}X_{i}^{2}-n\bar{X}^{2}}$$
+
+\subsection{Demostración Matricial}
+\noindent Partiendo de:
+$$y_{i}=X_{i}'\hat{\beta}+e_{i}$$
+Aplicando lo aprendido se sabe que un error estimado es:
+$$e_{i}=y_{i}-X_{i}'\hat{\beta}$$
+Aplicando sumatoria se obtiene:
+$$SRC=\sum^{n}_{i=1}(y_{i}-X_{i}'\hat{\beta})^2$$
+$$SRC=(y-X\hat{\beta})'(y-X\hat{\beta})$$
+Ahora recuerde que por propiedades de la transpuesta, $(AB)'$ es igual a $(B'A')$, por lo tanto la expresión queda expresada así:
+$$SRC=(y'-\hat{\beta}'X')(y-X\hat{\beta})$$
+Resolviendo el producto notable se obtiene:
+$$SRC=y'y-y'X\hat{\beta}-\hat{\beta}'X'y+\hat{\beta}'X'X\hat{\beta}$$
+Dado que estas matrices tienen la misma dimensión, se puede aplicar por propiedades de la transpuesta $(A'BC)=(C'B'A)$, por lo cual estas matrices son equivalentes:
+$$y'X\hat{\beta}=\hat{\beta}'X'y$$
+Entonces:
+$$=y'y-2y'X\hat{\beta}+\hat{\beta}'X'X\hat{\beta}$$
+\noindent Ahora, si se definen las siguientes expresiones (con el fin de que la expresión se vea más simple):
+$a=X'y$, $a'=y'X$, $A=X'X$
+Entonces:
+$$SRC=y'y-2a'\hat{\beta}+\hat{\beta}A\hat{\beta}$$
+Hacemos la derivada de matrices respecto el vector de parámetros:
+$$\frac{\partial(SRC)}{\partial\hat{\beta}}=-2a+2A\hat{\beta}=0$$
+La ecuación normal sería:
+$$-2a+2A\hat{\beta}=0$$
+$$2A\hat{\beta}=2a$$
+$$\hat{\beta}=\frac{2a}{2A}$$
+$$\hat{\beta}=\frac{X'y}{X'X}$$
+Finalmente despejando se obtiene:
+$$\hat{\beta}=(X'X)^{-1}(X'y)$$
+La ecuación definida con más claridad puede reescribirse como:
+\begin{equation}
+\begin{bmatrix}
+1 & ... & 1 \\
+X_{1} & ... & X_{n} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+y_{1} \\
+. \\
+. \\
+. \\
+y_{n} \\
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 & ... & 1 \\
+X_{1} & ... & X_{2} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+1 & X_{1} \\
+. & .\\
+. & .\\
+. & .\\
+1 & X_{1} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\begin{bmatrix}
+\sum^{n}_{i=1}y_{i} \\
+\sum^{n}_{i=1} y_{i}X_{i} \\
+\end{bmatrix}
+-
+\begin{bmatrix}
+n & \sum^{n}_{i=1} X_{i} \\
+\sum^{n}_{i=1} X_{i} & \sum^{n}_{i=1} X^{2}_{i} \\
+\end{bmatrix}
+*
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+0\\
+\end{bmatrix}
+\end{equation}
+\noindent y obtenemos la expresión conocida:
+$$\hat{\beta}=(X'X)^{-1}(X'y)$$
+Expresada de mejor manera queda como:
+\begin{equation}
+\begin{bmatrix}
+ \hat{\beta}_{1}\\
+ \hat{\beta}_{2}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+n & \sum^{n}_{i=1} X_{i} \\
+\sum^{n}_{i=1} X_{i} & \sum^{n}_{i=1} X^{2}_{i} \\
+\end{bmatrix}^{-1}
+*
+\begin{bmatrix}
+\sum^{n}_{i=1}y_{i} \\
+\sum^{n}_{i=1} y_{i}X_{i} \\
+\end{bmatrix}
+\end{equation}
+
+\noindent Se debe resolver la inversa $(X'X)^{-1}$ para eso se utiliza la definición de la inversa para el caso de una matriz $2x2$
+\begin{equation}
+A=
+\begin{bmatrix}
+ a & b \\
+ c & d \\
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+A^{-1}=
+\begin{bmatrix}
+ a & b \\
+ c & d \\
+\end{bmatrix}^{-1}
+=
+\frac{1}{ad-bc}
+*
+\begin{bmatrix}
+d & -b \\
+-c & a \\
+\end{bmatrix}
+\end{equation}
+
+\noindent Aplicado a nuestra matriz queda:
+\begin{equation}
+\begin{bmatrix}
+n & \sum^{n}_{i=1} X_{i} \\
+\sum^{n}_{i=1} X_{i} & \sum^{n}_{i=1} X^{2}_{i} \\
+\end{bmatrix}^{-1}
+=\frac{1}{n\sum^{n}_{i=1} X^{2}_{i}-(\sum^{n}_{i=1} X_{i})^2}
+*
+\begin{bmatrix}
+\sum^{n}_{i=1} X^{2}_{i} & -\sum^{n}_{i=1} X_{i} \\
+-\sum^{n}_{i=1} X_{i} & n \\
+\end{bmatrix}
+\end{equation}
+Obteniendo esta inversa y luego multiplicando por $X'y$, se obtendrían los parámetros que hacen que la suma de los residuos al cuadrado sea mínima.
+
+\section{Ejercicios}
+
+\noindent 1. La empresa ''La onda veloz'' ha especificado un modelo de regresión lineal clásico para explicar la función de demanda de sus aparatos de radio (Y), expresada en miles de unidades, y en función del precio de los aparatos de radio (X), en miles de pesos. Para su estimación se recoge una muestra de 24 observaciones, con los siguientes resultados:
+
+$$\sum^{24}_{i=1} Y_{i}=2637.252$$
+$$\sum^{24}_{i=1} X_{i}=85.249$$
+$$\sum^{24}_{i=1} (X_{i}-\bar{X})(Y_{i}-\bar{Y})=-16.586$$
+$$\sum^{24}_{i=1} (X_{i}-\bar{X})^{2}=3.091$$
+$$\sum^{24}_{i=1} (Y_{i}-\bar{Y})^{2}=159.8926$$
+
+\noindent De acuerdo a la información anterior obtenga:
+\begin{enumerate}
+\item Obtenga los parámetros.
+\bigskip
+\item Especifique la ecuación estimada.
+\bigskip
+\item Obtenga el coeficiente de correlación entre x y y
+\end{enumerate}
+
+\textbf{Solución:}\\
+1. Los parámetros se obtienen aplicando la fórmula:
+
+$$\hat{\beta}_{2}=\frac{Cov(X_{i},Y_{i})}{Var(X_{i})}=\frac{-16.5862}{3.09161}=-5.364$$
+
+$$\hat{\beta}_{1}=\bar{Y}-\hat{\beta}_{2}\bar{X}=$$
+
+\noindent Dado que:
+$$\bar{X}=\frac{\sum^{24}_{i=1} X_{i}}{n}=\frac{85.249}{24}=3.552$$
+
+$$\bar{Y}=\frac{\sum^{24}_{i=1} Y_{i}}{n}=\frac{2637.252}{24}=109.88$$
+Por lo tanto:
+$$\hat{\beta}_{1}=109.885-(-5.364)(3.552)=128.942$$
+
+2. La ecuación estimada es igual a:
+
+$$\hat{Y}_{i}=128.942-5.3649X_{i}$$
+
+3. El coeficiente de correlación entre X y Y sería igual a
+$$\rho_{xy}=\frac{Cov(X,Y)}{S_{x}S_{y}}$$
+De ahí que:
+$$\rho_{xy}=\frac{-16.586}{(1.758)(12.6448)}=-0.7461=-74\%$$
+
+\end{document}
+

@@ -1,0 +1,125 @@
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{\textbf{Ejercicios Econometría\\
+Interpretación de coeficientes\\
+Ayudantía \#7}}
+\begin{center}
+\author{Prof. Andr\'es Castaño Zuluaga\\
+\\
+Ayudantes:\\
+\\
+Josefa Pellejero Maranguni\v{c}\\
+Mariana Camila Nadal Fernández\\
+\\
+Econometría I (EC402)\\
+Ingeniería Comercial\\
+Universidad Cat\'olica del Norte\\}
+
+\end{center}
+
+\date{\today}
+\maketitle
+
+\section{Presentación del caso}
+
+A continuación se van a mostrar distintas especificaciones de una regresión lineal múltiple para los determinantes de la pobreza a nivel comunal en chile en el año 2011, midiendo esta como el porcentaje de población pobre en cada comuna (pct-pob-pobre). Las variables explicativas utilizadas van a ser:
+
+\begin{itemize}
+\item La población de urbana que tiene la comuna, medida en \% del total de población (part-urb).
+\item Densidad de población, medida en número de habitantes por $km2$ (densi).
+\item Participación Población Económicamente Activa (PEA) que trabaja en el sector terciario (servicios), medida en \% del total de la PEA (part-pea-sec-ter).
+\item Participación Población Económicamente Activa (PEA) que trabaja en el sector secundario (industria), medida en \% del total de la PEA (part-pea-sec-secun).
+\item Participación Población Económicamente Activa (PEA) que trabaja en el sector primario (agricultura), medida en \% del total de la PEA (part-pea-sec-prima).
+\item Total empresas grandes (ventas de más de 100.000 uf de acuerdo a SII), medida en número de empresas grandes (totalgrande).
+\item Participación pequeñas y medianas empresas, medida en \% que representan las pequeñas y medianas empresas en el total de empresas a nivel comunal (part-pym).
+\item Participación microempresas, medida en \% que representan las microempresas en el total de empresas a nivel comunal (part-micro).
+\item Salario por hora promedio de los trabajadores de cada comuna, medido en pesos por hora (sxh)
+\item Escolaridad  promedio de los trabajadores de cada comuna, medida en años promedio (esc)
+\item Experiencia promedio de los trabajadores de cada comuna, medida en años promedio (exper)
+\item Tasa de desocupación de cada comuna, medida en \% (tdocc)
+\end{itemize}
+
+\section{Preguntas a desarrollar}
+
+\begin{enumerate}
+\item Interprete los coeficientes de cada uno de los distintos modelos (de acuerdo a su especificación), tienen sentido desde la teoría económica cada uno de los signos obtenidos, justifique su respuesta. Si bien, sus conocimientos teóricos respecto a los determinantes de la pobreza son limitados, traten de buscar explicaciones desde el sentido común.
+\item Determine la significancia individual y global del modelo.
+\item Interprete los intervalos de confianza y la medida de bondad de ajuste, ¿podría predecir este modelo de buena manera el comportamiento de la pobreza a nivel comunal?.
+\item Para el caso de la regresión estandarizada, interprete los coeficientes expresados en la última columna, ¿cuál es la variable explicativa que mayor impacto (positivo o negativo) tiene sobre la pobreza a nivel comunal en chile?
+\item Indique qué otros determinantes (medibles) cree usted que afectan la pobreza en Chile?
+\item De acuerdo al criterio del $R^{2}$ ajustado, indique que especificaciones econométricas se pueden comparar, y cuál de ellas muestra mejor ajuste.
+\end{enumerate}
+
+\newpage
+
+\section{Gráficos de los resultados de las distintas especificaciones}
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación de los determinantes de la pobreza a nivel comunal en chile en el año 2011, modelo normal.}}
+\includegraphics[width=15cm]{Mnormal}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación de los determinantes de la pobreza a nivel comunal en chile en el año 2011, modelo con coeficientes estandarizados.}}
+\includegraphics[width=15cm]{Mestanda}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación de los determinantes de la pobreza a nivel comunal en chile en el año 2011, modelo log-log.}}
+\includegraphics[width=15cm]{Mlog_log}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación de los determinantes de la pobreza a nivel comunal en chile en el año 2011, modelo log-lin.}}
+\includegraphics[width=15cm]{Mlog_lin}
+\end{figure}
+\end{center}
+
+
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación de los determinantes de la pobreza a nivel comunal en chile en el año 2011, modelo lin-log.}}
+\includegraphics[width=15cm]{Mlin_log}
+\end{figure}
+\end{center}
+
+\end{document}
+ 
