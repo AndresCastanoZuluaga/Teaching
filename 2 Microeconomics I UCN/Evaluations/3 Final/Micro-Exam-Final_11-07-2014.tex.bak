@@ -1,0 +1,184 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[10pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+
+%
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{EC301-Microeconomía I}
+\newcommand{\term}{Primer semestre}
+\newcommand{\examnum}{Examen Final}
+\newcommand{\examdate}{11/07/2014}
+\newcommand{\timelimit}{120 minutos}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document}
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Página \thepage\ de \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r c}
+\textbf{\class} & \textbf{Nombre:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &\textbf{RUT:}& \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Tiempo limite: \timelimit} &  & \textbf{Profesor:} Andrés M. Castaño \emph{M.Sc. (c)}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+Este examen contiene 3 páginas y un total de 14 preguntas, al lado de cada pregunta aparece su ponderación de acuerdo a un máximo de 60 puntos (10 puntos de base). Ingrese la información requerida en la parte superior de la hoja. Las preguntas 1 hasta la 12 son de selección múltiple con única respuesta. Se penaliza cada desacierto con 1.5 puntos. Recuerde que no puede mirar la hoja de su compañero, ni sacar ningún tipo de material. En caso de ser sorprendido observando la hoja de su compañero se le quitará el examen y su nota será la mínima (1). Sólo se permite usar la Calculadora.\\
+
+\textbf{Nota:} Las preguntas que requieren desarrollo ya sea algebraico o numérico, deben ser resueltas en las hojas en blanco entregadas.
+
+\begin{questions}
+
+
+\addpoints
+\question[3] La condición de óptimo para el consumidor es que:
+\begin{choices}
+\choice Su elección le permita alcanzar el nivel de satisfacción más elevado posible y sea asequible dada su renta y los precios de mercado.
+\choice La relación marginal de sustitución sea igual al cociente de precios.
+\choice La relación marginal de sustitución sea menor que el cociente de precios.
+\choice La relación marginal de sustitución sea mayor que el cociente de precios.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] Un empresario incrementará el uso que hace del factor X siempre que:
+\begin{choices}
+\choice La productividad marginal de ese factor sea superior a la de los restantes.
+\choice El ingreso que obtiene por emplearlo sea superior a su coste.
+\choice La productividad marginal de ese factor sea positiva
+\choice Ninguna de las anteriores.
+\end{choices}
+
+\addpoints
+\question[3] Un consumidor racional con renta monetaria M consume dos mercancías $x_{1}$ y $x_{2}$. Si el precio de x1 aumenta mientras M y el precio de $x_{2}$ se mantienen constantes, podemos asegurar que:
+\begin{choices}
+\choice Si $x_{1}$ es un bien Giffen el efecto total hará que disminuya la demanda de $x_{1}$.
+\choice Si $x_{1}$ es un bien inferior el efecto substitución hará que aumente la demanda de $x_{1}$.
+\choice Si $x_{1}$ es un bien inferior el efecto total hará que aumente la demanda de $x_{1}$.
+\choice Si $x_{1}$ es un bien Giffen el efecto substitución hará que disminuya la demanda de $x_{1}$.
+\choice Ninguna de las anteriores.
+\end{choices}
+
+
+\addpoints
+\question[4] La producción con pérdidas:
+\begin{choices}
+\choice Implica falta de racionalidad del empresario.
+\choice Sólo es posible a largo plazo.
+\choice Ocurre cuando permite recuperar parte de los costes fijos.
+\choice Nada de lo anterior.
+\end{choices}
+
+\addpoints
+\question[4] Suponga un consumidor que demanda los bienes $x_{1}$ y $x_{2}$. Bajo el supuesto de preferencias regulares, si aumenta el precio del bien $x_{2}$, en el equilibrio:
+\begin{choices}
+\choice Aumentará el cociente entre la Utilidad Marginal de $x_{2}$ y la Utilidad Marginal de $x_{1}$.
+\choice Aumentará necesariamente la Utilidad Marginal de $x_{1}$.
+\choice Aumentará también el precio de $x_{1}$.
+\choice Disminuirá el cociente entre la Utilidad Marginal de X2 y la Utilidad Marginal de X1.
+\choice Nada de lo anterior.
+\end{choices}
+
+
+
+\addpoints
+\question[6] Dentro del topico de elasticidad explicado en clase responda lo siguiente:
+\begin{choices}
+\choice Qué problemas platea el cálculo de la elasticidad precio de la demanda y cómo se resuelven?
+\choice Cuales son las diferencias entre la elasticidad arco y la elasticidad punto.
+\choice Mencione tres aplicaciones de la elasticidad y expliquelas.
+\choice Grafique y explique que relación tiene la elasticidad precio de la demanda y el ingreso de los vendedores
+\choice Partiendo de que el ingreso de los vendedores es $R=P*Q$: muestre que:
+\begin{equation}
+\frac{\Delta R}{\Delta P}= Q[1- \abs{\varepsilon_{Q,P}}]
+\end{equation}
+\end{choices}
+
+\addpoints
+\question[6] Dentro de la teoría del productor responda lo siguiente:
+\begin{choices}
+\choice Defina (matematicamente) y explique las diferenacias entre una función de producción, un conjunto de producción y un plan de producción.
+\choice Explique que implicaciones tiene para el beneficio del productor, que este produciendo en el corto o en largo plazo.
+\choice Mencione tres aplicaciones de la elasticidad y expliquelas.
+\choice Grafique y explique que relación tiene la elasticidad precio de la demanda y el ingreso de los vendedores
+\choice Partiendo de que el ingreso de los vendedores es $R=P*Q$, muestre que $\frac{\Delta R}{\Delta P}= Q[1-\abs{\varepsilon_{Q,P}}]$
+\end{choices}
+
+\addpoints
+\question[6] Explique como se puede aproximar al valor de una empresa en escenarios de certidumbre e incertidumbre.
+
+
+\addpoints
+\question[18] Suponga un individuo cuya función de utilidad es:\\
+
+$$U=x_{1}^{6}x_{2}^{4}$$
+
+Resuelva lo siguiente:
+\begin{choices}
+\choice (2 points) Plantear el problema de optimización.
+\choice (4 points) Obtener las demandas marshallianas.
+\choice (4 points) Si $m=100$, $p_{1}=3$ y $p_{2}=4$, cuales son los valores óptimos $(x_{1}^{*}, x_{2}^{*})$ que resuelven el problema de optimización.
+\choice (2 points) Comprueba la validez del punto óptimo, y obtenga el valor de la utilidad en dicho punto.
+\choice (4 points) Si el gobierno decide gravar el consumo del bien $x_{1}$ con un impuesto ad-valorem del $100\%$, ¿cuáles son los nuevos niveles de consumo de ambos bienes en equilibrio, y su nivel de utilidad asociado?.
+\choice (2 points) Describa el efecto de la medida en los resultados de equilibrio.
+\end{choices}
+
+
+\bigskip
+\bigskip
+\large
+\centering
+\
+\emph{''Yo creo bastante en la suerte. Y he constatado que, cuanto más duro trabajo, más suerte tengo. Así que no descuides tu esfuerzo para que no te falte fortuna.'' <<Thomas Jefferson>>}
+
+\end{questions}
+\end{document}

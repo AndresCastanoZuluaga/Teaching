@@ -1,0 +1,153 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[10pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{mathtools}
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{EC301-Microeconomía I}
+\newcommand{\term}{Segundo semestre}
+\newcommand{\examnum}{Examen Final}
+\newcommand{\examdate}{03/11/2014}
+\newcommand{\timelimit}{150 minutos}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document}
+	
+	% These commands set up the running header on the top of the exam pages
+	\pagestyle{head}
+	\firstpageheader{}{}{}
+	\runningheader{\class}{\examnum\ - Página \thepage\ de \numpages}{\examdate}
+	\runningheadrule
+	
+	\begin{flushright}
+		\begin{tabular}{p{2.8in} r c}
+			\textbf{\class} & \textbf{Nombre:} & \makebox[2in]{\hrulefill}\\
+			\textbf{\term} &\textbf{RUT:}& \makebox[2in]{\hrulefill}\\
+			\textbf{\examnum} &&\\
+			\textbf{\examdate} &&\\
+			\textbf{Tiempo limite: \timelimit} &  & \textbf{Profesor:} Andrés M. Castaño \emph{M.Sc. (c)}
+		\end{tabular}\\
+	\end{flushright}
+	\rule[1ex]{\textwidth}{.1pt}
+	
+	Este examen contiene 2 páginas y un total de 12 preguntas, al lado de cada pregunta aparece su ponderación de acuerdo a un máximo de 60 puntos (10 puntos de base). Ingrese la información requerida en la parte superior de la hoja. Las preguntas 11 y 12 son de selección múltiple con única respuesta (la opción escogida debe ser justificada). Recuerde que no puede mirar la hoja de su compañero, ni sacar ningún tipo de material. En caso de ser sorprendido observando la hoja de su compañero, se le quitará el examen y su nota será la mínima (1). Sólo se permite usar la Calculadora.\\
+	
+	\textbf{Nota:} Las preguntas que requieren desarrollo ya sea algebraico o numérico, deben ser resueltas en las hojas en blanco entregadas (no resolver en las hojas de examen).
+	
+	\begin{questions}
+		
+		
+    \addpoints
+	\question[3] Mateo y Carmen se encuentran en el mercado donde hacen sus compras de los bienes 1 y 2. La función de utilidad de Mateo es $U(x_{1}, x_{2})=x_{1}^{2}x_{2}$ , y se sabe que esta maximizando su utilidad adquiriendo la combinación de bienes $x_{1}=14$ y $x_{2}=6$. Carmen tiene preferencias regulares y sabemos que ha escogido una combinación de bienes donde la pendiente de su curva de indiferencia es igual a $-2$. ¿Esta maximizando la utilidad? 
+			
+			
+		\addpoints
+	    \question[3] Un consumidor tiene como función de utilidad $U(x_{1}, x_{2})=x_{1}x_{2}^{2}$, y se enfrenta a los precios $p_{1}=10$ y $p_{2}=20$ con un ingreso $m=180$ (pesos chilenos). Si le ofrecen cuatro unidades juntas del bien 1 por un sólo pago de 20 pesos, ¿debe aceptar? ¿por qué?.
+			
+			
+		\addpoints
+		\question[4] La restricción presupuestaria de Tamara viene determinada por $m=500$; $p_{1}=1$; $p_{2}=2$. Explique cómo cambia el conjunto presupuestario si:
+		\begin{choices}
+			\choice El gobierno aplica un impuesto específico de $0,1$ al bien 1.
+			\choice El gobierno aplica un impuesto ad valorem de $10\%$ al bien 1.
+			\choice Si el precio relativo es 1
+		\end{choices}	
+			
+	\addpoints
+	\question[4] Si la función de utilidad es $U=(X_{1}-9)^{2}+(X_{2}-9)^{2}$, $p_{1}=9$, $P_{2}=9$ y $m=99$, determine (matemáticamente) si la solución óptima es interior o esquina.
+				  
+    \addpoints
+    \question[24] Si la función de utilidad de Pedro es de la forma: $U=x_{1}^{\frac{1}{2}}x_{2}^{\frac{1}{3}}$ ?y su nivel de ingreso y precio de los bienes son: m, $p_{1}$ y $p_{2}$.
+    \begin{choices}
+    	\choice Determine las demandas ordinarias para los dos bienes. ¿Qué sucede con el costo de oportunidad de $x_{2}$ si $p_{2}$ se incrementa en un $20\%$? ¿Cómo cambian las cantidades demandadas?
+    	\choice  Determine la curva precio consumo de $x_{2}$. ¿Depende de la cantidad consumido de $x_{1}$?
+    	\choice Si a pedro le incrementan el ingreso consecutivamente. ¿Cómo cambian sus demandas ordinarias sobre los bienes? ¿Cuál será su curva ingreso-consumo?
+    	\choice ¿Qué nos dice la curva de Engel de Pedro sobre el bien $x_{1}$?.
+    	\choice Supongamos que Pedro se fija una dieta rigurosa sobre $x_{1}$ y $x_{2}$ tal que modifica totalmente su función de utilidad, que se convierte en $U = Min(x_{2} + 2x_{1}; x_{1} + 2x_{2})$ ¿Cuáles serían sus demandas ordinarias sobre los bienes? ¿Cuál sera? la curva precio
+        consumo y la curva ingreso consumo? ¿Cómo es su curva de Engel para el bien $x_{1}$?
+        \choice Si $p_{1}=10$, $p_{2}=30$ y $m=1000$, cuales son las demandas ordinarias originales. 
+        \choice Si  $p_{1}$ aumenta hasta 30, descomponga los cambios que experimenta la demanda (Debe realizar el gráfico), determine que tipo de bien es $x_{1}$.  
+    \end{choices}
+ 
+    \addpoints
+    \question[2] Si la función de utilidad es Cobb Douglas ¿cómo es la curva de demanda cruzada del bien 2? ¿cómo es la curva de demanda cruzada del bien 1?
+
+    \addpoints
+    \question[2] En el caso de bienes complementarios perfectos ¿cómo es la curva de Engel?
+    
+   \addpoints
+    \question[8] Explique, grafique y desarrolle algebraicamente  (si es necesario):
+    \begin{choices}
+    			\choice Qué problemas platea el cálculo de la elasticidad precio de la demanda y cómo se resuelven?
+    			\choice Cuales son las diferencias entre la elasticidad arco y la elasticidad punto?
+    			\choice Mencione cuatro aplicaciones de la elasticidad y expliquelas (deben ser ejemplos aplicados para el caso de Antofagasta).
+    			\choice Explique que relación tiene la elasticidad precio de la demanda y el ingreso de los vendedores (debe entregar dos ejemplos para el caso de Antofagasta).
+    \end{choices}
+    
+    		\addpoints
+    		\question[4] Dentro de la teoría del productor responda lo siguiente:
+    		\begin{choices}
+    			\choice Explique y grafiqué las etapas de la producción, y cómo estás se relacionan con el PM, el PME, el CM y el CME.
+    			\choice Explique qué implicaciones tiene para el beneficio del productor, que este produciendo en el corto o en largo plazo.
+    		\end{choices}
+    		
+    		\addpoints
+    		\question[2] Explique como se puede aproximar al valor de una empresa en escenarios de certidumbre e incertidumbre.
+    		
+  \addpoints
+  \question[2] Un empresario incrementará el uso que hace del factor X siempre que:
+  \begin{choices}
+  	\choice La productividad marginal de ese factor sea superior a la de los restantes.
+  	\choice El ingreso que obtiene por emplearlo sea superior a su coste.
+  	\choice La productividad marginal de ese factor sea positiva.
+  	\choice Ninguna de las anteriores.
+  \end{choices}
+
+		\addpoints
+		\question[2] La producción con pérdidas:
+		\begin{choices}
+			\choice Implica falta de racionalidad del empresario.
+			\choice Sólo es posible a largo plazo.
+			\choice Ocurre cuando permite recuperar parte de los costes fijos.
+			\choice Nada de lo anterior.
+		\end{choices}
+				
+
+		
+		
+		\bigskip
+		\bigskip
+		\large
+		\centering
+		\
+		\emph{''El genio se compone del dos por ciento de talento y del noventa y ocho por ciento de perseverante aplicación.'' << H. Ludwig van Beethoven >>}
+		
+		""
+		
+	\end{questions}
+\end{document}

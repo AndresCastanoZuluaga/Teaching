@@ -1,0 +1,172 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[10pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{mathtools}
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{EC301-210-Microeconomía I}
+\newcommand{\term}{Segundo semestre}
+\newcommand{\examnum}{Cátedra}
+\newcommand{\examdate}{10/10/2014}
+\newcommand{\timelimit}{120 minutos}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document}
+	
+	% These commands set up the running header on the top of the exam pages
+	\pagestyle{head}
+	\firstpageheader{}{}{}
+	\runningheader{\class}{\examnum\ - Página \thepage\ de \numpages}{\examdate}
+	\runningheadrule
+	
+	\begin{flushright}
+		\begin{tabular}{p{2.8in} r c}
+			\textbf{\class} & \textbf{Nombre:} & \makebox[2in]{\hrulefill}\\
+			\textbf{\term} &\textbf{RUT:}& \makebox[2in]{\hrulefill}\\
+			\textbf{\examnum} &&\\
+			\textbf{\examdate} &&\\
+			\textbf{Tiempo limite: \timelimit} &  & \textbf{Profesor:} Andrés M. Castaño \emph{M.Sc. (c)}
+		\end{tabular}\\
+	\end{flushright}
+	\rule[1ex]{\textwidth}{.1pt}
+	
+	Este examen contiene 3 páginas y un total de 11 preguntas, al lado de cada pregunta aparece su ponderación de acuerdo a un máximo de 60 puntos (10 puntos de base). Ingrese la información requerida en la parte superior de la hoja. Las preguntas 1 hasta la 7 son de selección múltiple con única respuesta, y la respuesta escogida debe ser justificada, si marca la opción correcta pero no la justifica tendrá 0 puntos. Recuerde que no puede mirar la hoja de su compañero, ni sacar ningún tipo de material. En caso de ser sorprendido observando la hoja de su compañero se le quitará el examen y su nota será la mínima (1). Sólo se permite usar la Calculadora.\\
+	
+	\textbf{Nota:} Las preguntas que requieren desarrollo ya sea algebraico o numérico, deben ser resueltas en las hojas en blanco entregadas.
+	
+	\begin{questions}
+								
+		\addpoints
+		\question[3] Suponga un consumidor que demanda los bienes $x_{1}$ y $x_{2}$. Bajo el supuesto de preferencias regulares, si aumenta el precio del bien $x_{2}$, en el equilibrio:
+		\begin{choices}
+			\choice Aumentará el cociente entre la Utilidad Marginal de $x_{2}$ y la Utilidad Marginal de $x_{1}$.
+			\choice Aumentará necesariamente la Utilidad Marginal de $x_{1}$.
+			\choice Aumentará también el precio de $x_{1}$.
+			\choice Disminuirá el cociente entre la Utilidad Marginal de $x_{2}$ y la Utilidad Marginal de $x_{1}$.
+			\choice Nada de lo anterior.
+		\end{choices}
+		
+		\addpoints
+		\question[3] La introducción de un impuesto positivo de cuantía fija:
+		\begin{choices}
+			\choice Incrementa la cantidad máxima consumible de todos los bienes, dado el nivel de renta.
+			\choice Disminuye la cantidad máxima consumible de todos los bienes dado un nivel de renta.
+			\choice Altera los precios relativos de los bienes.
+			\choice No afecta a la cantidad demandada de los bienes.
+			\choice Nada de lo anterior.
+		\end{choices}
+		
+		\addpoints
+		\question[3] Suponga un individuo que posee una renta m = 100 y los precios de los bienes $p_{1}=4$ y $p_{2}=2$. Si el gobierno decide gravar con un impuesto ad-valorem del 25 por 100 en el bien $X_{1}$, Cuál será la máxima cantidad que se pueda consumir de este bien?
+		\begin{choices}
+			\choice 25
+			\choice 20
+			\choice 33.3
+			\choice 100
+			\choice Nada de lo anterior.
+		\end{choices}
+		
+	
+\addpoints
+\question[3] Suponga dos cestas de bienes $A = (x^{0}, y^{0})$ y $B = (x^{1}, y^{1})$. Si $B$ contiene la misma cantidad de todos los bienes y al menos más de uno de ellos y $B$ es preferido a $A$, entonces se dice que las preferencias son:
+\begin{choices}
+	\choice Monótonas
+	\choice Convexas
+	\choice Estrictamente convexas
+	\choice irregurales
+	\choice Nada de lo anterior.
+\end{choices}
+
+\addpoints
+\question[3] La función de utilidad $U=\frac{X_{1}}{X_{2}}$ revela que $X_{1}$ y  $X_{2}$ son  :
+\begin{choices}
+	\choice Sustitutos perfectos
+	\choice Complementarios perfectos
+	\choice Neutrales
+	\choice $X_{1}$ es un bien y $X_{2}$ es un mal
+	\choice Nada de lo anterior.
+\end{choices}
+
+\addpoints
+\question[3] En una función de utilidad del tipo $U=X_{1}^{a}X_{2}^{b}$ si la $RMS(X_{1}, X_{2})=2$, para $X_{1}=4$ y $X_{2}=5$, esta definida como las unidades de $X_{2}$ que está dispuesto a entregar por unidad adicional de $X_{1}$, entonces:
+\begin{choices}
+	\choice Para valores de $X_{1}>4$, la $RMS<2$
+	\choice Para valores de $X_{2}>5$, la $RMS<2$
+	\choice Para valores de $X_{1}<4$, la $RMS<2$
+	\choice La RMS permanece constante a lo largo de una curva de indiferencia
+	\choice Nada de lo anterior.
+\end{choices}
+
+\addpoints
+\question[3] Demuestre matemáticamente y explique, cuál de las funciones listadas abajo representa una transformación monótona de  la función $U=X_{1}^{a}X_{2}^{b}$.
+\begin{choices}
+	\choice $U = a ln X_{1} + bX_{2}$
+	\choice $U = aX_{1} + bX_{2}$
+	\choice $U = abX_{1}X_{2}$
+	\choice $U=\frac{a}{b}\frac{X_{1}}{X_{2}} $
+	\choice Nada de lo anterior.
+\end{choices}
+
+
+		
+\addpoints
+	\question[13] Amparo, Covadonga, Esperanza, Elena y Lourdes son cinco profesoras de la Universidad que acostumbran a comer en el comedor de la facultad. El menú está compuesto por platos de verdura y platos de pescado. Las preferencias de las cinco profesoras entre verdura (bien x) y pescado (bien y), son diferentes. Así, Amparo debe seguir una dieta rigurosa y tiene que comer tanto pescado como verdura, pero siempre en una proporción del triple de verdura que de pescado. A Covadonga le gusta tanto el pescado como la verdura, pero prefiere no consumir juntos los dos tipos de alimentos. Esperanza, por su parte, estaría siempre dispuesta a intercambiar un plato de pescado por dos de verduras, aunque ambos alimentos le agradan. A Elena, sin embargo, no le gusta el pescado, aunque sí la verdura, y sólo está dispuesta a comer algo de pescado si a cambio recibe una dosis extra de verdura. Por último, a Lourdes le gusta el pescado, mientras que la verdura le es indiferente. No le importa comerla, pero ello no le reporta ninguna satisfacción. Para cada una de las profesoras, caracterice sus preferencias y defina una función de utilidad (curvas de indiferencia) que las represente.			
+
+
+\addpoints
+\question[13] Las preferencias de Andrea, Juan, Camila, Diana, Ricardo y Sofia son caracterizadas por seis funciones de utilidad distintas, las cuales se presentan acontinuación. ¿Puede decir quienes tienen las mismas preferencias y por qué? Encuentre la tasa marginal de sustitución de cada una de las funciones de utilidad. Interprete:
+\begin{choices}
+	\choice $U_{A}=x_{1}\sqrt{x_{2}}$
+	\choice $U_{J}=x_{1}^{4}x_{2}^{2}$
+	\choice $U_{C}=(ax_{1}^{-2}+3x_{2}^{-2})^{-\frac{1}{2}}$
+	\choice $U_{D}=x_{1}x_{2}$
+	\choice $U_{R}=\sqrt{x_{1}} \sqrt{x_{2}}$
+	\choice $U_{S}=x_{1}^{2} x_{2}$
+\end{choices}
+
+\addpoints
+\question[13] Demostrar que la función Cobb-Douglas $Y=AK^{a}L{b}$, definida para todo $K>0$ y $L>0$, es cóncava si $A>0$, $a \geq 0$, $b\geq0$ y $(a+b)\leq1$. 
+		
+		\bigskip
+		\bigskip
+		\large
+		\centering
+		\
+		\emph{''En la pugna entre el arroyo y la roca, siempre triunfa el arroyo... no porque sea muy fuerte, sino porque persevera.'' << H. Jackson Brown >>}
+		
+\end{questions}
+\end{document}
+
+	
+	
+	
+			
+			
+			
+			
+	
