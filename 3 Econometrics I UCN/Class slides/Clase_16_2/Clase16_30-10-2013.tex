@@ -1,0 +1,358 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#16 - Extensiones del MCRL}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 16 30/10/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Miercoles 10 de octubre de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\section{Regresión a traves del origen}
+\begin{frame}
+\frametitle{Regresión a traves del origen}
+\begin{itemize}
+\item <1> $Y_{i}=\beta_{2}X_{i}+\mu_{i}$.
+\bigskip
+\item <1> A veces la teoría que sirve de base requiere o exige que el término intersección esté ausente.
+\bigskip
+\item <1> Hipótesis del ingreso permanente de M. Friedman, Teoría del Análisis de Costos, Teoría de Crecimiento de la Oferta Monetaria.
+\bigskip
+\item <1> Cómo se estiman este tipo de modelos sin intercepto? qué problemas presentan?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{MCO sin intercepto}
+\begin{itemize}
+\item <1> MCO sin intercepción:
+$$\hat{\beta}_{2}=\frac{\sum X_{i}Y_{i}}{\sum X^{2}_{i}}$$
+$$Var(\hat{\beta}_{2})=\frac{\sigma^{2}}{\sum X^{2}_{i}}$$
+$$\hat{\sigma}^{2}=\frac{\sum \hat{\mu}^{2}_{i}}{n-1}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{MCO con intercepto}
+\begin{itemize}
+\item <1> MCO con intercepto:
+$$\hat{\beta}_{2}=\frac{\sum x_{i}y_{i}}{\sum x^{2}_{i}}$$
+$$Var(\hat{\beta}_{2})=\frac{\sigma^{2}}{\sum x^{2}_{i}}$$
+$$\hat{\sigma}^{2}=\frac{\sum \hat{\mu}^{2}_{i}}{n-2}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Diferencias}
+\begin{itemize}
+\item <1> En el modelo sin términos de intersección sólo se usan sumas sencillas de cuadrados y productos cruzados, en el con intersección  se utilizan sumas ajustadas de la media y productos cruzados.
+\bigskip
+\item <1> Los grados de libertad son diferentes, por qué?
+\bigskip
+\item <1> Bajo el marco tradicional $\sum\hat{\mu}_{i}$ es siempre cero en el modelo con intersección. Sin intersección no es necesario que lo sea.
+\bigskip
+\item <1> El $r^{2}$ siempre positivo antes, ahora podría tomar valores negativos. $r^{2}$ puede no ser apropiado en modelos de regresión a través del origen.
+\bigskip
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Diferencias}
+\begin{itemize}
+\item <1> Se puede calcular lo que se conoce como el $r^{2}$ simple:
+$$r^{2}_{s}=\frac{(\sum X_{i}Y_{i})^{2}}{\sum X^{2}_{i}Y^{2}_{i}}$$
+\bigskip
+\item <1> Se trata de un r cuadrado que no es corregido por la media. No es comparable con el r cuadrado tradicional.
+\bigskip
+\item <1> A menos de que la teoría sea demasiado fuerte, se aconseja seguir apegado al modelo convencional.
+\bigskip
+\item <1> Si comenzamos del modelo tradicional con intercepto y este es no significativo, tendríamos de manera práctica una regresión a través del origen. Si se insiste desde el principio en correrlo sin intercepción se está cometiendo un error de especificación.
+\bigskip
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\includegraphics[width=10cm]{grafico1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo}
+\begin{center}
+\includegraphics[width=7cm]{grafico2.png}
+\end{center}
+\begin{center}
+\includegraphics[width=7cm]{grafico3.png}
+\end{center}
+
+\end{frame}
+
+
+\section{Regresión sobre variables estandarizadas}
+\begin{frame}
+\frametitle{Regresión sobre variables estandarizadas}
+\begin{itemize}
+\item <1> Las unidades en que la variable dependiente e independiente se expresa influye sobre la interpretación de los coeficientes de regresión.
+\bigskip
+\item <1> Esto se puede evitar si ambas variables se estandarizan.
+$$Y^{*}_{i}=\frac{Y_{i}-\bar{Y}}{S_{Y}}$$
+$$X^{*}_{i}=\frac{X_{i}-\bar{X}}{S_{X}}$$
+\item <1> Para una variable estandarizada la media siempre es cero y la varianza es igual a 1.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Regresión sobre variables estandarizadas}
+\begin{itemize}
+\item <1> Efectuar la regresión (los coeficientes son conocidos como coeficientes beta):
+$$Y^{*}_{i}=\beta^{*}_{1}+\beta^{*}_{2}X^{*}_{i}+\mu^{*}_{i}$$
+$$=\beta^{*}_{2}X^{*}_{i}+\mu^{*}_{i}$$
+Nos lleva a una regresión a través del origen. Las interpretaciones serán tomadas como el cambio en Beta desviaciones estándar que provoca un cambio en una desviación estándar de X.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ventajas del modelo tradicional versus el modelo estandarizado}
+\begin{itemize}
+\item <1> En el escenario de regresión múltiple el coeficiente estandarizado es una forma de medir la fuerza relativa de las distintas regresoras.
+\bigskip
+\item <1> Relación entre los coeficientes tradicionales y el coeficiente beta:
+$$\hat{\beta}^{*}_{2}=\hat{\beta}_{2}\frac{S_{x}}{S_{y}}$$
+\end{itemize}
+\end{frame}
+
+
+\section{Formas funcionales de los modelos de regresión}
+\begin{frame}
+\frametitle{Formas funcionales de los modelos de regresión}
+\begin{itemize}
+\item <1> Modelo log-log.
+\bigskip
+\item <1> Modelos semilogarítmicos (log-lin; lin-log).
+\bigskip
+\item <1> Modelos recíprocos.
+\bigskip
+\item <1> Modelo logarítmico recíproco.
+\end{itemize}
+\end{frame}
+
+
+\section{Cómo medir elasticidad: Modelo log-log}
+\begin{frame}
+\frametitle{Cómo medir elasticidad: Modelo log-log}
+\begin{itemize}
+\item <1> Modelo de regresión exponencial:
+$$Y_{i}=\beta_{1}X^{\beta_{2}}_{i}e^{\mu_{i}}$$
+$$ln Y_{i}=\alpha+\beta_{2}ln X_{i}+\mu_{i}$$
+\item <1> Esta ecuación se podría estimar igual por mínimos cuadrados ordinarios, Porqué?
+\bigskip
+\item <1> Bajos este marco el coeficiente $\beta_{2}$ mide la elasticidad de Y con respecto a X (esto es, el cambio porcentual en Y ante un cambio pequeño cambio porcentual en X.
+\bigskip
+\item <1> Características especiales: 1. El coeficiente de elasticidad entre Y y X permanece constante (modelo de elasticidad constante), 2. $\hat{\beta}_{1}$ es un estimador sesgado $\hat{\beta}_{1}=antilog(\hat{\alpha})$. En términos prácticos muchas veces no es necesario preocuparse por obtener este estimador insesgado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: elasticidad gasto en bienes durables respecto al gasto en consumo personal}
+\begin{center}
+\includegraphics[width=12cm]{grafico5}
+\end{center}
+\end{frame}
+
+
+\section{Cómo medir tasas de crecimiento: Modelo log-lin}
+\begin{frame}
+\frametitle{Cómo medir tasas de crecimiento: Modelo log-lin}
+\begin{itemize}
+\item <1> A veces el interés es encontrar la tasa de crecimiento de ciertas variables económicas (población, oferta monetaria, empleo, productividad)
+\bigskip
+\item <1> $ln Y_{t}=\beta_{1}+\beta_{2}t+\mu_{t}$
+\bigskip
+\item <1> $\beta_{2}$ representa un cambio relativo en Y dado un cambio absoluto en el valor del regresor (t en este caso)
+\bigskip
+\item <1> Si se multiplica el cambio relativo en Y por 100, nos da el cambio porcentual (tasa de crecimiento) en Y ocasionado por un cambio absoluto en X $(100*\beta_{2})$
+\bigskip
+\item <1> Modelo de crecimiento vs modelo de tendencia lineal
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: tasa de crecimiento del gasto en servicios}
+\begin{center}
+\includegraphics[width=12cm]{grafico6}
+\end{center}
+\end{frame}
+
+
+\section{Modelo lin-log}
+\begin{frame}
+\frametitle{Modelo lin-log}
+\begin{itemize}
+\item <1> A veces estamos interesados en saber el cambio absoluto en Y dado un cambio relativo en X (cambio porcentual).
+\bigskip
+\item <1> $ Y_{i}=\beta_{1}+\beta_{2}ln X_{i}+\mu_{i}$
+\bigskip
+\item <1> $\beta_{2}=\frac{cambio absoluto en Y}{Cambio relativo en X}$
+\bigskip
+\item <1> Para una buena interpretación, el valor del coeficiente de pendiente se debe dividir por 100.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Gasto vs gasto en alimentos}
+\begin{center}
+\includegraphics[width=12cm]{grafico7}
+\end{center}
+\end{frame}
+
+\section{Modelos reciprocos}
+\begin{frame}
+\frametitle{Modelos recíprocos}
+\begin{itemize}
+\item <1> $Y_{i}=\beta_{1}+\beta_{2}\frac{1}{X_{i}}+\mu_{i}$
+\bigskip
+\item <1> A medida que X aumenta indefinidamente, el término $\beta_{2}\frac{1}{X_{i}}$ se acerca a cero, y Y se aproxima al valor límite o asintótico $\beta_{1}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Comportamiento del modelo reciproco}
+\begin{center}
+\includegraphics[width=12cm]{grafico8}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Mortalidad infantil vs PIB per capita}
+\begin{center}
+\includegraphics[width=12cm]{grafico9}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo tomado del taller de la clase anterior}
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación ecuación de salarios a nivel comunal en chile, modelo normal.}}
+\includegraphics[width=11cm]{Modelo_normal}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo tomado del taller de la clase anterior}
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación ecuación de salarios a nivel comunal en chile, modelo con coeficientes estandarizados.}}
+\includegraphics[width=11cm]{Modelo_Estandarizado}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo tomado del taller de la clase anterior}
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación ecuación de salarios a nivel comunal en chile, modelo log-log.}}
+\includegraphics[width=11cm]{modelo_log-log}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo tomado del taller de la clase anterior}
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación ecuación de salarios a nivel comunal en chile, modelo log-lin.}}
+\includegraphics[width=11cm]{Modelo_log-lin}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo tomado del taller de la clase anterior}
+\begin{center}
+\begin{figure}[!ht]
+\centering
+\caption{\textbf{Resultados estimación ecuación de salarios a nivel comunal en chile, modelo lin-log.}}
+\includegraphics[width=11cm]{Modelo_lin-log}
+\end{figure}
+\end{center}
+
+\end{frame}
+
+
+
+\end{document}

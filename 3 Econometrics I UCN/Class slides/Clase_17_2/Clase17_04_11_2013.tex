@@ -1,0 +1,222 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#17 - Regresión Lineal Multiple}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 17 04/11/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Lunes 04 de Noviembre de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\section{Comentarios generales...}
+\begin{frame}
+\frametitle{Comentarios generales...}
+\begin{itemize}
+\item <1> A veces la variable que intentamos explicar está afectada por más de una variable.
+\bigskip
+\item <1> Modelo de tres variables. 1 dependiente y dos independientes:
+$$Y_{i}=\beta_{1}+\beta_{2}X_{2i}+\beta_{3}X_{3i}+\mu_{i}$$.
+\item <1> Se mantienen todos los supuestos.
+\bigskip
+\item <1> Los coeficientes $\beta_{2}$ y $\beta_{3}$ son denominados coeficientes de regresión parcial.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Interpretación de la ecuación de Regresión Múltiple}
+\begin{itemize}
+\item <1> $$E(Y_{i}\mid X_{2i}, X_{3i})=\beta_{1}+\beta_{2}X_{2i}+\beta_{3}X_{3i}$$
+\item <1> Los efectos de cada parámetro se interpretan ceteris paribus las otras variables.
+\bigskip
+\item <1> Se mantienen todos los supuestos.
+\bigskip
+\item <1> Los coeficientes $\beta_{2}$ y $\beta_{3}$ son denominados coeficientes de regresión parcial.
+\bigskip
+\item <1> Estimadores MCO Y MV
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimador MCO}
+\begin{itemize}
+\item <1> Se diferencia $Min\sum \hat{\mu}^{2}_{i}=\sum(Y_{i}-\beta_{1}-\beta_{2}X_{2i}-\beta_{3}X_{3i})^{2}$, se obtienen las ecuaciones normales:
+$$\bar{Y}=\hat{\beta}_{1}+\hat{\beta}_{2}\bar{X}_{2}+\hat{\beta}_{3}\bar{X}_{3}$$
+$$\sum Y_{i}X_{2i}=\hat{\beta}_{1}\sum X_{2i}+\hat{\beta}_{2}\sum X^{2}_{2i}+\hat{\beta}_{3}\sum X_{2i}X_{3i}$$
+$$\sum Y_{i}X_{3i}=\hat{\beta}_{1}\sum X_{3i}+\hat{\beta}_{2}\sum X_{2i}X_{3i}+\hat{\beta}_{3}\sum X^{2}_{3i}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Estimador MCO}
+\begin{itemize}
+\item <1> Resolviendo el sistema de ecuaciones se obtiene:
+$$\hat{\beta}_{1}=\bar{Y}-\hat{\beta}_{2}\bar{X}_{2}-\hat{\beta}_{3}\bar{X}_{3}$$
+
+$$\hat{\beta}_{2}=\frac{(\sum y_{i}x_{2i})(\sum x^{2}_{3i})-(\sum y_{i}x_{3i})(\sum x_{2i}x_{3i})}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}}$$
+
+$$\hat{\beta}_{3}=\frac{(\sum y_{i}x_{3i})(\sum x^{2}_{2i})-(\sum y_{i}x_{2i})(\sum x_{2i}x_{3i})}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Varianzas y errores estándar de los estimadores}
+\begin{itemize}
+\item <1> $$Var(\hat{\beta}_{1})=(\frac{1}{n}+\frac{\bar{X}^{2}_{2}\sum x^{2}_{3i}+\bar{X}^{2}_{3}\sum x^{2}_{2i}-2\bar{X}_{2}\bar{X}_{3}\sum x_{2i}x_{3i}}{\sum^{2}_{2i}\sum x^{2}_{3i}-(\sum x_{2i}x_{3i})^2})*\sigma^{2}$$
+\item <1> $$Var(\hat{\beta}_{2})=(\frac{\sum x^{2}_{3i}}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}})*\sigma^{2}$$
+\item <1> $$Var(\hat{\beta}_{3})=(\frac{\sum x^{2}_{2i}}{(\sum x^{2}_{2i})(\sum x^{2}_{3i})-(\sum x_{2i}x_{3i})^{2}})*\sigma^{2}$$
+\item <1> $$Cov(\hat{\beta}_{2}, \hat{\beta}_{3})=\frac{-r_{23}\sigma^{2}}{(1-r^{2}_{23})\sqrt{x^{2}_{2i}}\sqrt{x^{2}_{3i}}}$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Coeficiente de determinación múltiple $R^{2}$ y el coeficiente de correlación múltiple}
+\scriptsize
+\begin{itemize}
+\item <1> $$\hat{\sigma}^{2}=\frac{\sum \mu^{2}_{i}}{n-3}$$
+\item <1> Para obtener el coeficiente de determinación se sigue el siguiente procedimiento:
+ $$ Y_{i}=\hat{\beta}_{1}+\hat{\beta}_{2}X_{2i}+ \hat{\beta}_{3}X_{3i}+\hat{\mu}_{i}$$
+ $$=\hat{Y}_{i}+\hat{\mu}_{i}$$
+ Aplicando las desviaciones a partir de sus medias obtenemos:
+ $$y_{i}=\hat{\beta}_{2}x_{2i}+ \hat{\beta}_{3}x_{3i}+\hat{\mu}_{i}$$
+ $$y_{i}=\hat{y}_{i}+\hat{\mu}_{i}$$
+ Si se elevan al cuadrado ambos lados y se suman los valores muéstrales:
+ $$\sum y^{2}_{i}=\hat{y}^{2}_{i}+\hat{\mu}^{2}_{i}+2\sum\hat{y}_{i}\hat{\mu}_{i}$$
+ $$\sum y^{2}_{i}=\hat{y}^{2}_{i}+\hat{\mu}^{2}_{i}$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Coeficiente de determinación múltiple $R^{2}$ y el coeficiente de correlación múltiple}
+\begin{itemize}
+\item <1> Si substituimos el valor de los residuos, obtenemos:
+ $$\sum y^{2}_{i}=\hat{y}^{2}_{i}+\hat{\mu}^{2}_{i}$$
+ $$R^{2}=\frac{\hat{\beta}_{2}\sum y_{i}x_{2i}+\hat{\beta}_{3}\sum y_{i}x_{3i}}{\sum y^{2}_{i}}$$
+ $$R^{2}=1-\frac{SRC}{STC}=1- \frac{\sum \hat{\mu}^{2}_{i}}{\sum y^{2}_{i}}$$
+\item <1> Relación entre el $R^{2}$ y la varianza de un coeficiente:
+$$Var(\hat{\beta}_{j})=\frac{\sigma^{2}}{\sum x^{2}_{j}}(\frac{1}{1-R^{2}_{j}})$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo: mortalidad infantil respecto al PIB per cápita y la tasa de alfabetización en mujeres. No estandarizada vs estandarizada}
+\begin{center}
+\includegraphics[width=8cm]{grafico1.png}
+\end{center}
+\begin{center}
+\includegraphics[width=8cm]{grafico2.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elección de una forma funcional}
+\begin{itemize}
+\item <1> La teoría subyacente sugiere una forma funcional. 
+\bigskip
+\item <1> Comparar los coeficientes de pendiente con las elasticidades.
+\bigskip 
+\item <1> Los coeficientes de la forma funcional escogida deben satisfacer determinadas expectativas a-priori (signos esperados)
+\bigskip 
+\item <1> Comparar signos, significancia y ajuste global.
+\bigskip
+\item <1> Es preferible escoger un modelo con menor ajuste global y coeficientes con signos adecuados y significativos, que el caso contrario.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La regresión simple en el contexto de la regresión múltiple: introducción al sesgo de especificación}
+\begin{itemize}
+\item <1> Suponga que el modelo anterior es el verdadero, y que en su lugar usted estimó:
+$$MI_{i}=\alpha_{1}+\alpha_{2}PIBPC_{i}+\mu_{1i}$$
+\item <1> Es $\hat{\alpha}_{2}$ un estimador insesgado de $\beta_{2}$
+\end{itemize}
+\begin{center}
+\includegraphics[width=8cm]{grafico3.png}
+\end{center}
+El valor del coeficiente de PIBPC es 0.0114 (error Guajarati), el del parámetro autónomo tampoco es.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{La regresión simple en el contexto de la regresión múltiple: introducción al sesgo de especificación}
+\begin{center}
+\includegraphics[width=12cm]{grafico3.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{$R^{2}$ tradicional vs $R^{2}$ ajustado}
+\begin{itemize}
+\item <1> $$\bar{R}^{2}=1-\frac{\frac{\sum \hat{\mu}^{2}_{i}}{n-k}}{\frac{y^{2}_{i}}{n-1}}$$
+\item <1> Se debe tener mucho cuidado al comparar dos modelos con la misma variable dependiente  via el coeficiente de determinación tradicional. Para estos fines es mejor utilizar el ajustado.
+\item <1> $$\bar{R}^{2}=1-(1-R^{2})\frac{n-1}{n-k}$$
+\item <1> No decida si su especificación está bien o mal basado en el R cuadrado. Recuerde que el objetivo del análisis de regresión no es obtener un R más alto per se, sino obtener estimadores confiables de los verdaderos coeficientes de regresión. También es importante destacar la importancia de la relevancia teórica.
+\end{itemize}
+\end{frame}
+
+\end{document}

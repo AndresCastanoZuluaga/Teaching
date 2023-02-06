@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{An\'alisis de varianza}{2}{0}{1}
+\beamer@sectionintoc {2}{El estad\IeC {\'\i }stico F versus el est\'adistico T}{5}{0}{2}
+\beamer@sectionintoc {3}{Aplicaciones del an\'alisis de regresi\'on: problema de predicci\'on}{6}{0}{3}
+\beamer@sectionintoc {4}{Predicci\'on media}{7}{0}{4}
+\beamer@sectionintoc {5}{Predicci\'on individual.....}{12}{0}{5}

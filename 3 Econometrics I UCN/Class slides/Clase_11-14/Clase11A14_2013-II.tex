@@ -1,0 +1,441 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#11 - Prueba de hipótesis}
+\author[Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 11 02/10/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Miercoles 02 de octubre de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Estimación por intervalos}
+\begin{frame}
+\frametitle{Estimación por intervalos}
+\begin{itemize}
+\item <1> La teoría clásica de estimación estadística cuenta con dos partes: estimación puntual y estimación por intervalos. Con MCO obtuvomos estimaciones puntuales, ahora nos trasladamos hacía la estimación por intervalos.
+\bigskip
+\item <1> Requisitos conceptuales: probabilidad, distribuciónes de probabilidad, errores tipo I, errores tipo II, nivel de significancia, potencia de una prueba estadística e intervalos de confianza. Consulte el apéndice A de Gujarati.
+\end{itemize}
+\end{frame}
+
+\section{Repaso súper rápido.....}
+\begin{frame}
+\frametitle{Repaso súper rápido.....}
+\scriptsize
+\begin{itemize}
+\item <1> Variable aleatoria: variable cuyo valor está determinado por el resultado de un experimento
+de azar se denomina  (va). Las variables aleatorias se denotan usualmente por las letras mayúsculas X, Y, Z y así sucesivamente, y los valores
+que ellas toman están denotadas por letras minúsculas, x, y , z, etc.
+\bigskip
+\item <1> Variable aleatoria discreta: adquiere solamente un número finito (o infinito contable) de valores.2 Por ejemplo,
+al lanzar dos dados, cada uno numerado del 1 al 6, si se define la variable aleatoria X como la suma de los números que aparecen en los dados, entonces X tomará uno de los siguientes valores: 2, 3, 4, S, 6, 7, 8, 9, 10, 11 o 12
+\bigskip
+\item <1> Variable aleatoria continua: variable que puede tomar cualquier valor dentro de un intervalo de valores. Así, la estatura de ún individuo es una variable continua.
+\bigskip
+\item <1> Se denomina la función de densidad de probabilidad discreta (FDP) de X, donde $P(X = x_{i})$ significa la probabilidad de que la va discreta X tome el valor de $X_{i}$.
+\end{itemize}
+\end{frame}
+
+\section{Función de densidad de probabilidad discreta (FDP)}
+\begin{frame}
+\frametitle{Función de densidad de probabilidad discreta (FDP)}
+\begin{center}
+\includegraphics[width=8cm]{grafico1}
+\end{center}
+\end{frame}
+
+\section{FDP condicional}
+\begin{frame}
+\frametitle{FDP condicional}
+\scriptsize
+\begin{itemize}
+\item <1> Como en el análisis de regresión, el interés se centra, con frecuencia, en estudiar el comportamiento de una variable condicional respecto a los valores de otra u otras variables. Esto puede hacerse considerando la FDP condicional. La función:
+
+$$f(x\mid y) = P(X = x \mid Y= y)$$
+
+se conoce como la FDP condicional de X; ésta da la probabilidad de que X
+tome el valor de x dado que Y ha asumido el valor y . En forma similar:
+
+$$f(y\mid X) = P(Y = y\mid X = X)$$
+lo cual da la FDP condicional de Y.
+
+Las FDP condicionales pueden obtenerse de la siguiente manera:
+FDP condicional de X
+$$f(x\mid y)= \frac{f(x,y)}{f(y)}$$
+FDP condicional de Y
+$$f(y\mid x) = \frac{f(x,y)}{f(x)}$$
+\end{itemize}
+\end{frame}
+
+\section{Características de las distribuciones de probabilidad}
+\begin{frame}
+\frametitle{Características de las distribuciones de probabilidad}
+\scriptsize
+\begin{itemize}
+\item <1> Una distribución de probabilidad a menudo puede resumirse en términos de algunas de sus características, conocidas como los momentos de la distribución. Dos de los momentos más ampliamente utilizados son la media, o valor esperado y la varianza.
+\bigskip
+\item <1> Valor esperado: El valor esperado de una va discreta X, denotado por E(X), se define de la siguiente manera:
+$$E(X)=\sum_{x}xf(x)$$
+donde $\sum_{x}$ significa la suma sobre todos los valores de X y donde f(x) es la FDP (discreta) de X.
+\bigskip
+\item <1> Sea X una variable aleatoria y sea $E(X)=\mu$· La distribución o dispersión de los valores de X alrededor del valor esperado puede ser medida por la varianza, la cual se define como;
+    $$var(X)=\sigma^{2}_{x}=E(X-\mu)^{2}$$
+\end{itemize}
+\end{frame}
+
+\section{Distribución Normal}
+\begin{frame}
+\frametitle{Distribución Normal}
+\scriptsize
+\begin{itemize}
+\item <1> Se dice que una variable X aleatoria (continua) está normalmente distribuida si su FDP tiene la siguiente forma:
+$$f(x)=\frac{1}{\sigma\sqrt{2\Pi}}exp(-\frac{(x-\mu)^{2}}{2\sigma^{2}})$$
+donde $\mu$ y $\sigma^{2}$ conocidos como los parámetros de la distribución, son la media y la varianza de la distribución respectivamente. Las propiedades de esta distribución son las siguientes:
+\bigskip
+\item <1> Es simétrica alrededor de su valor medio.
+\item <1> Aproximadamente 68 por ciento del área bajo la curva normal se encuentra entre los valores de $\mu\pm\sigma$, alrededor de 95 por ciento del área se encuentra entre $\mu\pm 2\sigma$, y alrededor del 99.7 por ciento del área se encuentra entre $\mu\pm 3\sigma$.
+\item <1> La distribución normal depende de dos parámetros, $\mu$ y $\sigma^{2}$. Por tanto, una vez que éstos han sido especificados, se puede contrar la probabilidad de que X esté dentro de cierto intervalo utilizando la FDP de la distribución normal..
+\item <1> Para utilizar esta tabla, se convierte la variable X normalmente distribuida dada con media $\mu$ y $\sigma^{2}$ en una variable Z normal estandarizada mediante la siguiente transformación:
+    $$Z=\frac{x-\mu}{\sigma}$$
+    se obtiene entonces:
+    $$f(Z)=\frac{1}{\sqrt{2\Pi}}exp(-\frac{Z^{2}}{2})$$
+\end{itemize}
+\end{frame}
+
+
+\section{Distribución Normal}
+\begin{frame}
+\frametitle{Distribución Normal}
+\begin{center}
+\includegraphics[width=12cm]{grafico2}
+\end{center}
+\end{frame}
+
+
+\section{Retomamamos la estimación por intervalos}
+\begin{frame}
+\frametitle{Retomamamos la estimación por intervalos}
+\scriptsize
+\begin{itemize}
+\item <1> En estadística, la confiabilidad de un estimador puntual se mide por su error estándar. Por consiguiente, en lugar de depender de un solo estimador puntual, se puede construir un intervalo alrededor del estimador puntual. De modo tal que este tenga, digamos, $95\%$ de probabilidad de incluir el verdadero valor del parámetro. Esta es, a grandes rasgos, la idea básica de la estimación de intervalos.
+\bigskip
+\item <1> Para ser más específico, supóngase que se desea encontrar qué tan ''cerca'' está, por ejemplo, $\hat{\beta}_{2}$ de $\beta_{2}$  Con este fin, tratamos de encontrar dos números positivos, $\delta$ y $\alpha$, este último situado entre 0 y 1, tal que la probabilidad de que el intervalo aleatorio ($\hat{\beta}_{2}-\delta$, $\hat{\beta}_{2} + \delta$) contenga el verdadero $\beta_{2}$ sea $1-\alpha$. Simbólicamente,
+    $$Pr(\hat{\beta}_{2}-\delta\leq \beta_{2}\leq \beta_{2}+\delta)=1-\alpha$$
+Este eintervalo si existe se conoce como intervalo de confianza; donde $1-\alpha$ es el nivel de confianza y a $\alpha$ como nivel de significancia.
+\end{itemize}
+\end{frame}
+
+\section{Detalles sobre la última ecuación}
+\begin{frame}
+\frametitle{Detalles sobre la última ecuación}
+\begin{itemize}
+\item <1> La ecuación anterior establece que la probabilidad de construir un intervalo que contenga $\beta_{2}$ es $1-\alpha$.
+\bigskip
+\item <1> Es un intervalo aleatorio; es decir, variará de una muestra a la siguiente debido a que está basado en $\hat{\beta}_{2}$ , el cual es aleatorio.
+\bigskip
+\item <1> Puesto que el intervalo de confianza es aleatorio, los enunciados probabilísticos que le corresponden deben ser entendidos en un sentido de largo plazo, es decir, para muestreo repetido.
+\bigskip
+\item <1> Más específicamente, significa: Si se construyen intervalos de confianza como el anterior con base probabilística de $1-\alpha$, entonces, a largo plazo, en promedio, tales intervalos contendrán, en $1-\alpha$ de los casos, el valor verdadero del parámetro.
+\end{itemize}
+\end{frame}
+
+\section{¿Cómo se construyen los intervalos de confianza?}
+\begin{frame}
+\frametitle{¿Cómo se construyen los intervalos de confianza?}
+\begin{itemize}
+\item <1> Si se conocen las distribuciones muestrales o de probabilidad de los estimadores, se puedan hacer afirmaciones sobre intervalos de
+confianza.
+\bigskip
+\item <1> Bajo el supuesto de normalidad de las perturbaciones $\mu_{i}$, los estimadores MCO $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ están también normalmente distribuidos y el estimador MCO de la varianza de los errores, $\hat{\sigma}^{2}$, está relacionado con la distribución $\chi^{2}$ (ji-cuadrada).
+\end{itemize}
+\end{frame}
+
+
+\section{Intervalos de confianza para los coeficientes $\beta_{1}$ y $\beta_{2}$}
+\begin{frame}
+\frametitle{Intervalos de confianza para los coeficientes $\beta_{1}$ y $\beta_{2}$}
+\scriptsize
+\begin{itemize}
+\item <1> bajo el supuesto de normalidad de $\mu_{i}$, los estimadores MCO $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$ son en sí mismos normalmente distribuidos con medias y varianzas allí establecidas. Por consiguiente, por ejemplo, la variable:
+    $$Z=\frac{\hat{\beta}_{2}-\beta_{2}}{ee(\beta_{2})}$$
+\item <1> Es una variable normal estandarizada. Por consiguiente, parece que se puede utilizar la distribución normal para hacer afirmaciones
+probabilísticas sobre $\hat{\beta}_{2}$ siempre que se conozca la verdadera varianza poblacional $\sigma_{2}$, Si $\sigma_{2}$ se conoce, una propiedad importante de una variable normalmente distribuida con media $\mu$ y varianza $\sigma_{2}$ es que el área bajo la curva normal ya sabemos como es.
+\bigskip
+\item <1> Dado que $\sigma_{2}$ es rara vez conocida tengo que utilizar su estimador insesgado  $\hat{\sigma}_{2}$, entonces lo que cambia es $\hat{\sigma}_{2}$ en vez de $\sigma_{2}$;
+
+    $$T=\frac{\hat{\beta}_{2}-\beta_{2}}{ee(\hat{\beta}_{2})}$$
+Donde el error estándar ahora es el error estandar estimado de cada parámetro.
+\end{itemize}
+\end{frame}
+
+
+\section{Intervalos de confianza para los coeficientes $\beta_{1}$ y $\beta_{2}$}
+\begin{frame}
+\frametitle{Intervalos de confianza para los coeficientes $\beta_{1}$ y $\beta_{2}$}
+\scriptsize
+\begin{itemize}
+\item <1> la variable T, así definida, sigue la distribución t con n-2 g de l. Por consiguiente,
+en lugar de utilizar la distribución normal, se puede utilizar la distribución t para construir un intervalo de confianza para $\beta$ de la siguiente forma:
+$$Pr(-t_{\frac{\alpha}{2}}<t<t_{\frac{\alpha}{2}}) = 1-\alpha$$
+
+donde el valor t en el centro de esta doble desigualdad es el valor t dado con anterioridad, y donde $t_{\frac{\alpha}{2}}$ es el valor de la variable t obtenida de la distribución t para un nivel de significancia de $\frac{\alpha}{2}$ y $n-2$ g de l (valor crítico).
+
+$$Pr(-t_{\frac{\alpha}{2}}\leq\frac{\hat{\beta}_{2}-\beta_{2}}{ee(\hat{\beta}_{2})}\leq t_{\frac{\alpha}{2}}) = 1-\alpha$$
+Reorganizando se obtiene:
+$$Pr(\hat{\beta}_{2}-t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})\leq \beta_{2}\leq \hat{\beta}_{2}+t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})) =1-\alpha$$
+La ecuación proporciona un intervalo de confianza para $\beta_{2}$ al $100(1-\alpha)\%$, el cual puede ser escrito en forma más compacta como:
+$$\hat{\beta}_{2}\pm t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})$$
+\end{itemize}
+\end{frame}
+
+
+\section{Intervalos de confianza para $\sigma^{2}$}
+\begin{frame}
+\frametitle{Intervalos de confianza para $\sigma^{2}$}
+\scriptsize
+\begin{itemize}
+\item <1> También se puede construir el intervalo de confianza para la varianza de los errores:
+    $$Pr((n-2)\frac{\hat{\sigma}^{2}}{\chi^{2}_{\frac{\alpha}{2}}}\leq \sigma^{2}\leq (n-2)\frac{\hat{\sigma}^{2}}{\chi^{2}_{1-\frac{\alpha}{2}}})=1-\alpha$$
+\bigskip
+\item <1> Ejemplo: suponga que estimó una regresión obtuvo los coeficientes y luego calculó $\hat{\sigma}^{2}=42.1591$ con 8 g de l $(n-k)$. Si asignamos un nivel de significacncia del 5\%, obtendremos de la tabla de la distribución chi cuadrada con esos grados de libertad los siguientes valores críticos: $\chi^{2}_{0.025}=17.5346$ y $\chi^{2}_{0.975}=2.1797$, estos valores muestran que la probabilidad de que un valor chi cuadrado exceda 17.5346 es de $2,5\%$ y el de 2.1797 es de $97.5\%$.
+\bigskip
+\item <1> A qué es igual el intervalo de confianza para la varianza de los errores $(\sigma^{2})$ al 95\%:
+\bigskip
+\item <1> $19.2347\leq \sigma^{2}\leq 154.7336$
+\bigskip
+\item <1> Interpretación: si establecemos límites de confianza al 95\% sobre $\sigma^{2}$, y si afirmamos que apriori que entre estos límites cae el verdadero $\sigma^{2}$, se acertará a largo plazo el 95\% de las veces
+\end{itemize}
+\end{frame}
+
+\section{Gráfico Ejemplo}
+\begin{frame}
+\frametitle{Gráfico Ejemplo}
+\begin{center}
+\includegraphics[width=10cm]{grafico3}
+\end{center}
+\end{frame}
+
+\section{Pruebas de hipótesis}
+\begin{frame}
+\frametitle{Pruebas de hipótesis}
+\begin{itemize}
+\item <1> ¿Es compatible o incompatible una observación dada o un hallazgo, con algunas hipótesis planteadas?
+\item <1> ¿Es el $\hat{\beta}_{2}=0.5091$ consistente con la hipótesis planteada? no se rechaza o se rechaza?
+\item <1> Hipótesis Nula $(H_{0})$ frente a una hipótesis alternativa $(H_{1})$.
+\item <1> La hipótesis alternativa puede ser simple o compuesta. $H_{1}: \beta_{2}=1.5$ (simple) o $H_{1}: \beta_{2}\neq 1.5$ (compuesta).
+\item <1> La prueba de hipótesis se preocupa por el diseño de reglas o procedimientos que permitan decidir si se rechaza o no una hipótesis nula.
+\item <1> Hay dos métodos mutuamente complementarios para diseñar tales reglas: intervalo de confianza y la prueba de significancia.
+\end{itemize}
+\end{frame}
+
+\section{Método del intervalo de confianza: prueba de dos colas}
+\begin{frame}
+\frametitle{Método del intervalo de confianza: prueba de dos colas}
+\scriptsize
+\begin{itemize}
+\item <1> Imagine el ejemplo de que obtuvimos una propensión marginal a consumir (PMC) de 0.5091, y se postula que:
+$$H_{0}:\beta_{2}=0.3$$
+$$H_{1}:\beta_{2}\neq 0.3$$
+\item <1> La hipótesis Nula $(H_{0})$ es  simple, mientras que la alterna es una compuesta (hipótesis de dos lados o de dos colas).
+\item <1> ¿Es el $\hat{\beta}_{2}=0.5091$ consistente con la hipótesis planteada? no se rechaza o se rechaza?
+\item <1> El intervalo de confianza proporcionan un recorrido o límites dentro de los cuales se puede encontrar el verdadero $\beta_{2}$ o el parámetro sobre el cual se construya el intervalo
+\item <1> Regla de decisión: Si $\beta_{2}$ bajo $H_{0}$ se encuentra dentro del intervalo de confianza no se rechaza $H_{0}$, en caso contrario se rechaza a un determinado nivel de confianza $1-\alpha$.
+\item <1> Un hallazgo es significativo si se rechaza $H_{0}$ y cuando no se rechaza no es estadísticamente significativo.
+\end{itemize}
+\end{frame}
+
+\section{Gráfico intervalo de confianza}
+\begin{frame}
+\frametitle{Gráfico intervalo de confianza}
+\begin{center}
+\includegraphics[width=12cm]{grafico5}
+\end{center}
+\end{frame}
+
+
+\section{Datos ejemplo}
+\begin{frame}
+\frametitle{Datos ejemplo}
+\begin{center}
+\includegraphics[width=12cm]{grafico4}
+\end{center}
+\end{frame}
+
+\section{Con los datos anteriores..........}
+\begin{frame}
+\frametitle{Con los datos anteriores..........}
+Resuelva lo siguiente:
+\begin{itemize}
+\item <1> Contruya intervalos de confianza para $\hat{\beta}_{1}$ y $\hat{\beta}_{2}$
+\item <1> Valide lo siguiente respecto a $\hat{\beta}_{1}$:
+$$H_{0}:\hat{\beta}_{1}=30.1$$
+$$H_{1}:\hat{\beta}_{1}\neq 30.1$$
+\item <1> Valide lo siguiente respecto a $\hat{\beta}_{2}$:
+$$H_{0}:\hat{\beta}_{2}=0.5$$
+$$H_{1}:\hat{\beta}_{2}\neq 0.5$$
+\end{itemize}
+\end{frame}
+
+\section{Método del intervalo de confianza: prueba de un lado o una cola}
+\begin{frame}
+\frametitle{Método del intervalo de confianza: prueba de un lado o una cola}
+Cuando se tiene expectativa apriori (teórica o empírica) la hipótesis alterna es de un lado o de una sola dirección:
+\bigskip
+\begin{itemize}
+\item <1> Para el mismo ejemplo de consumo ingreso, se postula que:
+$$H_{0}:\beta_{2}\leq0.3$$
+$$H_{1}:\beta_{2}>0.3$$
+\item <1> ¿Cómo hacemos en este caso?.
+\end{itemize}
+\end{frame}
+
+
+\section{Prueba de hipótesis: Método de prueba de significancia}
+\begin{frame}
+\frametitle{Prueba de hipótesis: Método de prueba de significancia}
+Prueba de significancia de los coeficientes de regresión: la prueba t
+\begin{itemize}
+\item <1> Un prueba de significancia es un procedimiento mediante el cual se utilizan resultados muestrales para verificar la falsedad o no falsedad de una hipótesis nula.
+\item <1> Estadístico muestral  (estadístico de prueba, estadístico de contraste) vs estadístico crítico.
+\item <1> Región de aceptación y región de rechazo:
+$$Pr(\hat{\beta}_{2}-t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})\leq \beta^{*}_{2}\leq \hat{\beta}_{2}+t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})) =1-\alpha$$
+\item Los límites de confianza dados por los puntos extremos del intervalo de confianza son llamados valores críticos.
+\end{itemize}
+\end{frame}
+
+
+\section{Prueba de hipótesis: Método de prueba de significancia}
+\begin{frame}
+\frametitle{Prueba de hipótesis: Método de prueba de significancia}
+\begin{itemize}
+\item <1> Existe una gran relación entre los enfoques de intervalos de confianza y prueba se significancia puede verse comparando
+$$Pr(\hat{\beta}_{2}-t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})\leq \beta_{2}\leq \hat{\beta}_{2}+t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})) =1-\alpha$$
+con
+$$Pr(\hat{\beta}_{2}-t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})\leq \beta^{*}_{2}\leq \hat{\beta}_{2}+t_{\frac{\alpha}{2}}ee(\hat{\beta}_{2})) =1-\alpha$$
+\item <1> En el procedimiento del intervalo de confianza se trata de establecer un rango o intervalo que tenga una probabilidad determinada de contener el verdadero aunque desconocido $\beta_{2}$ , mientras que en el método de prueba de significancia se somete a hipótesis algún valor de $\beta_{2}$ y se trata de ver si el $\beta_{2}$ calculado se encuentra dentro de los límites alrededor del valor sometido a hipótesis.
+\end{itemize}
+\end{frame}
+
+\section{Criterio de decisión prueba t}
+\begin{frame}
+\frametitle{Criterio de decisión prueba t}
+\begin{center}
+\includegraphics[width=12cm]{grafico6}
+\end{center}
+\scriptsize
+También tenga en cuenta la regla práctica $2-t$: si el número de grados de libertad es mayor a  20 y si $\alpha$ se fija en 0,05, entonces la hipótesis nula $\beta_{k}=0$, puede ser rechazada si el valor de $t_{cal}$ excede a 2 en valor absoluto.
+\end{frame}
+
+
+\section{Prueba de significancia para $\sigma^{2}$: la prueba $\chi^{2}$}
+\begin{frame}
+\frametitle{Prueba de significancia para $\sigma^{2}$: la prueba $\chi^{2}$}
+\begin{itemize}
+\item <1> Recuerde que $\sigma^{2}$ sigue una distribución $\chi^{2}$ con n-2 g de l. Suponga que $\hat{\sigma}^{2}=42,1591$ y que los grados de libertad son iguales a 8. Se postula que $H_{0}:\sigma^{2}=85$ y $H_{1}: \sigma^{2}\neq 85$
+\bigskip
+\item <1> Procedimiento: 1. Obtenga el estadístico de prueba, 2. Obtenga el estadístico calculado, 3. contraste los estadísticos y decida.
+\bigskip
+\item <1> $\chi^{2}_{cal}=(n-2)\frac{\hat{\sigma}^{2}}{\sigma^{2}}$
+\bigskip
+\item <1> $\chi^{2}_{cri}=\chi^{2}_{\alpha,gl}$
+\end{itemize}
+Su denominador, va a ser el valor que usted intenta contrastar, en este caso $\sigma^{2}=85$
+\end{frame}
+
+\section{Criterio de decisión prueba $\chi^{2}$}
+\begin{frame}
+\frametitle{Criterio de decisión prueba $\chi^{2}$}
+\begin{center}
+\includegraphics[width=10cm]{grafico7}
+\end{center}
+\end{frame}
+
+\section{Selección del nivel de significancia $\alpha$}
+\begin{frame}
+\frametitle{Selección del nivel de significancia $\alpha$}
+\begin{itemize}
+\item <1> Porqué se escogen los niveles de significancia del 1, 5 y 10\%.
+\item <1> Si tratamos de reducir el error tipo I, aumentamos el error tipo II $\Longrightarrow$ se deben encontrar costos relativos para estos tipos de errores ¿Problema? $\Longrightarrow$ estos costos pocas veces se conocen.
+\item <1> La costumbre es fijar $\alpha$ en niveles de 1, 5 y 10\% y escojer un estadístio que minimize la probabilidad de cometer un error tipo II (potencia de la prueba).
+\item <1> Potencia de la prueba $(1-\beta)$=P(aceptar $H_{1}\mid H_{1}$
+ es verdadero), cuanta más potencia mejor.
+\item <1> La solución al problema de buscar un valor apropiado de $\alpha$ es utilizar el ''P-value''.
+\end{itemize}
+\end{frame}
+
+\section{P-value o nivel exacto de significancia}
+\begin{frame}
+\frametitle{P-value o nivel exacto de significancia}
+\begin{itemize}
+\item <1> Nivel observado o exacto de significancia.
+\item <1> Probabilidad exacta de cometer un error tipo I.
+\item <1> Nivel de significancia más bajo al cual se puede reachazar una hipótesis nula.
+\item <1> Probabilidad de obtener un valor t mayor o igual a cierto valor t observado.
+\item <1> este valor es mucho menor que los niveles de significancia obtenidos.
+\item <1> Si los datos no apoyan la hipótesis nula T va a ser grande y por lo tanto p-value pequeño.
+\item <1> Significancia estadística con significancia práctica
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Qu\'e es Gretl?}{2}{0}{1}
+\beamer@sectionintoc {2}{Installing Gretl}{3}{0}{2}
+\beamer@sectionintoc {3}{Gretl Basics}{4}{0}{3}
+\beamer@sectionintoc {4}{Importing Data}{5}{0}{4}
+\beamer@sectionintoc {5}{Importing Data}{6}{0}{5}
+\beamer@sectionintoc {6}{Generating New Variables}{7}{0}{6}
+\beamer@sectionintoc {7}{Example: Estimate the Food Expenditure Relationship}{8}{0}{7}
+\beamer@sectionintoc {8}{Graph the Data}{9}{0}{8}
+\beamer@sectionintoc {9}{MCO estimation}{10}{0}{9}

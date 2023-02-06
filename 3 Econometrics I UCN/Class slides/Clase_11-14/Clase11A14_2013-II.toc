@@ -1,0 +1,29 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Estimaci\'on por intervalos}{2}{0}{1}
+\beamer@sectionintoc {2}{Repaso s\'uper r\'apido.....}{3}{0}{2}
+\beamer@sectionintoc {3}{Funci\'on de densidad de probabilidad discreta (FDP)}{4}{0}{3}
+\beamer@sectionintoc {4}{FDP condicional}{5}{0}{4}
+\beamer@sectionintoc {5}{Caracter\IeC {\'\i }sticas de las distribuciones de probabilidad}{6}{0}{5}
+\beamer@sectionintoc {6}{Distribuci\'on Normal}{7}{0}{6}
+\beamer@sectionintoc {7}{Distribuci\'on Normal}{8}{0}{7}
+\beamer@sectionintoc {8}{Retomamamos la estimaci\'on por intervalos}{9}{0}{8}
+\beamer@sectionintoc {9}{Detalles sobre la \'ultima ecuaci\'on}{10}{0}{9}
+\beamer@sectionintoc {10}{\IeC {\textquestiondown }C\'omo se construyen los intervalos de confianza?}{11}{0}{10}
+\beamer@sectionintoc {11}{Intervalos de confianza para los coeficientes $\beta _{1}$ y $\beta _{2}$}{12}{0}{11}
+\beamer@sectionintoc {12}{Intervalos de confianza para los coeficientes $\beta _{1}$ y $\beta _{2}$}{13}{0}{12}
+\beamer@sectionintoc {13}{Intervalos de confianza para $\sigma ^{2}$}{14}{0}{13}
+\beamer@sectionintoc {14}{Gr\'afico Ejemplo}{15}{0}{14}
+\beamer@sectionintoc {15}{Pruebas de hip\'otesis}{16}{0}{15}
+\beamer@sectionintoc {16}{M\'etodo del intervalo de confianza: prueba de dos colas}{17}{0}{16}
+\beamer@sectionintoc {17}{Gr\'afico intervalo de confianza}{18}{0}{17}
+\beamer@sectionintoc {18}{Datos ejemplo}{19}{0}{18}
+\beamer@sectionintoc {19}{Con los datos anteriores..........}{20}{0}{19}
+\beamer@sectionintoc {20}{M\'etodo del intervalo de confianza: prueba de un lado o una cola}{21}{0}{20}
+\beamer@sectionintoc {21}{Prueba de hip\'otesis: M\'etodo de prueba de significancia}{22}{0}{21}
+\beamer@sectionintoc {22}{Prueba de hip\'otesis: M\'etodo de prueba de significancia}{23}{0}{22}
+\beamer@sectionintoc {23}{Criterio de decisi\'on prueba t}{24}{0}{23}
+\beamer@sectionintoc {24}{Prueba de significancia para $\sigma ^{2}$: la prueba $\chi ^{2}$}{25}{0}{24}
+\beamer@sectionintoc {25}{Criterio de decisi\'on prueba $\chi ^{2}$}{26}{0}{25}
+\beamer@sectionintoc {26}{Selecci\'on del nivel de significancia $\alpha $}{27}{0}{26}
+\beamer@sectionintoc {27}{P-value o nivel exacto de significancia}{28}{0}{27}

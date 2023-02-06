@@ -1,0 +1,291 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+%\documentclass{beamer}
+\usepackage[latin1]{inputenc} % remplace utf8 con latin1 si va a compilar en un sistema Windows
+\usepackage{times}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[sort]{natbib}
+\usepackage{textpos}
+%\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{graphicx}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage{lipsum}
+\usepackage{marvosym}
+\usefonttheme{professionalfonts} % font de Latex
+%\DeclareGraphicsRule{.png}{png}{.png.bb}{} %al parecer sirve para adaptar el tamaño de los gráficos cuando se insertan en Beamer
+%\usepackage{beamerthemeshadow} %hay que descargar está opción
+\newtheorem{defi}{Definición}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% Agregamos información del autor y titulo
+
+\title[Econometría I (EC402)]
+{Econometría I (EC402) \\
+Clase \#15 - Análisis de Varianza y Predicción}
+\author[Prof. Andrés M. Castaño]
+{
+ Prof. Andrés M. Castaño
+}
+
+\institute[]
+{
+}
+
+\LARGE
+\date[Clase 15 28/10/2013]
+{Ingeniería Comercial \\
+Universidad Católica del Norte\\
+
+Lunes 28 de octubre de 2013}
+
+%\date{\today}
+
+%Definimos la apariencia de las presentaciones
+%para agregar la línea de información en la diapositiva
+\setbeamercolor{block title}{bg=red!60,fg=black}
+\useoutertheme{infolines}
+\usetheme{Boadilla} %tipo de tema
+%\usecolortheme{beaver} %color del tema
+\usecolortheme{rose}
+\setbeamercovered{dynamic} % dentro de ambientes como itemize o enumerate resalta uno y los demas los pone trasparantes
+%\useoutertheme{infolines}
+\useinnertheme{default} % aspectos dentro del tema (cajas, viñetas, itemize, enumerate, theorem, footnotes. bibliography. opciones: circles,
+% default, rectangles
+
+
+\begin{document} %inicio del documento
+
+%portada
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\section{Análisis de varianza}
+\begin{frame}
+\frametitle{Análisis de varianza}
+\begin{itemize}
+\item <1> $$STC=SEC+SRC$$ 
+ $$\sum y^{2}_{i}=\sum \hat{y}^{2}_{i}+\sum \hat{\mu}^{2}_{i}$$
+ $$=\hat{\beta}^{2}_{2}\sum x^{2}_{i}+\sum \hat{\mu}^{2}_{i}$$
+\bigskip
+\item <1> El estudio de los componentes de la STC se conoce como el análisis de varianza.
+\bigskip
+\item <1> Asociado con cada uno de estos componentes está, sus respectivos grados de libertad. STC (n-1) gl, SRC (n-2) gl, SEC (1) gl.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tabla análisis de varianza}
+\begin{center}
+\includegraphics[width=12cm]{grafico1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{El estadístico F}
+\begin{itemize}
+\item <1> Si se satisface que $\mu_{i}$ esté normalmente distribuida, y si $H_{0}:\beta_{2}=0$, existe un estadístico F  que satisface la distribución F, con 1 y n-2 gl.
+\bigskip
+\item <1> $$F=\frac{SPC(SEC)}{SPC(SRC)}$$
+$$=\frac{\hat{\beta}^{2}_{2}\sum x^{2}_{i}}{\frac{\sum \hat{\mu}_{i}}{n-2}}$$
+$$=\frac{\hat{\beta}^{2}_{2}\sum x^{2}_{i}}{\hat{\sigma}^{2}}$$
+\end{itemize}
+\end{frame}
+
+\section{El estadístico F versus el estádistico T}
+\begin{frame}
+\frametitle{El estadístico F}
+\begin{itemize}
+\item <1>
+$$E(\hat{\beta}^{2}_{2}\sum x^{2}_{i})=\sigma^{2}+\beta^{2}_{2}\sum x^{2}_{i}$$
+y
+$$E(\frac{\sum\hat{\mu}_{i}}{n-2})=E(\hat{\sigma}^{2})=\sigma^{2}$$
+\bigskip
+\item <1> Si $\beta_{2}=0$, entonces ambas expresiones proporcionan el mismo valor para $\sigma^{2}$. Una distribución T (con k gl) al cuadrado es una distribución F $(1:k)$ gl.
+\bigskip
+\item <1> Las pruebas T y F, proporcionan, dos formas alternas pero complementarias de testear $H_{0}:\beta_{2}=0$.
+\bigskip
+\item <1> Cuando el análisis es de dos variables la prueba F es innecesaria, con más variables se pueden testear hipótesis globales.
+\end{itemize}
+\end{frame}
+
+
+\section{Aplicaciones del análisis de regresión: problema de predicción}
+\begin{frame}
+\frametitle{Aplicaciones del análisis de regresión: problema de predicción}
+\begin{itemize}
+\item <1> obteniedo:
+$$\hat{Y}_{i}=24.4545+0.5091X_{i}$$
+\bigskip
+\item <1> Qué podemos hacer con esta regresión:
+\bigskip
+\item <1> 1 $\Longrightarrow$ Predicción media: valor de la media condicional de Y correspondiente al valor de X (ejemplo $X_{0}$).
+\bigskip
+\item <1> 2 $\Longrightarrow$ Predicción individual: predicción de un valor individual Y, correspondiente a $X_{0}$.
+\end{itemize}
+\end{frame}
+
+
+\section{Predicción media}
+\begin{frame}
+\frametitle{Predicción media}
+\scriptsize
+\begin{itemize}
+\item <1> Suponga que $X_{0}=100$, y deseamos saber $E(Y\mid X_{0}=100)$. Obteniedo:
+$$\hat{Y}_{0}=\hat{\beta}_{1}+\hat{\beta}_{2}X_{0}$$
+$$=24.4545+0.5091(100)$$
+$$=75.364$$
+\bigskip
+\item <1> Dado que $\hat{Y}_{0}$ es un estimador, puede ser diferente del verdadero valor $\Longrightarrow$ Error de predicción $\Longrightarrow$ debemos encontrar la distribución muestral de $\hat{Y}_{0}$.
+\bigskip
+\item <1> $Y_{0}$ se distribuye con media $=(\beta_{1}+\beta_{2}X_{0})$, y
+\bigskip
+\item <1> $Var(\hat{Y}_{0})=\sigma^{2}(\frac{1}{n}+\frac{(X_{0}-\bar{X})^{2}}{\sum x^{2}_{i}})$
+\bigskip
+\item <1> $t=\frac{\hat{Y}_{0}-(\beta_{1}+\beta_{2}X_{0})}{ee(\hat{Y}_{0})}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Predicción media}
+\begin{itemize}
+\item <1> Intervalo de cofianza para el verdadero $E(Y_{0}\mid X_{0})$
+$$Pr(\beta_{1}+\beta_{2}X_{0}-t_{\frac{\alpha}{2}}ee(\hat{Y}_{0})\leq \beta_{1}+\beta_{2}X_{0} \leq \beta_{1}+\beta_{2}X_{0}+t_{\frac{\alpha}{2}}ee(\hat{Y}_{0}))=1-\alpha$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Predición media: Ejemplo...tabla 3.3 (Guajarati)}
+\begin{center}
+\includegraphics[width=12cm]{grafico3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cálculos ejemplo...}
+\begin{itemize}
+\item <1> obteniedo:
+$$\hat{Y}_{0}=\hat{\beta}_{1}+\hat{\beta}_{2}X_{0}$$
+$$=24.4545+0.5091(100)$$
+$$=75.364$$
+\bigskip
+\item <1> Con media $=(\beta_{1}+\beta_{2}X_{0})$.
+\bigskip
+\item <1> $Var(\hat{Y}_{0})=42.159(\frac{1}{10}+\frac{(100-170)^{2}}{33000})$
+$=10.4759$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cálculos ejemplo...}
+\begin{itemize}
+\item <1> Intervalo de confianza al 95\% de confianza para el verdadero $E(Y\mid X_{0})=\beta_{1}+\beta_{2}X_{0}$ :
+$$75.3645-2.306(3.2366)\leq E(Y_{0}\mid X=100)\leq 75.3645+2.306(3.2366)=1-\alpha$$
+$$(67.9010 \leq E(Y_{0}\mid X=100)\leq 82.8381)=1-\alpha$$
+\bigskip
+\item <1> Interpretación: En muestreo repetido dado $X_{0}=100$, en 95 de cada 100 intervalos como el anterior estará incluido el verdadero valor medio de  $Y_{0}$.
+\end{itemize}
+\end{frame}
+
+
+\section{Predicción individual.....}
+\begin{frame}
+\frametitle{Predicción individual.....}
+\scriptsize
+\begin{itemize}
+\item <1> Si el interés está en predecir un valor individual Y, $Y_{0}$ correspondiente a un valor dado de X $(X_{0})$, el mejor estimador lineal insesgado de $Y_{0}$ esta dado por:
+$$=(\beta_{1}+\beta_{2}X_{0})$$
+\bigskip
+\item <1> $$Var(Y_{0}-\hat{Y}_{0})=E(Y_{0}-\hat{Y}_{0})= \sigma^{2}(1 + \frac{1}{n}+\frac{(X_{0}-\bar{X})^{2}}{\sum x^{2}_{i}})$$
+\bigskip
+\item <1> $$t=\frac{Y_{0}-\hat{Y}_{0}}{ee(Y_{0}-\hat{Y}_{0})}$$
+\bigskip
+\item <1> Con el mismo ejemplo, hallar el intervalo de confianza para la predicción individual, debería darles:
+$$(58.6345 \leq Y_{0}\mid X_{0}=100 \leq 92.0945)$$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Predicción individual.....}
+\begin{itemize}
+\item <1> Evaluar lo siguiente: ¿Es posible decir con una confianza del 95\% que el consumo de una familia será de 110 (miles) si el ingreso es 180 (miles)? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparación predicción media vs predicción individual}
+\begin{center}
+\includegraphics[width=8cm]{grafico4.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Volvamosa a una salida de regresión}
+\begin{center}
+\includegraphics[width=10cm]{grafico5.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Qué hacer después de obtener la salida}
+\begin{itemize}
+\item <1> Signo de los coeficientes
+\bigskip
+\item <1> Significancia de los coeficientes
+\bigskip
+\item <1> Bonda de ajuste
+\bigskip
+\item <1> Estudiar el cumplimiento de los supuestos
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prueba de normalidad}
+\begin{itemize}
+\item <1> Histograma de los residuos
+\bigskip
+\item <1> Gráfica de probabilidad normal
+\bigskip
+\item <1> Prueba Jarque-Bera
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Histograma de residuos}
+\begin{center}
+\includegraphics[width=10cm]{grafico6.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Gráfica de probabilidad normal}
+\begin{center}
+\includegraphics[width=10cm]{grafico7.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Prueba Jarque-Bera (JB)}
+\begin{itemize}
+\item <1> Prueba asintótica o de grandes muestras.
+\bigskip
+\item <1> Calcula la asimetría y la curtosis de los residuos.
+\bigskip
+\item <1> $$JB=n(\frac{S^{2}}{6}+frac{(K-3)^2}{24})$$
+n=tamaño de la muestra; S=coeficiente de asimetría; K=coeficiente de curtosis.
+\end{itemize}
+\end{frame}
+
+\end{document}

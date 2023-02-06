@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Regresi\'on a traves del origen}{2}{0}{1}
+\beamer@sectionintoc {2}{Regresi\'on sobre variables estandarizadas}{9}{0}{2}
+\beamer@sectionintoc {3}{Formas funcionales de los modelos de regresi\'on}{12}{0}{3}
+\beamer@sectionintoc {4}{C\'omo medir elasticidad: Modelo log-log}{13}{0}{4}
+\beamer@sectionintoc {5}{C\'omo medir tasas de crecimiento: Modelo log-lin}{15}{0}{5}
+\beamer@sectionintoc {6}{Modelo lin-log}{17}{0}{6}
+\beamer@sectionintoc {7}{Modelos reciprocos}{19}{0}{7}
