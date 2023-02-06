@@ -1,0 +1,50 @@
+%% AMS-LaTeX Created by Wolfram Mathematica 7.0 : www.wolfram.com
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{enumerate}
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{center}
+\begin{large}
+\textbf{Control econometría (EC402) número \#2:}
+\end{large}\\
+\textbf{Prof. Andrés Mauricio Castaño Zuluaga}
+\end{center}
+\textbf{El tiempo máximo para responder es de 20 min, no se permite sacar material, se debe responder en el espacio asignado.}\\
+\\
+\scriptsize
+\textbf{El tiempo máximo para responder es de 20 min, no se permite sacar material, se debe responder en el espacio asignado.}\\
+\\
+\textbf{1. Cuál es la diferencia entre el concepto de regresión utilizado por Galton y la definición moderna de regresión, de un ejemplo}\\
+\\
+\textbf{2. Explique la(s) diferencias entre una relación estadística y una determinística}\\
+\\
+\textbf{3. Explique la diferecia entre regresión y causalidad}
+\\
+\textbf{4. Explique la diferencia entre regresión y correlación}
+
+\end{document}

@@ -1,0 +1,166 @@
+% Exam Template for UMTYMP and Math Department courses
+%
+% Using Philip Hirschhorn's exam.cls: http://www-math.mit.edu/~psh/#ExamCls
+%
+% run pdflatex on a finished exam at least three times to do the grading table on front page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These lines can probably stay unchanged, although you can remove the last
+% two packages if you're not making pictures with tikz.
+\documentclass[10pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+
+% By default LaTeX uses large margins.  This doesn't work well on exams; problems
+% end up in the "middle" of the page, reducing the amount of space for students
+% to work on them.
+\usepackage[margin=1in]{geometry}
+
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{EC100 y EC110}
+\newcommand{\term}{Primer semestre}
+\newcommand{\examnum}{Catedra \# 1}
+\newcommand{\examdate}{06/05/2015}
+\newcommand{\timelimit}{90 minutos}
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document}
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Página \thepage\ de \numpages}{\examdate}
+\runningheadrule
+
+\begin{flushright}
+\begin{tabular}{p{2.8in} r c}
+\textbf{\class} & \textbf{Nombre:} & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &\textbf{RUT:}& \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\textbf{\examdate} &&\\
+\textbf{Tiempo limite: \timelimit} &  & \textbf{Profesor:} Andrés M. Castaño \emph{M.Sc.}
+\end{tabular}\\
+\end{flushright}
+\rule[1ex]{\textwidth}{.1pt}
+
+Este examen contiene 2 páginas y un total de 8 preguntas, al lado de cada pregunta aparece su ponderación de acuerdo a un máximo de 60 puntos (10 puntos de base). Ingrese la información requerida en la parte superior de la hoja. Recuerde que no puede mirar la hoja de su compañero, ni sacar ningún tipo de material. En caso de ser sorprendido observando la hoja de su compañero se le quitará el examen y su nota será la mínima (1). Sólo se permite usar la Calculadora.\\
+
+\begin{questions}
+
+\addpoints
+\question[6] Respecto a la economía como ciencia:
+\begin{choices}
+\choice Explique cuáles son las diferencias y similitudes en la aproximación científica de las ciencias naturales y la de las ciencias sociales.
+\choice Enumere y explique los elementos que constituyen un modelo en economía.
+\choice De que manera podemos saber si un modelo es bueno o malo, justifique su respuesta.
+\end{choices}
+
+
+\addpoints
+\question[6] Respecto a las escuelas del pensamiento económico:
+\begin{choices}
+	\choice Enuncie y discuta dos diferencias y dos similitudes entre los mercantilistas y los fisiocratas
+	\choice Enuncie y discuta dos rasgos distintivos del pensamiento de Adam Smith
+	\choice Enuncie y discuta tres rasgos distintivos del pensamiento de David Ricardo
+\end{choices}
+
+
+\addpoints
+\question[6] Respecto a las fallas de mercado:
+\begin{choices}
+	\choice Indique y explique dos ejemplos de externalidades para el caso de la ciudad de Antofagasta.
+	\choice Indique y explique tres ejemplos de  estructuras de mercado para el caso de Chile (1 de monopolio, 1 de competencia monopolística y 1 de monopsonio).
+	\choice Indique y explique 1 ejemplo de un problema de información asimétrica.
+\end{choices}
+
+
+\addpoints
+\question[14] Suponga un bien X que consiste en una ''canasta de bienes y servicios'' de consumo básico y de uso corriente para los chilenos de ingresos medios. Suponga que se conocen las funciones de demanda y de oferta correspondientes al año 2013.
+\begin{choices}
+	\choice (4 points) Dibuje en un gráfico las curvas de demanda cumpliendo la Ley de la Demanda y de oferta (suponiendo que es bastante inclinada). Explique si son realistas estos supuestos y analice la situación de equilibrio en el mercado del bien X.
+	\choice (4 points) Explique el llamado ''ceteris paribus'' y sus componentes en cada función.
+	\choice (6 points) Al finalizar el primer semestre de 2015 se observa que el precio del bien X aumentó en el ano más de lo que se esperaba. Al evaluar las causas, se observa que la tecnología que emplean los productores de este bien es obsoleta y muy pocos han hecho inversiones para modernizar y mejorar su productividad. Sin embargo, se considera que su efecto sobre el precio de X es muy bajo. Por otra parte, se supone que la causa principal del cambio en el precio de X ha sido el exceso de dólares que entraron al país en 2014 y lo corrido del 2015, los cuales, al ser comprados por el Banco Central de Chile, se convirtieron en nuevos pesos para ser gastados en el país por muchos de los consumidores del bien X. Con base en las curvas de oferta y demanda del gráfico, muestre cada uno de los efectos sobre el mercado, de acuerdo con las causas anotadas. Tenga en cuenta el ceteris paribus.
+\end{choices}
+
+
+\addpoints
+\question[6] El proceso de cierre de la planta de Pollo de Agrosuper que está en desarrollo ha derivado en lo que se conoce como ''El efecto Freirina''. La prensa ha reportado que, hacia comienzos de agosto de 2012, la producción de carne de cerdo ha registrado un alza de 9,2\% la cual se puede explicar por el aumento en la faena proveniente de los criaderos de Freirina.
+\begin{choices}
+\choice (3 points) Describa gráficamente la situación que se está observando en el mercado de Cerdo y el efecto que esto habría tenido sobre el precio de equilibrio.
+\choice (3 points) Suponga ahora que para compensar sus pérdidas la empresa Agrosuper, decide aumentar significativamente el precio de los pollos. Describa gráficamente cómo esto cambiaría la situación en el mercado de la carne de cerdo tras el efecto Freirina.
+\end{choices}
+
+
+\addpoints
+\question[12] Para cada una de las situaciones siguientes explique qué está pasando en el mercado de los tallarines en Chile, describiendo en un gráfico lo que está sucediendo con la curva de demanda y oferta del mercado de los tallarines y de otros mercados que puedan estarlo afectando.
+\begin{choices}
+	\choice (2 points) Chile es importador de arroz e inundaciones en el sudeste asiático destruyen un porcentaje significativo de los cultivos.
+	\choice (3 points) La principal planta de Carozzi, el mayor productor chileno de tallarines, se quema y las otras plantas ya estaban produciendo a su máximo potencial.
+	\choice (3 points) La sequía en Chile genera una escasez de tomates.
+	\choice (4 points) Una política orientada a mejorar la nutrición el gobierno regala al cuartil más pobre de la población unos vales que pueden ser redimidos por productos alimenticios en ciertos supermercados (asuma que existe un mecanismo de control eficiente para evitar que los vales sean usados para otros fines).
+\end{choices}
+
+\addpoints
+\question[5] Suponga el mercado de las estufas de parafina de última generación (sin mecha) que contaminan muy poco. Evalúe el impacto final en el precio de estas estufas si, por un lado, disminuye el precio de la parafina, y por otro, se lanza una fuerte y efectiva campaña contra la contaminación intradomiciliaria.
+
+\addpoints
+\question[5] Indique si está de acuerdo o en desacuerdo con la siguiente afirmación (es necesario que dibuje los gráficos de los equilibrios de los mercados que considere convenientes)
+\begin{center}
+	''A pesar de la entrada de Virgin Mobile al mercado de telefonía celular chileno, los precios de los planes de otras compañías no debiesen caer mucho, pues Virgin sirve básicamente al mercado del prepago''
+\end{center}
+	
+
+
+\end{questions}
+\end{document}
+
+Se utilizaron las preguntas A1, A5, A6, A16, C6  del libro de ejercicios de Microeconomía de la Universidad de los Andes
+
+A.16. Mercado y características del bien
+Suponga el mercado de un bien X con las siguientes funciones de
+demanda y oferta:
+Xd = 100P^{(-1)} – (0.5)Y ; Xs = 40 +16P
+donde Xd es la cantidad demandada, Xs la ofrecida, P el precio y Y
+el ingreso de los consumidores.
+a) Calcule la situación de equilibrio en el mercado cuando Y=300 y
+cuando Y=200. Muestre los resultados en un gráfico.
+b) Qué se puede decir sobre la elasticidad ingreso de la demanda
+del bien X? Explique los conceptos que utiliza para sus
+cálculos e indique los resultados en un gráfico.
+
+
+C.06. Elasticidad de la demanda y su relación con otro bien
+Suponga la siguiente función de demanda:
+Qx = 200 - 2Px - 3Py
+donde QX es la cantidad demandada de X, PX es el precio de X y PY
+es el precio de Y.
+28
+a) Calcule la elasticidad punto de la demanda de X con respecto a
+su precio y muestre la relación entre los precios de X y Y,
+requerida para que la demanda de X sea inelástica.
+b) Suponga que el precio de X es 10. En el mercado de Y el
+precio es 20 y se cumple la Ley de la Demanda. Demuestre si en
+esta situación, Y es un bien sustituto o un bien
+complementario de X.
+c) Suponga que sólo se conocen cuatro puntos de la función de
+demanda:
+Punto A............ Px = 6 ; Py = 5
+Punto B............ Px = 8 ; Py = 7
+Punto C............ Px = 10; Py = 10
+Punto D............ Px = 8 ; Py = 5
+Calcule, donde sea posible, la elasticidad arco de la demanda
+de X con respecto al precio de X.
+d) Utilice los datos del punto c) para calcular la elasticidad
+arco cruzada de X con respecto a Y, donde sea posible.

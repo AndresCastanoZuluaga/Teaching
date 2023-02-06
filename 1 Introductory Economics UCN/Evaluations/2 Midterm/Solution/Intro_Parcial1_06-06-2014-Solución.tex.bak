@@ -1,0 +1,234 @@
+\documentclass[letterpaper,12pt,final,titlepage]{article}
+%PREAMBLE:
+\usepackage[total={18cm,21cm},top=2cm, left=2cm]{geometry} %simplifica la definición de margenes
+\usepackage[leqno]{amsmath}
+\usepackage{latexsym}
+\usepackage{amsmath, amssymb, graphics}
+\usepackage{color} %agregar color a las partes del documento que se prefieran%
+\usepackage[spanish,activeacute]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+\usepackage{graphicx} %sirve para insertar graficos en varios formatos%
+\usepackage{epsfig,tocbibind}%para incluir figuras en .EPS de Stata
+\usepackage{fancyhdr} %agrega topes y pies de pagina%
+\usepackage{rotating} %por si quiero colocar un hoja horizontal
+\usepackage{anysize} %sirve para definir margenes%
+\usepackage{hyperref} %para crear enlaces dentro del propio documento o para insertar urls.
+\usepackage[sort]{natbib} % Reference List
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{afterpage}
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}{{}}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{\textbf{Solución cátedra \#1\\
+Introducción a la Economía (EC-100)\\
+Visión del Entorno Económico (EC-110)}}
+
+\begin{center}
+\author{Profesor:\\
+\\
+Andr\'es M. Castaño Zuluaga\\
+\\
+Ayudantes:\\
+\\
+Mariana Camila Nadal Fernández\\
+Josefa Pellejero Maranguni\v{c}\\
+\\
+\\
+Ingeniería Comercial\\
+Ingeniería en Sistemas de Información\\
+Universidad Cat\'olica del Norte\\}
+
+\end{center}
+
+\date{\today}
+\maketitle
+
+
+
+1. Respuesta C. Las afirmaciones normativas se caracterizan por llevar intrínsecamente un componente de juicio o valoración propia, justo como el trabajador en la pregunta. Por su parte, las afirmaciones positivas simplemente describen un escenario como se ve, o en su defecto, a la luz de alguna teoría existente, justo como lo hace el técnico del Banco Central de Chile.\\
+\bigskip
+
+2. Respuesta B. El comercio internacional permite ir más allá de la frontera de posibilidades máximas de producción, permite la cooperación entre países, y de esta manera con la misma cantidad de recursos y tecnología una canasta de consumo mayor. Lo anterior se logra  a través de la especialización. Los países deciden especializarse en la producción de aquellos bienes que permiten mejorar la asignación de recursos con respecto a la situación cuando no había comercio internacional, es decir especializarse en el bien con el menor costo de oportunidad, lo que no quiere decir que dejen de producir en absoluto el otro bien, lo seguirán haciendo pero en menor cantidad.\\
+\bigskip
+
+3. Respuesta C. La mano invisible está guiada por la racionalidad de cada uno de los individuos en busca de maximizar su beneficio propio. En un mercado de competencia perfecta la mano invisible llevará a un resultado de mercado que será congruente con la racionalidad mencionada.\\
+\bigskip
+
+4. Respuesta D. Como se ha mencionado en clase, la tecnología es uno de los motivos por los cuales la frontera de posibilidades de producción se desplaza. La tecnología no sólo debe entenderse en el sentido de una empresa, puede entenderse también, como la capacidad de los individuos (que pueden estar dentro de algún grupo demográfico) para crear bienes y servicios de mejor calidad y en mayor cantidad, con el fin de satisfacer las necesidades de la población en general. En ese sentido, la mayor capacitación y especialización de los grupos demográficos permitiría desplazar la frontera de posibilidades de producción hacia la derecha.\\
+\bigskip
+
+5. Respuesta E. La escuela económica que se identificaba con este enunciado son los fisiocratas. Para los fisiócratas, la agricultura era el único sector genuinamente productivo de la economía capaz de generar el excedente del cual dependía todo lo demás. Para esta Escuela, la riqueza de una nación procedía de la capacidad de producción, y no de la cantidad de oro y plata que poseyeren (como pensaban los mercantilistas), por lo cual se centraran no en el estudio del dinero, sino en las fuerzas reales que permiten el desarrollo económico.\\
+\bigskip
+
+
+\newpage
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{EPO con segmentos elásticos e inelásticos.}}
+\includegraphics[width=13cm]{pregunta6}
+\scriptsize{\newline \emph{Fuente:}Mankiw capítulo 5, página 66, Figura 5.7 }
+\end{figure}\smallskip
+
+6. En el texto guía Mankiw, capítulo 5, página 66, Figura 5.7, se exhibe un ejemplo en donde la elasticidad precio de la oferta (EPO) tiene segmentos elásticos e inelásticos (Figura 1 en el documento). En dicho ejemplo, el comportamiento de la EPO en esa industria en particular era provocado por las restricciones físicas de producción (uso del espacio físico) de las empresas.\\
+\\
+En una etapa inicial es probable que algunas empresas dentro de una determina industria no estén usando al máximo su capacidad, es decir tengan algunos recursos ociosos, por lo cual si el precio de equilibrio de mercado sube $(\Delta P)$, es probable que  la producción $(\Delta Q)$ se ajuste en mayor medida (segmento elástico) y mejorar los ingresos de la empresas. No obstante, cuando ya una empresa alcanza el máximo de producción que puede realizar dadas las restricciones físicas de espacio, es probable que la reacción de la producción ante un aumento en el precio, sea menor (segmento inelástico). La producción de cualquier bien podría ser un buen ejemplo, siempre que se deje claro que la explicación pasa por el uso o no de los recursos físicos de manera eficiente.\\
+
+\newpage
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Mercado de apartamentos de la ciudad universitaria de la UCN.}}
+\includegraphics[width=10cm]{pregunta7}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+7.A Como se puede apreciar en la Figura 2, los apartamentos del circulo exterior ya tienen un alquiler definido, por lo cual los precios del circulo exterior son una variable exógena. En el interior, el número de apartamentos alquilados  y su precio va a ser determinado de acuerdo a la estructura del mercado, por lo cual el precio en el circulo interior es una variable endógena.\\
+\bigskip
+
+7.B Acerca del mercado interior, se sabe que existen muchos estudiantes buscando departamentos (muchos demandantes), muchas agencias inmobiliarias ofreciendo depertamentos (muchos oferentes), y además que los apartamentos son homogeneos. Las características anteriores permitrían pensar que el mercado de aparamentos interior de la ciudad universitaria de la UCN es un mercado de competencia perfecta.\\
+\bigskip
+
+7.C En la Figura 3, se muestra el comportamiento del mercado interior de apartamentos de la ciudad universitaria de la UCN. Dado que el analisis es en el corto plazo la oferta de departamentos es perfectamente inelástica.\\ 
+\bigskip
+\newpage
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Equilibrio de corto plazo en el mercado interior de apartamentos de la ciudad universitaria de la UCN.}}
+\includegraphics[width=10cm]{pregunta7C}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+Por mucho deseo que tengan los agentes inmobiliarios de modificar los apartamentos que ofrecen, en el corto plazo tienen restricciones de espacio físico. Independiente de lo que pase con la demanda, en el corto plazo la cantidad de apartmentos arrendados  de equilibrio está determinado por la oferta, mientras que el precio de equilibrio está determinado exclusivamente por la demanda.\\
+\bigskip
+
+
+7.D El resultado final de esta medida es una disminución en el numero de apartamentos arrendados de equilibrio, pero no tiene ningun efecto sobre el precio de equilibrio (Figura 4).\\
+\\
+Suponga que los agentes inmobiliarios deciden vender 10 apartamentos a sus inquilinos, por lo cual la oferta se dezplaza hacia la izquierda en 10 apartamentos, el pensamiento inicial es que la medidad provoca una disminución en el número de apartamentos de equilibrio, y un aumento en el precio de equilibrio. No obstante, al ser los inquilinos (circulo interior) los que compran los departamentos que ofrecen las empresas inmobiliarias, la demanda de apartamentos también disminuye, se dezplaza hacia la izquierda en exactamente 10, por lo cual el efecto sobre el precio es nulo, pero en las cantidades es una disminución de 10 (diferencia entre $S^{'}$ y $S$ en la Figura 4.\\
+\bigskip
+
+\newpage
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Impacto en el equilibrio si las agencias inmobiliarias deciden vender algunos departamentos a sus inquilinos.}}
+\includegraphics[width=10cm]{pregunta7D}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+8.A La noticia se refiere al mercado de Café, donde los que demandan pueden ser las empresas que compran (compradores) el grano y luego lo convierten en algún producto para consumo final, o algunas empresas importadoras de café. Los que ofrecen son las personas que cultivan el Café.\\
+\bigskip
+
+8.B  En lo que respecta a las expectativas (Figura 5), a los mismos precios los consumidores finales (personas) compran menos cantidad, dedido a que están en verano y sustituyen café (bebida caliente) por bebidas frías, este comportamiento hace que los demandantes (las empresas que los compran para fabricar algun producto final, no los consumidores finales de alguna bebida relacionada con café), disminuyan sus compras, dezplazando su curva de demanda de $D$ hasta $D^{'}$. Como resultado del ajuste de las expetativas, las cantidades de equilibrio disminuyen pasando de $Q1$ a $Q2$, mientras que el precio de equilibrio baja a $P2$
+
+\newpage
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Equilibrio en el mercado de Café y el impacto de las expectativas.}}
+\includegraphics[width=12cm]{pregunta8B}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+
+9.A Los consumidores del grupo A ''adictos'' sienten la necesidad de consumir determinada cantidad de cigarrilos al dia, y no cambia mucho por más que cambie el precio. El consumo del grupo B ''de vez en cuando'', es más sensible a variaciones en el precio. Lo anterior, da a entender  que la demanda del grupo A es más inelástica que la del grupo B (Vease Figura 6).
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Demanda de cigarrilos para los consumidores tipo A (Adictos) y tipo B (De vez en cuando).}}
+\includegraphics[width=12cm]{pregunta9A}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+\newpage
+
+9.B Después de introducir un curva de oferta normal, se pueden obtener los precios y cantidades de equilibrio de cada mercado, de igual modo se puede ver el efecto de cambios en los precios en la cantidad demandad de cigarrilos para los dos grupo(Vease Figura 7).
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Equilibrio en el mercado de cigarrilos para los consumidores tipo A (Adictos) y tipo B (De vez en cuando).}}
+\includegraphics[width=12cm]{pregunta9B}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+
+10. Al introducir cada par de precios en la ecuación $Q_{x} = 200 - 2P_{x} - 3P_{y}$, se pueden obtener los valores de $Q_{x}$. Utilizando la formula de elasticidad arco se puede obtener la elasticidad precio de la demanda ($e_{PQ}^{QD}$) para los segmentos AB, BC y CD. Luego utilizando el precio del bien relacionado $P_{y}$ con el valor de $Q_{x}$ se puede calcular la elasticidad precio cruzada de la demanda ($E_{PR}^{QD}$) para los mismos segmentos. después de realizados los cálculos los resultados se muestran en el Cuadro 1.
+
+\begin{table}[h!]
+\begin{center}
+\caption{\textbf{Resultados e interpretación preguntas 10.A y 10.B}}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Punto & $P_{x}$ & $P_{y}$ & $Q_{x}$ & $e_{PQ}^{QD}$ & inter. & Tipo & $E_{PR}^{QD}$ & Inter. & Tipo \\
+  \hline
+  A & 6  & 5  & 173 & - & - & - & - & - & -\\
+  B & 8  & 7  & 163 & $\abs{-0.20}$ & Inelas & Normal & $\abs{-0.17}$ & Inelas & Complementarios  \\
+  C & 10 & 10 & 150 & $\abs{-0.37}$ & Inelas & Normal & $\abs{-0.23}$ & Inelas & Complementarios \\
+  D & 8  & 5  & 169 & $\abs{-0.53}$ & Inelas & Normal & $\abs{-0.17}$ & Inelas & Complementarios \\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+11.A Para hallar el equilibrio cuando $Y=200$ partimos de:
+$$X_{D}=100\frac{1}{P}- (0.5) Y$$
+$$X_{D}=100\frac{1}{P}- 100$$
+Ahora sabemos que la función de oferta es igual a: 
+$$X_{S}=40 + 16P$$
+Por lo cual el equilibrio de mercado sería igual a:
+$$X_{D}=X_{S}$$
+$$100\frac{1}{P} - 100=40 + 16P$$
+$$P^{*}=0.663$$
+$$X^{*}=50.622$$
+
+Para obtener el equilibrio cuando $Y=300$ partimos de:
+$$X_{D}=100\frac{1}{P}- (0.5) Y$$
+$$X_{D}=100\frac{1}{P}- 150$$
+Ahora sabemos que la función de oferta es igual a:
+$$X_{S}=40 + 16P$$
+Por lo cual el equilibrio de mercado sería igual a:
+$$X_{D}=X_{S}$$
+$$100\frac{1}{P} - 150=40 + 16P$$
+$$P^{*}=0.504$$
+$$X^{*}=48.077$$
+
+En la Figura 8 se muestra el gráfico de los dos equilibrios.
+\newpage
+
+\begin{figure} [h!]
+\centering
+\caption{\textbf{Equilibrio de mercado para $Y=200$ $(D)$ y $Y=300$ $(D^{'})$}}
+\includegraphics[width=12cm]{pregunta11A}
+\scriptsize{\newline \emph{Fuente:}Construcción del profesor}
+\end{figure}\smallskip
+
+11.B Para obtener la elasticidad renta de la demanda $(E_{R}^{QD})$ tabulamos los puntos obtenidos en el ejercicio anterior de la siguiente manera:
+
+\begin{table}[h!]
+\begin{center}
+\caption{\textbf{Resultados de P y Q para $Y=200$ $(D)$ y $Y=300$ $(D^{'})$ }}
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  Renta & P & Q & $E_{R}^{QD}$ & Inter. & Tipo \\
+  \hline
+  200 &  &  &  &  &  \\
+  300 &  &  &  &  &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\end{document}
